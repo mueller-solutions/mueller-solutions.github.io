@@ -1,0 +1,9 @@
+{
+  "name": "mueller-solutions.github.io",
+  "scripts": {
+    "dev": ""
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
