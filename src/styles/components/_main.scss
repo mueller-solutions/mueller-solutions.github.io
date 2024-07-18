@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.site-main {
+  display: grid;
+  gap: pxToRem(120);
+  padding-block-end: pxToRem(120);
+}

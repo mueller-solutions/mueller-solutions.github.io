@@ -1,5 +1,20 @@
 ---
-import Layout from "../layout/layout.astro";
+import { getCollection } from "astro:content";
+import Header from "../components/Header.astro";
+import Service from "../components/Service.astro";
+import Layout from "../layout/Layout.astro";
+
+const allServices = await getCollection("services");
 ---
 
-<Layout pathname="/services"> Services </Layout>
+<Layout title="Our Service">
+  <Header />
+  <main class="site-main">
+    <section class="sub-hero">
+      <div class="wrapper">
+        <h1>Our Services</h1>
+      </div>
+    </section>
+    {allServices.map((service) => <Service service={service} />)}
+  </main>
+</Layout>

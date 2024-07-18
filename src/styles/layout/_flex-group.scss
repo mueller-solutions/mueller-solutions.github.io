@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.flex-group {
+  display: flex;
+  gap: pxToRem(32);
+
+  &[data-direction="column"] {
+    flex-direction: column;
+  }
+
+  &:not([data-direction="column"]) {
+    align-items: center;
+  }
+
+  &[data-justify="between"] {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+
+.button {
+  --_shine-color: #{$color-shine-low};
+  --_shadow-shine-top: inset 0 1px 0 0 var(--_shine-color);
+  --_shadow-shine-bottom: inset 0 -1px 0 0 var(--_shine-color);
+  --_transition-duration: 200ms;
+  --_shadow-dark: #{$shadow-button-sm};
+  --_offset-y: 0;
+  --_bg-offset: 0;
+
+  background-color: $color-yellow;
+  background-image: linear-gradient(to bottom, $color-yellow, $color-orange);
+  background-repeat: repeat-x;
+  background-position: 0 var(--_bg-offset);
+  box-shadow: var(--_shadow-shine-top), var(--_shadow-shine-bottom),
+    var(--_shadow-dark);
+  font-size: pxToRem(18);
+  line-height: pxToRem(18);
+  font-weight: 700;
+  padding: pxToRem(16) pxToRem(28);
+  border-radius: 999px;
+  width: 100%;
+  color: $color-dark;
+  transform: translateY(var(--_offset-y));
+  transition: background-position var(--_transition-duration) ease-out,
+    transform var(--_transition-duration) ease-out,
+    box-shadow var(--_transition-duration) ease-out;
+
+  @include mq(medium) {
+    width: auto;
+  }
+
+  &:hover {
+    --_shine-color: #{$color-shine};
+    --_shadow-dark: #{$shadow-button-sm-hover};
+    --_offset-y: -2px;
+    --_bg-offset: 10px;
+  }
+
+  &:active {
+    --_transition-duration: 75ms;
+    --_offset-y: 0;
+    --_shine-color: #{$color-shine-lower};
+    --_shadow-dark: #{$shadow-button-active};
+    --_bg-offset: 0px;
+  }
+
+  &[data-size="large"] {
+    --_shadow-dark: #{$shadow-button-lg};
+
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 1.125rem 2.25rem;
+    letter-spacing: -0.02em;
+
+    &:hover {
+      --_shadow-dark: #{$shadow-button-lg-hover};
+    }
+
+    &:active {
+      --_shadow-dark: #{$shadow-button-active};
+    }
+  }
+}

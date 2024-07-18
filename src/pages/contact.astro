@@ -1,5 +1,15 @@
 ---
-import Layout from "../layout/layout.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layout/Layout.astro";
 ---
 
-<Layout pathname="/contact"> Contact </Layout>
+<Layout title="Contact us!">
+  <Header />
+  <main class="site-main">
+    <section class="sub-hero">
+      <div class="wrapper">
+        <h1>Get in touch with us!</h1>
+      </div>
+    </section>
+  </main>
+</Layout>

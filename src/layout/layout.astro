@@ -1,22 +1,15 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Navigation from "../components/navigation/navigation.astro";
-import Meta from "./meta.astro";
-
-interface Props {
-  pathname: string;
-}
-
-const { pathname } = Astro.props;
+import "../styles/main.scss";
+import HtmlHead from "../components/HtmlHead.astro";
+const { title, description } = Astro.props;
 ---
 
-<html lang="en" class="antialiased">
+<!doctype html>
+<html lang="en" transition:animate="none">
   <head>
-    <Meta />
-    <ViewTransitions />
+    <HtmlHead title={title} description={description} />
   </head>
-  <body class="text-gray-700">
-    <Navigation pathname={pathname} />
+  <body>
     <slot />
   </body>
 </html>
