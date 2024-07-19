@@ -1,0 +1,13 @@
+---
+type Props = {
+  size?: "large";
+};
+const { size = undefined } = Astro.props;
+---
+
+<button
+  class="button schedule-call"
+  data-size={size}
+  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?primary_color=0b80c5'});return false;"
+  >Schedule a call</button
+>

@@ -4,6 +4,7 @@ import Layout from "../layout/MainLayout.astro";
 
 import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
+import SchedulaCallButton from "../components/SchedulaCallButton.astro";
 
 const allServices = await getCollection("services");
 ---
@@ -19,7 +20,7 @@ const allServices = await getCollection("services");
           Our team can bring your ideas to life faster.
         </p>
         <div>
-          <button class="button" data-size="large">Schedule a call</button>
+          <SchedulaCallButton size="large" />
         </div>
       </div>
     </section>
@@ -61,7 +62,7 @@ const allServices = await getCollection("services");
         </div>
       </div>
       <div>
-        <button class="button">Schedule a Call</button>
+        <SchedulaCallButton />
       </div>
     </section>
     <section class="wrapper section solutions">

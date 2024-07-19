@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tina": "tinacms dev -c \"pnpm dev\""
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
@@ -22,6 +23,11 @@
     "postcss-nested": "^6.0.1",
     "purgecss": "^6.0.0",
     "sass": "^1.77.8",
+    "tinacms": "^1.6.7",
     "typescript": "^5.5.2"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.5.49",
+    "@types/node": "^20.14.11"
   }
 }
