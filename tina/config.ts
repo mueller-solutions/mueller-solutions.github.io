@@ -64,6 +64,13 @@ export default defineConfig({
             label: "Body",
             isBody: true,
           },
+          {
+            type: "number",
+            name: "order",
+            label: "Order",
+            description: "Order of the service",
+            required: true,
+          },
         ],
       },
     ],

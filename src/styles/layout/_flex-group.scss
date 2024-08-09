@@ -12,6 +12,14 @@
     align-items: center;
   }
 
+  &[data-align="end"] {
+    align-items: flex-end;
+  }
+
+  &[data-align="start"] {
+    align-items: flex-start;
+  }
+
   &[data-justify="between"] {
     justify-content: space-between;
   }

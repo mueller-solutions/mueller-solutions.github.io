@@ -90,6 +90,7 @@ const htmlDescription = description
   sizes="192x192"
   href="/assets/android-icon-192x192.png"
 />
+
 <link rel="shortcut icon" href="/assets/favicon.ico" />
 <link rel="manifest" href="./site.webmanifest" />
 <link
@@ -100,12 +101,65 @@ const htmlDescription = description
   type="image/webp"
 />
 <link
+  rel="preload"
+  fetchpriority="high"
+  as="image"
+  href="/images/florian-mueller.webp"
+  type="image/webp"
+/>
+<link
   href="https://assets.calendly.com/assets/external/widget.css"
   rel="stylesheet"
 />
 <script
   src="https://assets.calendly.com/assets/external/widget.js"
   type="text/javascript"
-  async
-  is:inline
-  script></script>
+  async></script>
+<script>
+  const navLinkEls = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const sectionEls = document.querySelectorAll<HTMLElement>(".section");
+  const headerEl = document.querySelector<HTMLElement>(".site-header");
+  const headerHeight = headerEl ? headerEl.offsetHeight * 1.5 : 0;
+  const logoLinkEls =
+    document.querySelectorAll<HTMLAnchorElement>(".logo-link");
+
+  // Highlight the active section in the navigation
+  let currentSection = "top";
+  window.addEventListener("scroll", () => {
+    sectionEls.forEach((sectionEl) => {
+      const windowScrollY = window.scrollY + headerHeight;
+
+      if (windowScrollY >= sectionEl.offsetTop) {
+        currentSection = sectionEl.id;
+      }
+    });
+
+    navLinkEls.forEach((navLinkEl) => {
+      navLinkEl.classList.remove("active");
+      if (navLinkEl.href.includes(`#${currentSection}`)) {
+        navLinkEl.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scroll to sections
+  navLinkEls.forEach((navLinkEl) => {
+    navLinkEl.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetId = navLinkEl.href.split("#")[1];
+      const targetEl = document.getElementById(targetId);
+      const targetTop = targetEl?.offsetTop || 0;
+      const targetY = targetTop - headerHeight;
+
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+    });
+  });
+
+  // Smooth scroll to top
+  logoLinkEls.forEach((logoLinkEl) => {
+    logoLinkEl.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>

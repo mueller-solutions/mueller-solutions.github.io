@@ -14,7 +14,7 @@
   border-bottom-right-radius: clamp(pxToRem(28), 4vw, pxToRem(40));
   text-align: var(--_text-align);
   color: $color-light;
-  padding-block: clamp(#{pxToRem(40)}, 8vw, #{pxToRem(200)});
+  padding-block: clamp(#{pxToRem(40)}, 8vw, #{pxToRem(120)});
 
   @include mq(medium) {
     --_text-align: left;
@@ -24,6 +24,10 @@
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
+  }
+
+  @include mq(large) {
+    background-size: auto 110%;
   }
 
   h1 {

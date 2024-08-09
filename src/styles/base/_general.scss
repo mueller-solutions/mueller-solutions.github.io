@@ -23,6 +23,12 @@ video {
 a,
 a:hover {
   text-decoration: none;
+
+  &.active {
+    color: $color-brand-light;
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 button,

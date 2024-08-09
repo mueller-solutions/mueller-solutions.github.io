@@ -1,6 +1,13 @@
 @use "../abstracts" as *;
 
 .solutions {
+  .heading {
+    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
+    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.04em;
+  }
+
   .solution {
     background-color: $color-light;
     border-radius: clamp(pxToRem(12), 2vw, pxToRem(20));

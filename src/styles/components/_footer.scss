@@ -4,6 +4,8 @@
   background-color: $color-dark;
   color: $color-light;
   padding-block: pxToRem(60);
+  display: grid;
+  gap: pxToRem(20);
 
   nav {
     ul {
@@ -12,11 +14,36 @@
       align-items: center;
       gap: pxToRem(24);
     }
+
+    a {
+      color: $color-light;
+      transition: color 200ms ease-in-out;
+
+      &:not(.active):hover {
+        color: $color-gray-light;
+      }
+
+      &.active {
+        color: $color-brand-light;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
   }
 
   .socials {
     display: flex;
     gap: pxToRem(24);
     align-items: center;
+  }
+
+  hr {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: $color-gray-darker;
+  }
+
+  .footer-bottom {
+    font-size: pxToRem(14);
   }
 }

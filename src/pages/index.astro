@@ -1,17 +1,17 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layout/MainLayout.astro";
 
-import { getCollection } from "astro:content";
 import Header from "../components/Header.astro";
-import SchedulaCallButton from "../components/SchedulaCallButton.astro";
-
-const allServices = await getCollection("services");
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Footer from "../components/Footer.astro";
+import Benefits from "../components/Benefits.astro";
+import Services from "../components/Solutions.astro";
+import About from "../components/About.astro";
 ---
 
 <Layout>
   <Header />
-  <main class="site-main">
+  <main class="site-main" id="top">
     <section class="hero">
       <div class="wrapper">
         <h1>Elevate Your Business with Cutting-Edge Web Solutions</h1>
@@ -20,131 +20,13 @@ const allServices = await getCollection("services");
           Our team can bring your ideas to life faster.
         </p>
         <div>
-          <SchedulaCallButton size="large" />
+          <ScheduleACallButton size="large" />
         </div>
       </div>
     </section>
-    <section class="wrapper section benefits">
-      <h2 class="section-tag">
-        <Image
-          src="/images/icons/lightbulb.svg"
-          alt="Lightbulb Icon"
-          width="30"
-          height="30"
-        />
-        Why MUELLER?
-      </h2>
-      <h3 class="heading">
-        Turn Your Vision into<br />High-Performance Web Solutions
-      </h3>
-      <div class="columns">
-        <div class="benefit">
-          <h4>Faster Web Application Development</h4>
-          <p>
-            We speed up your development with efficient processes. Our team
-            works with you to meet your unique needs on all stages for faster
-            releases.
-          </p>
-        </div>
-        <div class="benefit">
-          <h4>Higher Quality<br />and Stability</h4>
-          <p>
-            Our team sets up strict coding standards and testing for you. We use
-            modern technologies to build advanced frontend architecture.
-          </p>
-        </div>
-        <div class="benefit">
-          <h4>Better Conversion<br />and Findability</h4>
-          <p>
-            We add a Progressive Web App and server-side rendering. They will
-            speed up your app and boost SEO, which makes your app more visible.
-          </p>
-        </div>
-      </div>
-      <div>
-        <SchedulaCallButton />
-      </div>
-    </section>
-    <section class="wrapper section solutions">
-      <h2 class="section-tag">
-        <Image
-          src="/images/icons/puzzle.svg"
-          alt="Puzzle Icon"
-          width="30"
-          height="30"
-        />
-        Our Solutions
-      </h2>
-      <div class="columns smaller">
-        {
-          allServices.map((service) => (
-            <a
-              id={service.slug}
-              href={`/services#${service.slug}`}
-              class="solution"
-            >
-              <div>
-                <div class="icon">
-                  <div
-                    class="mask"
-                    style={`--_icon: url('/images/icons/${service.data.icon}.svg');`}
-                  />
-                </div>
-              </div>
-              <div class="solution-content">
-                <h1>{service.data.title}</h1>
-                <p>{service.data.excerpt}</p>
-              </div>
-              <div class="link">Learn more</div>
-            </a>
-          ))
-        }
-      </div>
-    </section>
+    <Benefits />
+    <Services />
+    <About />
   </main>
-  <footer class="site-footer">
-    <div class="wrapper flex-group" data-justify="between">
-      <Image
-        src="/images/logo-white.svg"
-        alt="MUELLER Logo White"
-        width="216"
-        height="36"
-      />
-      <nav>
-        <ul>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/about">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-        </ul>
-      </nav>
-
-      <div class="socials">
-        <a href="">
-          <Image
-            src="/images/icons/x.svg"
-            alt="Twitter Icon"
-            width="24"
-            height="22"
-          />
-        </a>
-        <a href="">
-          <Image
-            src="/images/icons/linkedin.svg"
-            alt="LinkedIn Icon"
-            width="24"
-            height="24"
-          />
-        </a>
-        <a href="">
-          <Image
-            src="/images/icons/facebook.svg"
-            alt="Facebook Icon"
-            width="24"
-            height="24"
-          />
-        </a>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </Layout>

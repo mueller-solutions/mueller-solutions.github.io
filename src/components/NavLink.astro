@@ -1,0 +1,14 @@
+---
+type Props = astroHTML.JSX.AnchorHTMLAttributes & {
+  href: string;
+};
+
+const { href } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const isActive = pathname.startsWith(href);
+---
+
+<a href={href} class:list={["nav-link", isActive && "active"]}>
+  <slot />
+</a>
