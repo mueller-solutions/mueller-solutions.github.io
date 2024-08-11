@@ -3,16 +3,16 @@
 .site-footer {
   background-color: $color-dark;
   color: $color-light;
-  padding-block: pxToRem(60);
+  padding-block: clamp(pxToRem(20), 4vw, pxToRem(60));
   display: grid;
-  gap: pxToRem(20);
+  gap: clamp(pxToRem(10), 4vw, pxToRem(20));
 
   nav {
     ul {
       list-style: none;
       display: flex;
       align-items: center;
-      gap: pxToRem(24);
+      gap: clamp(pxToRem(12), 3vw, pxToRem(24));
     }
 
     a {
@@ -33,7 +33,7 @@
 
   .socials {
     display: flex;
-    gap: pxToRem(24);
+    gap: clamp(pxToRem(20), 4vw, pxToRem(24));
     align-items: center;
   }
 
@@ -44,6 +44,10 @@
   }
 
   .footer-bottom {
-    font-size: pxToRem(14);
+    font-size: clamp(pxToRem(12), 3vw, pxToRem(14));
+  }
+
+  .copyright {
+    font-size: clamp(pxToRem(12), 3vw, pxToRem(14));
   }
 }

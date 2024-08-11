@@ -7,11 +7,19 @@
     $color-brand-dark
   );
   color: $color-light;
-  padding: pxToRem(100) 0 pxToRem(80);
+  padding: clamp(pxToRem(28), 4vw, pxToRem(100)) 0
+    clamp(pxToRem(32), 4vw, pxToRem(80));
+
+  border-radius: clamp(pxToRem(28), 4vw, pxToRem(40));
 
   .wrapper {
     display: flex;
-    gap: clamp(pxToRem(60), 5vw, pxToRem(100));
+    flex-direction: column-reverse;
+    gap: clamp(pxToRem(30), 5vw, pxToRem(100));
+
+    @include mq(medium) {
+      flex-direction: row;
+    }
   }
 
   .heading {
@@ -22,8 +30,8 @@
   }
 
   .subheading {
-    font-size: clamp(pxToRem(24), 4vw, pxToRem(28));
-    line-height: clamp(pxToRem(28), 5vw, pxToRem(32));
+    font-size: clamp(pxToRem(26), 4vw, pxToRem(28));
+    line-height: clamp(pxToRem(30), 5vw, pxToRem(32));
     font-weight: $font-weight-regular;
     letter-spacing: -0.03em;
   }
@@ -51,6 +59,8 @@
   }
 
   .portrait {
+    margin: 0 auto;
+    flex-shrink: 0;
     margin-top: -1rem;
   }
 }

@@ -5,8 +5,9 @@ import Header from "../components/Header.astro";
 import ScheduleACallButton from "../components/ScheduleACallButton.astro";
 import Footer from "../components/Footer.astro";
 import Benefits from "../components/Benefits.astro";
-import Services from "../components/Solutions.astro";
+import Solutions from "../components/Solutions.astro";
 import About from "../components/About.astro";
+import Technologies from "../components/Technologies.astro";
 ---
 
 <Layout>
@@ -14,10 +15,10 @@ import About from "../components/About.astro";
   <main class="site-main" id="top">
     <section class="hero">
       <div class="wrapper">
-        <h1>Elevate Your Business with Cutting-Edge Web Solutions</h1>
+        <h1>Speed Up Your Success with Fast and Reliable Web Solutions</h1>
         <p>
-          We provide custom web apps, frontend advice, and performance boosts.
-          Our team can bring your ideas to life faster.
+          We help you develop your ideas faster and with greater stability,
+          providing expert guidance and performance improvements.
         </p>
         <div>
           <ScheduleACallButton size="large" />
@@ -25,8 +26,9 @@ import About from "../components/About.astro";
       </div>
     </section>
     <Benefits />
-    <Services />
+    <Solutions />
     <About />
+    <Technologies />
   </main>
   <Footer />
 </Layout>

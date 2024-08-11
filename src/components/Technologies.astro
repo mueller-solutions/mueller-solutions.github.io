@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allTechnologies = await getCollection("technologies");
+const sortedTechnologies = allTechnologies.sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section class="section wrapper technologies" id="technologies">
+  <p class="section-tag">
+    <Image src="/images/icons/net.svg" alt="Net Icon" width="27" height="27" />
+    What We Use
+  </p>
+  <h2 class="heading">
+    Unleash Your Potential with <br />Tomorrow's Tech Today
+  </h2>
+  <p>
+    In the ever-evolving world of web development, staying ahead means embracing
+    the right technologies. At the core of our services is a deep understanding
+    and mastery of the most powerful tools and frameworks in the industry. We
+    leverage these technologies to create scalable, high-performance solutions
+    tailored to your unique needs. From frontend development to server-side
+    solutions, our expertise ensures that your projects are built with the
+    best-in-class technology stack, driving innovation and delivering
+    exceptional results. Explore the technologies that power our work and see
+    how we can bring your vision to life.
+  </p>
+  <div class="list">
+    <div class="canvas">
+      {
+        sortedTechnologies.map((technology) => (
+          <article class="technology-article" id={technology.slug}>
+            <h1 class="heading">{technology.data.title}</h1>
+            <p>{technology.data.excerpt}</p>
+          </article>
+        ))
+      }
+    </div>
+    {
+      sortedTechnologies.map((technology) => (
+        <a href={`#${technology.slug}`} class="technology-link">
+          <div class="icon">
+            <div
+              class="mask"
+              style={`--_icon: url(/images/icons/${technology.data.icon}.svg);`}
+            />
+          </div>
+          <span class="title">{technology.data.title}</span>
+        </a>
+      ))
+    }
+  </div>
+</section>

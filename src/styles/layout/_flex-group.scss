@@ -2,7 +2,12 @@
 
 .flex-group {
   display: flex;
-  gap: pxToRem(32);
+  flex-direction: column;
+  gap: clamp(pxToRem(20), 4vw, pxToRem(32));
+
+  @include mq(medium) {
+    flex-direction: row;
+  }
 
   &[data-direction="column"] {
     flex-direction: column;
@@ -13,11 +18,19 @@
   }
 
   &[data-align="end"] {
-    align-items: flex-end;
+    align-items: center;
+
+    @include mq(medium) {
+      align-items: flex-end;
+    }
   }
 
   &[data-align="start"] {
-    align-items: flex-start;
+    align-items: center;
+
+    @include mq(medium) {
+      align-items: flex-start;
+    }
   }
 
   &[data-justify="between"] {

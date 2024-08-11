@@ -2,6 +2,6 @@
 
 .site-main {
   display: grid;
-  gap: pxToRem(120);
-  padding-block-end: pxToRem(120);
+  gap: clamp(pxToRem(60), 6vw, pxToRem(140));
+  padding-block-end: clamp(pxToRem(40), 4vw, pxToRem(120));
 }

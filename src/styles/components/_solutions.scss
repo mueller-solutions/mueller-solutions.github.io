@@ -6,6 +6,14 @@
     line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
     font-weight: $font-weight-bold;
     letter-spacing: -0.04em;
+
+    br {
+      display: none;
+
+      @include mq(medium) {
+        display: block;
+      }
+    }
   }
 
   .solution {

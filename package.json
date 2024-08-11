@@ -14,21 +14,21 @@
     "@astrojs/check": "^0.9.2",
     "@astrojs/sitemap": "^3.1.6",
     "@playform/compress": "^0.1.1",
-    "astro": "^4.11.0",
-    "astro-purgecss": "^4.1.1",
+    "astro": "^4.13.2",
+    "astro-purgecss": "^4.3.0",
     "astro-robots-txt": "^1.0.0",
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.3",
-    "cssnano-preset-advanced": "^7.0.3",
-    "postcss-nested": "^6.0.1",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.5",
+    "cssnano-preset-advanced": "^7.0.5",
+    "postcss-nested": "^6.2.0",
     "purgecss": "^6.0.0",
     "sass": "^1.77.8",
     "tinacms": "^2.1.0",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.5.49",
-    "@types/node": "^22.1.0"
-  },
-  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+    "@tinacms/cli": "^1.5.52",
+    "@types/node": "^22.1.0",
+    "prettier": "^3.3.3"
+  }
 }
