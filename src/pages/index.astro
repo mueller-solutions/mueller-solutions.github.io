@@ -1,102 +1,34 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layout/layout.astro";
+import Layout from "../layout/MainLayout.astro";
+
+import Header from "../components/Header.astro";
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Footer from "../components/Footer.astro";
+import Benefits from "../components/Benefits.astro";
+import Solutions from "../components/Solutions.astro";
+import About from "../components/About.astro";
+import Technologies from "../components/Technologies.astro";
 ---
 
 <Layout>
-  <main class="container mx-auto py-8 text-gray-800">
-    <Image
-      src="/images/logo-main.svg"
-      alt="MUELLER"
-      width="282"
-      height="48"
-      class="mb-4"
-    />
-    <h1 class="text-3xl font-bold mb-4">
-      <span class="sr-only">MUELLER - </span>Crafting Digital Experiences for
-      Growing Businesses
-    </h1>
-    <p class="mb-2">
-      <strong>Empower Your Business with Cutting-Edge Web Solutions</strong>
-    </p>
-    <p class="mb-2">
-      At MUELLER, we specialize in transforming your digital vision into
-      reality. Whether you need a sleek, high-performing website or a robust web
-      application, our team of experts is here to help. We cater to small and
-      mid-sized companies, providing them with tailored solutions that drive
-      growth and success.
-    </p>
-    <h2 class="text-2xl font-bold mt-4 mb-2">Our Services</h2>
-    <h3 class="text-lg uppercase mt-4 mb-2">Web Applications</h3>
-    <p class="mb-2">
-      Experience fast, scalable, and user-friendly web applications tailored to
-      enhance your business operations and boost customer engagement.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Performance-Optimized Websites</h3>
-    <p class="mb-2">
-      Discover visually stunning websites that deliver outstanding performance
-      and an exceptional user experience.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Dynamic Websites</h3>
-    <p class="mb-2">
-      Engage your audience with dynamic content and features, offering seamless
-      user interactions and enhanced SEO.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Custom Web Solutions</h3>
-    <p class="mb-2">
-      Have a unique idea? Let us bring it to life with custom web development
-      services designed to meet your specific needs perfectly.
-    </p>
-    <h2 class="text-2xl font-bold mt-4 mb-2">Technologies We Use</h2>
-    <p class="mb-2">
-      At MUELLER, we leverage a diverse set of modern web development
-      technologies to build innovative and efficient digital solutions:
-    </p>
-    <ul class="mb-2 list-disc pl-4">
-      <li>React</li>
-      <li>Astro</li>
-      <li>Node.js</li>
-      <li>TypeScript</li>
-      <li>Tailwind CSS</li>
-      <li>RESTful APIs</li>
-      <li>GraphQL</li>
-      <li>JavaScript</li>
-      <li>HTML5 & CSS3</li>
-    </ul>
-    <h2 class="text-2xl font-bold mt-4 mb-2">Why Choose MUELLER?</h2>
-    <h3 class="text-lg uppercase mt-4 mb-2">Expertise</h3>
-    <p class="mb-2">
-      Our team is skilled in the latest technologies and best practices,
-      ensuring top-notch quality for every project.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Customization</h3>
-    <p class="mb-2">
-      We understand that every business is unique. Our solutions are tailored to
-      fit your specific goals and requirements.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Support</h3>
-    <p class="mb-2">
-      From concept to launch and beyond, we provide ongoing support to ensure
-      your success.
-    </p>
-    <h3 class="text-lg uppercase mt-4 mb-2">Results-Driven</h3>
-    <p class="mb-2">
-      Our focus is on delivering tangible results that drive growth and boost
-      your bottom line.
-    </p>
-    <h2 class="text-2xl font-bold mt-4 mb-2">Get in Touch</h2>
-    <p class="mb-2">
-      Ready to take your business to the next level? Contact us today to discuss
-      your project and learn how we can help you achieve your digital goals.
-    </p>
-    <p class="mb-2">
-      <a
-        href="mailto:info@mueller-solutions.dev"
-        class="text-blue-600 hover:underline"
-        title="Contact MUELLER"
-      >
-        info@mueller-solutions.dev
-      </a>
-    </p>
+  <Header />
+  <main class="site-main" id="top">
+    <section class="hero">
+      <div class="wrapper">
+        <h1>Speed Up Your Success with Fast and Reliable Web Solutions</h1>
+        <p>
+          We help you develop your ideas faster and with greater stability,
+          providing expert guidance and performance improvements.
+        </p>
+        <div>
+          <ScheduleACallButton size="large" />
+        </div>
+      </div>
+    </section>
+    <Benefits />
+    <Solutions />
+    <About />
+    <Technologies />
   </main>
+  <Footer />
 </Layout>

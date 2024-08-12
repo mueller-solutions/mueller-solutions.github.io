@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import NavLink from "./NavLink.astro";
+---
+
+<header class="site-header">
+  <div class="wrapper">
+    <a href="/" class="logo-link">
+      <Image
+        src="/images/logo.svg"
+        alt="MUELLER Solutions"
+        width="216"
+        height="36"
+        class="main-logo"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li><NavLink href="/#/services">Services</NavLink></li>
+        <li><NavLink href="/#/about">About</NavLink></li>
+        <li><NavLink href="/#/technologies">Technologies</NavLink></li>
+      </ul>
+    </nav>
+  </div>
+</header>

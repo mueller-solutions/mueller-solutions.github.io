@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allServices = await getCollection("services");
+const sortedServices = allServices.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="services" class="wrapper section solutions">
+  <p class="section-tag">
+    <Image
+      src="/images/icons/puzzle.svg"
+      alt="Puzzle Icon"
+      width="30"
+      height="30"
+    />
+    Our Solutions
+  </p>
+  <h2 class="heading">
+    Expert Frontend Solutions <br />Tailored for Your Success
+  </h2>
+  <div class="columns smaller">
+    {
+      sortedServices.map((service) => (
+        <article class="solution">
+          <div>
+            <div class="icon">
+              <div
+                class="mask"
+                style={`--_icon: url('/images/icons/${service.data.icon}.svg');`}
+              />
+            </div>
+          </div>
+          <div class="solution-content">
+            <h1>{service.data.title}</h1>
+            <p>{service.data.excerpt}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

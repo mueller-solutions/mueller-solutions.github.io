@@ -1,0 +1,15 @@
+---
+import "../styles/main.scss";
+import HtmlHead from "../components/HtmlHead.astro";
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <HtmlHead title={title} description={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

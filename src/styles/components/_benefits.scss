@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.benefits {
+  .heading {
+    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
+    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.04em;
+
+    br {
+      display: none;
+
+      @include mq(medium) {
+        display: block;
+      }
+    }
+  }
+
+  .benefit {
+    display: grid;
+    gap: pxToRem(12);
+
+    h3 {
+      font-size: clamp(pxToRem(22), 3vw, pxToRem(28));
+      line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+      letter-spacing: -0.03rem;
+      font-weight: $font-weight-bold;
+      color: $color-brand-light;
+    }
+
+    p {
+      font-size: pxToRem(16);
+      line-height: pxToRem(26);
+    }
+  }
+}

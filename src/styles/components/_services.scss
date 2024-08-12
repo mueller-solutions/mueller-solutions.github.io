@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.services {
+  .service {
+    h2 {
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+    }
+  }
+}

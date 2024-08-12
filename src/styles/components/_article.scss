@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+
+.site-article {
+  padding-block: clamp(pxToRem(40), 4vw, pxToRem(80));
+
+  .heading {
+    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
+    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.04em;
+
+    br {
+      display: none;
+
+      @include mq(medium) {
+        display: block;
+      }
+    }
+  }
+
+  h2 {
+    font-size: clamp(pxToRem(22), 3vw, pxToRem(28));
+    line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+    letter-spacing: -0.03rem;
+    font-weight: $font-weight-bold;
+    color: $color-brand-light;
+
+    br {
+      display: none;
+
+      @include mq(medium) {
+        display: block;
+      }
+    }
+  }
+
+  h3 {
+    font-size: clamp(pxToRem(20), 3vw, pxToRem(24));
+    line-height: clamp(pxToRem(24), 4vw, pxToRem(28));
+    letter-spacing: -0.02em;
+    font-weight: $font-weight-bold;
+    margin-block-end: pxToRem(8);
+  }
+
+  section {
+    display: grid;
+    gap: clamp(pxToRem(12), 1vw, pxToRem(24));
+  }
+
+  ul {
+    padding-inline-start: pxToRem(20);
+    display: grid;
+    gap: clamp(pxToRem(6), 4vw, pxToRem(10));
+  }
+
+  a {
+    color: $color-brand-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-brand-dark;
+      text-decoration: none;
+    }
+  }
+}

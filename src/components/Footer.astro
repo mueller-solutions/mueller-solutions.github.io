@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import NavLink from "./NavLink.astro";
+---
+
+<footer class="site-footer">
+  <div class="wrapper flex-group" data-justify="between" data-align="end">
+    <a href="/" class="logo-link">
+      <Image
+        src="/images/logo-white.svg"
+        alt="MUELLER Solutions"
+        width="216"
+        height="36"
+      />
+    </a>
+
+    <nav>
+      <ul>
+        <li>
+          <NavLink
+            href="#"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+          >
+            Schedule a Call
+          </NavLink>
+        </li>
+        <li><NavLink href="/#/services">Services</NavLink></li>
+        <li><NavLink href="/#/about">About</NavLink></li>
+      </ul>
+    </nav>
+
+    <div class="socials">
+      <!-- <a href="">
+        <Image
+          src="/images/icons/x.svg"
+          alt="Twitter Icon"
+          width="24"
+          height="22"
+        />
+      </a> -->
+      <a
+        href="https://www.linkedin.com/company/mueller-solutions-dev"
+        target="_blank"
+      >
+        <Image
+          src="/images/icons/linkedin.svg"
+          alt="LinkedIn Icon"
+          width="24"
+          height="24"
+        />
+      </a>
+      <a
+        href="https://www.facebook.com/profile.php?id=61564462280786"
+        target="_blank"
+      >
+        <Image
+          src="/images/icons/facebook.svg"
+          alt="Facebook Icon"
+          width="24"
+          height="24"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="wrapper"><hr /></div>
+  <div
+    class="wrapper flex-group footer-bottom"
+    data-justify="between"
+    data-align="start"
+  >
+    <nav class="site-footer-nav">
+      <ul>
+        <li><NavLink href="/privacy-policy">Privacy Policy</NavLink></li>
+        <!-- <li><NavLink href="/terms-of-use">Terms of Use</NavLink></li> -->
+        <!-- <li><NavLink href="/accessibility">Accessibility</NavLink></li> -->
+      </ul>
+    </nav>
+    <div class="copyright">
+      &copy; 2024 Mueller Solutions, LLC. All rights reserved.
+    </div>
+  </div>
+</footer>

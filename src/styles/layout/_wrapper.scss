@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "sass:math";
+@use "../abstracts/" as *;
+
+.wrapper {
+  $maxWidth: pxToRem(1440);
+
+  --padding: 1rem;
+  --max-width: #{$maxWidth};
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+
+  @include mq(medium) {
+    --padding: 2rem;
+  }
+
+  @include mq(large) {
+    --padding: 3rem;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+.columns {
+  display: grid;
+  gap: clamp(pxToRem(20), 2vw, pxToRem(32));
+
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
