@@ -2,7 +2,7 @@
 const { title, description } = Astro.props;
 
 const websiteTitle =
-  "MUELLER | Expert Frontend Consulting | Fast & Stable Web App Development | Boost Performance & Speed";
+  "MUELLER | Expert Frontend Consulting for Fast & Stable Web App Development with High Performance & Speed";
 const htmlTitle = title ? `${title} | ${websiteTitle}` : websiteTitle;
 const htmlDescription = description
   ? description
@@ -112,31 +112,7 @@ const htmlDescription = description
   async
   is:inline
   src="https://www.googletagmanager.com/gtag/js?id=G-777G6E86XK"></script>
-<script lang="js" is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-777G6E86XK");
-</script>
-<!-- Hotjar Tracking Code for Site 5088047 (name missing) -->
-<script lang="js" is:inline>
-  (function (h, o, t, j, a, r) {
-    h.hj =
-      h.hj ||
-      function () {
-        (h.hj.q = h.hj.q || []).push(arguments);
-      };
-    h._hjSettings = { hjid: 5088047, hjsv: 6 };
-    a = o.getElementsByTagName("head")[0];
-    r = o.createElement("script");
-    r.async = 1;
-    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-    a.appendChild(r);
-  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-</script>
+<script is:inline src="/js/app.js"></script>
 <link
   href="https://assets.calendly.com/assets/external/widget.css"
   rel="stylesheet"
@@ -145,93 +121,4 @@ const htmlDescription = description
   src="https://assets.calendly.com/assets/external/widget.js"
   type="text/javascript"
   is:inline
-  defer
   async></script>
-<script is:inline lang="js">
-  window.addEventListener("DOMContentLoaded", () => {
-    const navLinkEls = document.querySelectorAll(".nav-link");
-    const sectionEls = document.querySelectorAll(".section");
-    const headerEl = document.querySelector(".site-header");
-    const headerHeight = headerEl ? headerEl.offsetHeight * 1.5 : 0;
-    const logoLinkEls = document.querySelectorAll(".logo-link");
-    const technologyLinkEls = document.querySelectorAll(".technology-link");
-    const technologiesEls = document.querySelectorAll(".technology-article");
-
-    // Highlight the active section in the navigation
-    let currentSection = "top";
-    window.addEventListener("scroll", () => {
-      sectionEls.forEach((sectionEl) => {
-        const windowScrollY = window.scrollY + headerHeight;
-
-        if (windowScrollY >= sectionEl.offsetTop) {
-          currentSection = sectionEl.id;
-        }
-      });
-
-      navLinkEls.forEach((navLinkEl) => {
-        navLinkEl.classList.remove("active");
-        if (navLinkEl.href.includes(`#${currentSection}`)) {
-          navLinkEl.classList.add("active");
-        }
-      });
-    });
-
-    // Smooth scroll to sections
-    navLinkEls.forEach((navLinkEl) => {
-      navLinkEl.addEventListener("click", (event) => {
-        event.preventDefault();
-        const targetId = navLinkEl.href.split("#")[1];
-        const targetEl = document.getElementById(targetId);
-        const targetTop = targetEl?.offsetTop || 0;
-        const targetY = targetTop - headerHeight;
-
-        window.scrollTo({ top: targetY, behavior: "smooth" });
-      });
-    });
-
-    // Smooth scroll to top
-    logoLinkEls.forEach((logoLinkEl) => {
-      logoLinkEl.addEventListener("click", (event) => {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    });
-
-    // Show technology articles
-    technologyLinkEls.forEach((technologyLinkEl) => {
-      technologyLinkEl.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        technologyLinkEl.classList.add("active");
-        const targetId = technologyLinkEl.href.split("#")[1];
-
-        technologiesEls.forEach((article) => {
-          article.classList.remove("active");
-
-          if (article.id == targetId) {
-            article.classList.add("active");
-          }
-        });
-      });
-
-      technologyLinkEl.addEventListener("blur", (event) => {
-        event.preventDefault();
-
-        technologyLinkEl.classList.remove("active");
-
-        setTimeout(() => {
-          const targetId = technologyLinkEl.href.split("#")[1];
-
-          technologiesEls.forEach((article) => {
-            if (
-              article.id == targetId &&
-              article.classList.contains("active")
-            ) {
-              article.classList.remove("active");
-            }
-          });
-        }, 200);
-      });
-    });
-  });
-</script>

@@ -5,12 +5,14 @@ import NavLink from "./NavLink.astro";
 
 <footer class="site-footer">
   <div class="wrapper flex-group" data-justify="between" data-align="end">
-    <Image
-      src="/images/logo-white.svg"
-      alt="MUELLER Logo White"
-      width="216"
-      height="36"
-    />
+    <a href="/" class="logo-link">
+      <Image
+        src="/images/logo-white.svg"
+        alt="MUELLER Solutions"
+        width="216"
+        height="36"
+      />
+    </a>
 
     <nav>
       <ul>
@@ -22,21 +24,24 @@ import NavLink from "./NavLink.astro";
             Schedule a Call
           </NavLink>
         </li>
-        <li><NavLink href="#services">Services</NavLink></li>
-        <li><NavLink href="#about">About</NavLink></li>
+        <li><NavLink href="/#/services">Services</NavLink></li>
+        <li><NavLink href="/#/about">About</NavLink></li>
       </ul>
     </nav>
 
     <div class="socials">
-      <a href="">
+      <!-- <a href="">
         <Image
           src="/images/icons/x.svg"
           alt="Twitter Icon"
           width="24"
           height="22"
         />
-      </a>
-      <a href="">
+      </a> -->
+      <a
+        href="https://www.linkedin.com/company/mueller-solutions-dev"
+        target="_blank"
+      >
         <Image
           src="/images/icons/linkedin.svg"
           alt="LinkedIn Icon"
@@ -63,8 +68,8 @@ import NavLink from "./NavLink.astro";
     <nav class="site-footer-nav">
       <ul>
         <li><NavLink href="/privacy-policy">Privacy Policy</NavLink></li>
-        <li><NavLink href="/terms-of-use">Terms of Use</NavLink></li>
-        <li><NavLink href="/accessibility">Accessibility</NavLink></li>
+        <!-- <li><NavLink href="/terms-of-use">Terms of Use</NavLink></li> -->
+        <!-- <li><NavLink href="/accessibility">Accessibility</NavLink></li> -->
       </ul>
     </nav>
     <div class="copyright">
