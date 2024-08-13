@@ -1,6 +1,9 @@
 ---
 import "../styles/main.scss";
 import HtmlHead from "../components/HtmlHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 const { title, description } = Astro.props;
 ---
 
@@ -10,6 +13,8 @@ const { title, description } = Astro.props;
     <HtmlHead title={title} description={description} />
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
