@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layout/MainLayout.astro";
+---
+
+<Layout title="Booking Confirmed">
+  <article class="wrapper section site-article">
+    <h1 class="heading">Your Booking is Confirmed</h1>
+    <section>
+      <p><b>Thank you for scheduling a call with us!</b></p>
+      <p>
+        We're excited to connect with you and discuss how we can support your
+        web development needs. A confirmation email with all the details of your
+        scheduled call has been sent to your inbox.
+      </p>
+      <h3>What to Expect</h3>
+      <ul>
+        <li>
+          During our call, we'll discuss your specific challenges, goals, and
+          how our frontend consulting services can help you achieve success.
+        </li>
+        <li>
+          Please feel free to prepare any questions or topics you'd like to
+          cover during our discussion.
+        </li>
+      </ul>
+      <p>
+        If you need to reschedule or have any questions before our meeting,
+        don't hesitate to reach out to us at info@mueller-solutions.dev.
+      </p>
+      <p>We look forward to speaking with you!</p>
+    </section>
+    <section>
+      <p>Your team from</p>
+      <a href="/" class="logo-link">
+        <Image
+          src="/images/logo.svg"
+          alt="MUELLER Solutions"
+          width="216"
+          height="36"
+          class="main-logo"
+        />
+      </a>
+    </section>
+  </article>
+</Layout>
