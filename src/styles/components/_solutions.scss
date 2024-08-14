@@ -83,10 +83,26 @@
     }
 
     .link {
-      color: $color-brand-light;
+      color: $color-brand-dark;
       transition: color 300ms ease-out;
       font-size: clamp(pxToRem(12), 3vw, pxToRem(14));
       line-height: clamp(pxToRem(12), 3vw, pxToRem(14));
+
+      &:hover {
+        color: $color-brand-light;
+      }
+
+      > span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
     }
 
     &:hover {

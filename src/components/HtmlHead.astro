@@ -1,12 +1,21 @@
 ---
-const { title, description } = Astro.props;
+type Props = {
+  title?: string;
+  description?: string;
+  keywords?: string;
+};
+
+const { title, description, keywords } = Astro.props;
 
 const websiteTitle =
-  "MUELLER | Expert Frontend Consulting for Fast & Stable Web App Development with High Performance & Speed";
+  "Expert Front End Development Services for Fast, Stable, and High-Performance Web Apps | MUELLER";
 const htmlTitle = title ? `${title} | ${websiteTitle}` : websiteTitle;
 const htmlDescription = description
   ? description
-  : "Boost your web app development with expert frontend consulting. We help you build faster, more stable applications with performance optimization and cutting-edge solutions. Achieve your goals with ease and efficiency.";
+  : "Enhance your web app development with expert front end development services. We specialize in building faster, more stable web applications through speed optimization and advanced front end solutions. Achieve your goals efficiently and effectively.";
+const htmlKeywords = keywords
+  ? keywords
+  : "front end development, front end development services, web app development, frontend consulting, performance optimization, scalable web applications, speed optimization, Progressive Web Apps, server-side rendering, React development, code optimization, cross-browser compatibility, user experience design, UI/UX consulting, web performance, frontend architecture, micro-frontend architecture, responsive web design, SEO for web apps, modern frontend development";
 ---
 
 <meta charset="UTF-8" />
@@ -16,10 +25,7 @@ const htmlDescription = description
 />
 <title>{htmlTitle}</title>
 <meta name="description" content={htmlDescription} />
-<meta
-  name="keywords"
-  content="frontend consulting, web app development, performance optimization, fast web apps, stable web applications, frontend expertise, web performance, speed optimization, custom web solutions, web development consulting"
-/>
+<meta name="keywords" content={htmlKeywords} />
 <meta property="og:title" content={htmlTitle} />
 <meta property="og:type" content="website" />
 <meta property="og:description" content={htmlDescription} />
@@ -114,18 +120,23 @@ const htmlDescription = description
   href="/images/florian-mueller.webp"
   type="image/webp"
 />
-<!-- Google tag (gtag.js) -->
-<script
-  async
-  is:inline
-  src="https://www.googletagmanager.com/gtag/js?id=G-777G6E86XK"></script>
-<script is:inline src="/js/app.js"></script>
+<!-- Calendly widget -->
 <link
   href="https://assets.calendly.com/assets/external/widget.css"
   rel="stylesheet"
+  media="screen"
 />
 <script
   src="https://assets.calendly.com/assets/external/widget.js"
   type="text/javascript"
   is:inline
-  async></script>
+  async
+  defer></script>
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  defer
+  is:inline
+  src="https://www.googletagmanager.com/gtag/js?id=G-777G6E86XK"></script>
+<!-- App Scripts -->
+<script is:inline src="/js/app.js"></script>
