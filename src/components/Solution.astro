@@ -1,0 +1,30 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  icon: string;
+  href?: string;
+};
+
+const { title, description, icon, href } = Astro.props;
+---
+
+<article class="solution">
+  <div>
+    <div class="icon">
+      <div class="mask" style={`--_icon: url('/images/icons/${icon}.svg');`}>
+      </div>
+    </div>
+  </div>
+  <div class="solution-content">
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </div>
+  {
+    href && (
+      <a href={href} class="link" title={`Learn more about ${title}`}>
+        Learn More <span>about {title}</span>
+      </a>
+    )
+  }
+</article>
