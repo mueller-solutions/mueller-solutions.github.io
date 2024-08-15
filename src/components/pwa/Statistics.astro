@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import ScheduleACallButton from "../ScheduleACallButton.astro";
+import Statistic from "../Statistic.astro";
 ---
 
 <section id="pwa-statistics" class="wrapper section">
@@ -24,26 +25,10 @@ import ScheduleACallButton from "../ScheduleACallButton.astro";
     </p>
   </header>
   <div class="cards">
-    <figure class="card">
-      <span>Up to</span>
-      <span class="number">+76%</span>
-      <figcaption>Conversion Rate</figcaption>
-    </figure>
-    <figure class="card">
-      <span>Up to</span>
-      <span class="number">+100%</span>
-      <figcaption>Impressions Per Session</figcaption>
-    </figure>
-    <figure class="card">
-      <span>Up to</span>
-      <span class="number">4x</span>
-      <figcaption>Interaction Rate</figcaption>
-    </figure>
-    <figure class="card">
-      <span>Up to</span>
-      <span class="number">-80%</span>
-      <figcaption>Load Times</figcaption>
-    </figure>
+    <Statistic number="+76%" caption="Conversion Rate" />
+    <Statistic number="+100%" caption="Impressions Per Session" />
+    <Statistic number="4x" caption="Interaction Rate" />
+    <Statistic number="-80%" caption="Load Times" />
   </div>
   <div>
     <ScheduleACallButton />

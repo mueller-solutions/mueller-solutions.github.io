@@ -1,0 +1,14 @@
+---
+type Props = {
+  number: string;
+  caption: string;
+};
+
+const { number, caption } = Astro.props;
+---
+
+<figure class="card">
+  <span>Up to</span>
+  <span class="number">{number}</span>
+  <figcaption>{caption}</figcaption>
+</figure>

@@ -1,0 +1,42 @@
+---
+import Statistics from "../components/project-setup/Statistics.astro";
+import Benefits from "../components/project-setup/Benefits.astro";
+import Approach from "../components/project-setup/Approach.astro";
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Layout from "../layout/MainLayout.astro";
+---
+
+<Layout
+  title="Advanced Project Setup Guidance: Turn Development Chaos into Order and Success"
+  description="Optimize your web development with our Advanced Project Setup Guidance. We ensure fast, scalable, and efficient front end development with tailored workflows, best practices, and performance optimization. Build a strong foundation for your web app today."
+  keywords="Advanced project setup, front end development, web app scalability, performance optimization, fast build times, web development consulting, streamlined workflows, bug reduction, scalable web apps, development efficiency, modern frontend architecture, project configuration, web app performance, code optimization, frontend best practices"
+>
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/project-setup-hero-background.webp"
+    type="image/webp"
+  />
+  <main class="site-main">
+    <section class="hero project-setup">
+      <div class="wrapper">
+        <h1>
+          Master Your Development Process with Advanced Project Setup Guidance
+        </h1>
+        <p>
+          Build a Solid Foundation for Success with Expert Front End Development
+          Consulting. Our consulting includes hands-on plans and ongoing support
+          for successful adoption.
+        </p>
+        <div>
+          <ScheduleACallButton size="large" />
+        </div>
+      </div>
+    </section>
+    <Benefits />
+    <Statistics />
+    <Approach />
+  </main>
+</Layout>
