@@ -31,6 +31,10 @@
     &.pwa {
       background-image: url("/images/pwa-hero-background.webp");
     }
+
+    &.project-setup {
+      background-image: url("/images/project-setup-hero-background.webp");
+    }
   }
 
   @include mq(large) {
