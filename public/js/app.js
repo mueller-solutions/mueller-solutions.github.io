@@ -45,19 +45,29 @@ window.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: targetY, behavior: "smooth" });
   }
 
+  // Debounce function
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
+
   // Highlight the active section in the navigation
   let currentSection = "home";
-  window.addEventListener("scroll", () => {
+
+  const handleScroll = debounce(() => {
     if (window.location.pathname !== "/") {
       return;
     }
+
+    const windowScrollY = window.scrollY + headerHeight;
 
     sectionEls.forEach((sectionEl) => {
       if (!sectionEl.id) {
         return;
       }
-
-      const windowScrollY = window.scrollY + headerHeight;
 
       if (windowScrollY >= sectionEl.offsetTop) {
         currentSection = sectionEl.id;
@@ -67,8 +77,6 @@ window.addEventListener("DOMContentLoaded", () => {
     if (window.scrollY === 0) {
       currentSection = "home";
     }
-
-    console.log(currentSection);
 
     navLinkEls.forEach((navLinkEl) => {
       navLinkEl.classList.remove("active");
@@ -85,13 +93,14 @@ window.addEventListener("DOMContentLoaded", () => {
         navLinkEl.classList.add("active");
       }
     });
-  });
+  }, 100);
+
+  window.addEventListener("scroll", handleScroll);
 
   // Smooth scroll to sections
   navLinkEls.forEach((navLinkEl) => {
     navLinkEl.addEventListener("click", (event) => {
       if (window.location.pathname !== "/") {
-        console.log("not home");
         return;
       }
 

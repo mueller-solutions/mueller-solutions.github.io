@@ -1,10 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 import Solution from "./Solution.astro";
-
-const allServices = await getCollection("services");
-const sortedServices = allServices.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section id="services" class="wrapper section solutions">

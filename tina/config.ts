@@ -29,45 +29,6 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "service",
-        label: "Services",
-        path: "src/content/services",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "slug",
-            label: "Slug",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "icon",
-            label: "Icon",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "excerpt",
-            label: "Excerpt",
-            required: true,
-          },
-          {
-            type: "number",
-            name: "order",
-            label: "Order",
-            description: "Order of the service",
-            required: true,
-          },
-        ],
-      },
-      {
         name: "technology",
         label: "Technologies",
         path: "src/content/technologies",
