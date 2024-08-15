@@ -13,8 +13,14 @@
   }
 
   .card {
-    display: grid;
-    gap: pxToRem(12);
+    & > * {
+      display: block;
+
+      &:not(:last-child) {
+        margin-block-end: clamp(pxToRem(6), 1vw, pxToRem(12));
+      }
+    }
+
     background-color: $color-light;
     border-radius: clamp(pxToRem(12), 2vw, pxToRem(20));
     padding: clamp(pxToRem(20), 4vw, pxToRem(30));

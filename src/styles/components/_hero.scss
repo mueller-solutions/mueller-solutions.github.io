@@ -35,6 +35,10 @@
     &.project-setup {
       background-image: url("/images/project-setup-hero-background.webp");
     }
+
+    &.codebase {
+      background-image: url("/images/codebase-hero-background.webp");
+    }
   }
 
   @include mq(large) {
