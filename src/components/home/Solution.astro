@@ -23,7 +23,7 @@ const { title, description, icon, href } = Astro.props;
   {
     href && (
       <a href={href} class="link" title={`Learn more about ${title}`}>
-        Learn More <span>about {title}</span>
+        Learn More <span class="sr-only">about {title}</span>
       </a>
     )
   }

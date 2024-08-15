@@ -14,7 +14,19 @@ import NavLink from "./NavLink.astro";
         class="main-logo"
       />
     </a>
-    <nav>
+    <button
+      class="nav-toggle"
+      aria-controls="site-navigation"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Menu</span>
+    </button>
+    <nav
+      class="site-navigation"
+      id="site-navigation"
+      style="--_height: 0px;"
+      data-visible="false"
+    >
       <ul>
         <li><NavLink href="/">Home</NavLink></li>
         <li><NavLink href="/#/services">Services</NavLink></li>
