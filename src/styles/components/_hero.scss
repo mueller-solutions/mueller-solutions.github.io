@@ -19,26 +19,12 @@
   @include mq(medium) {
     --_text-align: left;
     --_max-width: 47.5%;
+    --_background-image: url("/images/hero-background.webp");
 
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
-
-    &.home {
-      background-image: url("/images/hero-background.webp");
-    }
-
-    &.pwa {
-      background-image: url("/images/pwa-hero-background.webp");
-    }
-
-    &.project-setup {
-      background-image: url("/images/project-setup-hero-background.webp");
-    }
-
-    &.codebase {
-      background-image: url("/images/codebase-hero-background.webp");
-    }
+    background-image: var(--_background-image);
   }
 
   @include mq(large) {
