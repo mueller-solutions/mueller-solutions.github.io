@@ -1,23 +1,6 @@
 @use "../abstracts" as *;
 
 .technologies {
-  .heading {
-    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
-    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
-    font-weight: $font-weight-bold;
-    letter-spacing: -0.04em;
-
-    br {
-      display: none;
-    }
-
-    @include mq(medium) {
-      br {
-        display: block;
-      }
-    }
-  }
-
   .list {
     @include mq(medium) {
       display: grid;

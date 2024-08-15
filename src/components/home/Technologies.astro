@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allTechnologies = await getCollection("technologies");
+const sortedTechnologies = allTechnologies.sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section class="section wrapper technologies" id="technologies">
+  <header>
+    <p class="section-tag">
+      <Image
+        src="/images/icons/net.svg"
+        alt="Net Icon"
+        width="27"
+        height="27"
+      />
+      What We Use
+    </p>
+    <h2 class="heading">
+      Unleash Your Potential with&nbsp;<br />Cutting-Edge Front End&nbsp;<br
+      />Development Technologies
+    </h2>
+    <p>
+      In the fast-paced world of web development, staying ahead requires
+      embracing cutting-edge technologies. Our front end development services
+      are built on a deep understanding and mastery of the industry's most
+      powerful tools and frameworks. We leverage these technologies to create
+      scalable, high-performance web applications tailored to your specific
+      needs. From advanced front end development to robust server-side
+      solutions, our expertise ensures that your projects are built with a
+      top-tier technology stack, driving innovation and delivering outstanding
+      results. Discover the technologies that power our work and see how we can
+      bring your vision to life.
+    </p>
+  </header>
+
+  <div class="list">
+    <div class="canvas">
+      {
+        sortedTechnologies.map((technology) => (
+          <article class="technology-article" id={technology.slug}>
+            <h1 class="heading">{technology.data.title}</h1>
+            <p>{technology.data.excerpt}</p>
+          </article>
+        ))
+      }
+    </div>
+    {
+      sortedTechnologies.map((technology) => (
+        <a href={`#${technology.slug}`} class="technology-link">
+          <div class="icon">
+            <div
+              class="mask"
+              style={`--_icon: url(/images/icons/${technology.data.icon}.svg);`}
+            />
+          </div>
+          <span class="title">{technology.data.title}</span>
+        </a>
+      ))
+    }
+  </div>
+</section>

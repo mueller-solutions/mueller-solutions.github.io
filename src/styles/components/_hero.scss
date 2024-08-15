@@ -20,10 +20,17 @@
     --_text-align: left;
     --_max-width: 47.5%;
 
-    background-image: url("/images/hero-background.webp");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
+
+    &.home {
+      background-image: url("/images/hero-background.webp");
+    }
+
+    &.pwa {
+      background-image: url("/images/pwa-hero-background.webp");
+    }
   }
 
   @include mq(large) {

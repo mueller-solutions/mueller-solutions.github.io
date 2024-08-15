@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.cards {
+  display: grid;
+  gap: clamp(pxToRem(20), 6vw, pxToRem(32));
+
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    display: grid;
+    gap: pxToRem(12);
+    background-color: $color-light;
+    border-radius: clamp(pxToRem(12), 2vw, pxToRem(20));
+    padding: clamp(pxToRem(20), 4vw, pxToRem(30));
+    text-align: center;
+
+    .number {
+      font-size: clamp(pxToRem(38), 4vw, pxToRem(48));
+      line-height: clamp(pxToRem(38), 4vw, pxToRem(48));
+      font-weight: $font-weight-bold;
+      color: $color-brand-dark;
+      letter-spacing: -0.06em;
+    }
+
+    figcaption {
+      font-size: clamp(pxToRem(16), 4vw, pxToRem(22));
+      line-height: clamp(pxToRem(16), 4vw, pxToRem(22));
+      font-weight: $font-weight-bold;
+      letter-spacing: -0.03em;
+    }
+  }
+}
