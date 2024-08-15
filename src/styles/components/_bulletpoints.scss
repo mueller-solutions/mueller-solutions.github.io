@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.bulletpoints {
+  display: grid;
+  gap: clamp(pxToRem(16), 2vw, pxToRem(20));
+  list-style: none;
+
+  @include mq(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li {
+    padding-left: clamp(pxToRem(40), 4vw, pxToRem(46));
+    background-image: url("/images/icons/checkmark.svg");
+    background-repeat: no-repeat;
+
+    strong {
+      display: inline-block;
+      font-size: clamp(pxToRem(20), 3vw, pxToRem(28));
+      line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+      letter-spacing: -0.03rem;
+      font-weight: $font-weight-bold;
+    }
+
+    span {
+      display: block;
+      font-size: pxToRem(16);
+      line-height: pxToRem(26);
+    }
+  }
+}

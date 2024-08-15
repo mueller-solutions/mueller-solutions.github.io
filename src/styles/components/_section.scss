@@ -3,15 +3,39 @@
 .section {
   display: grid;
   gap: clamp(pxToRem(32), 4vw, pxToRem(66));
-}
 
-.section-tag {
-  display: flex;
-  align-items: center;
-  gap: pxToRem(12);
-  font-size: pxToRem(20);
-  line-height: pxToRem(20);
-  font-weight: $font-weight-bold;
-  letter-spacing: -0.01em;
-  color: $color-brand-light;
+  header {
+    display: grid;
+    gap: clamp(pxToRem(20), 4vw, pxToRem(40));
+  }
+
+  .heading {
+    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
+    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.04em;
+
+    br {
+      display: none;
+
+      @include mq(medium) {
+        display: block;
+      }
+    }
+  }
+
+  .section-tag {
+    display: flex;
+    align-items: flex-start;
+    gap: pxToRem(12);
+    font-size: pxToRem(20);
+    line-height: clamp(pxToRem(26), 4vw, pxToRem(20));
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.01em;
+    color: $color-brand-light;
+
+    @include mq(medium) {
+      align-items: center;
+    }
+  }
 }

@@ -46,8 +46,12 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Highlight the active section in the navigation
-  let currentSection = "top";
+  let currentSection = "home";
   window.addEventListener("scroll", () => {
+    if (window.location.pathname !== "/") {
+      return;
+    }
+
     sectionEls.forEach((sectionEl) => {
       if (!sectionEl.id) {
         return;
@@ -60,9 +64,24 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    if (window.scrollY === 0) {
+      currentSection = "home";
+    }
+
+    console.log(currentSection);
+
     navLinkEls.forEach((navLinkEl) => {
       navLinkEl.classList.remove("active");
       if (navLinkEl.href.includes(`/#/${currentSection}`)) {
+        navLinkEl.classList.add("active");
+      }
+      if (
+        currentSection === "home" &&
+        navLinkEl.href ===
+          window.location.origin +
+            window.location.pathname +
+            window.location.search
+      ) {
         navLinkEl.classList.add("active");
       }
     });
@@ -71,7 +90,28 @@ window.addEventListener("DOMContentLoaded", () => {
   // Smooth scroll to sections
   navLinkEls.forEach((navLinkEl) => {
     navLinkEl.addEventListener("click", (event) => {
-      if (!navLinkEl.href.includes("/#/") || window.location.pathname !== "/") {
+      if (window.location.pathname !== "/") {
+        console.log("not home");
+        return;
+      }
+
+      if (
+        navLinkEl.href ===
+        window.location.origin +
+          window.location.pathname +
+          window.location.search
+      ) {
+        event.preventDefault();
+        history.pushState(
+          "",
+          document.title,
+          window.location.pathname + window.location.search
+        );
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      if (!navLinkEl.href.includes("/#/")) {
         return;
       }
 

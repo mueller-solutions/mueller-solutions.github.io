@@ -1,0 +1,30 @@
+---
+import Benefits from "../components/pwa/Benefits.astro";
+import Expertise from "../components/pwa/Expertise.astro";
+import Statistics from "../components/pwa/Statistics.astro";
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Layout from "../layout/MainLayout.astro";
+---
+
+<Layout
+  title="Progressive Web App (PWA) Development Services | Fast, Secure, and Engaging Web Solutions"
+>
+  <main class="site-main">
+    <section class="hero pwa">
+      <div class="wrapper">
+        <h1>Elevate Your Digital Presence with Progressive Web Apps</h1>
+        <p>
+          Progressive Web Apps (PWAs) boost user engagement and satisfaction.
+          They work offline, send push notifications, load quickly, and function
+          seamlessly on all devices.
+        </p>
+        <div>
+          <ScheduleACallButton size="large" />
+        </div>
+      </div>
+    </section>
+    <Benefits />
+    <Statistics />
+    <Expertise />
+  </main>
+</Layout>

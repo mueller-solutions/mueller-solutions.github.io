@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.block {
+  display: grid;
+  gap: clamp(pxToRem(4), 2vw, pxToRem(12));
+
+  h2 {
+    font-size: clamp(pxToRem(22), 3vw, pxToRem(28));
+    line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+    letter-spacing: -0.03rem;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    font-size: pxToRem(16);
+    line-height: pxToRem(26);
+  }
+}
