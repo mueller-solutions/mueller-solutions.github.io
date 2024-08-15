@@ -106,20 +106,7 @@ const htmlKeywords = keywords
 
 <link rel="shortcut icon" href="/assets/favicon.ico" />
 <link rel="manifest" href="./site.webmanifest" />
-<link
-  rel="preload"
-  fetchpriority="high"
-  as="image"
-  href="/images/hero-background.webp"
-  type="image/webp"
-/>
-<link
-  rel="preload"
-  fetchpriority="high"
-  as="image"
-  href="/images/florian-mueller.webp"
-  type="image/webp"
-/>
+<slot name="html-head" />
 <!-- Calendly widget -->
 <link
   href="https://assets.calendly.com/assets/external/widget.css"
@@ -137,6 +124,7 @@ const htmlKeywords = keywords
   async
   defer
   is:inline
+  type="text/javascript"
   src="https://www.googletagmanager.com/gtag/js?id=G-777G6E86XK"></script>
 <!-- App Scripts -->
-<script is:inline src="/js/app.js"></script>
+<script is:inline src="/js/app.js" defer></script>

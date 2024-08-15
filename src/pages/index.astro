@@ -9,6 +9,22 @@ import Technologies from "../components/home/Technologies.astro";
 ---
 
 <Layout>
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/hero-background.webp"
+    type="image/webp"
+  />
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/florian-mueller.webp"
+    type="image/webp"
+  />
   <main class="site-main" id="home">
     <section class="hero home">
       <div class="wrapper">

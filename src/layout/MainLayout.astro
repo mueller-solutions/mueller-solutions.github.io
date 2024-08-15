@@ -7,15 +7,18 @@ import Footer from "../components/Footer.astro";
 type Props = {
   title?: string;
   description?: string;
+  keywords?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <HtmlHead title={title} description={description} />
+    <HtmlHead title={title} description={description} keywords={keywords}>
+      <slot name="html-head" slot="html-head" />
+    </HtmlHead>
   </head>
   <body>
     <Header />
