@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import ScheduleACallButton from "../ScheduleACallButton.astro";
+---
+
+<section id="pwa-benefits" class="wrapper section">
+  <header>
+    <p class="section-tag">
+      <Image
+        src="/images/icons/lightbulb.svg"
+        alt="Lightbulb Icon"
+        width="30"
+        height="30"
+      />
+      Why a Scalable and Maintainable Codebase is Essential
+    </p>
+    <p>
+      A scalable and maintainable codebase is the cornerstone of a successful
+      web application. It ensures that your app can evolve with your business,
+      offering stability, optimized performance, and simplified maintenance.
+    </p>
+  </header>
+  <ul class="bulletpoints">
+    <li>
+      <strong>Effortless Scalability</strong>
+      <span>Handle growth without performance loss.</span>
+    </li>
+    <li>
+      <strong>Simplified Maintenance</strong>
+      <span>Easily update and fix with modular code.</span>
+    </li>
+    <li>
+      <strong>Reduced Technical Debt</strong>
+      <span>Follow best practices to save time and resources.</span>
+    </li>
+    <li>
+      <strong>Enhanced Collaboration</strong>
+      <span>Consistent standards boost team efficiency.</span>
+    </li>
+    <li>
+      <strong>Improved Performance</strong>
+      <span>Faster load times and smoother experience.</span>
+    </li>
+    <li>
+      <strong>Future-Proofing</strong>
+      <span>Adapt to new technologies for long-term relevance.</span>
+    </li>
+  </ul>
+  <div>
+    <ScheduleACallButton />
+  </div>
+</section>

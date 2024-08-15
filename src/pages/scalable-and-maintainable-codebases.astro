@@ -1,0 +1,42 @@
+---
+import Approach from "../components/codebase/Approach.astro";
+import Benefits from "../components/codebase/Benefits.astro";
+import Statistics from "../components/codebase/Statistics.astro";
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Layout from "../layout/MainLayout.astro";
+---
+
+<Layout
+  title="Transform Your Web App with Scalable, Maintainable Codebases That Drive Growth"
+  description="Build a future-proof web app with our expert front end development services. We create scalable, maintainable codebases that ensure your application grows seamlessly with your business, improving performance, collaboration, and efficiency."
+  keywords="scalable codebase, maintainable codebase, front end development, web app growth, web development services, future-proof web app, performance optimization, modular architecture, technical debt reduction, efficient web app development, team collaboration, codebase best practices, web application scalability, maintainable web apps, front end consulting"
+>
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/codebase-hero-background.webp"
+    type="image/webp"
+  />
+  <main class="site-main">
+    <section
+      class="hero"
+      style="--_background-image: url('/images/codebase-hero-background.webp')"
+    >
+      <div class="wrapper">
+        <h1>Build for the Future with Scalable and Maintainable Codebases</h1>
+        <p>
+          Empower Your Web App with Scalable Front End Development that Grows
+          with Your Business and Stands the Test of Time**
+        </p>
+        <div>
+          <ScheduleACallButton size="large" />
+        </div>
+      </div>
+    </section>
+    <Benefits />
+    <Statistics />
+    <Approach />
+  </main>
+</Layout>
