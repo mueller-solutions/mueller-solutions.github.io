@@ -8,7 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "tina": "tinacms dev -c \"npm run dev\""
+    "tina": "tinacms dev -c \"npm run dev\"",
+    "format": "prettier --write \"**/*.{js,astro}\"",
+    "lint:styles": "stylelint \"src/**/*.scss\""
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -29,6 +31,9 @@
   "devDependencies": {
     "@tinacms/cli": "^1.5.52",
     "@types/node": "^22.1.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard-scss": "^13.1.0"
   }
 }

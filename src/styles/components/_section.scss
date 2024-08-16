@@ -2,16 +2,16 @@
 
 .section {
   display: grid;
-  gap: clamp(pxToRem(32), 4vw, pxToRem(66));
+  gap: clamp(pxtorem(32), 4vw, pxtorem(66));
 
   header {
     display: grid;
-    gap: clamp(pxToRem(20), 4vw, pxToRem(40));
+    gap: clamp(pxtorem(20), 4vw, pxtorem(40));
   }
 
   .heading {
-    font-size: clamp(pxToRem(30), 4vw, pxToRem(38));
-    line-height: clamp(pxToRem(36), 5vw, pxToRem(44));
+    font-size: clamp(pxtorem(30), 4vw, pxtorem(38));
+    line-height: clamp(pxtorem(36), 5vw, pxtorem(44));
     font-weight: $font-weight-bold;
     letter-spacing: -0.04em;
 
@@ -27,9 +27,9 @@
   .section-tag {
     display: flex;
     align-items: flex-start;
-    gap: pxToRem(12);
-    font-size: pxToRem(20);
-    line-height: clamp(pxToRem(26), 4vw, pxToRem(20));
+    gap: pxtorem(12);
+    font-size: pxtorem(20);
+    line-height: clamp(pxtorem(26), 4vw, pxtorem(20));
     font-weight: $font-weight-bold;
     letter-spacing: -0.01em;
     color: $color-brand-light;

@@ -2,7 +2,7 @@
 
 .bulletpoints {
   display: grid;
-  gap: clamp(pxToRem(16), 2vw, pxToRem(20));
+  gap: clamp(pxtorem(16), 2vw, pxtorem(20));
   list-style: none;
 
   @include mq(medium) {
@@ -10,22 +10,22 @@
   }
 
   li {
-    padding-left: clamp(pxToRem(40), 4vw, pxToRem(46));
+    padding-left: clamp(pxtorem(40), 4vw, pxtorem(46));
     background-image: url("/images/icons/checkmark.svg");
     background-repeat: no-repeat;
 
     strong {
       display: inline-block;
-      font-size: clamp(pxToRem(20), 3vw, pxToRem(28));
-      line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+      font-size: clamp(pxtorem(20), 3vw, pxtorem(28));
+      line-height: clamp(pxtorem(28), 3.5vw, pxtorem(32));
       letter-spacing: -0.03rem;
       font-weight: $font-weight-bold;
     }
 
     span {
       display: block;
-      font-size: pxToRem(16);
-      line-height: pxToRem(26);
+      font-size: pxtorem(16);
+      line-height: pxtorem(26);
     }
   }
 }

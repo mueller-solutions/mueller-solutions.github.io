@@ -3,7 +3,7 @@
 .flex-group {
   display: flex;
   flex-direction: column;
-  gap: clamp(pxToRem(20), 4vw, pxToRem(32));
+  gap: clamp(pxtorem(20), 4vw, pxtorem(32));
 
   @include mq(medium) {
     flex-direction: row;

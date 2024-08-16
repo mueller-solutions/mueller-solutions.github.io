@@ -2,7 +2,7 @@
 
 .columns {
   display: grid;
-  gap: clamp(pxToRem(20), 2vw, pxToRem(32));
+  gap: clamp(pxtorem(20), 2vw, pxtorem(32));
 
   @include mq(medium) {
     grid-template-columns: repeat(2, 1fr);
