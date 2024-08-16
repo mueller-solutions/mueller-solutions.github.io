@@ -29,9 +29,14 @@
 
     > li {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: pxToRem(10);
       position: relative;
+
+      @include mq(medium) {
+        align-items: center;
+        flex-direction: row;
+      }
     }
   }
 
@@ -39,9 +44,9 @@
     display: block;
     color: $color-dark;
     transition: color 200ms ease-out;
-    text-align: center;
 
     @include mq(medium) {
+      text-align: center;
       text-align: left;
     }
 
@@ -83,7 +88,7 @@
   aspect-ratio: 1 / 1;
   aspect-ratio: 1 / 1;
   position: relative;
-  display: grid;
+  display: none;
   place-content: center;
   width: pxToRem(32);
   height: pxToRem(32);
@@ -103,23 +108,13 @@
     transform: rotate(180deg);
     background-color: $color-brand-dark;
   }
+
+  @include mq(medium) {
+    display: grid;
+  }
 }
 
 .site-sub-navigation {
-  &[data-visible="false"] {
-    top: -9999px;
-    opacity: 0;
-    transform: translateY(pxToRem(-30));
-  }
-
-  &.in {
-    animation: subNavIn 200ms ease-out forwards;
-  }
-
-  &.out {
-    animation: subNavOut 200ms ease-out forwards;
-  }
-
   opacity: 1;
   transform: translateY(0);
   background-color: $color-light;
@@ -129,6 +124,20 @@
   gap: pxToRem(4);
 
   @include mq(medium) {
+    &[data-visible="false"] {
+      top: -9999px;
+      opacity: 0;
+      transform: translateY(pxToRem(-30));
+    }
+
+    &.in {
+      animation: subNavIn 200ms ease-out forwards;
+    }
+
+    &.out {
+      animation: subNavOut 200ms ease-out forwards;
+    }
+
     position: absolute;
     top: calc(100% + #{pxToRem(10)});
     left: 50%;
@@ -141,10 +150,21 @@
   }
 
   > li {
+    padding-inline-start: pxToRem(18);
+
+    @include mq(medium) {
+      padding-inline-start: 0;
+    }
+
     a {
       display: block;
       white-space: nowrap;
       padding-block: pxToRem(8);
+      font-size: pxToRem(14);
+
+      @include mq(medium) {
+        font-size: pxToRem(16);
+      }
     }
   }
 }
