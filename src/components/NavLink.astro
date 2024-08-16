@@ -5,7 +5,6 @@ type Props = astroHTML.JSX.AnchorHTMLAttributes & {
 
 const { href, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname;
-
 const isActive = pathname === href;
 ---
 
