@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import NavLink from "./NavLink.astro";
+import Navigation from "./Navigation.astro";
 ---
 
 <header class="site-header">
@@ -14,25 +14,6 @@ import NavLink from "./NavLink.astro";
         class="main-logo"
       />
     </a>
-    <button
-      class="nav-toggle"
-      aria-controls="site-navigation"
-      aria-expanded="false"
-    >
-      <span class="sr-only">Menu</span>
-    </button>
-    <nav
-      class="site-navigation"
-      id="site-navigation"
-      style="--_height: 0px;"
-      data-visible="false"
-    >
-      <ul>
-        <li><NavLink href="/">Home</NavLink></li>
-        <li><NavLink href="/#/services">Services</NavLink></li>
-        <li><NavLink href="/#/about">About</NavLink></li>
-        <li><NavLink href="/#/technologies">Technologies</NavLink></li>
-      </ul>
-    </nav>
+    <Navigation />
   </div>
 </header>

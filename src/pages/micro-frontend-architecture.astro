@@ -1,0 +1,42 @@
+---
+import Approach from "../components/micro-frontend/Approach.astro";
+import Benefits from "../components/micro-frontend/Benefits.astro";
+import Statisticts from "../components/micro-frontend/Statisticts.astro";
+import ScheduleACallButton from "../components/ScheduleACallButton.astro";
+import Layout from "../layout/MainLayout.astro";
+---
+
+<Layout
+  title="Transform Your Web App with Micro-Frontend Architecture for Unmatched Flexibility and Scalability"
+  description="Unlock the full potential of your web application with Micro-Frontend Architecture. Achieve unparalleled scalability, maintainability, and development speed by modularizing your frontend. Empower your team to work independently and integrate the best technologies for each component."
+  keywords="Micro-Frontend Architecture, scalable frontend, modular web development, maintainable codebase, web app scalability, frontend modularization, independent development teams, technology flexibility, faster time-to-market, frontend development consulting, performance optimization, reduced technical debt, continuous deployment"
+>
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/micro-frontend-hero-background.webp"
+    type="image/webp"
+  />
+  <main class="site-main">
+    <section
+      class="hero"
+      style="--_background-image: url('/images/micro-frontend-hero-background.webp')"
+    >
+      <div class="wrapper">
+        <h1>Break Down Complexity with Micro-Frontend Architecture</h1>
+        <p>
+          Empower Your Web Application with Scalable, Modular, and Maintainable
+          Frontend Solutions
+        </p>
+        <div>
+          <ScheduleACallButton size="large" />
+        </div>
+      </div>
+    </section>
+    <Benefits />
+    <Statisticts />
+    <Approach />
+  </main>
+</Layout>

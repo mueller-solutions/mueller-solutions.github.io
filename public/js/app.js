@@ -28,7 +28,8 @@ gtag("config", "G-777G6E86XK");
 
 const navEl = document.querySelector(".site-navigation");
 const navListEl = document.querySelector(".site-navigation > ul");
-const navToggleEl = document.querySelector(".nav-toggle");
+const navToggleEl = document.querySelector(".site-nav-toggle");
+const subNavToggleEl = document.querySelector(".sub-nav-toggle");
 const navLinkEls = document.querySelectorAll(".nav-link");
 const sectionEls = document.querySelectorAll(".section");
 const headerEl = document.querySelector(".site-header");
@@ -204,11 +205,34 @@ navToggleEl.addEventListener("click", () => {
 
   if (visibility === "false") {
     navToggleEl.setAttribute("aria-expanded", "true");
-    navEl.setAttribute("data-visible", "true");
     navEl.setAttribute("style", `--_height: ${navListHeight}px`);
   } else {
     navToggleEl.setAttribute("aria-expanded", "false");
-    navEl.setAttribute("data-visible", "false");
     navEl.setAttribute("style", `--_height: 0`);
+  }
+});
+
+// Sub Navigation
+subNavToggleEl.addEventListener("click", () => {
+  const visibility = subNavToggleEl.getAttribute("aria-expanded");
+  const subNavId = subNavToggleEl.getAttribute("aria-controls");
+  const subNav = document.getElementById(subNavId);
+
+  if (visibility === "false") {
+    subNavToggleEl.setAttribute("aria-expanded", "true");
+    subNav.classList.add("in");
+    subNav.setAttribute("data-visible", "true");
+    setTimeout(() => {
+      subNav.classList.remove("in");
+    }, 250);
+  } else {
+    subNavToggleEl.setAttribute("aria-expanded", "false");
+
+    subNav.classList.add("out");
+
+    setTimeout(() => {
+      subNav.classList.remove("out");
+      subNav.setAttribute("data-visible", "false");
+    }, 250);
   }
 });
