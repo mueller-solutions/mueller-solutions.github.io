@@ -106,7 +106,6 @@ navLinkEls.forEach((navLinkEl) => {
     // Close the mobile navigation
     setTimeout(() => {
       navToggleEl.setAttribute("aria-expanded", "false");
-      navEl.setAttribute("data-visible", "false");
       navEl.setAttribute("style", `--_height: 0`);
     }, 100);
 
@@ -200,7 +199,7 @@ technologyLinkEls.forEach((technologyLinkEl) => {
 
 // Mobile Navigation
 navToggleEl.addEventListener("click", () => {
-  const visibility = navEl.getAttribute("data-visible");
+  const visibility = navToggleEl.getAttribute("aria-expanded");
   const navListHeight = navListEl.offsetHeight;
 
   if (visibility === "false") {
