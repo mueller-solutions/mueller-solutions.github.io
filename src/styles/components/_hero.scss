@@ -1,8 +1,8 @@
 @use "../abstracts" as *;
 
 .hero {
-  --_text-align: center;
-  --_max-width: 100%;
+  --text-align: center;
+  --max-width: 100%;
 
   background-color: $color-brand-dark;
   background-image: linear-gradient(
@@ -10,21 +10,21 @@
     $color-brand-light,
     $color-brand-dark
   );
-  border-bottom-left-radius: clamp(pxToRem(28), 4vw, pxToRem(40));
-  border-bottom-right-radius: clamp(pxToRem(28), 4vw, pxToRem(40));
-  text-align: var(--_text-align);
+  border-bottom-left-radius: clamp(pxtorem(28), 4vw, pxtorem(40));
+  border-bottom-right-radius: clamp(pxtorem(28), 4vw, pxtorem(40));
+  text-align: var(--text-align);
   color: $color-light;
-  padding-block: clamp(#{pxToRem(40)}, 8vw, #{pxToRem(120)});
+  padding-block: clamp(#{pxtorem(40)}, 8vw, #{pxtorem(120)});
 
   @include mq(medium) {
-    --_text-align: left;
-    --_max-width: 47.5%;
-    --_background-image: url("/images/hero-background.webp");
+    --text-align: left;
+    --max-width: 47.5%;
+    --background-image: url("/images/hero-background.webp");
 
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
-    background-image: var(--_background-image);
+    background-image: var(--background-image);
   }
 
   @include mq(large) {
@@ -32,21 +32,21 @@
   }
 
   h1 {
-    font-size: clamp(pxToRem(40), 4vw, pxToRem(56));
-    line-height: clamp(pxToRem(42), 4.5vw, pxToRem(58));
+    font-size: clamp(pxtorem(40), 4vw, pxtorem(56));
+    line-height: clamp(pxtorem(42), 4.5vw, pxtorem(58));
     font-weight: $font-weight-semibold;
     letter-spacing: -0.03em;
     text-shadow: $shadow-text;
-    margin-bottom: pxToRem(22);
-    max-width: var(--_max-width);
+    margin-bottom: pxtorem(22);
+    max-width: var(--max-width);
   }
 
   p {
-    font-size: clamp(pxToRem(18), 2.75vw, pxToRem(24));
-    line-height: clamp(pxToRem(26), 3vw, pxToRem(32));
+    font-size: clamp(pxtorem(18), 2.75vw, pxtorem(24));
+    line-height: clamp(pxtorem(26), 3vw, pxtorem(32));
     letter-spacing: -0.01em;
     text-shadow: $shadow-text;
-    margin-bottom: clamp(pxToRem(32), 6vw, pxToRem(61));
-    max-width: var(--_max-width);
+    margin-bottom: clamp(pxtorem(32), 6vw, pxtorem(61));
+    max-width: var(--max-width);
   }
 }

@@ -3,16 +3,12 @@ type Props = astroHTML.JSX.AnchorHTMLAttributes & {
   href: string;
 };
 
-const { href, ...props } = Astro.props;
+const { href, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const isActive = pathname === href;
 ---
 
-<a
-  {...props}
-  href={href}
-  class:list={[!props.onclick && "nav-link", isActive && "active"]}
->
+<a {...props} href={href} class:list={[className, !props.onclick && 'nav-link', isActive && 'active']}>
   <slot />
 </a>

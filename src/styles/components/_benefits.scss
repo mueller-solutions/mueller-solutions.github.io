@@ -3,17 +3,17 @@
 .benefits {
   .benefit {
     h3 {
-      font-size: clamp(pxToRem(22), 3vw, pxToRem(28));
-      line-height: clamp(pxToRem(28), 3.5vw, pxToRem(32));
+      font-size: clamp(pxtorem(22), 3vw, pxtorem(28));
+      line-height: clamp(pxtorem(28), 3.5vw, pxtorem(32));
       letter-spacing: -0.03rem;
       font-weight: $font-weight-bold;
       color: $color-brand-light;
-      margin-block-end: pxToRem(12);
+      margin-block-end: pxtorem(12);
     }
 
     p {
-      font-size: pxToRem(16);
-      line-height: pxToRem(26);
+      font-size: pxtorem(16);
+      line-height: pxtorem(26);
     }
   }
 }

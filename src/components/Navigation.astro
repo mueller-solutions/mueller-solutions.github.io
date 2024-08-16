@@ -1,69 +1,50 @@
 ---
-import NavLink from "./NavLink.astro";
+import NavLink from './NavLink.astro';
 ---
 
-<button
-  class="site-nav-toggle"
-  aria-controls="site-navigation"
-  aria-expanded="false"
->
+<button class="site-nav-toggle" aria-controls="site-navigation" aria-expanded="false">
   <span class="sr-only">Menu</span>
 </button>
-<nav
-  class="site-navigation"
-  id="site-navigation"
-  style="--_height: 0px;"
-  data-visible="false"
->
-  <ul>
-    <li><NavLink href="/">Home</NavLink></li>
-    <li>
+<nav class="site-navigation" id="site-navigation" style="--height: 0px;" data-visible="false">
+  <ul class="nav-list">
+    <li class="nav-item"><NavLink href="/">Home</NavLink></li>
+    <li class="nav-item">
       <NavLink href="/#/services">Services</NavLink>
-      <button
-        class="sub-nav-toggle"
-        aria-controls="services-sub-nav"
-        aria-expanded="false"
-      >
+      <button class="sub-nav-toggle" aria-controls="services-sub-nav" aria-expanded="false">
         <span class="sr-only">Services Menu</span>
       </button>
-      <ul
-        class="site-sub-navigation"
-        id="services-sub-nav"
-        data-visible="false"
-      >
-        <li>
-          <NavLink href="/progressive-web-app-pwa">
-            Progressive Web Apps (PWAs)
-          </NavLink>
+      <ul class="site-sub-navigation" id="services-sub-nav" data-visible="false">
+        <li class="sub-nav-item">
+          <NavLink href="/progressive-web-app-pwa" class="sub-nav-link"> Progressive Web Apps (PWAs) </NavLink>
         </li>
-        <li>
-          <NavLink href="/advanced-project-setup-guidance">
+        <li class="sub-nav-item">
+          <NavLink href="/advanced-project-setup-guidance" class="sub-nav-link">
             Advanced Project Setup Guidance
           </NavLink>
         </li>
-        <li>
-          <NavLink href="/scalable-and-maintainable-codebases">
+        <li class="sub-nav-item">
+          <NavLink href="/scalable-and-maintainable-codebases" class="sub-nav-link">
             Scalable and Maintainable Codebases
           </NavLink>
         </li>
-        <li>
-          <NavLink href="/micro-frontend-architecture">
-            Mirco-Frontend Architecture
-          </NavLink>
+        <li class="sub-nav-item">
+          <NavLink href="/micro-frontend-architecture" class="sub-nav-link"> Mirco-Frontend Architecture </NavLink>
         </li>
-        <!-- <li>
-          <NavLink href="/performance-improvement-strategires">
+        <!-- <li class="sub-nav-item">
+          <NavLink href="/performance-improvement-strategires" class="sub-nav-link">
             Frontend Performance Improvement
           </NavLink>
         </li>
-        <li>
-          <NavLink href="/modern-frontend-technologies">
+        <li class="sub-nav-item">
+          <NavLink href="/modern-frontend-technologies" class="sub-nav-link">
             Modern Frontend Technologies
           </NavLink>
         </li> -->
       </ul>
     </li>
-    <li><NavLink href="/#/about">About</NavLink></li>
-    <li><NavLink href="/#/technologies">Technologies</NavLink></li>
+    <li class="nav-item"><NavLink href="/#/about">About</NavLink></li>
+    <li class="nav-item">
+      <NavLink href="/#/technologies">Technologies</NavLink>
+    </li>
   </ul>
 </nav>

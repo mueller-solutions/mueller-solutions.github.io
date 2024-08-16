@@ -1,46 +1,44 @@
 @use "../abstracts/" as *;
 
 .site-navigation {
-  --_height: 0;
+  --height: 0;
+
   overflow: hidden;
   transition: height 300ms ease-out;
-  height: var(--_height);
+  height: var(--height);
 
   @include mq(medium) {
     height: initial;
     transition: initial;
     overflow: initial;
   }
+}
 
-  > ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-top: pxtorem(20);
+  gap: clamp(pxtorem(8), 4vw, pxtorem(52));
+
+  @include mq(medium) {
+    flex-direction: row;
+    padding-top: 0;
+  }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: pxtorem(10);
+  position: relative;
+
+  @include mq(medium) {
+    align-items: center;
+    flex-direction: row;
   }
 
-  > ul {
-    padding-top: pxToRem(20);
-    gap: clamp(pxToRem(8), 4vw, pxToRem(52));
-
-    @include mq(medium) {
-      flex-direction: row;
-      padding-top: 0;
-    }
-
-    > li {
-      display: flex;
-      flex-direction: column;
-      gap: pxToRem(10);
-      position: relative;
-
-      @include mq(medium) {
-        align-items: center;
-        flex-direction: row;
-      }
-    }
-  }
-
-  a {
+  .nav-link {
     display: block;
     color: $color-dark;
     transition: color 200ms ease-out;
@@ -67,8 +65,8 @@
   background-image: url("/images/icons/menu.svg");
   background-repeat: no-repeat;
   background-position: center;
-  width: pxToRem(36);
-  height: pxToRem(36);
+  width: pxtorem(36);
+  height: pxtorem(36);
   right: 0;
   top: 0;
   aspect-ratio: 1 / 1;
@@ -83,15 +81,12 @@
 }
 
 .sub-nav-toggle {
-  width: pxToRem(32);
-  height: pxToRem(32);
-  aspect-ratio: 1 / 1;
   aspect-ratio: 1 / 1;
   position: relative;
   display: none;
   place-content: center;
-  width: pxToRem(32);
-  height: pxToRem(32);
+  width: pxtorem(32);
+  height: pxtorem(32);
   overflow: hidden;
   mask-image: url("/images/icons/chevron-down.svg");
   mask-position: center;
@@ -121,72 +116,74 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  gap: pxToRem(4);
+  gap: pxtorem(4);
 
   @include mq(medium) {
     &[data-visible="false"] {
       top: -9999px;
       opacity: 0;
-      transform: translateY(pxToRem(-30));
+      transform: translateY(pxtorem(-30));
     }
 
     &.in {
-      animation: subNavIn 200ms ease-out forwards;
+      animation: sub-nav-in 200ms ease-out forwards;
     }
 
     &.out {
-      animation: subNavOut 200ms ease-out forwards;
+      animation: sub-nava-out 200ms ease-out forwards;
     }
 
     position: absolute;
-    top: calc(100% + #{pxToRem(10)});
+    top: calc(100% + #{pxtorem(10)});
     left: 50%;
     translate: -50% 0;
     z-index: 10;
-    padding-inline: pxToRem(20);
-    padding-block: pxToRem(10);
-    border-radius: pxToRem(12);
+    padding-inline: pxtorem(20);
+    padding-block: pxtorem(10);
+    border-radius: pxtorem(12);
     box-shadow: $shadow-header;
   }
+}
 
-  > li {
-    padding-inline-start: pxToRem(18);
+.sub-nav-item {
+  padding-inline-start: pxtorem(18);
+
+  @include mq(medium) {
+    padding-inline-start: 0;
+  }
+
+  .sub-nav-link {
+    display: block;
+    white-space: nowrap;
+    padding-block: pxtorem(8);
+    font-size: pxtorem(14);
 
     @include mq(medium) {
-      padding-inline-start: 0;
-    }
-
-    a {
-      display: block;
-      white-space: nowrap;
-      padding-block: pxToRem(8);
-      font-size: pxToRem(14);
-
-      @include mq(medium) {
-        font-size: pxToRem(16);
-      }
+      font-size: pxtorem(16);
     }
   }
 }
 
-@keyframes subNavIn {
+@keyframes sub-nav-in {
   from {
     opacity: 0;
-    transform: translateY(pxToRem(-30));
+    transform: translateY(pxtorem(-30));
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes subNavOut {
+@keyframes sub-nav-out {
   from {
     opacity: 1;
     transform: translateY(0);
   }
+
   to {
     opacity: 0;
-    transform: translateY(pxToRem(-30));
+    transform: translateY(pxtorem(-30));
   }
 }

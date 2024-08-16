@@ -5,7 +5,7 @@
   top: 0;
   background-color: $color-light;
   box-shadow: $shadow-header;
-  padding-block: pxToRem(20);
+  padding-block: pxtorem(20);
   z-index: 10;
   width: 100%;
 
@@ -16,7 +16,7 @@
     flex-direction: column;
 
     @include mq(medium) {
-      gap: pxToRem(20);
+      gap: pxtorem(20);
       align-items: center;
       flex-direction: row;
     }

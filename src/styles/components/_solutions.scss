@@ -3,10 +3,10 @@
 .solutions {
   .solution {
     background-color: $color-light;
-    border-radius: clamp(pxToRem(12), 2vw, pxToRem(20));
+    border-radius: clamp(pxtorem(12), 2vw, pxtorem(20));
     display: grid;
-    gap: clamp(pxToRem(18), 2vw, pxToRem(24));
-    padding: clamp(pxToRem(18), 2vw, pxToRem(24));
+    gap: clamp(pxtorem(18), 2vw, pxtorem(24));
+    padding: clamp(pxtorem(18), 2vw, pxtorem(24));
     position: relative;
     z-index: 1;
     box-shadow: 0 0 0 rgb(0 0 0 / 0%);
@@ -17,8 +17,8 @@
       position: relative;
       display: grid;
       place-content: center;
-      width: clamp(pxToRem(46), 5vw, pxToRem(60));
-      height: clamp(pxToRem(46), 5vw, pxToRem(60));
+      width: clamp(pxtorem(46), 5vw, pxtorem(60));
+      height: clamp(pxtorem(46), 5vw, pxtorem(60));
       border-radius: 100%;
       background-color: $color-light;
       box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
@@ -45,33 +45,32 @@
         z-index: 2;
         height: 100%;
         width: 100%;
-        mask-image: var(--_icon);
+        mask-image: var(--icon);
         mask-position: center;
         mask-repeat: no-repeat;
-        // mask-size: 100%;
         transition: background-color 300ms ease-out;
         background-color: $color-brand-light;
       }
     }
 
     h1 {
-      font-size: clamp(pxToRem(20), 3vw, pxToRem(24));
-      line-height: clamp(pxToRem(24), 4vw, pxToRem(28));
+      font-size: clamp(pxtorem(20), 3vw, pxtorem(24));
+      line-height: clamp(pxtorem(24), 4vw, pxtorem(28));
       letter-spacing: -0.02em;
       font-weight: $font-weight-bold;
-      margin-block-end: pxToRem(8);
+      margin-block-end: pxtorem(8);
     }
 
     p {
-      font-size: clamp(pxToRem(12), 3vw, pxToRem(14));
-      line-height: clamp(pxToRem(20), 4vw, pxToRem(22));
+      font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
+      line-height: clamp(pxtorem(20), 4vw, pxtorem(22));
     }
 
     .link {
       color: $color-brand-dark;
       transition: color 300ms ease-out;
-      font-size: clamp(pxToRem(12), 3vw, pxToRem(14));
-      line-height: clamp(pxToRem(12), 3vw, pxToRem(14));
+      font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
+      line-height: clamp(pxtorem(12), 3vw, pxtorem(14));
 
       &:hover {
         color: $color-brand-light;
@@ -80,7 +79,7 @@
 
     &:hover {
       z-index: 2;
-      box-shadow: 0 0 pxToRem(70) rgb(0 0 0 / 20%);
+      box-shadow: 0 0 pxtorem(70) rgb(0 0 0 / 20%);
 
       .icon {
         &::before {

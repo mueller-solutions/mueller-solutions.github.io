@@ -1,17 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import NavLink from "./NavLink.astro";
+import { Image } from 'astro:assets';
+import NavLink from './NavLink.astro';
 ---
 
 <footer class="site-footer">
   <div class="wrapper flex-group" data-justify="between" data-align="end">
     <a href="/" class="logo-link">
-      <Image
-        src="/images/logo-white.svg"
-        alt="MUELLER Solutions"
-        width="216"
-        height="36"
-      />
+      <Image src="/images/logo-white.svg" alt="MUELLER Solutions" width="216" height="36" />
     </a>
 
     <nav>
@@ -38,36 +33,16 @@ import NavLink from "./NavLink.astro";
           height="22"
         />
       </a> -->
-      <a
-        href="https://www.linkedin.com/company/mueller-solutions-dev"
-        target="_blank"
-      >
-        <Image
-          src="/images/icons/linkedin.svg"
-          alt="LinkedIn Icon"
-          width="24"
-          height="24"
-        />
+      <a href="https://www.linkedin.com/company/mueller-solutions-dev" target="_blank">
+        <Image src="/images/icons/linkedin.svg" alt="LinkedIn Icon" width="24" height="24" />
       </a>
-      <a
-        href="https://www.facebook.com/profile.php?id=61564462280786"
-        target="_blank"
-      >
-        <Image
-          src="/images/icons/facebook.svg"
-          alt="Facebook Icon"
-          width="24"
-          height="24"
-        />
+      <a href="https://www.facebook.com/profile.php?id=61564462280786" target="_blank">
+        <Image src="/images/icons/facebook.svg" alt="Facebook Icon" width="24" height="24" />
       </a>
     </div>
   </div>
   <div class="wrapper"><hr /></div>
-  <div
-    class="wrapper flex-group footer-bottom"
-    data-justify="between"
-    data-align="start"
-  >
+  <div class="wrapper flex-group footer-bottom" data-justify="between" data-align="start">
     <nav class="site-footer-nav">
       <ul>
         <li><NavLink href="/privacy-policy">Privacy Policy</NavLink></li>
@@ -75,8 +50,6 @@ import NavLink from "./NavLink.astro";
         <!-- <li><NavLink href="/accessibility">Accessibility</NavLink></li> -->
       </ul>
     </nav>
-    <div class="copyright">
-      &copy; 2024 Mueller Solutions, LLC. All rights reserved.
-    </div>
+    <div class="copyright">&copy; 2024 Mueller Solutions, LLC. All rights reserved.</div>
   </div>
 </footer>
