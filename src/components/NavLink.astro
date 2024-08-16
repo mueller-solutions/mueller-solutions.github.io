@@ -4,10 +4,7 @@ type Props = astroHTML.JSX.AnchorHTMLAttributes & {
 };
 
 const { href, class: className, ...props } = Astro.props;
-const pathname =
-  Astro.url.pathname !== '/' && Astro.url.pathname.endsWith('/')
-    ? Astro.url.pathname.replace(/\/$/, '')
-    : Astro.url.pathname;
+const pathname = Astro.url.pathname;
 
 const isActive = pathname === href;
 ---
