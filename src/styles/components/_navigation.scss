@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 .site-navigation {
   --height: 0;
@@ -62,7 +62,7 @@
   display: block;
   position: absolute;
   background-color: transparent;
-  background-image: url("/images/icons/menu.svg");
+  background-image: url('/images/icons/menu.svg');
   background-repeat: no-repeat;
   background-position: center;
   width: pxtorem(36);
@@ -71,8 +71,8 @@
   top: 0;
   aspect-ratio: 1 / 1;
 
-  &[aria-expanded="true"] {
-    background-image: url("/images/icons/close.svg");
+  &[aria-expanded='true'] {
+    background-image: url('/images/icons/close.svg');
   }
 
   @include mq(medium) {
@@ -88,18 +88,19 @@
   width: pxtorem(32);
   height: pxtorem(32);
   overflow: hidden;
-  mask-image: url("/images/icons/chevron-down.svg");
+  mask-image: url('/images/icons/chevron-down.svg');
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: $color-gray-dark;
   transition: background-color 200ms ease-out;
   transform: rotate(0deg);
+  margin-inline-end: -#{pxtorem(16)};
 
-  &:not([aria-expanded="true"]):hover {
+  &:not([aria-expanded='true']):hover {
     background-color: $color-brand-light;
   }
 
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transform: rotate(180deg);
     background-color: $color-brand-dark;
   }
@@ -119,7 +120,17 @@
   gap: pxtorem(4);
 
   @include mq(medium) {
-    &[data-visible="false"] {
+    position: absolute;
+    top: calc(100% + #{pxtorem(10)});
+    left: 50%;
+    translate: -50% 0;
+    z-index: 10;
+    padding-inline: pxtorem(20);
+    padding-block: pxtorem(10);
+    border-radius: pxtorem(12);
+    box-shadow: $shadow-header;
+
+    &[data-visible='false'] {
       top: -9999px;
       opacity: 0;
       transform: translateY(pxtorem(-30));
@@ -130,18 +141,8 @@
     }
 
     &.out {
-      animation: sub-nava-out 200ms ease-out forwards;
+      animation: sub-nav-out 200ms ease-out forwards;
     }
-
-    position: absolute;
-    top: calc(100% + #{pxtorem(10)});
-    left: 50%;
-    translate: -50% 0;
-    z-index: 10;
-    padding-inline: pxtorem(20);
-    padding-block: pxtorem(10);
-    border-radius: pxtorem(12);
-    box-shadow: $shadow-header;
   }
 }
 

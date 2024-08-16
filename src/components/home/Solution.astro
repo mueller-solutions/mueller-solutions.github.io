@@ -16,14 +16,16 @@ const { title, description, icon, href } = Astro.props;
     </div>
   </div>
   <div class="solution-content">
-    <h1>{title}</h1>
-    <p>{description}</p>
+    <h1 class="solution-heading">{title}</h1>
+    <p class="solution-description">{description}</p>
   </div>
   {
     href && (
-      <a href={href} class="link" title={`Learn more about ${title}`}>
-        Learn More <span class="sr-only">about {title}</span>
-      </a>
+      <div>
+        <a href={href} class="link" title={`Learn more about ${title}`}>
+          Learn More <span class="sr-only">about {title}</span>
+        </a>
+      </div>
     )
   }
 </article>

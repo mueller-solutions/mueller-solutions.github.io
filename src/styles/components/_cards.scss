@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .cards {
   display: grid;
@@ -13,6 +13,11 @@
   }
 
   .card {
+    background-color: $color-light;
+    border-radius: clamp(pxtorem(12), 2vw, pxtorem(20));
+    padding: clamp(pxtorem(20), 4vw, pxtorem(30));
+    text-align: center;
+
     & > * {
       display: block;
 
@@ -20,11 +25,6 @@
         margin-block-end: clamp(pxtorem(6), 1vw, pxtorem(12));
       }
     }
-
-    background-color: $color-light;
-    border-radius: clamp(pxtorem(12), 2vw, pxtorem(20));
-    padding: clamp(pxtorem(20), 4vw, pxtorem(30));
-    text-align: center;
 
     .number {
       font-size: clamp(pxtorem(38), 4vw, pxtorem(48));

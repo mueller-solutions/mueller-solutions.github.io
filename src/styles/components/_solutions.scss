@@ -1,10 +1,11 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .solutions {
   .solution {
     background-color: $color-light;
     border-radius: clamp(pxtorem(12), 2vw, pxtorem(20));
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: clamp(pxtorem(18), 2vw, pxtorem(24));
     padding: clamp(pxtorem(18), 2vw, pxtorem(24));
     position: relative;
@@ -26,14 +27,10 @@
 
       &::before {
         aspect-ratio: 1 / 1;
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
-        background-image: linear-gradient(
-          to bottom,
-          $color-yellow,
-          $color-orange
-        );
+        background-image: linear-gradient(to bottom, $color-yellow, $color-orange);
         z-index: 1;
         opacity: 0;
         transition: opacity 200ms ease-out;
@@ -53,7 +50,11 @@
       }
     }
 
-    h1 {
+    .solution-content {
+      flex-grow: 1;
+    }
+
+    .solution-heading {
       font-size: clamp(pxtorem(20), 3vw, pxtorem(24));
       line-height: clamp(pxtorem(24), 4vw, pxtorem(28));
       letter-spacing: -0.02em;
@@ -61,19 +62,28 @@
       margin-block-end: pxtorem(8);
     }
 
-    p {
-      font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
-      line-height: clamp(pxtorem(20), 4vw, pxtorem(22));
+    .solution-description {
+      font-size: pxtorem(14);
+      line-height: pxtorem(22);
     }
 
     .link {
-      color: $color-brand-dark;
-      transition: color 300ms ease-out;
-      font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
-      line-height: clamp(pxtorem(12), 3vw, pxtorem(14));
+      display: inline-block;
+      background-color: $color-brand-light;
+      border-radius: 30px;
+      transition: background-color 200ms ease-out;
+      font-size: pxtorem(14);
+      line-height: pxtorem(14);
+      padding: pxtorem(8) pxtorem(16);
+      font-weight: $font-weight-medium;
+
+      &,
+      &:hover {
+        color: $color-light;
+      }
 
       &:hover {
-        color: $color-brand-light;
+        background-color: $color-brand-dark;
       }
     }
 
@@ -89,10 +99,6 @@
         .mask {
           background-color: $color-light;
         }
-      }
-
-      .link {
-        color: $color-brand-dark;
       }
     }
   }
