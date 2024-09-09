@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "tina": "tinacms dev -c \"npm run dev\"",
-    "format": "prettier --write \"**/*.{js,astro}\"",
+    "format": "prettier --write \"**/*.{ts,js,astro}\"",
     "lint:styles": "stylelint \"src/**/*.scss\""
   },
   "dependencies": {
