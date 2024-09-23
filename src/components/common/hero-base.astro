@@ -7,14 +7,12 @@ type Props = {
 const { imageUrl, class: className } = Astro.props;
 ---
 
-<section class={className}>
+<section class:list={['hero', className]}>
   <div class="wrapper">
     <div class="content">
       <slot />
-      <div>
-        <div class="buttons">
-          <slot name="buttons" />
-        </div>
+      <div class="buttons">
+        <slot name="buttons" />
       </div>
     </div>
   </div>
@@ -23,46 +21,49 @@ const { imageUrl, class: className } = Astro.props;
 <style lang="scss" define:vars={{ imageUrl: `url(${imageUrl})` }}>
   @use '../../styles/abstracts' as *;
 
-  @mixin blueStructure() {
-    background-color: $color-primary-dark;
-    background-image: url('/images/hero/structure.svg');
-  }
-
-  @mixin gradientDown() {
-    background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
-  }
-
-  @mixin blue() {
-    background-color: $color-primary-dark;
-  }
-
-  @mixin lightBlue() {
-    background-color: $color-primary-light;
-  }
-
   section {
-    display: grid;
     position: relative;
-    z-index: 0;
-
-    @include mq(mobile) {
-      min-height: 100svh;
-    }
+    width: 100dvw;
 
     @include mq(small) {
-      padding-block-start: $hero-padding-top;
       max-height: pxtorem(900);
     }
 
-    &::before,
+    @include mq(large) {
+      max-height: pxtorem(1080);
+    }
+
+    &.blue-structured {
+      background-color: $color-primary-dark;
+      background-image: url('/images/boxy-structure.svg');
+      background-position: bottom right;
+    }
+
+    &.gradient-down {
+      background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
+    }
+
+    &.blue {
+      background-color: $color-primary-dark;
+    }
+
+    &.light-blue {
+      background-color: $color-primary-light;
+    }
+
     &::after {
       content: '';
       position: absolute;
       z-index: 1;
       top: 0;
-      width: 100%;
-      background-size: cover;
+      background-image: var(--imageUrl);
       background-repeat: no-repeat;
+      background-size: cover;
+
+      @include mq(mobile) {
+        height: 40%;
+        width: 100dvw;
+      }
 
       @include mq(small) {
         width: 50%;
@@ -70,135 +71,42 @@ const { imageUrl, class: className } = Astro.props;
       }
     }
 
-    &::before {
-      background-position: right bottom;
-    }
+    @include mq(small) {
+      &.image-right {
+        &::after {
+          right: 0;
+          background-position: left center;
+        }
 
-    &::after {
-      background-position: left bottom;
-    }
-
-    &.image-right {
-      &::before {
-        left: 0;
-
-        @include mq(mobile) {
-          top: 40%;
-          height: 60%;
+        .content {
+          padding-inline-end: clamp(60%, 4vw, 70%);
         }
       }
 
-      &::after {
-        left: 50%;
-        background-image: var(--imageUrl);
-
-        @include mq(mobile) {
-          left: 0%;
-          height: 40%;
-        }
-      }
-
-      &.blue-structured {
-        &::before {
-          @include blueStructure();
-        }
-      }
-
-      &.gradient-down {
-        &::before {
-          @include gradientDown();
-        }
-      }
-
-      &.blue {
-        &::before {
-          @include blue();
-        }
-      }
-
-      &.light-blue {
-        &::before {
-          @include lightBlue();
-        }
-      }
-
-      .content {
-        @include mq(small) {
-          padding-inline-end: calc(50% + #{pxtorem(130)});
-        }
-      }
-    }
-
-    &.image-left {
-      &::before {
-        left: 0;
-        background-image: var(--imageUrl);
-
-        @include mq(mobile) {
+      &.image-left {
+        &::after {
           left: 0;
-          height: 40%;
+          background-position: right center;
         }
-      }
 
-      &::after {
-        left: 50%;
-
-        @include mq(mobile) {
-          left: 0;
-          top: 40%;
-          height: 60%;
+        .content {
+          padding-inline-start: calc(50% + #{pxtorem(80)});
         }
-      }
-
-      &.blue-structured {
-        &::after {
-          @include blueStructure();
-        }
-      }
-
-      &.gradient-down {
-        &::after {
-          @include gradientDown();
-        }
-      }
-
-      &.blue {
-        &::after {
-          @include blue();
-        }
-      }
-
-      &.light-blue {
-        &::after {
-          @include lightBlue();
-        }
-      }
-
-      .content {
-        @include mq(small) {
-          padding-inline-start: calc(50% + #{pxtorem(130)});
-        }
-      }
-    }
-
-    &.blue-structured,
-    &.blue {
-      .content {
-        color: $color-light;
       }
     }
   }
 
-  .content {
-    position: relative;
-    z-index: 3;
-    display: grid;
-    gap: clamp(pxtorem(20), 4vw, pxtorem(38));
-    padding-block: calc(40svh + #{pxtorem(20)}) 0;
+  .wrapper {
+    padding-block-start: #{$site-header-height + $site-header-inset};
+  }
 
-    @include mq(small) {
-      padding-block: pxtorem(90);
-    }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(pxtorem(28), 4vw, pxtorem(40));
+    padding-block-start: clamp(pxtorem(80), 4vw, pxtorem(150));
+    padding-block-end: clamp(pxtorem(120), 4vw, pxtorem(180));
   }
 
   .buttons {

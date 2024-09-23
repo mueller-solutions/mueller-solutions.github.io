@@ -52,3 +52,10 @@
 @mixin transition-long($props, $ease: $transition-ease-out) {
   @include transition($props, $transition-ease-out, $transition-duration-long);
 }
+
+@mixin scroll-animate($timelineName, $animationName) {
+  view-timeline-name: --#{$timelineName};
+  animation: $animationName both;
+  animation-timeline: --#{$timelineName};
+  animation-range: 5% 30%;
+}

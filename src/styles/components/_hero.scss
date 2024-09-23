@@ -1,0 +1,35 @@
+@use '../abstracts/' as *;
+
+@keyframes hero-heading-in {
+  from {
+    translate: 0 -#{pxtorem(20)};
+    opacity: 0;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes hero-buttons-in {
+  from {
+    translate: 0 #{pxtorem(20)};
+    opacity: 0;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+.hero {
+  h1 {
+    animation: hero-heading-in $transition-duration-longer $transition-ease-out forwards;
+  }
+
+  .button {
+    animation: hero-buttons-in $transition-duration-longer $transition-ease-out forwards;
+  }
+}

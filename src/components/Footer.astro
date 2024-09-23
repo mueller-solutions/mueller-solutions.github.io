@@ -86,6 +86,10 @@ const pathname = Astro.url.pathname;
     &:not(:last-of-type) {
       margin-block-end: pxtorem(8);
     }
+
+    &.active {
+      color: $color-primary;
+    }
   }
 
   address {

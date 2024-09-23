@@ -68,17 +68,40 @@ const { title, imageUrl, benefits, descriptions, imageDirection, buttonLabel } =
 <style lang="scss">
   @use '../../styles/abstracts' as *;
 
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      translate: -#{pxtorem(20)};
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      translate: pxtorem(20);
+    }
+  }
+
   .service {
-    display: grid;
+    display: flex;
     gap: pxtorem(30);
-    align-items: stretch;
 
     &.image-left {
-      grid-template-columns: 25% 1fr;
+      figure {
+        @include scroll-animate(fade-in-left, fade-in-left);
+      }
+      .content {
+        @include scroll-animate(fade-in-right, fade-in-right);
+      }
     }
 
     &.image-right {
-      grid-template-columns: 1fr 25%;
+      figure {
+        @include scroll-animate(fade-in-right, fade-in-right);
+      }
+      .content {
+        @include scroll-animate(fade-in-left, fade-in-left);
+      }
     }
   }
 
@@ -87,6 +110,7 @@ const { title, imageUrl, benefits, descriptions, imageDirection, buttonLabel } =
   }
 
   figure {
+    flex-shrink: 0;
     aspect-ratio: 321 / 573;
     overflow: hidden;
     border-radius: pxtorem(12);

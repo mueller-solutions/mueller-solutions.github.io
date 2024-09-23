@@ -9,10 +9,5 @@ import Button from '../common/button.astro';
     We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
     experience." Discover how we can help your business thrive in the digital world.
   </p>
-  <Button
-    slot="buttons"
-    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation'});return false;"
-  >
-    Schedule a Free Consultation
-  </Button>
+  <Button slot="buttons" scheduleAppointment> Schedule a Free Consultation </Button>
 </HeroBase>

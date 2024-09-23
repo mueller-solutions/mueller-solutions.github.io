@@ -17,11 +17,11 @@ if (scheduleAppointment && !href) {
 
 {
   href ? (
-    <a href={href} class:list={[isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
+    <a href={href} class:list={['button', isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
       <slot />
     </a>
   ) : (
-    <button class:list={[isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
+    <button class:list={['button', isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
       <slot />
     </button>
   )
