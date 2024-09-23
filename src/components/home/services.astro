@@ -1,0 +1,87 @@
+---
+import Icon from '../common/icon.astro';
+import Button from '../common/button.astro';
+---
+
+<section>
+  <div class="wrapper">
+    <p class="tagline inverted">Solutions that drive success</p>
+    <h2 class="heading2 inverted">Our Services</h2>
+    <p class="description">
+      We offer a range of services designed to optimize your web app for peak performance and scalability. Whether you
+      need frontend performance optimization, scalable architecture, or cutting-edge technology integration, we've got
+      you covered.
+    </p>
+    <ul class="even-columns three-columns">
+      <li class="service card white">
+        <div class="icon">
+          <Icon name="frontend-performance" width="52" height="52" />
+        </div>
+        <h3 class="heading3">Frontend Performance Optimization</h3>
+        <p class="body2">Make your app lightning-fast and keep users engaged</p>
+      </li>
+      <li class="service card white">
+        <div class="icon">
+          <Icon name="scalable-architecture" width="60" height="52" />
+        </div>
+        <h3 class="heading3">The Scalable Web Architecture</h3>
+        <p class="body2">Build a robust foundation that grows with your business</p>
+      </li>
+      <li class="service card white">
+        <div class="icon">
+          <Icon name="cutting-edge-technology" width="52" height="52" />
+        </div>
+        <h3 class="heading3">Cutting-Edge Technology Integration</h3>
+        <p class="body2">Stay ahead with the latest tools and frameworks</p>
+      </li>
+    </ul>
+    <Button href="/services" isSecondary> Explore Our Services </Button>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../../styles/abstracts' as *;
+
+  section {
+    background-color: $color-primary-dark;
+    padding: pxtorem(69) 0 pxtorem(84);
+  }
+
+  .wrapper {
+    text-align: center;
+  }
+
+  h2 {
+    margin-block-end: pxtorem(14);
+  }
+
+  .even-columns {
+    margin-block-start: pxtorem(50);
+  }
+
+  .description {
+    margin: 0 auto;
+    color: $color-light;
+
+    @include mq(medium) {
+      max-width: 75%;
+    }
+  }
+
+  ul {
+    margin-block-end: pxtorem(37);
+  }
+
+  .service {
+    padding: pxtorem(45) pxtorem(36);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: pxtorem(16);
+  }
+
+  .icon {
+    color: $color-primary;
+    margin-bottom: pxtorem(8);
+  }
+</style>

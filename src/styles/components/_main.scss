@@ -1,7 +1,0 @@
-@use "../abstracts" as *;
-
-.site-main {
-  display: grid;
-  gap: clamp(pxtorem(60), 6vw, pxtorem(140));
-  padding-block: pxtorem(76) clamp(pxtorem(40), 4vw, pxtorem(120));
-}

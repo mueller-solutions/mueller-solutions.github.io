@@ -1,0 +1,98 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes & {
+  isSecondary?: boolean;
+  isOutlined?: boolean;
+  href?: string;
+  scheduleAppointment?: boolean;
+};
+
+const { isSecondary, isOutlined, href, scheduleAppointment, ...rest } = Astro.props;
+
+const restProps = { ...rest };
+if (scheduleAppointment && !href) {
+  restProps.onclick =
+    "Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation'});return false;";
+}
+---
+
+{
+  href ? (
+    <a href={href} class:list={[isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
+      <slot />
+    </a>
+  ) : (
+    <button class:list={[isSecondary && 'secondary', isOutlined && 'outlined']} {...restProps}>
+      <slot />
+    </button>
+  )
+}
+
+<style lang="scss">
+  @use 'sass:color';
+  @use '../../styles/abstracts' as *;
+
+  a,
+  button {
+    --button-color: #{$color-primary};
+    --button-text-color: #{$color-light};
+    --button-text-color-contrast: #{$color-dark};
+    --button-shadow-color: #{rgba($color-primary, 0.3)};
+
+    padding-inline: pxtorem(28);
+    padding-block: pxtorem(16);
+    font-weight: $font-weight-medium;
+    color: var(--button-text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: pxtorem(8);
+    gap: pxtorem(10);
+    background-color: var(--button-color);
+    border: 1px solid var(--button-color);
+    translate: 0 0;
+
+    @include transition-medium(box-shadow translate);
+
+    &:not(&.outlined) {
+      &:hover,
+      &:focus-visible {
+        translate: 0 -#{pxtorem(4)};
+      }
+    }
+
+    &:not(&.outlined) {
+      box-shadow: 0 0 0 var(--button-shadow-color);
+
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0 #{pxtorem(13)} #{pxtorem(49)} var(--button-shadow-color);
+      }
+    }
+
+    &.secondary {
+      --button-color: #{$color-secondary};
+      --button-text-color: #{$color-dark};
+      --button-shadow-color: #{rgba($color-secondary, 0.5)};
+    }
+
+    &.outlined {
+      background-color: transparent;
+      color: var(--button-color);
+
+      @include transition-medium(background-color color translate);
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--button-color);
+
+        &.secondary {
+          color: var(--button-text-color-contrast);
+        }
+
+        &:not(&.secondary) {
+          color: $color-light;
+        }
+      }
+    }
+  }
+</style>

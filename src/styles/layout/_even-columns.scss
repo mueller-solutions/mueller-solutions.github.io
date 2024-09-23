@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.even-columns {
+  display: grid;
+  gap: clamp(pxtorem(16), 3vw, pxtorem(30));
+  list-style-type: none;
+  padding: 0;
+
+  &.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.three-columns {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mq(small) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

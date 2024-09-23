@@ -1,44 +1,72 @@
 ---
-import { Image } from 'astro:assets';
-import ScheduleACallButton from '../ScheduleACallButton.astro';
+
 ---
 
-<section id="benefits" class="wrapper section benefits">
-  <header>
-    <p class="section-tag">
-      <Image src="/images/icons/lightbulb.svg" alt="Lightbulb Icon" width="30" height="30" />
-      Why MUELLER?
-    </p>
-    <h2 class="heading">
-      Turn Your Vision into&nbsp;<br />High-Performance Web Applications
-    </h2>
-  </header>
-  <div class="columns">
-    <div class="benefit">
-      <h3>Faster Web&nbsp;<br />App Development</h3>
-      <p>
-        We accelerate your development with efficient frontend development processes. Our team collaborates with you at
-        every stage to meet your unique needs, ensuring faster releases.
-      </p>
-    </div>
-    <div class="benefit">
-      <h3>
-        Top Frontend Development&nbsp;<br />Services for Greater Stability
-      </h3>
-      <p>
-        Our team establishes strict coding standards and comprehensive testing to ensure quality. We utilize modern
-        frontend development technologies to build advanced and robust frontend architecture.
-      </p>
-    </div>
-    <div class="benefit">
-      <h3>Enhanced Conversion and&nbsp;<br />SEO for Better Findability</h3>
-      <p>
-        We add a Progressive Web App and server-side rendering. They will speed up your app and boost SEO, which makes
-        your app more visible.
-      </p>
-    </div>
-  </div>
-  <div>
-    <ScheduleACallButton />
-  </div>
+<section class="wrapper">
+  <p class="tagline">See the difference we can make</p>
+  <h2 class="heading2">Why Choose Us?</h2>
+  <p class="description">
+    Partnering with us means you'll experience significant improvements in speed, user satisfaction, and scalability.
+    Here's what we deliver:
+  </p>
+  <ul class="even-columns three-columns">
+    <li class="card benefit speed">
+      <h3 class="heading3">Blazing Fast Performance</h3>
+      <p class="body2">We optimize your app for lightning speed</p>
+    </li>
+    <li class="card benefit ux">
+      <h2 class="heading3">Seamless User Experience</h2>
+      <p class="body2">Smooth interactions that keep users coming back</p>
+    </li>
+    <li class="card benefit scalable">
+      <h3 class="heading3">Scalable Solutions</h3>
+      <p class="body2">Architecture that grows with your business</p>
+    </li>
+  </ul>
 </section>
+
+<style lang="scss">
+  @use '../../styles/abstracts' as *;
+
+  section {
+    text-align: center;
+    padding-block: pxtorem(116);
+  }
+
+  h2 {
+    margin-bottom: pxtorem(14);
+  }
+
+  .description {
+    margin: 0 auto;
+
+    @include mq(medium) {
+      max-width: 75%;
+    }
+  }
+
+  .even-columns {
+    margin-block-start: pxtorem(50);
+  }
+
+  .benefit {
+    padding: pxtorem(33) pxtorem(42);
+    text-align: left;
+  }
+
+  h3 {
+    margin-block-end: pxtorem(10);
+  }
+
+  .speed {
+    background-color: rgb(231 247 255);
+  }
+
+  .ux {
+    background-color: rgb(231 235 255);
+  }
+
+  .scalable {
+    background-color: rgb(224 250 238);
+  }
+</style>

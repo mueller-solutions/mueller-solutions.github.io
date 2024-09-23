@@ -1,46 +1,22 @@
 ---
-import Layout from '../layout/MainLayout.astro';
-
-import ScheduleACallButton from '../components/ScheduleACallButton.astro';
-import Benefits from '../components/home/Benefits.astro';
-import Solutions from '../components/home/Solutions.astro';
-import About from '../components/home/About.astro';
-import Technologies from '../components/home/Technologies.astro';
+import MainLayout from '../layouts/main-layout.astro';
+import Hero from '../components/home/hero.astro';
+import Problem from '../components/home/problem.astro';
+import Benefits from '../components/home/benefits.astro';
+import Services from '../components/home/services.astro';
+import Solutions from '../components/home/solutions.astro';
+// import Testimonials from '../components/home/testimonials.astro';
+import About from '../components/home/about.astro';
+import FinalEngagement from '../components/home/final-engagement.astro';
 ---
 
-<Layout>
-  <link
-    slot="html-head"
-    rel="preload"
-    fetchpriority="high"
-    as="image"
-    href="/images/hero-background.webp"
-    type="image/webp"
-  />
-  <link
-    slot="html-head"
-    rel="preload"
-    fetchpriority="high"
-    as="image"
-    href="/images/florian-mueller.webp"
-    type="image/webp"
-  />
-  <main class="site-main" id="home">
-    <section class="hero home">
-      <div class="wrapper">
-        <h1>Speed Up Your Success with Fast and Reliable Web App Development</h1>
-        <p>
-          We help you turn your ideas into reality faster and with greater stability, offering expert frontend
-          development services and performance optimization.
-        </p>
-        <div>
-          <ScheduleACallButton size="large" />
-        </div>
-      </div>
-    </section>
-    <Benefits />
-    <Solutions />
-    <About />
-    <Technologies />
-  </main>
-</Layout>
+<MainLayout>
+  <Hero />
+  <Problem />
+  <Benefits />
+  <Services />
+  <Solutions />
+  <!-- <Testimonials /> -->
+  <About />
+  <FinalEngagement />
+</MainLayout>

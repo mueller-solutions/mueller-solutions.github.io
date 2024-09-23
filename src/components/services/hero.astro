@@ -1,0 +1,18 @@
+---
+import HeroBase from '../common/hero-base.astro';
+import Button from '../common/button.astro';
+---
+
+<HeroBase class="image-right gradient-down" imageUrl="/images/services/hero-services.webp">
+  <h1 class="heading1">Explore Our Expert Services</h1>
+  <p class="body1">
+    We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
+    experience." Discover how we can help your business thrive in the digital world.
+  </p>
+  <Button
+    slot="buttons"
+    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation'});return false;"
+  >
+    Schedule a Free Consultation
+  </Button>
+</HeroBase>

@@ -1,0 +1,79 @@
+@use '../abstracts' as *;
+
+.heading1 {
+  font-size: clamp(pxtorem(40), 4vw, pxtorem(66));
+  line-height: clamp(pxtorem(44), 4vw, pxtorem(70));
+  letter-spacing: -0.02em;
+  font-weight: $font-weight-semibold;
+  text-wrap: balance;
+  color: $color-dark;
+
+  &.inverted {
+    color: $color-light;
+  }
+}
+
+.heading2 {
+  font-size: clamp(pxtorem(28), 4vw, pxtorem(40));
+  line-height: clamp(pxtorem(30), 4vw, pxtorem(46));
+  letter-spacing: -0.025em;
+  font-weight: $font-weight-semibold;
+  text-wrap: balance;
+  color: $color-dark;
+
+  &.inverted {
+    color: $color-light;
+  }
+}
+
+.heading3 {
+  font-size: pxtorem(20);
+  line-height: pxtorem(24);
+  letter-spacing: -0.015em;
+  font-weight: $font-weight-semibold;
+  text-wrap: balance;
+  color: $color-primary-darker;
+}
+
+.heading4 {
+  font-size: pxtorem(16);
+  line-height: pxtorem(20);
+  letter-spacing: -0.015em;
+  font-weight: $font-weight-medium;
+  text-wrap: balance;
+  color: $color-primary-darker;
+}
+
+.tagline {
+  font-size: clamp(pxtorem(14), 4vw, pxtorem(18));
+  line-height: clamp(pxtorem(21), 4vw, pxtorem(27));
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-block-end: pxtorem(4);
+  color: $color-primary;
+
+  &.inverted {
+    color: $color-secondary;
+  }
+}
+
+.body1 {
+  font-size: pxtorem(16);
+  line-height: pxtorem(22);
+  letter-spacing: 0;
+  font-weight: $font-weight-regular;
+  text-wrap: balance;
+}
+
+.body2 {
+  font-size: pxtorem(14);
+  line-height: pxtorem(20);
+  letter-spacing: 0;
+  font-weight: $font-weight-regular;
+  text-wrap: balance;
+}
+
+.text-muted {
+  color: $color-gray;
+  opacity: 0.65;
+}

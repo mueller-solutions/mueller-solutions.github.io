@@ -1,18 +1,18 @@
-@use "sass:map";
-@use "sass:math";
-@use "../abstracts/" as *;
+@use 'sass:map';
+@use 'sass:math';
+@use '../abstracts/' as *;
 
 .wrapper {
-  --padding: 1rem;
+  --padding: #{pxtorem(20)};
 
-  width: min(pxtorem(1440), 100% - (var(--padding) * 2));
+  width: min(#{$content-width}, 100% - (var(--padding) * 2));
   margin-inline: auto;
 
   @include mq(medium) {
-    --padding: 2rem;
+    --padding: #{pxtorem(26)};
   }
 
   @include mq(large) {
-    --padding: 3rem;
+    --padding: #{pxtorem(30)};
   }
 }

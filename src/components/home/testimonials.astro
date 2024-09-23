@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../common/button.astro';
+---
+
+<section>
+  <p class="tagline">Testimonial</p>
+  <h2 class="heading2">Real Results, Real Impact</h2>
+  <p class="description">
+    Talk is cheap, but results speak volumes. Here's how we've helped businesses like yours overcome their biggest
+    challenges and achieve exceptional results
+  </p>
+  <div class="content">
+    <ul class="even-columns three-columns">
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+      <li class="card white shadow">
+        <p class="body2">
+          Our app is faster, more scalable, and just better overall thanks to the expert team at MUELLER.
+        </p>
+        <div class="author">
+          <figure>
+            <Image src="https://i.pravatar.cc/70" alt="Raymond R. McNally" width="70" height="70" />
+          </figure>
+          <div class="caption">
+            <p class="heading4">Raymond R. McNally</p>
+            <p class="body2 text-muted">CTO, ACME Corporation</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <Button> See More Success Stories </Button>
+</section>
+
+<style lang="scss">
+  @use '../../styles/abstracts' as *;
+
+  section {
+    background-image: linear-gradient(to bottom, rgb(231 247 255 / 100%), $color-light);
+    padding-block: pxtorem(47) pxtorem(105);
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: pxtorem(14);
+  }
+
+  .description {
+    margin: 0 auto;
+
+    @include mq(medium) {
+      max-width: 75%;
+    }
+  }
+
+  .content {
+    padding: pxtorem(71) pxtorem(32) pxtorem(50);
+  }
+
+  li {
+    display: grid;
+    gap: pxtorem(22);
+    padding: pxtorem(28) pxtorem(32);
+    text-align: left;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: pxtorem(10);
+
+    figure {
+      width: pxtorem(38);
+      height: pxtorem(38);
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+</style>

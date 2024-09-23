@@ -25,7 +25,7 @@ gtag('config', 'G-777G6E86XK');
 })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 
 // Navigation
-
+/*
 const navEl = document.querySelector('.site-navigation');
 const navListEl = document.querySelector('.site-navigation > .nav-list');
 const navToggleEl = document.querySelector('.site-nav-toggle');
@@ -217,3 +217,4 @@ subNavToggleEl.addEventListener('click', () => {
     }, 250);
   }
 });
+*/

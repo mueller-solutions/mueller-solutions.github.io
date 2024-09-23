@@ -1,13 +1,18 @@
-$color-brand-light: rgb(11 128 197 / 100%);
-$color-brand-dark: rgb(20 82 133 / 100%);
+$color-body: rgb(254 254 254 / 100%);
+
+// Gray
+$color-gray: rgb(98 98 98 / 100%);
+$color-gray-light: rgb(216 242 255 / 100%);
+
+// Light & Dark
 $color-light: rgb(255 255 255 / 100%);
-$color-dark: rgb(69 69 69 / 100%);
-$color-gray-darker: rgb(95 95 95 / 100%);
-$color-gray-dark: rgb(160 160 160 / 100%);
-$color-gray-light: rgb(189 189 189 / 100%);
-$color-body: rgb(241 241 241 / 100%);
-$color-shine: rgb(255 252 241 / 75%);
-$color-shine-low: rgb(255 252 241 / 50%);
-$color-shine-lower: rgb(255 252 241 / 40%);
-$color-orange: rgb(255 148 22 / 100%);
-$color-yellow: rgb(255 213 64 / 100%);
+$color-dark: rgb(34 52 63 / 100%);
+
+// Primary
+$color-primary-light: rgb(231 247 255 / 100%);
+$color-primary: rgb(11 128 197 / 100%);
+$color-primary-dark: rgb(1 97 176 / 100%);
+$color-primary-darker: rgb(3 72 112 / 100%);
+
+// Secondary
+$color-secondary: rgb(255 202 58 / 100%);

@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.card {
+  --shadow-color: transparent;
+  --background-color: transparent;
+
+  display: block;
+  border-radius: pxtorem(12);
+  box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(38) var(--shadow-color);
+  background-color: var(--background-color);
+
+  &.white {
+    --background-color: #{$color-light};
+  }
+
+  &.shadow {
+    --shadow-color: rgb(0 0 0 / 6%);
+  }
+
+  &.shadow-strong {
+    --shadow-color: rgb(0 0 0 / 12%);
+  }
+
+  &[href] {
+    @include transition-medium(box-shadow);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(64) rgb(0 0 0 / 12%);
+    }
+  }
+}

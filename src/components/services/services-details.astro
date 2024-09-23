@@ -1,0 +1,123 @@
+---
+import Icon from '../common/icon.astro';
+import Button from '../common/button.astro';
+import ServiceDetailsItem from './service-details-item.astro';
+---
+
+<section>
+  <h2 class="sr-only">Details about our services</h2>
+  <div class="wrapper">
+    <div class="service-details">
+      <ServiceDetailsItem
+        title="Frontend Performance Optimization"
+        imageUrl="/images/services/frontend-performance.webp"
+        imageDirection="right"
+        descriptions={[
+          {
+            title: 'What It Is',
+            content:
+              'We optimize every aspect of your frontend. This ensures fast load times and a smooth user experience.',
+          },
+          {
+            title: 'Why It Matters',
+            content:
+              'A slow web app frustrates users and drives them away. Our optimization services keep your app responsive, improving user retention and satisfaction.',
+          },
+          {
+            title: 'How We Do It',
+            content:
+              "We use advanced techniques to boost your app's performance. They include code splitting, lazy loading, and asset management. They speed it up without losing functionality.",
+          },
+        ]}
+        benefits={['Faster load times', 'Improved user engagement', 'Lower bounce rates']}
+        buttonLabel="Schedule a Performance Audit"
+      />
+      <ServiceDetailsItem
+        title="Scalable Web Architecture"
+        imageUrl="/images/services/web-architecture.webp"
+        imageDirection="left"
+        descriptions={[
+          {
+            title: 'What It Is',
+            content:
+              "We design your web app's architecture to scale. It will handle increased traffic and complexity with ease.",
+          },
+          {
+            title: 'Why It Matters',
+            content:
+              'As your business grows, your web app must grow, too. It must not lose performance. Our scalable solutions ensure your app remains robust, no matter the demand.',
+          },
+          {
+            title: 'How We Do It',
+            content:
+              "We use advanced techniques to boost your app's performance. They include code splitting, lazy loading, and asset management. They speed it up without losing functionality.",
+          },
+        ]}
+        benefits={['A scalable foundation', 'Seamless feature integration', 'Consistent performance under load']}
+        buttonLabel="Learn More About Our Scalable Solutions"
+      />
+      <ServiceDetailsItem
+        title="Cutting-Edge Technology Integration"
+        imageUrl="/images/services/technology.webp"
+        imageDirection="right"
+        descriptions={[
+          {
+            title: 'What It Is',
+            content:
+              'We use the best web development tools and frameworks. They keep your app at the forefront of technology.',
+          },
+          {
+            title: 'Why It Matters',
+            content:
+              'Technology moves fast, and so should your app. Integrating cutting-edge tools not only improves performance but also future-proofs your investment.',
+          },
+          {
+            title: 'How We Do It',
+            content:
+              'We use the best tech to make your app faster and smarter. It includes React, Next.js, Vue, Astro, and the latest server-side rendering techniques.',
+          },
+        ]}
+        benefits={['Future-proof technology stack', 'Improved performance and capabilities', 'Competitive advantage']}
+        buttonLabel="Upgrade Your Tech Stack Today"
+      />
+      <ServiceDetailsItem
+        title="Expert Consulting & Strategy"
+        imageUrl="/images/services/consulting.webp"
+        imageDirection="left"
+        descriptions={[
+          {
+            title: 'What It Is',
+            content:
+              'We offer consulting to find opportunities and solve problems. We will optimize your web app for success.',
+          },
+          {
+            title: 'Why It Matters',
+            content:
+              "Navigating the complexities of web development can be daunting. Our expert guidance will help you. You'll avoid common pitfalls and succeed faster.",
+          },
+          {
+            title: 'How We Do It',
+            content:
+              'We partner with you to develop a personalized approach. It will align with your goals, whether to optimize an existing app or build a new one.',
+          },
+        ]}
+        benefits={['Tailored strategic advice', 'A clear roadmap to success', 'Ongoing support and optimization']}
+        buttonLabel="Get Your Personalized Strategy"
+      />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../../styles/abstracts' as *;
+
+  section {
+    background-color: $color-primary-darker;
+    padding-block: pxtorem(68);
+  }
+
+  .service-details {
+    display: grid;
+    gap: clamp(pxtorem(20), 4vw, pxtorem(60));
+  }
+</style>

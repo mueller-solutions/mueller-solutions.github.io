@@ -1,0 +1,12 @@
+@use 'functions' as *;
+
+// Site
+$site-width: pxtorem(1400);
+$content-width: pxtorem(1170);
+
+// Header
+$site-header-height: pxtorem(76);
+$site-header-inset: pxtorem(18);
+
+// Hero
+$hero-padding-top: $site-header-height + $site-header-inset;

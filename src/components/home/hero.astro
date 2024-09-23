@@ -1,0 +1,24 @@
+---
+import HeroBase from '../common/hero-base.astro';
+import Button from '../common/button.astro';
+import Icon from '../common/icon.astro';
+---
+
+<HeroBase class="image-right blue-structured" imageUrl="/images/home/hero-app-development.webp">
+  <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
+  <p class="body1">
+    Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business. Stand
+    out online and leave your competition behind.
+  </p>
+  <Button
+    isSecondary
+    slot="buttons"
+    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation'});return false;"
+  >
+    Schedule a Free Consultation
+  </Button>
+  <Button isSecondary isOutlined slot="buttons">
+    <Icon name="download" />
+    <span>Free Optimization Checklist</span>
+  </Button>
+</HeroBase>
