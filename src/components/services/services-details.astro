@@ -1,8 +1,8 @@
 ---
-import ServiceDetailsItem from './service-details-item.astro';
+import ServiceDetailsItem from './services-details-item.astro';
 ---
 
-<section>
+<section class="services-details">
   <h2 class="sr-only">Details about our services</h2>
   <div class="wrapper">
     <div class="service-details">
@@ -105,17 +105,3 @@ import ServiceDetailsItem from './service-details-item.astro';
     </div>
   </div>
 </section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  section {
-    background-color: $color-primary-darker;
-    padding-block: pxtorem(68);
-  }
-
-  .service-details {
-    display: grid;
-    gap: clamp(pxtorem(20), 4vw, pxtorem(60));
-  }
-</style>

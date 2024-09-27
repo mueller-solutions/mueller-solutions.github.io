@@ -1,77 +1,42 @@
 ---
 import Button from '../common/button.astro';
+import Section from '../common/section.astro';
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
 ---
 
-<section>
-  <div class="wrapper">
-    <div class="content">
-      <p class="tagline">Got Questions? We've Got Answers.</p>
-      <h2 class="heading2">Frequently Asked Questions</h2>
-      <p class="description">
-        We know choosing the right partner for your web development needs is a big decision. Here are some common
-        questions and answers to help you make the best choice.
-      </p>
-      <ul>
-        <li class="card white">
-          <h3 class="heading3">How do you ensure my web app will be fast and scalable?</h3>
-          <p class="body2">
-            We use proven techniques and scalable design to make your app perform well in any conditions.
-          </p>
-        </li>
-        <li class="card white">
-          <h3 class="heading3">What if I only need help with part of my web app?</h3>
-          <p class="body2">
-            No problem! Our services are flexible and customizable, so we can work on just the areas where you need the
-            most help.
-          </p>
-        </li>
-        <li class="card white">
-          <h3 class="heading3">Do you offer ongoing support?</h3>
-          <p class="body2">Yes, we offer ongoing support and maintenance to keep your app updated and running well.</p>
-        </li>
-      </ul>
-      <div>
-        <Button href="/contact">Still Have Questions? Contact Us</Button>
-      </div>
-    </div>
+<Section
+  class="services-faqs"
+  isPrimaryLight
+  isSlimContent
+  tagline="Got Questions? We've Got Answers."
+  title="Frequently Asked Questions"
+  description="We know choosing the right partner for your web development needs is a big decision. Here are some common questions and answers to help you make the best choice."
+>
+  <CardList>
+    <CardWithIcon
+      isWhite
+      isFadeFromBottom
+      noIcon
+      title="How do you ensure my web app will be fast and scalable?"
+      description="We use proven techniques and scalable design to make your app perform well in any conditions."
+    />
+    <CardWithIcon
+      isWhite
+      isFadeFromBottom
+      noIcon
+      title="What if I only need help with part of my web app?"
+      description="No problem! Our services are flexible and customizable, so we can work on just the areas where you need the most help."
+    />
+    <CardWithIcon
+      isWhite
+      isFadeFromBottom
+      noIcon
+      title="Do you offer ongoing support?"
+      description="Yes, we offer ongoing support and maintenance to keep your app updated and running well."
+    />
+  </CardList>
+  <div slot="buttons">
+    <Button href="/contact">Still Have Questions? Contact Us</Button>
   </div>
-</section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  section {
-    background-color: $color-primary-light;
-    padding-block: clamp(pxtorem(20), 4vw, pxtorem(70));
-  }
-
-  .content {
-    display: grid;
-    align-items: center;
-    text-align: center;
-    padding-inline: clamp(0%, 4vw, 25%);
-  }
-
-  h2 {
-    margin-block-end: pxtorem(14);
-  }
-
-  .description {
-    margin-block-end: clamp(pxtorem(20), 4vw, pxtorem(60));
-  }
-
-  ul {
-    display: grid;
-    gap: pxtorem(30);
-    margin-inline: clamp(0rem, 4vw, pxtorem(200));
-    margin-block-end: clamp(pxtorem(20), 4vw, pxtorem(50));
-  }
-
-  li {
-    padding: pxtorem(40) pxtorem(88);
-
-    h3 {
-      margin-block-end: pxtorem(8);
-    }
-  }
-</style>
+</Section>

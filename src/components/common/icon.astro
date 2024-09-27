@@ -14,18 +14,4 @@ const style = [
 ].join('; ');
 ---
 
-<span style={style} class={className}></span>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  span {
-    display: block;
-    width: var(--width, #{pxtorem(24)});
-    height: var(--height, #{pxtorem(24)});
-    mask-image: var(--icon);
-    mask-position: center;
-    mask-repeat: no-repeat;
-    background-color: currentColor;
-  }
-</style>
+<span style={style} class:list={['base-icon', className]}></span>

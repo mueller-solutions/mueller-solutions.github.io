@@ -1,9 +1,8 @@
 ---
-import { Image } from 'astro:assets';
 import Button from '../common/button.astro';
 ---
 
-<section class="wrapper card white shadow">
+<section class="home-solutions wrapper card white shadow">
   <div class="even-columns two-columns">
     <div class="content">
       <p class="tagline">Proven Process to Success</p>
@@ -27,51 +26,7 @@ import Button from '../common/button.astro';
       <Button> Ready To Get Started </Button>
     </div>
     <figure>
-      <Image src="/images/home/solutions-collage.webp" alt="Solutions Collage" width="514" height="552" />
+      <img src="/images/home/solutions-collage.webp" alt="Solutions Collage" width="514" height="552" loading="lazy" />
     </figure>
   </div>
 </section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  section {
-    padding: clamp(pxtorem(30), 4vw, pxtorem(60));
-    margin-block: pxtorem(86) pxtorem(140);
-  }
-
-  .even-columns {
-    align-items: center;
-  }
-
-  h2 {
-    margin-bottom: pxtorem(14);
-  }
-
-  figure {
-    aspect-ratio: 514 / 552;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .description {
-    margin-block-end: pxtorem(24);
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-block-end: pxtorem(36);
-
-    > li:not(:last-child) {
-      margin-block-end: pxtorem(12);
-    }
-  }
-
-  strong {
-    color: $color-primary-darker;
-  }
-</style>

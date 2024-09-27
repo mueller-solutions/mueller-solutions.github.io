@@ -1,9 +1,8 @@
 ---
-import { Image } from 'astro:assets';
 import Button from '../common/button.astro';
 ---
 
-<section>
+<section class="home-about">
   <div class="wrapper">
     <div>
       <p class="tagline">Experience You Can Trust</p>
@@ -26,40 +25,8 @@ import Button from '../common/button.astro';
     </div>
     <div>
       <figure>
-        <Image src="/images/home/florian-mueller.webp" alt="Florian Mueller" width="477" height="505" />
+        <img src="/images/home/florian-mueller.webp" alt="Florian Mueller" width="477" height="505" loading="lazy" />
       </figure>
     </div>
   </div>
 </section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  section {
-    background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
-    padding-block: pxtorem(106) pxtorem(168);
-  }
-
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr fit-content(40%);
-    align-items: center;
-    gap: pxtorem(120);
-  }
-
-  h2 {
-    margin-block-end: pxtorem(14);
-  }
-
-  p:not(.tagline) {
-    margin-block-end: pxtorem(20);
-
-    &:last-of-type {
-      margin-block-end: pxtorem(30);
-    }
-  }
-
-  .image {
-    text-align: right;
-  }
-</style>

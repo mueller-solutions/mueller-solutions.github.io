@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.final-engagement {
+  margin-block: pxtorem(95);
+
+  .buttons {
+    display: inline-flex;
+    flex-direction: column;
+    gap: pxtorem(20);
+    margin-block-start: pxtorem(33);
+  }
+}

@@ -1,0 +1,58 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+type Props = {
+  tag?: HTMLTag;
+  isWhite?: boolean;
+  isShadow?: boolean;
+  isShadowStrong?: boolean;
+  isFadeFromBottom?: boolean;
+  isFadeFromTop?: boolean;
+  align?: 'center' | 'left' | 'right';
+  color?: 'white' | 'blue' | 'purple' | 'green' | 'red';
+  title: string;
+  description: string;
+  noIcon?: boolean;
+};
+
+const {
+  tag: Element = 'div',
+  isWhite,
+  isShadow,
+  isShadowStrong,
+  isFadeFromBottom,
+  isFadeFromTop,
+  align = 'center',
+  title,
+  description,
+  color,
+  noIcon,
+}: Props = Astro.props;
+---
+
+<Element
+  class:list={[
+    'card',
+    color === 'white' && 'white',
+    color === 'blue' && 'blue',
+    color === 'purple' && 'purple',
+    color === 'green' && 'green',
+    color === 'red' && 'red',
+    isWhite && 'white',
+    isShadow && 'shadow',
+    isShadowStrong && 'shadow-strong',
+    isFadeFromBottom && 'fade-from-bottom',
+    isFadeFromTop && 'fade-from-top',
+    `align-${align}`,
+  ]}
+>
+  {
+    !noIcon && (
+      <span class="icon">
+        <slot />
+      </span>
+    )
+  }
+  <h3 class="heading3">{title}</h3>
+  <p class="body2">{description}</p>
+</Element>

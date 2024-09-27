@@ -1,0 +1,71 @@
+@use '../abstracts' as *;
+
+.card {
+  --shadow-color: transparent;
+  --background-color: transparent;
+
+  display: flex;
+  border-radius: pxtorem(12);
+  box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(38) var(--shadow-color);
+  background-color: var(--background-color);
+  padding: clamp(pxtorem(20), 4vw, pxtorem(40));
+  flex-direction: column;
+  gap: clamp(pxtorem(10), 4vw, pxtorem(16));
+
+  &.white {
+    --background-color: #{$color-light};
+  }
+
+  &.blue {
+    --background-color: rgb(231 247 255);
+  }
+
+  &.red {
+    --background-color: rgb(255 231 231);
+  }
+
+  &.green {
+    --background-color: rgb(224 250 238);
+  }
+
+  &.purple {
+    --background-color: rgb(231 235 255);
+  }
+
+  &.shadow {
+    --shadow-color: rgb(0 0 0 / 6%);
+  }
+
+  &.shadow-strong {
+    --shadow-color: rgb(0 0 0 / 12%);
+  }
+
+  &.align-center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &.align-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &.align-right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &[href] {
+    @include transition-medium(box-shadow);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(64) rgb(0 0 0 / 12%);
+    }
+  }
+
+  .icon {
+    color: $color-primary;
+    margin-bottom: pxtorem(8);
+  }
+}

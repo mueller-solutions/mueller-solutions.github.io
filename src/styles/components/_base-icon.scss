@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.base-icon {
+  display: block;
+  width: var(--width, #{pxtorem(24)});
+  height: var(--height, #{pxtorem(24)});
+  mask-image: var(--icon);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background-color: currentcolor;
+}

@@ -1,348 +1,41 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from './common/icon.astro';
-
-const pathname = Astro.url.pathname;
+import NavigationItem from './navigation-item.astro';
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navToggle = document.querySelector('[aria-controls="main-navigation"]');
-    const menuEl = document.getElementById('main-navigation');
-    const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
-    const subMenuEl = document.getElementById('services-navigation');
-
-    const toggleNav = (toggle: Element, menu: HTMLElement | null) => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      if (isOpen) {
-        menu?.classList.add('out');
-        setTimeout(() => {
-          menu?.classList.remove('out');
-        }, 300);
-      }
-    };
-
-    navToggle?.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleNav(navToggle, menuEl);
-    });
-
-    subNavToggle?.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleNav(subNavToggle, subMenuEl);
-    });
-
-    document.addEventListener('click', (event) => {
-      const subNavOpen = subNavToggle?.getAttribute('aria-expanded') === 'true';
-      if (subNavOpen && !subMenuEl?.contains(event.target as Node) && !subNavToggle?.contains(event.target as Node)) {
-        toggleNav(subNavToggle, subMenuEl);
-      }
-    });
-  });
-</script>
-
-<header>
+<header class="site-header">
   <div class="content">
     <div class="wrapper">
-      <Image src="/images/logo-color.svg" width="144" height="24" alt="MUELLER Logo" />
+      <img src="/images/logo-color.svg" width="144" height="24" alt="MUELLER Logo" />
       <button aria-controls="main-navigation" aria-expanded="false">
         <span class="sr-only">Menu</span>
         <Icon name="menu" width="24" height="24" />
       </button>
       <nav id="main-navigation" aria-label="Main navigation">
         <ul>
-          <li>
-            <a href="/" class:list={['nav-link', pathname === '/' && 'active']}>Home</a>
-          </li>
-          <li>
-            <a href="/services" class:list={['nav-link', pathname === '/services' && 'active']}> Services </a>
-            <button aria-controls="services-navigation" aria-expanded="false">
+          <NavigationItem href="/">Home</NavigationItem>
+          <NavigationItem href="/services">
+            Services
+            <button aria-controls="services-navigation" aria-expanded="false" slot="submenu">
               <span class="sr-only">Sub Menu</span>
               <Icon name="dropdown" />
             </button>
-            <ul id="services-navigation">
-              <li>
-                <a
-                  href="/frontend-performance-optimization"
-                  class:list={['nav-link', pathname === '/frontend-performance-optimization' && 'active']}
-                >
-                  Frontend Performance Optimization
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/scalable-web-architecture"
-                  class:list={['nav-link', pathname === '/scalable-web-architecture' && 'active']}
-                >
-                  Scalable Web Architecture
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/cutting-edge-technology-integration"
-                  class:list={['nav-link', pathname === '/cutting-edge-technology-integration' && 'active']}
-                >
-                  Cutting-Edge Technology Integration
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/expert-consulting-and-strategy"
-                  class:list={['nav-link', pathname === '/expert-consulting-and-strategy' && 'active']}
-                >
-                  Expert Consulting & Strategy
-                </a>
-              </li>
+            <ul id="services-navigation" slot="submenu">
+              <NavigationItem href="/frontend-performance-optimization">
+                Frontend Performance Optimization
+              </NavigationItem>
+              <NavigationItem href="/scalable-web-architecture"> Scalable Web Architecture </NavigationItem>
+              <NavigationItem href="/cutting-edge-technology-integration">
+                Cutting-Edge Technology Integration
+              </NavigationItem>
+              <NavigationItem href="/expert-consulting-and-strategy"> Expert Consulting & Strategy </NavigationItem>
             </ul>
-          </li>
-          <li>
-            <a href="/about-us" class:list={['nav-link', pathname === '/about-us' && 'active']}> About </a>
-          </li>
-          <li>
-            <a href="/contact" class:list={['nav-button', pathname === '/contact' && 'active']}> Contact </a>
-          </li>
+          </NavigationItem>
+          <NavigationItem href="/blog"> Blog </NavigationItem>
+          <NavigationItem href="/about-us"> About </NavigationItem>
+          <NavigationItem isButton href="/contact"> Contact </NavigationItem>
         </ul>
       </nav>
     </div>
   </div>
 </header>
-
-<style lang="scss">
-  @use '../styles/abstracts' as *;
-
-  header {
-    position: fixed;
-    z-index: 900;
-    height: $site-header-height + $site-header-inset;
-    width: 100dvw;
-    padding-block: $site-header-inset 0;
-
-    @include mq(small) {
-      padding-inline: $site-header-inset;
-    }
-  }
-
-  .content {
-    background-color: $color-light;
-    box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(38) rgb(0 0 0 / 12%);
-    max-width: $site-width;
-    height: $site-header-height;
-    margin: 0 auto;
-
-    @include mq(small) {
-      border-radius: pxtorem(12);
-    }
-  }
-
-  .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: $site-header-height;
-  }
-
-  @keyframes subMenuOpen {
-    from {
-      translate: 0 -#{pxtorem(20)};
-      opacity: 0;
-    }
-    to {
-      translate: 0 0;
-      opacity: 1;
-    }
-  }
-
-  @keyframes subMenuClose {
-    from {
-      translate: 0 0;
-      opacity: 1;
-    }
-    to {
-      translate: 0 -#{pxtorem(20)};
-      opacity: 0;
-    }
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: pxtorem(26);
-
-    > li {
-      @include mq(small) {
-        position: relative;
-        display: flex;
-        align-items: center;
-
-        [aria-controls='services-navigation'][aria-expanded='false'] ~ ul {
-          display: none;
-        }
-
-        [aria-controls='services-navigation'][aria-expanded='true'] ~ ul {
-          display: grid;
-        }
-
-        [aria-expanded='true'] {
-          color: $color-primary;
-        }
-      }
-
-      > ul {
-        @include mq(small) {
-          position: absolute;
-          top: 100%;
-          right: 0%;
-          background-color: $color-light;
-          gap: pxtorem(4);
-          width: fit-content;
-          padding: pxtorem(8);
-          border-radius: pxtorem(8);
-          margin-top: pxtorem(10);
-          box-shadow: 0 pxtorem(8) pxtorem(20) rgba(0 0 0 / 25%);
-          translate: 0 -#{pxtorem(20)};
-          opacity: 0;
-          animation: subMenuOpen $transition-duration-short $transition-ease-out forwards;
-
-          &.out {
-            animation: subMenuClose $transition-duration-short $transition-ease-out forwards;
-          }
-        }
-
-        > li {
-          white-space: nowrap;
-
-          @include mq(mobile) {
-            margin-inline-start: pxtorem(20);
-          }
-
-          > a {
-            padding: pxtorem(8);
-          }
-        }
-      }
-    }
-  }
-
-  [aria-controls='services-navigation'],
-  [aria-controls='main-navigation'] {
-    display: block;
-    padding: pxtorem(8);
-    background-color: transparent;
-    border: 0;
-  }
-
-  [aria-controls='services-navigation'] {
-    @include mq(mobile) {
-      display: none;
-    }
-  }
-
-  [aria-controls='main-navigation'] {
-    @include mq(small) {
-      display: none;
-    }
-  }
-
-  @keyframes mobileMenuOpen {
-    from {
-      transform: scaleY(0);
-      opacity: 0;
-    }
-    to {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes mobileMenuClose {
-    from {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-    to {
-      transform: scaleY(0);
-      opacity: 0;
-    }
-  }
-
-  nav {
-    @media (width < 30em) {
-      display: none;
-      transform-origin: top center;
-      opacity: 0;
-
-      [aria-controls='main-navigation'][aria-expanded='true'] ~ & {
-        display: block;
-        position: absolute;
-        z-index: 9;
-        height: fit-content;
-        padding: 0 pxtorem(16) pxtorem(16);
-        inset: 0;
-        background-color: $color-light;
-        translate: 0 #{$site-header-inset + $site-header-height};
-        opacity: 1;
-        animation: mobileMenuOpen $transition-duration-short $transition-ease-out forwards;
-
-        &::after {
-          content: '';
-          width: 100%;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          height: 60px;
-          background-image: linear-gradient(to bottom, rgba(0 0 0 / 50%), rgba(0 0 0 / 0%));
-        }
-
-        &.out {
-          animation: mobileMenuClose $transition-duration-short $transition-ease-out forwards;
-        }
-
-        ul {
-          display: grid;
-          gap: pxtorem(8);
-        }
-      }
-    }
-
-    a {
-      display: flex;
-    }
-
-    .nav-link {
-      padding: pxtorem(8);
-
-      @include transition-short(color);
-
-      &:not(.active):hover,
-      &:not(.active):focus-visible {
-        color: $color-primary;
-      }
-
-      &.active {
-        color: $color-primary-dark;
-        font-weight: $font-weight-semibold;
-      }
-    }
-
-    .nav-button {
-      padding-inline: pxtorem(16);
-      padding-block: pxtorem(8);
-      color: $color-primary;
-      border: 1px solid $color-primary;
-      border-radius: pxtorem(8);
-
-      @include transition-short(background-color color);
-
-      &:not(.active):hover,
-      &:not(.active):focus-visible {
-        background-color: $color-primary;
-        color: $color-light;
-      }
-    }
-  }
-</style>

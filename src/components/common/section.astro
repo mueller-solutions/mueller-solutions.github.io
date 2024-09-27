@@ -1,0 +1,58 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+export type Props = astroHTML.JSX.HTMLAttributes & {
+  tag?: HTMLTag;
+  isPrimary?: boolean;
+  isPrimaryLight?: boolean;
+  isPrimaryWithOrnaments?: boolean;
+  isGradientDown?: boolean;
+  isGradientUp?: boolean;
+  tagline?: string;
+  title: string;
+  description?: string;
+  isRounded?: boolean;
+  isSlimContent?: boolean;
+};
+
+const {
+  tag: Element = 'section',
+  isPrimary = false,
+  isPrimaryLight = false,
+  isPrimaryWithOrnaments = false,
+  isRounded = false,
+  isSlimContent = false,
+  isGradientDown = false,
+  isGradientUp = false,
+  tagline,
+  title,
+  description,
+  class: className,
+  ...rest
+}: Props = Astro.props;
+
+const isInverted = isPrimary || isPrimaryWithOrnaments;
+---
+
+<Element
+  class:list={[
+    'section',
+    isPrimary && 'primary',
+    isPrimaryLight && 'primary-light',
+    isPrimaryWithOrnaments && 'primary-with-ornaments',
+    isRounded && 'rounded',
+    isSlimContent && 'slim-content',
+    isGradientDown && 'gradient-down',
+    isGradientUp && 'gradient-up',
+    className,
+  ]}
+  {...rest}
+>
+  <div class="wrapper">
+    {tagline && <p class:list={['tagline', isInverted && 'inverted']}>{tagline}</p>}
+    <h2 class:list={['heading2', isInverted && 'inverted']}>{title}</h2>
+    <p class:list={['description', isInverted && 'inverted']}>{description}</p>
+    <slot />
+    <slot name="buttons" />
+  </div>
+</Element>

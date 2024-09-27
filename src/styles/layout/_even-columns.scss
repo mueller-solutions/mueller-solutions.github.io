@@ -5,15 +5,26 @@
   gap: clamp(pxtorem(16), 3vw, pxtorem(30));
   list-style-type: none;
   padding: 0;
+  contain: layout style;
+
+  &.one-column {
+    grid-template-columns: 1fr;
+  }
 
   &.two-columns {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
+    @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &.three-columns {
-    grid-template-columns: repeat(2, 1fr);
-
     @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(medium) {
       grid-template-columns: repeat(3, 1fr);
     }
   }

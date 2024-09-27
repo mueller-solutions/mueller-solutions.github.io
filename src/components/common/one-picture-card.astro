@@ -1,95 +1,35 @@
 ---
-import { Image } from 'astro:assets';
-
 type Props = {
   tagline?: string;
   title: string;
   description: string;
   imageUrl: string;
+  imageAlign?: 'left' | 'right';
 };
 
-const { tagline, title, description, imageUrl } = Astro.props;
+const { tagline, title, description, imageUrl, imageAlign = 'left' } = Astro.props;
 ---
 
-<section class="wrapper">
-  <figure>
-    <Image src={imageUrl} width="699" height="484" alt={title} />
-  </figure>
-  <div class="content card white shadow">
+<section class:list={['one-picture-card', 'wrapper', `align-${imageAlign}`]}>
+  {
+    imageAlign === 'left' && (
+      <figure class="fade-from-left">
+        <img src={imageUrl} width="699" height="484" alt={title} loading="lazy" />
+      </figure>
+    )
+  }
+  <div class:list={['content card white shadow', imageAlign === 'left' ? 'fade-from-right' : 'fade-from-left']}>
     {tagline && <p class="tagline">{tagline}</p>}
     <h2 class="heading2">{title}</h2>
     <p>{description}</p>
     <slot />
   </div>
+
+  {
+    imageAlign === 'right' && (
+      <figure class="fade-from-right">
+        <img src={imageUrl} width="699" height="484" alt={title} loading="lazy" />
+      </figure>
+    )
+  }
 </section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  @keyframes image-in {
-    from {
-      opacity: 0;
-      translate: -#{pxtorem(40)};
-    }
-  }
-
-  @keyframes card-in {
-    from {
-      opacity: 0;
-      translate: #{pxtorem(40)};
-    }
-  }
-
-  section {
-    padding-block: pxtorem(80);
-
-    @include mq(small) {
-      display: flex;
-      align-items: center;
-      padding-block: clamp(pxtorem(120), 4vw, pxtorem(140)) 0;
-    }
-  }
-
-  figure {
-    aspect-ratio: 699 / 484;
-    overflow: hidden;
-    border-radius: pxtorem(12);
-
-    @include mq(small) {
-      min-width: pxtorem(699);
-
-      @include scroll-animate(one-picture-card-figure, image-in);
-    }
-
-    @include mq(mobile) {
-      max-width: 100%;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .content {
-    position: relative;
-    z-index: 2;
-    padding: pxtorem(42) pxtorem(20);
-
-    @include mq(mobile) {
-      margin-top: -#{pxtorem(42)};
-    }
-
-    @include mq(small) {
-      padding: pxtorem(39) pxtorem(45);
-      margin-inline-start: -#{pxtorem(45)};
-
-      @include scroll-animate(one-picture-card-card, card-in);
-    }
-
-    > * + * {
-      margin-block-end: pxtorem(18);
-    }
-  }
-</style>

@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.services-faqs {
+  background-color: $color-primary-light;
+  padding-block: clamp(pxtorem(20), 4vw, pxtorem(70));
+
+  .content {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding-inline: clamp(0%, 4vw, 25%);
+  }
+
+  h2 {
+    margin-block-end: pxtorem(14);
+  }
+
+  .description {
+    margin-block-end: clamp(pxtorem(20), 4vw, pxtorem(60));
+  }
+
+  ul {
+    display: grid;
+    gap: pxtorem(30);
+    margin-inline: clamp(0rem, 4vw, pxtorem(200));
+    margin-block-end: clamp(pxtorem(20), 4vw, pxtorem(50));
+  }
+
+  li {
+    padding: pxtorem(40) pxtorem(88);
+
+    h3 {
+      margin-block-end: pxtorem(8);
+    }
+  }
+}

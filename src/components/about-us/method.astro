@@ -1,0 +1,71 @@
+---
+import Section from '../common/section.astro';
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
+import Icon from '../common/icon.astro';
+---
+
+<Section isGradientUp tagline="Methodical and Strategic" title="How We Deliver Excellence">
+  <CardList columns="three">
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Consultation and Discovery"
+      description="We start by understanding your business goals and technical requirements."
+    >
+      <Icon name="clipboard-search" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Tailored Strategy Development"
+      description="Crafting a strategy that addresses your specific challenges."
+    >
+      <Icon name="pen" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Collaborative Design and Execution"
+      description="Working closely with you to bring your vision to life."
+    >
+      <Icon name="plug" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Ongoing Optimization"
+      description="Continuously refining and enhancing the solution to meet evolving needs."
+    >
+      <Icon name="pie-chart" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Transparent Communication"
+      description="Keeping you informed at every step with clear and open communication."
+    >
+      <Icon name="communicate" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="center"
+      isShadow
+      title="Long-Term Support"
+      description="Providing ongoing support to ensure sustained success and adaptability."
+    >
+      <Icon name="phone-thin" width="68" height="68" />
+    </CardWithIcon>
+  </CardList>
+</Section>

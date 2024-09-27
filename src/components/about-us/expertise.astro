@@ -1,0 +1,65 @@
+---
+import Section from '../common/section.astro';
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
+import Icon from '../common/icon.astro';
+---
+
+<Section isPrimary tagline="Expertise That Drives Success" title="What Florian Mueller Brings to the Table">
+  <CardList columns="three">
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="20+ Years in Web Development"
+      description="Leveraging extensive industry experience to solve complex challenges."
+    >
+      <Icon name="monitor" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="Innovative Problem-Solving"
+      description="Crafting creative solutions that push the boundaries of technology."
+    >
+      <Icon name="brain" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="Client-Focused Approach"
+      description="Deeply understanding your needs to deliver bespoke digital strategies."
+    >
+      <Icon name="target" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="Proven Success"
+      description="A portfolio filled with successful projects across various industries."
+    >
+      <Icon name="proof" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="Cutting-Edge Technology"
+      description="Always up-to-date with the latest trends and tools to ensure your project is ahead of the curve."
+    >
+      <Icon name="net" width="58" height="58" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="white"
+      align="left"
+      title="Scalable Solutions"
+      description="Designing architectures that grow with your business."
+    >
+      <Icon name="box" width="68" height="68" />
+    </CardWithIcon>
+  </CardList>
+</Section>

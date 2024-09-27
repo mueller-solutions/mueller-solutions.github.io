@@ -1,141 +1,47 @@
 ---
 import Icon from '../common/icon.astro';
+import Section from '../common/section.astro';
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
 ---
 
-<section class="wrapper">
-  <p class="tagline">Focused Expertise in Every Area</p>
-  <h2 class="heading2">Our Core Services</h2>
-  <p class="description">
-    Explore our key offerings. They each solve specific problems and deliver results. Click on any service to learn more
-    about how we can help your business excel.
-  </p>
-  <ul class="even-columns two-columns">
-    <li>
-      <a href="/frontend-performance-optimization" class="card fade-from-bottom performance">
-        <span class="icon">
-          <Icon name="flash" width="68" height="68" />
-        </span>
-        <h3 class="heading3">Frontend Performance Optimization</h3>
-        <p class="body2">
-          Enhance your web app's speed and efficiency to keep users engaged and satisfied. No one sticks around for a
-          slow app—let's make yours lightning-fast.
-        </p>
-      </a>
-    </li>
-    <li>
-      <a href="/scalable-web-architecture" class="card fade-from-bottom architecture">
-        <span class="icon">
-          <Icon name="box" width="68" height="68" />
-        </span>
-        <h2 class="heading3">Scalable Web Architecture</h2>
-        <p class="body2">
-          Build a foundation that scales as your business grows. It delivers uniform results. Don't let your app crumble
-          under the weight of success - build it to last.
-        </p>
-      </a>
-    </li>
-    <li>
-      <a href="/cutting-edge-technology-integration" class="card fade-from-bottom technology">
-        <span class="icon">
-          <Icon name="net" width="58" height="58" />
-        </span>
-        <h3 class="heading3">Cutting-Edge Technology Integration</h3>
-        <p class="body2">
-          Stay ahead of the curve by integrating the latest tools and frameworks into your web app. Innovation doesn't
-          wait - neither should your app.
-        </p>
-      </a>
-    </li>
-    <li>
-      <a href="/expert-consulting-and-strategy" class="card fade-from-bottom consulting">
-        <span class="icon">
-          <Icon name="clipboard-search" width="68" height="68" />
-        </span>
-        <h3 class="heading3">Expert Consulting & Strategy</h3>
-        <p class="body2">
-          Get personalized advice and support to make your web app exceptional. It's time to stop guessing and start
-          succeeding.
-        </p>
-      </a>
-    </li>
-  </ul>
-</section>
-
-<style lang="scss">
-  @use '../../styles/abstracts' as *;
-
-  section {
-    text-align: center;
-    padding-block: pxtorem(116);
-  }
-
-  h2 {
-    margin-bottom: pxtorem(14);
-  }
-
-  .description {
-    margin: 0 auto;
-
-    @include mq(medium) {
-      max-width: 75%;
-    }
-  }
-
-  .even-columns {
-    margin-block-start: pxtorem(50);
-  }
-
-  li {
-    > a {
-      padding: pxtorem(33) pxtorem(42);
-      text-align: left;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  h3 {
-    margin-block-end: pxtorem(10);
-  }
-
-  .icon {
-    display: block;
-    margin-block-end: pxtorem(12);
-  }
-
-  .performance {
-    background-color: rgb(231 247 255);
-
-    h3,
-    .icon {
-      color: rgb(45 96 121);
-    }
-  }
-
-  .architecture {
-    background-color: rgb(231 235 255);
-
-    h3,
-    .icon {
-      color: rgb(64 74 124);
-    }
-  }
-
-  .technology {
-    background-color: rgb(224 250 238);
-
-    h3,
-    .icon {
-      color: rgb(60 102 83);
-    }
-  }
-
-  .consulting {
-    background-color: rgb(255 231 231);
-
-    h3,
-    .icon {
-      color: rgb(88 71 71);
-    }
-  }
-</style>
+<Section
+  tagline="Focused Expertise in Every Area"
+  title="Our Core Services"
+  description="Explore our key offerings. They each solve specific problems and deliver results. Click on any service to learn more about how we can help your business excel."
+>
+  <CardList columns="two">
+    <CardWithIcon
+      isFadeFromBottom
+      color="blue"
+      title="Frontend Performance Optimization"
+      description="Enhance your web app's speed and efficiency to keep users engaged and satisfied. No one sticks around for a slow app—let's make yours lightning-fast."
+    >
+      <Icon name="flash" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="purple"
+      title="Scalable Web Architecture"
+      description="Build a foundation that scales as your business grows. It delivers uniform results. Don't let your app crumble under the weight of success - build it to last."
+    >
+      <Icon name="box" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="green"
+      title="Cutting-Edge Technology Integration"
+      description="Stay ahead of the curve by integrating the latest tools and frameworks into your web app. Innovation doesn't wait - neither should your app."
+    >
+      <Icon name="net" width="58" height="58" />
+    </CardWithIcon>
+    <CardWithIcon
+      isFadeFromBottom
+      color="red"
+      title="Expert Consulting & Strategy"
+      description="Get personalized advice and support to make your web app exceptional. It's time to stop guessing and start succeeding."
+    >
+      <Icon name="clipboard-search" width="68" height="68" />
+    </CardWithIcon>
+  </CardList>
+</Section>

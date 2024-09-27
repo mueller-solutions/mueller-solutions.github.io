@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.home-about {
+  background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
+  padding-block: pxtorem(106) pxtorem(80);
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr fit-content(40%);
+    align-items: center;
+    gap: pxtorem(120);
+  }
+
+  h2 {
+    margin-block-end: pxtorem(14);
+  }
+
+  p:not(.tagline) {
+    margin-block-end: pxtorem(20);
+
+    &:last-of-type {
+      margin-block-end: pxtorem(30);
+    }
+  }
+
+  .image {
+    text-align: right;
+  }
+}

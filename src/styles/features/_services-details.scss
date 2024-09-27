@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.services-details {
+  background-color: $color-primary-darker;
+  padding-block: pxtorem(68);
+
+  .service-details {
+    display: grid;
+    gap: clamp(pxtorem(20), 4vw, pxtorem(60));
+  }
+
+  .service {
+    display: flex;
+    gap: pxtorem(30);
+
+    h3 {
+      margin-bottom: pxtorem(20);
+    }
+
+    figure {
+      flex-shrink: 0;
+      aspect-ratio: 321 / 573;
+      overflow: hidden;
+      border-radius: pxtorem(12);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      padding: clamp(pxtorem(20), 4vw, pxtorem(40));
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      > li {
+        margin-block-end: pxtorem(12);
+      }
+    }
+
+    strong {
+      color: $color-primary-darker;
+    }
+
+    .benefits {
+      display: flex;
+      gap: pxtorem(18);
+
+      li {
+        display: flex;
+        gap: pxtorem(6);
+        align-items: center;
+      }
+    }
+
+    .icon-checkbox {
+      color: rgb(120 167 90);
+    }
+  }
+}

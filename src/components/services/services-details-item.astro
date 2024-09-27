@@ -1,0 +1,66 @@
+---
+import Icon from '../common/icon.astro';
+import Button from '../common/button.astro';
+
+export type DescriptionItem = {
+  title: string;
+  content: string;
+};
+
+type Props = {
+  title: string;
+  imageUrl: string;
+  benefits: string[];
+  descriptions: DescriptionItem[];
+  imageDirection: 'left' | 'right';
+  buttonLabel: string;
+};
+
+const { title, imageUrl, benefits, descriptions, imageDirection, buttonLabel } = Astro.props;
+---
+
+<div class:list={['service', imageDirection === 'left' ? 'image-left' : 'image-right']}>
+  {
+    imageDirection === 'left' && (
+      <figure class="fade-from-left">
+        <img src={imageUrl} alt={title} width="321" height="573" />
+      </figure>
+    )
+  }
+
+  <div class:list={['card white content', imageDirection === 'left' ? 'fade-from-right' : 'fade-from-left']}>
+    <h3 class="heading2">{title}</h3>
+    <ul>
+      {
+        descriptions.map((description) => (
+          <li>
+            <strong>{description.title}:</strong> {description.content}
+          </li>
+        ))
+      }
+    </ul>
+    <div class="benefits">
+      <p><strong>What You Get: </strong></p>
+      <ul>
+        {
+          benefits.map((benefit) => (
+            <li>
+              <span class="icon-checkbox">
+                <Icon name="checkbox" width="20" height="20" />
+              </span>
+              {benefit}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <Button isOutlined scheduleAppointment>{buttonLabel}</Button>
+  </div>
+  {
+    imageDirection === 'right' && (
+      <figure class="fade-from-right">
+        <img src={imageUrl} alt={title} width="321" height="573" />
+      </figure>
+    )
+  }
+</div>

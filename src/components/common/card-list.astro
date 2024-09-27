@@ -1,0 +1,19 @@
+---
+type Props = {
+  columns?: 'one' | 'two' | 'three';
+};
+
+const { columns = 'one' }: Props = Astro.props;
+---
+
+<ul
+  class:list={[
+    'card-list',
+    'even-columns',
+    columns === 'one' && 'one-column',
+    columns === 'two' && 'two-columns',
+    columns === 'three' && 'three-columns',
+  ]}
+>
+  <slot />
+</ul>

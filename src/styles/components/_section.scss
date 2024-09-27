@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+
+.section {
+  padding: pxtorem(69) 0 pxtorem(84);
+
+  &.slim-content {
+    padding-inline: pxtorem(217);
+  }
+
+  &.primary {
+    background-color: $color-primary-dark;
+  }
+
+  &.primary-light {
+    background-color: $color-primary-light;
+  }
+
+  &.primary-with-ornaments {
+    background-color: $color-primary-dark;
+    background-image: url('/images/ornaments.svg'), url('/images/ornaments.svg'), url('/images/ornaments.svg'),
+      url('/images/ornaments.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position:
+      top #{pxtorem(16)} left #{pxtorem(16)},
+      top #{pxtorem(16)} right #{pxtorem(16)},
+      bottom #{pxtorem(16)} left #{pxtorem(16)},
+      bottom #{pxtorem(16)} right #{pxtorem(16)};
+  }
+
+  &.gradient-down {
+    background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
+  }
+
+  &.gradient-up {
+    background-image: linear-gradient(to top, $color-primary-light, $color-light);
+  }
+
+  &.rounded {
+    border-radius: pxtorem(20);
+  }
+
+  .wrapper {
+    text-align: center;
+  }
+
+  h2 {
+    margin-block-end: pxtorem(14);
+    margin-inline: auto;
+
+    @include mq(small) {
+      max-width: 90%;
+    }
+
+    @include mq(medium) {
+      max-width: 80%;
+    }
+
+    @include mq(large) {
+      max-width: 60%;
+    }
+  }
+
+  .description {
+    margin: 0 auto;
+
+    &.inverted {
+      color: $color-light;
+    }
+
+    @include mq(medium) {
+      max-width: 75%;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}

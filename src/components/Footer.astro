@@ -1,21 +1,20 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from './common/icon.astro';
 
 const pathname = Astro.url.pathname;
 ---
 
-<footer>
+<footer class="site-footer">
   <div class="wrapper main-content">
     <div class="even-columns three-columns">
       <div class="logo">
-        <Image src="/images/logo-white.svg" width="144" height="24" alt="MUELLER Logo White" />
+        <img src="/images/logo-white.svg" width="144" height="24" alt="MUELLER Logo White" loading="lazy" />
       </div>
       <nav aria-label="Footer navigation">
-        <a href="/about-us" class:list={[pathname === '/about-us' && 'active']}>About Us</a>
-        <a href="/services" class:list={[pathname === '/services' && 'active']}>Services</a>
-        <a href="/blog" class:list={[pathname === '/blog' && 'active']}>Blog</a>
-        <a href="/contact" class:list={[pathname === '/contact' && 'active']}>Contact</a>
+        <a href="/about-us" class:list={['nav-link', pathname === '/about-us' && 'active']}>About Us</a>
+        <a href="/services" class:list={['nav-link', pathname === '/services' && 'active']}>Services</a>
+        <a href="/blog" class:list={['nav-link', pathname === '/blog' && 'active']}>Blog</a>
+        <a href="/contact" class:list={['nav-link', pathname === '/contact' && 'active']}>Contact</a>
       </nav>
       <div class="contact-info">
         <address>
@@ -47,98 +46,6 @@ const pathname = Astro.url.pathname;
   </div>
   <div class="wrapper copyright">
     <span>&copy; 2024 DevBucket LLC. All rights reserved.</span>
-    <a href="/privacy-policy" class:list={[pathname === '/privacy-policy' && 'active']}>Privacy Policy</a>
+    <a href="/privacy-policy" class:list={['nav-link', pathname === '/privacy-policy' && 'active']}>Privacy Policy</a>
   </div>
 </footer>
-
-<style lang="scss">
-  @use '../styles/abstracts' as *;
-
-  footer {
-    container-name: footer;
-    background-color: $color-dark;
-    color: $color-gray-light;
-    padding-block: pxtorem(67) pxtorem(20);
-  }
-
-  .main-content {
-    margin-block-end: pxtorem(50);
-  }
-
-  .logo {
-    grid-column: 1 / -1;
-
-    @include mq(small) {
-      grid-column: 1;
-    }
-  }
-
-  .contact-info {
-    font-size: pxtorem(14);
-    line-height: pxtorem(20);
-  }
-
-  nav a {
-    display: block;
-    color: $color-gray-light;
-    text-decoration: none;
-
-    &:not(:last-of-type) {
-      margin-block-end: pxtorem(8);
-    }
-
-    &.active {
-      color: $color-primary;
-    }
-  }
-
-  address {
-    p {
-      @include mq(small) {
-        display: grid;
-        grid-template-columns: pxtorem(14) 1fr;
-        align-items: flex-start;
-        gap: pxtorem(12);
-      }
-
-      &:not(:last-of-type) {
-        margin-block-end: pxtorem(8);
-      }
-
-      > span:first-child {
-        display: none;
-
-        @include mq(small) {
-          display: grid;
-          place-items: center;
-          margin-block-start: pxtorem(5);
-        }
-      }
-    }
-  }
-
-  .copyright {
-    padding-block-start: pxtorem(18);
-    font-size: pxtorem(12);
-    color: $color-gray-light;
-    text-align: center;
-    border-top: 1px solid #{rgba($color-gray-light, 0.15)};
-  }
-
-  a {
-    &:not(.active) {
-      color: $color-gray-light;
-
-      @include transition-medium(color);
-
-      &:hover,
-      &:focus-visible {
-        color: $color-secondary;
-      }
-    }
-
-    &.active {
-      color: $color-primary;
-    }
-  }
-</style>

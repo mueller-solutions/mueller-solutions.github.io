@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+
+.one-picture-card {
+  position: relative;
+  z-index: 1;
+  padding-block: pxtorem(80);
+  margin-block-end: clamp(pxtorem(120), 4vw, pxtorem(140));
+
+  @include mq(small) {
+    display: flex;
+    align-items: center;
+    padding-block: clamp(pxtorem(120), 4vw, pxtorem(140)) 0;
+  }
+
+  figure {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 699 / 484;
+    overflow: hidden;
+    border-radius: pxtorem(12);
+
+    @include mq(small) {
+      min-width: pxtorem(699);
+    }
+
+    @include mq(mobile) {
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    z-index: 2;
+    position: relative;
+    padding: pxtorem(42) pxtorem(20);
+
+    @include mq(mobile) {
+      margin-top: -#{pxtorem(42)};
+    }
+
+    @include mq(small) {
+      padding: pxtorem(39) pxtorem(45);
+    }
+
+    > * + * {
+      margin-block-end: pxtorem(18);
+    }
+  }
+
+  @include mq(small) {
+    &.align-left {
+      .content {
+        margin-inline-start: -#{pxtorem(45)};
+      }
+    }
+
+    &.align-right {
+      .content {
+        margin-inline-end: -#{pxtorem(45)};
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+---
+type Props = {
+  href: string;
+  isButton?: boolean;
+};
+
+const { href, isButton } = Astro.props;
+---
+
+<li>
+  <a href={href} class:list={[isButton ? 'nav-button' : 'nav-link']}>
+    <slot />
+  </a>
+  <slot name="submenu" />
+</li>

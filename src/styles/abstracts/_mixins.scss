@@ -31,6 +31,10 @@
   }
 }
 
+@mixin set-transition($transition) {
+  transition: $transition;
+}
+
 @mixin transition($props, $ease, $duration) {
   $transition: ();
 
@@ -38,7 +42,7 @@
     $transition: list.append($transition, list.nth($props, $i) $duration $ease, comma);
   }
 
-  transition: $transition;
+  @include set-transition($transition);
 }
 
 @mixin transition-short($props, $ease: $transition-ease-out) {

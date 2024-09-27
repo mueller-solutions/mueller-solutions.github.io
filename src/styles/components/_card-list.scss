@@ -1,0 +1,5 @@
+@use '../abstracts' as *;
+
+.card-list {
+  margin-block: clamp(pxtorem(20), 4vw, pxtorem(50)) clamp(pxtorem(18), 4vw, pxtorem(37));
+}
