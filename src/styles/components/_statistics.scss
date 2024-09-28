@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.statistics {
+  .content {
+    padding-block-start: clamp(pxtorem(26), 4vw, pxtorem(60));
+  }
+
+  dl {
+    // border-block-start: 1px solid $color-primary;
+    padding-block-start: clamp(pxtorem(20), 4vw, pxtorem(50));
+  }
+
+  dt {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: pxtorem(20);
+    padding-inline: clamp(pxtorem(20), 4vw, pxtorem(50));
+
+    strong {
+      font-size: clamp(pxtorem(28), 4vw, pxtorem(56));
+      line-height: 1;
+      font-weight: $font-weight-semibold;
+      color: $color-secondary;
+    }
+
+    span {
+      color: $color-body;
+      font-size: pxtorem(14);
+    }
+
+    &:not(:last-of-type) {
+      border-inline-end: 1px solid $color-primary;
+    }
+  }
+}

@@ -2,10 +2,14 @@
 
 .even-columns {
   display: grid;
-  gap: clamp(pxtorem(16), 3vw, pxtorem(30));
   list-style-type: none;
   padding: 0;
   contain: layout style;
+  grid-template-columns: var(--grid-columns, none);
+
+  &:not(&.no-gap) {
+    gap: var(--gap, clamp(pxtorem(16), 3vw, pxtorem(30)));
+  }
 
   &.one-column {
     grid-template-columns: 1fr;
@@ -26,6 +30,16 @@
 
     @include mq(medium) {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.four-columns {
+    @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(medium) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

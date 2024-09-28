@@ -1,0 +1,32 @@
+---
+type Props = {
+  quote: string;
+  author: string;
+  company: string;
+  image: string;
+  href?: string;
+};
+
+const { quote, author, company, image, href } = Astro.props;
+---
+
+<li class="card white shadow fade-from-bottom">
+  <p class="body2">{quote}</p>
+  <div class="author">
+    <figure>
+      <img src={image} alt={author} width="70" height="70" loading="lazy" />
+    </figure>
+    <div class="caption">
+      {
+        href ? (
+          <a href={href} class="heading4">
+            {author}
+          </a>
+        ) : (
+          <p class="heading4">{author}</p>
+        )
+      }
+      <p class="body2 text-muted">{company}</p>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.home-testimonials {
+  li {
+    display: grid;
+    gap: pxtorem(22);
+    padding: pxtorem(28) pxtorem(32);
+    text-align: left;
+  }
+
+  .author {
+    display: grid;
+    grid-template-columns: pxtorem(38) 1fr;
+    align-items: flex-start;
+    gap: pxtorem(10);
+
+    figure {
+      width: pxtorem(38);
+      height: pxtorem(38);
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        aspect-ratio: 1/1;
+        width: pxtorem(38);
+        height: pxtorem(38);
+        object-fit: cover;
+      }
+    }
+  }
+}

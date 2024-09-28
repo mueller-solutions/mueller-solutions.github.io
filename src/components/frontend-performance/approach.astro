@@ -1,0 +1,31 @@
+---
+import SpecsCard from '../common/specs-card.astro';
+import Button from '../common/button.astro';
+---
+
+<SpecsCard
+  tagline="Optimized for Success"
+  title="Our Proven Approach to Frontend Performance Optimization"
+  list={[
+    { title: 'Performance Audit', description: 'Analyze your current site performance and identify bottlenecks.' },
+    { title: 'Code Refactoring', description: 'Optimize and streamline your code for faster execution.' },
+    {
+      title: 'Asset Optimization',
+      description: 'Compress and minify CSS, JavaScript, and images for quicker load times.',
+    },
+    { title: 'Caching Strategies', description: 'Implement effective caching mechanisms to speed up repeat visits.' },
+    { title: 'CDN Integration', description: 'Implement effective caching mechanisms to speed up repeat visits.' },
+    {
+      title: 'Ongoing Monitoring',
+      description: 'Continuously track performance metrics and make adjustments as needed.',
+    },
+  ]}
+  imageUrl="/images/frontend-performance/spyglas.webp"
+  imageWidth={432}
+  imageHeight={560}
+  imageAlt="Our Proven Approach to Frontend Performance Optimization"
+  imageAspectRatio="432/560"
+  noPadding
+>
+  <Button scheduleAppointment>Schedule a Performance Audit</Button>
+</SpecsCard>

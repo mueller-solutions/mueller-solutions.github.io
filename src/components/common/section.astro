@@ -5,7 +5,8 @@ export type Props = astroHTML.JSX.HTMLAttributes & {
   tag?: HTMLTag;
   isPrimary?: boolean;
   isPrimaryLight?: boolean;
-  isPrimaryWithOrnaments?: boolean;
+  withOrnaments?: boolean;
+  withStars?: boolean;
   isGradientDown?: boolean;
   isGradientUp?: boolean;
   tagline?: string;
@@ -19,7 +20,8 @@ const {
   tag: Element = 'section',
   isPrimary = false,
   isPrimaryLight = false,
-  isPrimaryWithOrnaments = false,
+  withOrnaments = false,
+  withStars = false,
   isRounded = false,
   isSlimContent = false,
   isGradientDown = false,
@@ -31,7 +33,7 @@ const {
   ...rest
 }: Props = Astro.props;
 
-const isInverted = isPrimary || isPrimaryWithOrnaments;
+const isInverted = isPrimary;
 ---
 
 <Element
@@ -39,7 +41,8 @@ const isInverted = isPrimary || isPrimaryWithOrnaments;
     'section',
     isPrimary && 'primary',
     isPrimaryLight && 'primary-light',
-    isPrimaryWithOrnaments && 'primary-with-ornaments',
+    withOrnaments && 'with-ornaments',
+    withStars && 'with-stars',
     isRounded && 'rounded',
     isSlimContent && 'slim-content',
     isGradientDown && 'gradient-down',
@@ -51,7 +54,7 @@ const isInverted = isPrimary || isPrimaryWithOrnaments;
   <div class="wrapper">
     {tagline && <p class:list={['tagline', isInverted && 'inverted']}>{tagline}</p>}
     <h2 class:list={['heading2', isInverted && 'inverted']}>{title}</h2>
-    <p class:list={['description', isInverted && 'inverted']}>{description}</p>
+    {description && <p class:list={['description', isInverted && 'inverted']}>{description}</p>}
     <slot />
     <slot name="buttons" />
   </div>

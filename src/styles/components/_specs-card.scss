@@ -1,8 +1,11 @@
 @use '../abstracts' as *;
 
-.home-solutions {
-  padding: clamp(pxtorem(30), 4vw, pxtorem(60));
+.specs-card {
   margin-block: pxtorem(86) pxtorem(140);
+
+  &:not(.no-padding) {
+    padding: clamp(pxtorem(30), 4vw, pxtorem(60));
+  }
 
   .even-columns {
     align-items: center;
@@ -13,7 +16,7 @@
   }
 
   figure {
-    aspect-ratio: 514 / 552;
+    aspect-ratio: var(--image-aspect-ratio);
 
     img {
       width: 100%;

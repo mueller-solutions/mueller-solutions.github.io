@@ -1,10 +1,10 @@
 @use '../abstracts' as *;
 
 .section {
-  padding: pxtorem(69) 0 pxtorem(84);
+  padding-block: clamp(pxtorem(40), 4vw, pxtorem(69)) clamp(pxtorem(40), 4vw, pxtorem(84));
 
-  &.slim-content {
-    padding-inline: pxtorem(217);
+  @include mq(mobile) {
+    padding-inline: pxtorem(10);
   }
 
   &.primary {
@@ -15,16 +15,27 @@
     background-color: $color-primary-light;
   }
 
-  &.primary-with-ornaments {
-    background-color: $color-primary-dark;
-    background-image: url('/images/ornaments.svg'), url('/images/ornaments.svg'), url('/images/ornaments.svg'),
-      url('/images/ornaments.svg');
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position:
-      top #{pxtorem(16)} left #{pxtorem(16)},
-      top #{pxtorem(16)} right #{pxtorem(16)},
-      bottom #{pxtorem(16)} left #{pxtorem(16)},
-      bottom #{pxtorem(16)} right #{pxtorem(16)};
+  &.with-ornaments {
+    @include mq(medium) {
+      background-image: url('/images/ornaments.svg'), url('/images/ornaments.svg'), url('/images/ornaments.svg'),
+        url('/images/ornaments.svg');
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position:
+        top #{pxtorem(16)} left #{pxtorem(16)},
+        top #{pxtorem(16)} right #{pxtorem(16)},
+        bottom #{pxtorem(16)} left #{pxtorem(16)},
+        bottom #{pxtorem(16)} right #{pxtorem(16)};
+    }
+  }
+
+  &.with-stars {
+    @include mq(medium) {
+      background-image: url('/images/stars.svg'), url('/images/stars.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-position:
+        top #{pxtorem(16)} left #{pxtorem(16)},
+        top #{pxtorem(16)} right #{pxtorem(16)};
+    }
   }
 
   &.gradient-down {
@@ -63,16 +74,24 @@
   .description {
     margin: 0 auto;
 
-    &.inverted {
-      color: $color-light;
-    }
-
     @include mq(medium) {
       max-width: 75%;
     }
 
+    &.inverted {
+      color: $color-light;
+    }
+
     &:empty {
       display: none;
+    }
+  }
+
+  &.slim-content {
+    .tagline,
+    h2,
+    .description {
+      padding-inline: pxtorem(217);
     }
   }
 }

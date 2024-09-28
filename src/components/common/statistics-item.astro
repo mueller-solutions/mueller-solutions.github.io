@@ -1,0 +1,13 @@
+---
+type Props = {
+  value: string;
+  label: string;
+};
+
+const { value, label } = Astro.props;
+---
+
+<dt class="fade-from-bottom">
+  <strong>{value}</strong>
+  <span>{label}</span>
+</dt>

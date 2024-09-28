@@ -2,13 +2,22 @@
 
 .home-about {
   background-image: linear-gradient(to bottom, $color-primary-light, $color-light);
-  padding-block: pxtorem(106) pxtorem(80);
+  padding-block: clamp(pxtorem(40), 4vw, pxtorem(80));
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr fit-content(40%);
     align-items: center;
-    gap: pxtorem(120);
+    gap: clamp(pxtorem(40), 4vw, pxtorem(120));
+
+    @include mq(small) {
+      grid-template-columns: 1fr fit-content(40%);
+    }
+  }
+
+  .content {
+    @include mq(mobile) {
+      text-align: center;
+    }
   }
 
   h2 {

@@ -1,0 +1,21 @@
+---
+import Section from './section.astro';
+
+type Props = {
+  tagline?: string;
+  title: string;
+  description?: string;
+};
+
+const { tagline, title, description } = Astro.props;
+---
+
+<section class="statistics">
+  <Section isPrimary withStars tag="div" tagline={tagline} title={title} description={description}>
+    <div class="content">
+      <dl class="even-columns four-columns no-gap">
+        <slot />
+      </dl>
+    </div>
+  </Section>
+</section>

@@ -1,32 +1,32 @@
 ---
 import Button from '../common/button.astro';
+import SpecsCard from '../common/specs-card.astro';
 ---
 
-<section class="home-solutions wrapper card white shadow">
-  <div class="even-columns two-columns">
-    <div class="content">
-      <p class="tagline">Proven Process to Success</p>
-      <h2 class="heading2">Innovative Solutions With Integrity</h2>
-      <p class="description">
-        With over 20 years of experience, we've honed a process that ensures your app not only meets your current needs
-        but is also ready to scale as your business grows.
-      </p>
-      <ul>
-        <li><strong>Understand Your Needs:</strong> We start by diving deep into your business goals and challenges</li>
-        <li>
-          <strong>Audit & Analyze:</strong> We conduct a thorough performance audit to identify areas for improvement.
-        </li>
-        <li>
-          <strong>Craft a Custom Strategy:</strong> We develop a tailored plan that addresses your unique challenges.
-        </li>
-        <li><strong>Implement & Optimize:</strong> We roll out the solutions that will transform your app.</li>
-        <li><strong>Test for Perfection:</strong> Rigorous testing ensures flawless performance.</li>
-        <li><strong>Ongoing Support:</strong> We provide continuous support to keep your app at its best.</li>
-      </ul>
-      <Button> Ready To Get Started </Button>
-    </div>
-    <figure>
-      <img src="/images/home/solutions-collage.webp" alt="Solutions Collage" width="514" height="552" loading="lazy" />
-    </figure>
-  </div>
-</section>
+<SpecsCard
+  withShadow
+  tagline="Proven Process to Success"
+  title="Innovative Solutions With Integrity"
+  description="With over 20 years of experience, we've honed a process that ensures your app not only meets your current needs but is also ready to scale as your business grows."
+  list={[
+    { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
+    {
+      title: 'Audit & Analyze',
+      description: 'We conduct a thorough performance audit to identify areas for improvement',
+    },
+    {
+      title: 'Craft a Custom Strategy',
+      description: 'We develop a tailored plan that addresses your unique challenges',
+    },
+    { title: 'Implement & Optimize', description: 'We roll out the solutions that will transform your app' },
+    { title: 'Test for Perfection', description: 'Rigorous testing ensures flawless performance' },
+    { title: 'Ongoing Support', description: 'We provide continuous support to keep your app at its best' },
+  ]}
+  imageUrl="/images/home/solutions-collage.webp"
+  imageAlt="Solutions Collage"
+  imageWidth={514}
+  imageHeight={552}
+  imageAspectRatio="514 / 552"
+>
+  <Button scheduleAppointment> Ready To Get Started </Button>
+</SpecsCard>

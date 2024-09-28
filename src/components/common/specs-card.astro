@@ -1,0 +1,87 @@
+---
+type ListItem = {
+  title: string;
+  description: string;
+};
+
+type Props = {
+  tagline: string;
+  title: string;
+  description?: string;
+  list: ListItem[];
+  imageUrl: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  imageAspectRatio: string;
+  withShadow?: boolean;
+  noPadding?: boolean;
+  imageAlign?: 'left' | 'right';
+};
+
+const {
+  tagline,
+  title,
+  description,
+  list,
+  imageUrl,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  imageAspectRatio,
+  withShadow,
+  noPadding,
+  imageAlign = 'right',
+} = Astro.props;
+---
+
+<section class:list={['specs-card wrapper card white', withShadow && 'shadow', noPadding && 'no-padding']}>
+  <div
+    class="even-columns"
+    style={`--grid-columns: ${imageAlign === 'left' ? '36% 1fr' : '1fr 36%'}; --gap: clamp(1.25rem, 4vw, 3.125rem);`}
+  >
+    {
+      imageAlign === 'left' && (
+        <figure class="fade-from-left">
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            loading="lazy"
+            style={`--image-aspect-ratio: ${imageAspectRatio}`}
+          />
+        </figure>
+      )
+    }
+    <div class="content">
+      <p class="tagline">{tagline}</p>
+      <h2 class="heading2">{title}</h2>
+      {description && <p class="description">{description}</p>}
+      <ul>
+        {
+          list.map((item) => (
+            <li class="fade-from-bottom">
+              <strong>{item.title}:</strong> {item.description}
+            </li>
+          ))
+        }
+      </ul>
+      <slot />
+    </div>
+    {
+      imageAlign === 'right' && (
+        <figure class="fade-from-right">
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            loading="lazy"
+            style={`--image-aspect-ratio: ${imageAspectRatio}`}
+          />
+        </figure>
+      )
+    }
+  </div>
+</section>

@@ -29,15 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const subMenuEl = document.getElementById('services-navigation');
   const navLinks = document.querySelectorAll('.nav-link, .nav-button');
 
-  function toggleNav(toggle, menu) {
+  function toggleNav(toggle, menu, noWait = false) {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
 
     if (isOpen) {
-      menu?.classList.add('out');
-      setTimeout(() => {
+      if (noWait) {
         toggle.setAttribute('aria-expanded', 'false');
-        menu?.classList.remove('out');
-      }, 300);
+      } else {
+        menu?.classList.add('out');
+        setTimeout(() => {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu?.classList.remove('out');
+        }, 300);
+      }
     } else {
       toggle.setAttribute('aria-expanded', 'true');
     }
@@ -46,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   navToggle?.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    toggleNav(navToggle, menuEl);
+    toggleNav(navToggle, menuEl, true);
   });
 
   subNavToggle?.addEventListener('click', (event) => {

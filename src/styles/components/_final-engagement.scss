@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .final-engagement {
-  margin-block: pxtorem(95);
+  margin-block: clamp(pxtorem(40), 4vw, pxtorem(95));
 
   .buttons {
     display: inline-flex;
