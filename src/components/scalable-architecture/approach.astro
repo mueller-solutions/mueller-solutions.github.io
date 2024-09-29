@@ -1,0 +1,40 @@
+---
+import SpecsCard from '../common/specs-card.astro';
+import Button from '../common/button.astro';
+---
+
+<SpecsCard
+  tagline="Built to Scale"
+  title="Our Method for Creating Scalable Web Architectures"
+  list={[
+    { title: 'Initial Assessment', description: 'Evaluate your current infrastructure to identify scalability needs.' },
+    {
+      title: 'Architecture Design',
+      description: 'Plan a modular and flexible architecture tailored to your business goals',
+    },
+    {
+      title: 'Load Balancing',
+      description: 'Implement load balancing strategies to distribute traffic efficiently.',
+    },
+    {
+      title: 'Database Optimization',
+      description: 'Scale databases to handle increasing volumes of data without latency.',
+    },
+    {
+      title: 'Cloud Integration',
+      description: 'Leverage cloud solutions for dynamic scaling and resource management.',
+    },
+    {
+      title: 'Stress Testing',
+      description: 'Perform rigorous stress tests to ensure the architecture handles peak loads.',
+    },
+  ]}
+  imageUrl="/images/scalable-architecture/laptop-with-architecture.webp"
+  imageWidth={568}
+  imageHeight={609}
+  imageAlt="Our Method for Creating Scalable Web Architectures"
+  imageAspectRatio="568/609"
+  noPadding
+>
+  <Button scheduleAppointment>Schedule a Performance Audit</Button>
+</SpecsCard>

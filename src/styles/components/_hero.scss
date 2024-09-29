@@ -97,7 +97,7 @@
       }
 
       .content {
-        padding-inline-start: calc(50% + #{pxtorem(80)});
+        padding-inline-start: clamp(55%, 4vw, 65%);
       }
     }
   }
