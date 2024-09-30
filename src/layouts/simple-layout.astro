@@ -1,0 +1,23 @@
+---
+import MainLayout, { type Props as MainLayoutProps } from './main-layout.astro';
+import Section from '../components/common/section.astro';
+
+type Props = MainLayoutProps & {
+  htmlTitle?: string;
+  htmlDescription?: string;
+};
+
+const { title, description, keywords, class: className, htmlTitle, htmlDescription } = Astro.props;
+---
+
+<MainLayout
+  title={htmlTitle || title}
+  description={htmlDescription || description}
+  keywords={keywords}
+  class:list={['simple-layout', className]}
+>
+  <Section isHeader class="header" isPrimary withStars tag="div" title={title || ''} description={description} />
+  <div class="wrapper">
+    <slot />
+  </div>
+</MainLayout>

@@ -1,0 +1,28 @@
+---
+export type BlogPost = {
+  id: number;
+  date: string;
+  slug: string;
+  title: { rendered: string };
+  content: { rendered: string };
+  excerpt: { rendered: string };
+  meta: {
+    advanced_seo_description: string;
+    jetpack_seo_html_title: string;
+    jetpack_seo_noindex: boolean;
+  };
+};
+
+type Props = {
+  post: BlogPost;
+};
+
+const { post } = Astro.props as Props;
+---
+
+<li class="blog-post-item">
+  <h2 class="heading2">{post.title.rendered}</h2>
+  <span class="content">
+    {post.excerpt.rendered}
+  </span>
+</li>

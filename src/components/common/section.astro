@@ -14,6 +14,7 @@ export type Props = astroHTML.JSX.HTMLAttributes & {
   description?: string;
   isRounded?: boolean;
   isSlimContent?: boolean;
+  isHeader?: boolean;
 };
 
 const {
@@ -24,6 +25,7 @@ const {
   withStars = false,
   isRounded = false,
   isSlimContent = false,
+  isHeader = false,
   isGradientDown = false,
   isGradientUp = false,
   tagline,
@@ -45,6 +47,7 @@ const isInverted = isPrimary;
     withStars && 'with-stars',
     isRounded && 'rounded',
     isSlimContent && 'slim-content',
+    isHeader && 'page-header',
     isGradientDown && 'gradient-down',
     isGradientUp && 'gradient-up',
     className,
@@ -53,7 +56,14 @@ const isInverted = isPrimary;
 >
   <div class="wrapper">
     {tagline && <p class:list={['tagline', isInverted && 'inverted']}>{tagline}</p>}
-    <h2 class:list={['heading2', isInverted && 'inverted']}>{title}</h2>
+    {
+      isHeader ? (
+        <h1 class:list={['heading2', isInverted && 'inverted']}>{title}</h1>
+      ) : (
+        <h2 class:list={['heading2', isInverted && 'inverted']}>{title}</h2>
+      )
+    }
+
     {description && <p class:list={['description', isInverted && 'inverted']}>{description}</p>}
     <slot />
     <slot name="buttons" />

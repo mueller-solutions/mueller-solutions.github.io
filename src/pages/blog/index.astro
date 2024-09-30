@@ -1,0 +1,13 @@
+---
+import SimpleLayout from '../../layouts/simple-layout.astro';
+import BlogPostItem, { type BlogPost } from '../../components/blog/post-item.astro';
+import blogService from '../../services/blog.service';
+
+const posts = await blogService.getPosts();
+---
+
+<SimpleLayout htmlTitle="Blog" title="MUELLER's Insights: Expert Frontend Tips & Trends">
+  <ul class="blog-posts">
+    {posts.map((post) => <BlogPostItem post={post} />)}
+  </ul>
+</SimpleLayout>

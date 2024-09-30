@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+.blog-posts {
+  list-style: none;
+  padding: clamp(pxtorem(20), 5vw, pxtorem(40)) 0;
+  margin: 0;
+
+  @include mq(medium) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: pxtorem(24);
+  }
+}

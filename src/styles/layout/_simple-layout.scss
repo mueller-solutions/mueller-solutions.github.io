@@ -1,0 +1,22 @@
+@use '../abstracts/' as *;
+
+.simple-layout {
+  .page-header {
+    $padding-min: $site-header-height + $site-header-inset + pxtorem(40);
+    $padding-max: $site-header-height + $site-header-inset + pxtorem(69);
+
+    padding-block-start: clamp(#{$padding-min}, 4vw, #{$padding-max});
+
+    .heading2 {
+      @include mq(medium) {
+        max-width: 90%;
+        margin-inline: auto;
+      }
+
+      @include mq(large) {
+        max-width: 80%;
+        margin-inline: auto;
+      }
+    }
+  }
+}
