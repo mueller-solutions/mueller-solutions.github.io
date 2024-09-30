@@ -1,0 +1,71 @@
+---
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
+import Icon from '../common/icon.astro';
+import Section from '../common/section.astro';
+---
+
+<Section tagline="Stay Ahead with Innovation" title="Why Cutting-Edge Technology Integration?">
+  <CardList columns="three">
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Needs Assessment"
+      description="Analyze your current setup and identify areas where modern technologies can bring value."
+    >
+      <Icon name="assets" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Tech Selection"
+      description="Choose the best technologies suited to your business goals and existing infrastructure."
+    >
+      <Icon name="flag-circle" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Custom Implementation"
+      description="Integrate the selected technologies in a way that enhances your existing system without disrupting operations."
+    >
+      <Icon name="settings-clap" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Testing and Optimization"
+      description="Ensure that all new technologies are thoroughly tested and optimized for peak performance."
+    >
+      <Icon name="radio-signal" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Training and Support"
+      description="Provide your team with the necessary training and ongoing support to make the most of the new tools."
+    >
+      <Icon name="wrench" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Continuous Updates"
+      description="Regularly update your technology stack to incorporate the latest advancements and maintain a competitive edge."
+    >
+      <Icon name="tooltip" width="68" height="68" />
+    </CardWithIcon>
+  </CardList>
+</Section>
