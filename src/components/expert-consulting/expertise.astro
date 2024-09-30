@@ -1,0 +1,71 @@
+---
+import CardList from '../common/card-list.astro';
+import CardWithIcon from '../common/card-with-icon.astro';
+import Icon from '../common/icon.astro';
+import Section from '../common/section.astro';
+---
+
+<Section tagline="Expertise at Every Step" title="Our Consulting & Strategy Process">
+  <CardList columns="three">
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Initial Assessment"
+      description="Conduct a thorough analysis of your current situation, challenges, and objectives."
+    >
+      <Icon name="click" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Goal Setting"
+      description="Collaborate to define clear, actionable goals that align with your business vision."
+    >
+      <Icon name="flag-circle" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Strategic Planning"
+      description="Develop a detailed strategy, outlining the steps needed to achieve your objectives."
+    >
+      <Icon name="pie-chart" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Implementation Support"
+      description="Provide ongoing guidance and support throughout the implementation phase."
+    >
+      <Icon name="support" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Performance Monitoring"
+      description="Continuously monitor progress, adjusting strategies as needed to ensure success."
+    >
+      <Icon name="monitoring" width="68" height="68" />
+    </CardWithIcon>
+    <CardWithIcon
+      isWhite
+      isShadow
+      isFadeFromBottom
+      align="left"
+      title="Post-Implementation Review"
+      description="Evaluate outcomes and refine strategies for future growth and development."
+    >
+      <Icon name="review" width="68" height="68" />
+    </CardWithIcon>
+  </CardList>
+</Section>
