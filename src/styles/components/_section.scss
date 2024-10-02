@@ -1,41 +1,11 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .section {
   display: grid;
   gap: clamp(pxtorem(32), 4vw, pxtorem(66));
 
-  header {
+  .header {
     display: grid;
     gap: clamp(pxtorem(20), 4vw, pxtorem(40));
-  }
-
-  .heading {
-    font-size: clamp(pxtorem(30), 4vw, pxtorem(38));
-    line-height: clamp(pxtorem(36), 5vw, pxtorem(44));
-    font-weight: $font-weight-bold;
-    letter-spacing: -0.04em;
-
-    br {
-      display: none;
-
-      @include mq(medium) {
-        display: block;
-      }
-    }
-  }
-
-  .section-tag {
-    display: flex;
-    align-items: flex-start;
-    gap: pxtorem(12);
-    font-size: pxtorem(20);
-    line-height: clamp(pxtorem(26), 4vw, pxtorem(20));
-    font-weight: $font-weight-bold;
-    letter-spacing: -0.01em;
-    color: $color-brand-light;
-
-    @include mq(medium) {
-      align-items: center;
-    }
   }
 }

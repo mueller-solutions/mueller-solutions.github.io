@@ -6,7 +6,7 @@ function gtag() {
 }
 gtag('js', new Date());
 
-gtag('config', 'G-777G6E86XK');
+gtag('config', 'AW-16724228029');
 
 // Hotjar Tracking Code
 

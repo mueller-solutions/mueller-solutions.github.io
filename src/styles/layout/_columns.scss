@@ -1,7 +1,8 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .columns {
   display: grid;
+  list-style: none;
   gap: clamp(pxtorem(20), 2vw, pxtorem(32));
 
   @include mq(medium) {
