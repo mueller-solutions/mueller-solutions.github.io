@@ -1,13 +1,3 @@
-// Google Tracking Code
-
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag('js', new Date());
-
-gtag('config', 'AW-16724228029');
-
 // Google Tag Manager
 (function (w, d, s, l, i) {
   w[l] = w[l] || [];
