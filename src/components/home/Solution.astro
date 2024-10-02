@@ -9,9 +9,9 @@ type Props = {
 const { title, description, icon, href } = Astro.props;
 ---
 
-<article class="solution">
+<li class="solution fade-from-bottom">
   <div>
-    <div class="icon">
+    <div class="icon zoom-in">
       <div class="mask" style={`--icon: url('/images/icons/${icon}.svg');`}></div>
     </div>
   </div>
@@ -28,4 +28,4 @@ const { title, description, icon, href } = Astro.props;
       </div>
     )
   }
-</article>
+</li>

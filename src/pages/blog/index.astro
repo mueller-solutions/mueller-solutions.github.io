@@ -1,0 +1,22 @@
+---
+import blogService from '../../services/blog.service';
+import MainLayout from '../../layout/MainLayout.astro';
+
+const posts = await blogService.getPostsPaginated(1);
+---
+
+<MainLayout title="Blog">
+  <main class="site-main" id="home">
+    <div class="wrapper">
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/article/${post.slug}`}>{post.title.rendered}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+</MainLayout>

@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.heading1 {
+  font-size: clamp(pxtorem(40), 4vw, pxtorem(56));
+  line-height: clamp(pxtorem(42), 4.5vw, pxtorem(58));
+  font-weight: $font-weight-semibold;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.heading2 {
+  font-size: clamp(pxtorem(30), 4vw, pxtorem(38));
+  line-height: clamp(pxtorem(36), 5vw, pxtorem(44));
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.heading3 {
+  font-size: clamp(pxtorem(22), 3vw, pxtorem(28));
+  line-height: clamp(pxtorem(28), 3.5vw, pxtorem(32));
+  letter-spacing: -0.03rem;
+  font-weight: $font-weight-bold;
+  color: $color-brand-light;
+}
+
+.heading4 {
+  font-size: clamp(pxtorem(20), 3vw, pxtorem(24));
+  line-height: clamp(pxtorem(24), 4vw, pxtorem(28));
+  letter-spacing: -0.02em;
+  font-weight: $font-weight-bold;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: pxtorem(12);
+  font-size: pxtorem(20);
+  line-height: clamp(pxtorem(26), 4vw, pxtorem(20));
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.01em;
+  color: $color-brand-light;
+}
+
+.body1 {
+  font-size: pxtorem(16);
+  line-height: pxtorem(26);
+  text-wrap: balance;
+}

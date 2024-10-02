@@ -1,15 +1,11 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .hero {
   --text-align: center;
   --max-width: 100%;
 
   background-color: $color-brand-dark;
-  background-image: linear-gradient(
-    to bottom,
-    $color-brand-light,
-    $color-brand-dark
-  );
+  background-image: linear-gradient(to bottom, $color-brand-light, $color-brand-dark);
   border-bottom-left-radius: clamp(pxtorem(28), 4vw, pxtorem(40));
   border-bottom-right-radius: clamp(pxtorem(28), 4vw, pxtorem(40));
   text-align: var(--text-align);
@@ -19,7 +15,7 @@
   @include mq(medium) {
     --text-align: left;
     --max-width: 47.5%;
-    --background-image: url("/images/hero-background.webp");
+    --background-image: url('/images/hero-background.webp');
 
     background-repeat: no-repeat;
     background-position: right center;
@@ -32,10 +28,6 @@
   }
 
   h1 {
-    font-size: clamp(pxtorem(40), 4vw, pxtorem(56));
-    line-height: clamp(pxtorem(42), 4.5vw, pxtorem(58));
-    font-weight: $font-weight-semibold;
-    letter-spacing: -0.03em;
     text-shadow: $shadow-text;
     margin-bottom: pxtorem(22);
     max-width: var(--max-width);
