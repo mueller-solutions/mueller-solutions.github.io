@@ -6,6 +6,8 @@ import Benefits from '../components/home/Benefits.astro';
 import Solutions from '../components/home/Solutions.astro';
 import About from '../components/home/About.astro';
 import Technologies from '../components/home/Technologies.astro';
+import Hero from '../components/Hero.astro';
+import FinalEngagement from '../components/FinalEngagement.astro';
 ---
 
 <Layout>
@@ -25,22 +27,63 @@ import Technologies from '../components/home/Technologies.astro';
     href="/images/florian-mueller.webp"
     type="image/webp"
   />
-  <main class="site-main" id="home">
-    <section class="hero home">
-      <div class="wrapper">
-        <h1 class="heading1">Speed Up Your Success with Fast and Reliable Web App Development</h1>
+  <Hero imageUrl="/images/hero-background.webp">
+    <h1 class="heading1">Unlock Your Web App's Full Potential</h1>
+    <p>
+      Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
+      Stand out online and leave your competition behind.
+    </p>
+    <ScheduleACallButton size="large" slot="actions" />
+  </Hero>
+  <section class="section wrapper">
+    <div class="even-columns two-columns no-gap items-center">
+      <figure class="fade-from-left">
+        <img
+          src="/images/home/problem-statement.webp"
+          alt="Don't Let a Slow App Hold You Back"
+          width="699"
+          height="484"
+          class="rounded"
+        />
+      </figure>
+      <div class="card white shadow fade-from-right" style="margin-left: -1.25rem">
+        <p class="tagline">Don't Let a Slow App Hold You Back</p>
+        <h2 class="heading2">Is Your Web App Slowing You Down?</h2>
         <p>
-          We help you turn your ideas into reality faster and with greater stability, offering expert frontend
-          development services and performance optimization.
+          In today's fast-paced digital world, a slow, unresponsive web app isn't just frustrating — it's costing you
+          users, conversions, and revenue. We're here to fix what's holding you back and unlock your app's full
+          potential.
         </p>
-        <div>
-          <ScheduleACallButton size="large" />
-        </div>
       </div>
-    </section>
-    <Benefits />
-    <Solutions />
-    <About />
-    <Technologies />
-  </main>
+    </div>
+  </section>
+  <section class="section wrapper">
+    <header>
+      <p class="tagline">See the difference we can make</p>
+      <h2 class="heading2">Why Choose Us?</h2>
+      <p class="description">
+        Partnering with us means you'll experience significant improvements in speed, user satisfaction, and
+        scalability. Here's what we deliver:
+      </p>
+    </header>
+    <ul class="even-columns three-columns">
+      <li class="card white shadow">
+        <h3 class="heading3">Blazing Fast Performance</h3>
+        <p class="body1">We optimize your app for lightning speed</p>
+      </li>
+      <li class="card white shadow">
+        <h3 class="heading3">Seamless User Experience</h3>
+        <p class="body1">Smooth interactions that keep users coming back</p>
+      </li>
+      <li class="card white shadow">
+        <h3 class="heading3">Scalable Solutions</h3>
+        <p class="body1">Architecture that grows with your business</p>
+      </li>
+    </ul>
+  </section>
+  <Benefits />
+  <Solutions />
+  <About />
+  <!-- <Technologies /> -->
+  <FinalEngagement />
 </Layout>

@@ -19,21 +19,19 @@ import Layout from '../layout/MainLayout.astro';
     href="/images/pwa-hero-background.webp"
     type="image/webp"
   />
-  <main class="site-main">
-    <section class="hero" style="--background-image: url('/images/pwa-hero-background.webp')">
-      <div class="wrapper">
-        <h1 class="heading1">Elevate Your Digital Presence with Progressive Web Apps</h1>
-        <p>
-          Progressive Web Apps (PWAs) boost user engagement and satisfaction. They work offline, send push
-          notifications, load quickly, and function seamlessly on all devices.
-        </p>
-        <div>
-          <ScheduleACallButton size="large" />
-        </div>
+  <section class="hero" style="--background-image: url('/images/pwa-hero-background.webp')">
+    <div class="wrapper">
+      <h1 class="heading1">Elevate Your Digital Presence with Progressive Web Apps</h1>
+      <p>
+        Progressive Web Apps (PWAs) boost user engagement and satisfaction. They work offline, send push notifications,
+        load quickly, and function seamlessly on all devices.
+      </p>
+      <div>
+        <ScheduleACallButton size="large" />
       </div>
-    </section>
-    <Benefits />
-    <Statistics />
-    <Expertise />
-  </main>
+    </div>
+  </section>
+  <Benefits />
+  <Statistics />
+  <Expertise />
 </Layout>

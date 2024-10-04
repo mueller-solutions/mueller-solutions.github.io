@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import purgecss from 'astro-purgecss';
 import playformCompress from '@playform/compress';
 import robotsTxt from 'astro-robots-txt';
@@ -9,6 +10,8 @@ const siteURL = 'https://mueller-solutions.dev';
 // https://astro.build/config
 export default defineConfig({
   site: siteURL,
+  output: 'server',
+  adapter: netlify(),
   integrations: [
     purgecss(),
     sitemap({

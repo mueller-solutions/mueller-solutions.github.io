@@ -3,55 +3,26 @@ import { Image } from 'astro:assets';
 import ScheduleACallButton from '../ScheduleACallButton.astro';
 ---
 
-<section id="about" class="section about">
-  <div class="wrapper">
+<section id="about" class="section primary">
+  <div class="wrapper fluid-row">
     <div class="content">
-      <header>
-        <h2 class="heading">Hi, I am Florian Mueller</h2>
-        <p class="subheading">Senior Frontend Developer since 2001</p>
+      <header class="header">
+        <p class="tagline inverted">Experience You Can Trust</p>
+        <h2 class="heading2 inverted">Meet Florian Mueller</h2>
+        <p class="body1 inverted">
+          With over 20 years in web development, I've seen it all—from small agency projects to large-scale enterprise
+          solutions. Now, I bring that experience to you, delivering personalized, expert consulting to help your
+          business thrive. I work closely with clients to ensure every project exceeds expectations, with the goal of
+          building long-term partnerships that drive success.
+        </p>
       </header>
-      <p>
-        I studied media design in the late 1990s. Yet, the digital world captivated me. This shift sparked my move from
-        design to web development. By 2001, I had fully embraced it. I enjoyed the challenges and rewards of creating
-        digital experiences.
-      </p>
-      <div class="block">
-        <h3 class="block-heading">A Rich Tapestry of Experiences</h3>
-        <p>
-          I've worked with many companies over the years. Each offered unique challenges and invaluable lessons. My
-          career has been a rich tapestry of experiences. I honed my skills at smaller agencies, creating custom
-          websites for clients. At larger firms, I developed complex SaaS e-commerce solutions. My time with enterprise
-          corporations was one of the most rewarding chapters. I built engagement planning software for the medical and
-          pharmaceutical industries. These roles refined my skills. They also showed me how technology can drive
-          industry-specific innovations.
-        </p>
-      </div>
-      <div class="block">
-        <h3 class="block-heading">Collaborative Excellence</h3>
-        <p>
-          Now, with much experience, I'm starting a new venture: my own consulting business. This isn't just about me.
-          It's about a group of talented professionals. I've worked with them throughout my career. I'm partnering with
-          skilled freelancers and trusted colleagues. They are as passionate about frontend development as I am.
-          Together, we bring a diverse range of expertise and a shared commitment to excellence.
-        </p>
-      </div>
-      <div class="block">
-        <h3 class="block-heading">Join Us on Our Journey</h3>
-        <p>
-          Let's work together to make your vision a reality. Our combined skills can take your business to new heights.
-          We aim to make a lasting impact. Our foundation is trust, innovation, and a pursuit of excellence.
-        </p>
-      </div>
-      <div>
-        <ScheduleACallButton />
-      </div>
     </div>
-    <div class="portrait fade-from-right">
+    <div class="fade-from-right no-shrink">
       <Image
-        src="/images/florian-mueller.webp"
+        src="/images/home/florian-mueller.webp"
         alt="Florian Mueller, Senior Frontend Developer since 2001"
-        width="367"
-        height="592"
+        width="404"
+        height="492"
       />
     </div>
   </div>

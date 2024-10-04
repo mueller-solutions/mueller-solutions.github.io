@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.even-columns {
+  display: grid;
+  list-style-type: none;
+  padding: 0;
+  contain: layout style;
+  grid-template-columns: var(--grid-columns, none);
+
+  &:not(&.no-gap) {
+    gap: var(--gap, clamp(pxtorem(16), 3vw, pxtorem(30)));
+  }
+
+  &.one-column {
+    grid-template-columns: 1fr;
+  }
+
+  &.two-columns {
+    grid-template-columns: repeat(1, 1fr);
+
+    @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &.three-columns {
+    @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.four-columns {
+    @include mq(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

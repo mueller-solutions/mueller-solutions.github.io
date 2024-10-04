@@ -1,55 +1,51 @@
 ---
-import { Image } from 'astro:assets';
-import NavLink from './NavLink.astro';
+import Icon from './common/Icon.astro';
+const pathname = Astro.url.pathname;
 ---
 
 <footer class="site-footer">
-  <div class="wrapper flex-group" data-justify="between" data-align="end">
-    <a href="/" class="logo-link">
-      <Image src="/images/logo-white.svg" alt="MUELLER Logo" width="216" height="36" />
-    </a>
-
-    <nav>
-      <ul>
-        <li>
-          <NavLink
-            href="#"
-            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-          >
-            Schedule a Call
-          </NavLink>
-        </li>
-        <li><NavLink href="/#/services">Services</NavLink></li>
-        <li><NavLink href="/#/about">About</NavLink></li>
-      </ul>
-    </nav>
-
-    <div class="socials">
-      <!-- <a href="">
-        <Image
-          src="/images/icons/x.svg"
-          alt="Twitter Icon"
-          width="24"
-          height="22"
-        />
-      </a> -->
-      <a href="https://www.linkedin.com/company/mueller-solutions-dev" target="_blank">
-        <Image src="/images/icons/linkedin.svg" alt="LinkedIn Icon" width="24" height="24" />
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61564462280786" target="_blank">
-        <Image src="/images/icons/facebook.svg" alt="Facebook Icon" width="24" height="24" />
-      </a>
+  <div class="wrapper main-content">
+    <div class="even-columns three-columns">
+      <div class="logo">
+        <img src="/images/logo-white.svg" width="144" height="24" alt="MUELLER Logo White" loading="lazy" />
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/about-us" class:list={['nav-link', pathname === '/about-us' && 'active']}>About Us</a>
+        <a href="/services" class:list={['nav-link', pathname === '/services' && 'active']}>Services</a>
+        <a href="/blog" class:list={['nav-link', pathname === '/blog' && 'active']}>Blog</a>
+        <a href="/contact" class:list={['nav-link', pathname === '/contact' && 'active']}>Contact</a>
+      </nav>
+      <div class="contact-info">
+        <address>
+          <p>
+            <span class="icon">
+              <Icon name="location" width="11" height="14" />
+            </span>
+            <span>5900 Balcones Drive STE 100, Austin, TX 78731</span>
+          </p>
+          <p>
+            <span class="icon">
+              <Icon name="email" width="14" height="10" />
+            </span>
+            <span>info@mueller-solutions.dev</span>
+          </p>
+          <p>
+            <span class="icon">
+              <Icon name="phone" width="10" height="10" />
+            </span>
+            <span>+1 (512) 203 5199</span>
+          </p>
+        </address>
+        <div class="social-links">
+          <div class="facebook"></div>
+          <div class="linkedin"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="wrapper"><hr /></div>
-  <div class="wrapper flex-group footer-bottom" data-justify="between" data-align="start">
-    <nav class="site-footer-nav">
-      <ul>
-        <li><NavLink href="/privacy-policy">Privacy Policy</NavLink></li>
-        <!-- <li><NavLink href="/terms-of-use">Terms of Use</NavLink></li> -->
-        <!-- <li><NavLink href="/accessibility">Accessibility</NavLink></li> -->
-      </ul>
-    </nav>
-    <div class="copyright">&copy; 2024 DevBucket LLC. All rights reserved.</div>
+  <div class="wrapper copyright">
+    <span>&copy; 2024 DevBucket LLC. All rights reserved.</span>
+    <span class="separator">|</span>
+    <a href="/privacy-policy" class:list={['nav-link', pathname === '/privacy-policy' && 'active']}>Privacy Policy</a>
   </div>
 </footer>

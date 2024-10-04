@@ -1,53 +1,89 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .site-footer {
+  container-name: footer;
   background-color: $color-dark;
-  color: $color-light;
-  padding-block: clamp(pxtorem(20), 4vw, pxtorem(60));
-  display: grid;
-  gap: clamp(pxtorem(10), 4vw, pxtorem(20));
+  color: $color-gray-light;
+  padding-block: pxtorem(67) pxtorem(20);
 
-  nav {
-    ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: clamp(pxtorem(12), 3vw, pxtorem(24));
-    }
+  .main-content {
+    margin-block-end: pxtorem(50);
+  }
 
-    a {
-      color: $color-light;
-      transition: color 200ms ease-in-out;
+  .logo {
+    grid-column: 1 / -1;
 
-      &:not(.active):hover {
-        color: $color-gray-light;
-      }
-
-      &.active {
-        color: $color-brand-light;
-        cursor: default;
-        pointer-events: none;
-      }
+    @include mq(small) {
+      grid-column: 1;
     }
   }
 
-  .socials {
-    display: flex;
-    gap: clamp(pxtorem(20), 4vw, pxtorem(24));
-    align-items: center;
+  .contact-info {
+    font-size: pxtorem(14);
+    line-height: pxtorem(20);
   }
 
-  hr {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-color: $color-gray-darker;
+  nav > a {
+    display: block;
+    color: $color-gray-light;
+    text-decoration: none;
   }
 
-  .footer-bottom {
-    font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
+  .nav-link {
+    &:not(.active) {
+      color: $color-gray-light;
+
+      @include transition-medium(color);
+
+      &:hover,
+      &:focus-visible {
+        color: $color-yellow;
+      }
+    }
+
+    &.active {
+      color: $color-brand-light;
+    }
+  }
+
+  nav > a:not(:last-of-type) {
+    margin-block-end: pxtorem(8);
+  }
+
+  address {
+    p {
+      @include mq(small) {
+        display: grid;
+        grid-template-columns: pxtorem(14) 1fr;
+        align-items: flex-start;
+        gap: pxtorem(12);
+      }
+
+      &:not(:last-of-type) {
+        margin-block-end: pxtorem(8);
+      }
+
+      > span:first-child {
+        display: none;
+
+        @include mq(small) {
+          display: grid;
+          place-items: center;
+          margin-block-start: pxtorem(5);
+        }
+      }
+    }
   }
 
   .copyright {
-    font-size: clamp(pxtorem(12), 3vw, pxtorem(14));
+    padding-block-start: pxtorem(18);
+    font-size: pxtorem(12);
+    color: $color-gray-light;
+    text-align: center;
+    border-top: 1px solid #{rgba($color-gray-light, 0.15)};
+  }
+
+  .separator {
+    margin-inline: pxtorem(4);
   }
 }

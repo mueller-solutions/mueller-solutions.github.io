@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 *,
 *::before,
@@ -20,6 +20,8 @@ video {
   display: block;
   max-width: 100%;
   height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
 }
 
 a,
@@ -34,7 +36,7 @@ a:hover {
 }
 
 button,
-input[type="submit"] {
+input[type='submit'] {
   cursor: pointer;
   border: 0;
 

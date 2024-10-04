@@ -1,24 +1,65 @@
-@use "sass:meta";
-@use "sass:math";
-@use "sass:map";
-@use "breakpoints" as *;
+@use 'sass:meta';
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
+@use 'breakpoints' as *;
+@use 'transitions' as *;
 
 @mixin mq($size) {
-  @if map.has-key($breakpoints, $size) {
-    $breakpoint: map.get($breakpoints, $size);
-
-    @media screen and (min-width: $breakpoint) {
+  @if $size == mobile {
+    @media (width < 30em) {
       @content;
     }
-  } @else if meta.type-of($size) == number {
-    @if math.is-unitless($size) {
-      @error 'when using a number with @mq() make sure to include a unit';
-    } @else {
-      @media screen and (min-width: $size) {
+  } @else {
+    @if map.has-key($breakpoints, $size) {
+      $breakpoint: map.get($breakpoints, $size);
+
+      @media screen and (min-width: $breakpoint) {
         @content;
       }
+    } @else if meta.type-of($size) == number {
+      @if math.is-unitless($size) {
+        @error 'when using a number with @mq() make sure to include a unit';
+      } @else {
+        @media screen and (min-width: $size) {
+          @content;
+        }
+      }
+    } @else {
+      @error 'the keyword #{$size} is not in the $breakpoints map';
     }
-  } @else {
-    @error 'the keyword #{$size} is not in the $breakpoints map';
   }
+}
+
+@mixin set-transition($transition) {
+  transition: $transition;
+}
+
+@mixin transition($props, $ease, $duration) {
+  $transition: ();
+
+  @for $i from 1 through list.length($props) {
+    $transition: list.append($transition, list.nth($props, $i) $duration $ease, comma);
+  }
+
+  @include set-transition($transition);
+}
+
+@mixin transition-short($props, $ease: $transition-ease-out) {
+  @include transition($props, $ease, $transition-duration-short);
+}
+
+@mixin transition-medium($props, $ease: $transition-ease-out) {
+  @include transition($props, $ease, $transition-duration-medium);
+}
+
+@mixin transition-long($props, $ease: $transition-ease-out) {
+  @include transition($props, $transition-ease-out, $transition-duration-long);
+}
+
+@mixin scroll-animate($timelineName, $animationName) {
+  view-timeline-name: --#{$timelineName};
+  animation: $animationName both;
+  animation-timeline: --#{$timelineName};
+  animation-range: 5% 30%;
 }

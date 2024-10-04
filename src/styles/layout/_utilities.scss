@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+.no-shrink {
+  flex-shrink: 0;
+}
+
+.rounded {
+  border-radius: pxtorem(12);
+}
+
+.items-center {
+  align-items: center;
+}

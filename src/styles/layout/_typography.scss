@@ -6,6 +6,10 @@
   font-weight: $font-weight-semibold;
   letter-spacing: -0.03em;
   text-wrap: balance;
+
+  &.inverted {
+    color: $color-brand-light;
+  }
 }
 
 .heading2 {
@@ -14,6 +18,10 @@
   font-weight: $font-weight-bold;
   letter-spacing: -0.04em;
   text-wrap: balance;
+
+  &.inverted {
+    color: $color-light;
+  }
 }
 
 .heading3 {
@@ -22,6 +30,11 @@
   letter-spacing: -0.03rem;
   font-weight: $font-weight-bold;
   color: $color-brand-light;
+  text-wrap: balance;
+
+  &.inverted {
+    color: $color-light;
+  }
 }
 
 .heading4 {
@@ -29,21 +42,32 @@
   line-height: clamp(pxtorem(24), 4vw, pxtorem(28));
   letter-spacing: -0.02em;
   font-weight: $font-weight-bold;
+  text-wrap: balance;
+
+  &.inverted {
+    color: $color-light;
+  }
 }
 
 .tagline {
-  display: flex;
-  align-items: center;
-  gap: pxtorem(12);
   font-size: pxtorem(20);
   line-height: clamp(pxtorem(26), 4vw, pxtorem(20));
   font-weight: $font-weight-bold;
   letter-spacing: -0.01em;
   color: $color-brand-light;
+  text-transform: uppercase;
+
+  &.inverted {
+    color: $color-yellow;
+  }
 }
 
 .body1 {
   font-size: pxtorem(16);
   line-height: pxtorem(26);
   text-wrap: balance;
+
+  &.inverted {
+    color: $color-light;
+  }
 }

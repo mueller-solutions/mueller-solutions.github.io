@@ -16,7 +16,7 @@
   box-shadow: var(--shadow-shine-top), var(--shadow-shine-bottom), var(--shadow-dark);
   font-size: pxtorem(18);
   line-height: pxtorem(18);
-  font-weight: 700;
+  font-weight: $font-weight-semibold;
   padding: pxtorem(16) pxtorem(28);
   border-radius: 999px;
   width: 100%;

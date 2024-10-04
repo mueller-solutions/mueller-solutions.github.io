@@ -1,14 +1,88 @@
 @use '../abstracts' as *;
 
 .card {
-  background-color: $color-light;
-  border-radius: clamp(pxtorem(12), 2vw, pxtorem(20));
+  --shadow-color: transparent;
+  --background-color: transparent;
+  --icon-color: #{$color-brand-light};
+  --heading-color: #{$color-dark};
+
   display: flex;
+  border-radius: pxtorem(12);
+  box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(38) var(--shadow-color);
+  background-color: var(--background-color);
   flex-direction: column;
-  gap: clamp(pxtorem(18), 2vw, pxtorem(24));
-  padding: clamp(pxtorem(18), 2vw, pxtorem(24));
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 0 rgb(0 0 0 / 0%);
-  transition: box-shadow 200ms ease-in-out;
+  gap: clamp(pxtorem(10), 4vw, pxtorem(16));
+
+  &:not(&.no-padding) {
+    padding: clamp(pxtorem(20), 4vw, pxtorem(40));
+  }
+
+  .icon {
+    color: var(--icon-color);
+    margin-bottom: pxtorem(8);
+  }
+
+  h3 {
+    color: var(--heading-color);
+  }
+
+  &.white {
+    --background-color: #{$color-light};
+  }
+
+  &.blue {
+    --icon-color: #{$color-brand-light};
+    --background-color: rgb(231 247 255);
+    --heading-color: rgb(45 96 121);
+  }
+
+  &.red {
+    --icon-color: rgb(88 71 71);
+    --background-color: rgb(255 231 231);
+    --heading-color: rgb(88 71 71);
+  }
+
+  &.green {
+    --icon-color: rgb(60 102 83);
+    --background-color: rgb(224 250 238);
+    --heading-color: rgb(60 102 83);
+  }
+
+  &.purple {
+    --icon-color: rgb(64 74 124);
+    --background-color: rgb(231 235 255);
+    --heading-color: rgb(64 74 124);
+  }
+
+  &.shadow {
+    --shadow-color: rgb(0 0 0 / 6%);
+  }
+
+  &.shadow-strong {
+    --shadow-color: rgb(0 0 0 / 12%);
+  }
+
+  &.align-center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &.align-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &.align-right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &[href] {
+    @include transition-medium(box-shadow);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: pxtorem(5) -#{pxtorem(4)} pxtorem(64) rgb(0 0 0 / 12%);
+    }
+  }
 }

@@ -31,7 +31,9 @@ const { title, description, keywords } = Astro.props;
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <Header />
-    <slot />
+    <main class="site-main" id="home">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
