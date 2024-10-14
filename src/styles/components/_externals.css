@@ -1,0 +1,9 @@
+/* stylelint-disable selector-class-pattern */
+
+.pipedriveWebForms {
+  text-align: center;
+
+  button[type='submit'] {
+    border-radius: 0;
+  }
+}

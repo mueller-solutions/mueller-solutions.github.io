@@ -1,9 +1,0 @@
-@use '../abstracts' as *;
-
-.benefits {
-  .benefit {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(pxtorem(14), 4vw, pxtorem(20));
-  }
-}

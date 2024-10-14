@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 node_modules
+
+.netfly/
+
+_src_old/

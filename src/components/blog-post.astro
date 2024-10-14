@@ -1,0 +1,44 @@
+---
+import dayjs from 'dayjs';
+import BlogPostDate from './blog-post-date.astro';
+
+type Props = {
+  post: any;
+  type: 'featured' | 'preview' | 'latest';
+};
+
+const { post, type = 'preview' } = Astro.props;
+---
+
+<article
+  class:list={[
+    type !== 'latest' && 'card white shadow no-padding',
+    'post',
+    type,
+    type === 'latest' && 'flex items-center gap-1',
+  ]}
+>
+  <figure>
+    <img src={post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url} alt="" />
+  </figure>
+  {
+    type === 'latest' ? (
+      <header>
+        <BlogPostDate date={post.date} />
+        <h2 class="heading3">
+          <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+        </h2>
+      </header>
+    ) : (
+      <div class="content">
+        <BlogPostDate date={post.date} />
+        <header>
+          <h2 class="heading2">
+            <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+          </h2>
+        </header>
+        <Fragment set:html={post.excerpt.rendered} />
+      </div>
+    )
+  }
+</article>

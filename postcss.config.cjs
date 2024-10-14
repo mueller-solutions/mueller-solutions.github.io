@@ -1,9 +1,12 @@
 module.exports = {
   plugins: {
+    'postcss-import': {},
+    'postcss-mixins': {},
+    'postcss-nested': {},
+    'postcss-preset-env': {},
     autoprefixer: {},
-    "postcss-nested": {},
     cssnano: {
-      preset: "advanced",
+      preset: 'advanced',
     },
   },
 };

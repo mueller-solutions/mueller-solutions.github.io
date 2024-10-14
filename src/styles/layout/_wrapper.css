@@ -1,0 +1,16 @@
+/* stylelint-disable at-rule-no-unknown */
+.wrapper {
+  --padding: 20px;
+  --max-width: 1440px;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+
+  @mixin tablet-up {
+    --padding: 40px;
+  }
+
+  @mixin desktop-up {
+    --padding: 80px;
+  }
+}

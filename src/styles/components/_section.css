@@ -1,0 +1,56 @@
+/* stylelint-disable at-rule-no-unknown */
+.section {
+  --spacing-y: clamp(60px, 6vw, 160px);
+
+  padding-block: var(--spacing-y);
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    margin-block-end: clamp(30px, 6vw, 50px);
+
+    @mixin tablet-up {
+      max-width: clamp(70%, 4vw, 60%);
+      margin-inline: auto;
+    }
+  }
+
+  &.primary {
+    background-color: var(--clr-primary-dark);
+  }
+
+  &.gradient-down {
+    background-image: linear-gradient(to bottom, rgb(231 247 255 / 100%), var(--clr-body));
+  }
+
+  &.gradient-up {
+    background-image: linear-gradient(to top, rgb(231 247 255 / 100%), var(--clr-body));
+  }
+
+  .actions {
+    padding-block-start: clamp(20px, 4vw, 40px);
+    text-align: center;
+  }
+
+  &.align-left {
+    header {
+      margin-inline: initial;
+
+      @mixin tablet-up {
+        text-align: left;
+        max-width: 80%;
+      }
+    }
+  }
+
+  &.simple {
+    --spacing-y: clamp(30px, 6vw, 60px);
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  &:has(.pipedriveWebForms) {
+    --spacing-y: clamp(20px, 6vw, 30px);
+  }
+}
