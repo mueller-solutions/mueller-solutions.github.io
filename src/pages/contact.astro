@@ -1,3 +1,40 @@
 ---
-
+import Icon from '../components/icon.astro';
+import MainLayout from '../layouts/main-layout.astro';
 ---
+
+<MainLayout
+  title="Contact Us"
+  description="Get in touch with MUELLER for your next project."
+  keywords="contact, email, phone, form"
+>
+  <section class="hero simple">
+    <div class="wrapper">
+      <h1 class="heading1 inverted">Let's Build the Future Together</h1>
+      <p class="text-balance text-pretty-mobile">
+        Have a project in mind or need expert advice? Reach out to our team and let's create something extraordinary.
+      </p>
+    </div>
+  </section>
+  <section class="section wrapper">
+    <p class="tagline text-center">No red tape, just real solutions.</p>
+    <div
+      class="pipedriveWebForms"
+      data-pd-webforms="https://webforms.pipedrive.com/f/6FvFfQYkb4Gh0vK6guVt535BCcsWPAZSIvipYaBUd63dNyFUwt5tQKtt0Bg25GAQ15"
+    >
+      <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
+    </div>
+  </section>
+  <section class="section simple wrapper">
+    <header>
+      <p class="tagline">Quick, easy, and just a message away!</p>
+      <h2 class="heading2">Got Questions? Let's Chat!</h2>
+    </header>
+    <p class="text-center">
+      <a href="https://wa.me/15122035199" target="_blank" class="button whatsapp">
+        <Icon name="whatsapp" width="24" height="24" />
+        Chat with us on WhatsApp
+      </a>
+    </p>
+  </section>
+</MainLayout>

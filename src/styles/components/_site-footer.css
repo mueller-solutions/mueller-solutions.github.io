@@ -1,0 +1,74 @@
+/* stylelint-disable at-rule-no-unknown */
+.site-footer {
+  --spacing-y: clamp(20px, 6vw, 50px);
+
+  padding-block: var(--spacing-y) 16px;
+  background-color: var(--clr-dark);
+  color: rgb(216 242 255 / 100%);
+
+  @mixin tablet-up {
+    font-size: 14px;
+  }
+
+  address {
+    gap: 8px;
+    font-style: normal;
+    font-size: 14px;
+  }
+
+  a {
+    color: rgb(216 242 255 / 100%);
+    transition: color var(--trans-duration-short) var(--trans-ease-out);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-yellow);
+    }
+
+    &.active {
+      color: var(--clr-primary);
+    }
+  }
+
+  .footer-nav {
+    .nav-link {
+      display: inline-block;
+      padding: 6px 10px;
+
+      @mixin mobile {
+        margin-inline: -10px;
+      }
+    }
+
+    .sub-navigation {
+      background-color: transparent;
+
+      @mixin tablet-up {
+        display: grid;
+        position: relative;
+        top: initial;
+        box-shadow: none;
+        margin-top: 0;
+        border-radius: 0;
+        padding: 0 0 0 20px;
+        animation: none;
+      }
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid rgb(216 242 255 / 10%);
+    margin-top: 40px;
+    padding-top: 16px;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+  }
+
+  .separator {
+    @mixin mobile {
+      display: block;
+      color: transparent;
+    }
+  }
+}

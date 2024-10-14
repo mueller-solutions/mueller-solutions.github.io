@@ -1,58 +1,26 @@
-import WPAPI from 'wpapi';
-import wpClient from '../lib/client';
+import axios, { type AxiosInstance } from 'axios';
 
-/**
- * Type representing a blog post.
- */
-export type Post = {
-  id: number;
-  date: string;
-  slug: string;
-  title: { rendered: string };
-  content: { rendered: string };
-  excerpt: { rendered: string };
-  meta: {
-    advanced_seo_description: string;
-    jetpack_seo_html_title: string;
-    jetpack_seo_noindex: boolean;
-  };
-};
+const client = axios.create({
+  baseURL: `${import.meta.env.WP_API_URL}/wp/v2/`,
+});
 
-/**
- * Service for fetching blog posts from the WordPress REST API.
- */
 class BlogService {
-  constructor(protected client: WPAPI) {}
-
-  /**
-   * Fetches paginated blog posts.
-   * @param page - The page number to fetch.
-   * @returns A promise that resolves to an array of Post objects.
-   */
-  async getPostsPaginated(page: number): Promise<Post[]> {
-    try {
-      return await this.client.posts().page(page).perPage(20);
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
+  constructor(protected client: AxiosInstance) {
+    this.client = client;
   }
 
-  /**
-   * Fetches a blog post by its slug.
-   * @param slug - The slug of the post to fetch.
-   * @returns A promise that resolves to a Post object or null if not found.
-   */
-  async getPostBySlug(slug: string): Promise<Post | null> {
-    try {
-      return await this.client.posts().slug(slug).get();
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
+  async getPosts(page: number = 1) {
+    const response = await this.client.get(`posts?_embed&per_page=20&page=${page}&orderby=date&order=desc`);
+    const numPages = parseInt(response.headers['x-wp-totalpages'], 10);
+    return { posts: response.data, numPages, currentPage: page };
+  }
+
+  async getPost(slug: string) {
+    const response = await this.client.get(`posts?slug=${slug}&_embed`);
+    return response.data;
   }
 }
 
-const blogService = new BlogService(wpClient);
+const blogService = new BlogService(client);
 
 export default blogService;

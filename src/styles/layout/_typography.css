@@ -1,0 +1,130 @@
+/* stylelint-disable at-rule-no-unknown */
+.heading1 {
+  font-size: clamp(40px, 4vw, 66px);
+  line-height: clamp(44px, 4vw, 70px);
+  letter-spacing: -0.03em;
+  font-weight: var(--fnt-weight-semibold);
+  text-wrap: balance;
+  color: var(--clr-dark);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.heading2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: clamp(30px, 4vw, 46px);
+  letter-spacing: -0.025em;
+  font-weight: var(--fnt-weight-semibold);
+  text-wrap: balance;
+  color: var(--clr-dark);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.heading3 {
+  font-size: clamp(18px, 4vw, 20px);
+  line-height: clamp(22px, 4vw, 24px);
+  letter-spacing: -0.01em;
+  font-weight: var(--fnt-weight-semibold);
+  text-wrap: balance;
+  color: var(--clr-primary-darker);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.heading4 {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.015em;
+  font-weight: var(--fnt-weight-semibold);
+  text-wrap: balance;
+  color: var(--clr-primary-dark);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.tagline {
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: clamp(16px, 4vw, 20px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--clr-primary-dark);
+
+  @mixin mobile {
+    letter-spacing: 0;
+  }
+
+  &.inverted {
+    color: var(--clr-yellow);
+  }
+}
+
+.body1 {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--clr-dark);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.body2 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  font-weight: var(--fnt-weight-regular);
+  color: var(--clr-gray-darker);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.body3 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0;
+  color: var(--clr-gray-darker);
+
+  &.inverted {
+    color: var(--clr-light);
+  }
+}
+
+.text-muted {
+  color: var(--clr-gray-dark);
+  opacity: 0.65;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-balance-mobile {
+  @mixin mobile {
+    text-wrap: balance;
+  }
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-pretty-mobile {
+  @mixin mobile {
+    text-wrap: pretty;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

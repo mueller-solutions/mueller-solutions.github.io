@@ -1,22 +1,32 @@
 ---
-import Layout from '../layout/MainLayout.astro';
+import FinalEngagement from '../components/final-engagement.astro';
+import Icon from '../components/icon.astro';
+import Testimonial from '../components/testimonial.astro';
+import MainLayout from '../layouts/main-layout.astro';
 
-import ScheduleACallButton from '../components/ScheduleACallButton.astro';
-import Benefits from '../components/home/Benefits.astro';
-import Solutions from '../components/home/Solutions.astro';
-import About from '../components/home/About.astro';
-import Technologies from '../components/home/Technologies.astro';
-import Hero from '../components/Hero.astro';
-import FinalEngagement from '../components/FinalEngagement.astro';
+const solutions = [
+  { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
+  {
+    title: 'Audit & Analyze',
+    description: 'We conduct a thorough performance audit to identify areas for improvement',
+  },
+  {
+    title: 'Craft a Custom Strategy',
+    description: 'We develop a tailored plan that addresses your unique challenges',
+  },
+  { title: 'Implement & Optimize', description: 'We roll out the solutions that will transform your app' },
+  { title: 'Test for Perfection', description: 'Rigorous testing ensures flawless performance' },
+  { title: 'Ongoing Support', description: 'We provide continuous support to keep your app at its best' },
+];
 ---
 
-<Layout>
+<MainLayout>
   <link
     slot="html-head"
     rel="preload"
     fetchpriority="high"
     as="image"
-    href="/images/hero-background.webp"
+    href="/images/home/man-with-laptop.webp"
     type="image/webp"
   />
   <link
@@ -24,32 +34,56 @@ import FinalEngagement from '../components/FinalEngagement.astro';
     rel="preload"
     fetchpriority="high"
     as="image"
-    href="/images/florian-mueller.webp"
+    href="/images/home/problem-statement.webp"
     type="image/webp"
   />
-  <Hero imageUrl="/images/hero-background.webp">
-    <h1 class="heading1">Unlock Your Web App's Full Potential</h1>
-    <p>
-      Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
-      Stand out online and leave your competition behind.
-    </p>
-    <ScheduleACallButton size="large" slot="actions" />
-  </Hero>
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/home/solutions-collage.webp"
+    type="image/webp"
+  />
+  <link
+    slot="html-head"
+    rel="preload"
+    fetchpriority="high"
+    as="image"
+    href="/images/home/florian-mueller.webp"
+    type="image/webp"
+  />
+  <!-- Hero -->
+  <section class="hero" style="--background-image: url('/images/home/man-with-laptop.webp')">
+    <div class="wrapper">
+      <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
+      <p class="text-balance text-pretty-mobile">
+        Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
+        Stand out online and leave your competition behind.
+      </p>
+      <div class="hero-actions">
+        <button
+          class="button"
+          data-size="large"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+        >
+          Schedule a Free Consultation
+        </button>
+        <button class="button inverted">
+          <Icon name="download" width="24" height="24" />
+          Free Optimization Checklist
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <figure class="fade-from-left">
-        <img
-          src="/images/home/problem-statement.webp"
-          alt="Don't Let a Slow App Hold You Back"
-          width="699"
-          height="484"
-          class="rounded"
-        />
-      </figure>
-      <div class="card white shadow fade-from-right" style="margin-left: -1.25rem">
+      <img src="/images/home/problem-statement.webp" alt="Problem Statement" width="699" height="484" class="rounded" />
+      <div class="card white shadow-strong overlap-left">
         <p class="tagline">Don't Let a Slow App Hold You Back</p>
         <h2 class="heading2">Is Your Web App Slowing You Down?</h2>
-        <p>
+        <p class="body1 text-balance text-pretty-mobile">
           In today's fast-paced digital world, a slow, unresponsive web app isn't just frustrating — it's costing you
           users, conversions, and revenue. We're here to fix what's holding you back and unlock your app's full
           potential.
@@ -57,33 +91,192 @@ import FinalEngagement from '../components/FinalEngagement.astro';
       </div>
     </div>
   </section>
+  <!-- Why Choose Us -->
   <section class="section wrapper">
     <header>
-      <p class="tagline">See the difference we can make</p>
+      <p class="tagline">See The Difference We Can Make</p>
       <h2 class="heading2">Why Choose Us?</h2>
-      <p class="description">
+      <p class="body1 text-balance text-pretty-mobile">
         Partnering with us means you'll experience significant improvements in speed, user satisfaction, and
         scalability. Here's what we deliver:
       </p>
     </header>
     <ul class="even-columns three-columns">
-      <li class="card white shadow">
+      <li class="card blue align-left fade-from-bottom">
         <h3 class="heading3">Blazing Fast Performance</h3>
-        <p class="body1">We optimize your app for lightning speed</p>
+        <p class="body2 text-balance text-pretty-mobile">We optimize your app for lightning speed</p>
       </li>
-      <li class="card white shadow">
+      <li class="card purple align-left fade-from-bottom">
         <h3 class="heading3">Seamless User Experience</h3>
-        <p class="body1">Smooth interactions that keep users coming back</p>
+        <p class="body2 text-balance text-pretty-mobile">Smooth interactions that keep users coming back</p>
       </li>
-      <li class="card white shadow">
+      <li class="card green align-left fade-from-bottom">
         <h3 class="heading3">Scalable Solutions</h3>
-        <p class="body1">Architecture that grows with your business</p>
+        <p class="body2 text-balance text-pretty-mobile">Architecture that grows with your business</p>
       </li>
     </ul>
   </section>
-  <Benefits />
-  <Solutions />
-  <About />
-  <!-- <Technologies /> -->
+  <!-- Our Services -->
+  <section class="section primary">
+    <div class="wrapper">
+      <header>
+        <p class="tagline inverted">Solutions That Drive Success</p>
+        <h2 class="heading2 inverted">Our Services</h2>
+        <p class="body1 inverted text-balance text-pretty-mobile">
+          We specialize in building high-performance, scalable web applications that elevate your business. We modernize
+          legacy systems and craft custom web solutions. We ensure your digital presence is ready to scale and succeed.
+        </p>
+      </header>
+      <ul class="even-columns three-columns">
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="frontend-performance" width="52" height="52" />
+          <h3 class="heading3">Performance-Optimized Web Development</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Create lightning-fast websites and apps that keep users engaged and drive conversions.
+          </p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="scalable-architecture" width="60" height="52" />
+          <h3 class="heading3">Legacy Application Modernization</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Transform outdated systems into modern, scalable web applications with the latest technologies.
+          </p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="cutting-edge-technology" width="59" height="52" />
+          <h3 class="heading3">Custom Web Application Development</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Create custom web solutions for your unique business needs. They should be scalable and high-performing.
+          </p>
+        </li>
+      </ul>
+      <div class="actions">
+        <a href="/services" class="button">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+  <!-- Proven Process to Success -->
+  <section class="section align-left wrapper">
+    <div class="flex flex-sm-col gap-4 items-center">
+      <div>
+        <header>
+          <p class="tagline">Proven Process to Success</p>
+          <h2 class="heading2">Innovative Solutions With Integrity</h2>
+          <p class="body1 text-balance text-pretty-mobile">
+            With over 20 years of experience, we've honed a process that ensures your app not only meets your current
+            needs but is also ready to scale as your business grows.
+          </p>
+        </header>
+        <div class="flex flex-col gap-4">
+          <ul data-type="list">
+            {
+              solutions.map((solution) => (
+                <li class="fade-from-bottom text-balance text-pretty-mobile">
+                  <strong>{solution.title}:</strong> {solution.description}
+                </li>
+              ))
+            }
+          </ul>
+          <div>
+            <button
+              class="button primary"
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+            >
+              Ready To Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+      <img
+        class="fade-from-right"
+        src="/images/home/solutions-collage.webp"
+        alt="Solutions Collage"
+        width="514"
+        height="552"
+      />
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section class="section gradient-down">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">Testimonial</p>
+        <h2 class="heading2">Real Results, Real Impact</h2>
+        <p class="body1 text-balance text-pretty-mobile">
+          Talk is cheap, but results speak volumes. Here's how we've helped businesses like yours overcome their biggest
+          challenges and achieve exceptional results
+        </p>
+      </header>
+      <div class="even-columns three-columns">
+        <Testimonial
+          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
+          author="Stephan Conrad"
+          company="Senior Director of Engineering, Veeva Systems"
+          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
+          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
+        />
+        <!-- <Testimonial
+          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
+          author="Stephan Conrad"
+          company="Senior Director of Engineering, Veeva Systems"
+          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
+          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
+        />
+        <Testimonial
+          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
+          author="Stephan Conrad"
+          company="Senior Director of Engineering, Veeva Systems"
+          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
+          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
+        />
+        <Testimonial
+          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
+          author="Stephan Conrad"
+          company="Senior Director of Engineering, Veeva Systems"
+          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
+          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
+        />
+        <Testimonial
+          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
+          author="Stephan Conrad"
+          company="Senior Director of Engineering, Veeva Systems"
+          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
+          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
+        /> -->
+      </div>
+    </div>
+  </section>
+  <!-- Meet Florian -->
+  <section class="section align-left">
+    <div class="wrapper">
+      <div class="flex flex-sm-col gap-4 items-center">
+        <div class="fade-from-left">
+          <header>
+            <p class="tagline">Experience You Can Trust</p>
+            <h2 class="heading2">Meet Florian Mueller</h2>
+            <p class="body1 text-balance text-pretty-mobile">
+              With over <strong>23 years of experience</strong> in web development, I've had the opportunity to lead projects
+              of all sizes—from small agency initiatives to large-scale enterprise solutions across the U.S. and Europe.
+              Today, as the founder of <strong>MUELLER</strong>, I bring that deep expertise to help businesses thrive
+              in the digital landscape. My focus goes beyond just delivering web development; I"m dedicated to
+              integrating cutting-edge technologies like <strong>AI</strong> to provide innovative, scalable solutions. I
+              work closely with each client to ensure every project not only meets but
+              <strong>exceeds expectations</strong>, with the goal of building lasting partnerships that drive long-term
+              success.
+            </p>
+          </header>
+          <button class="button primary">Let's Work Together</button>
+        </div>
+        <img
+          class="fade-from-right"
+          src="/images/home/florian-mueller.webp"
+          alt="Florian Mueller"
+          width="404"
+          height="492"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- Final Engagement -->
   <FinalEngagement />
-</Layout>
+</MainLayout>

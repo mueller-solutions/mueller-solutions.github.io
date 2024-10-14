@@ -1,0 +1,29 @@
+---
+import BlogPostDate from '../../components/blog-post-date.astro';
+import MainLayout from '../../layouts/main-layout.astro';
+import blogService from '../../services/blog.service';
+
+const { slug } = Astro.params;
+
+const [post] = await blogService.getPost(slug!);
+---
+
+<MainLayout title={post.title.rendered} description={post.excerpt.rendered} keywords={post.tags}>
+  <article class="post full">
+    <div
+      class="hero remote-image"
+      style={`--background-image: url(${post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url})`}
+    >
+    </div>
+    <div class="wrapper content">
+      <header>
+        <BlogPostDate date={post.date} />
+        <h1 class="heading1" set:html={post.title.rendered} />
+      </header>
+      <div class="excerpt">
+        <Fragment set:html={post.excerpt.rendered} />
+      </div>
+      <Fragment set:html={post.content.rendered} />
+    </div>
+  </article>
+</MainLayout>

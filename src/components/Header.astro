@@ -1,13 +1,40 @@
 ---
-import { Image } from 'astro:assets';
-import Navigation from './Navigation.astro';
+import Icon from './icon.astro';
+import NavLink from './nav-link.astro';
+import ServicesNavigation from './services-navigation.astro';
 ---
 
 <header class="site-header">
-  <div class="wrapper">
-    <a href="/" class="logo-link">
-      <Image src="/images/logo.svg" alt="MUELLER Logo" width="216" height="36" class="main-logo" />
+  <div class="wrapper flex space-between items-center">
+    <a href="/">
+      <img src="/images/logo.svg" alt="MUELLER Logo" class="site-logo" width="216" height="36" />
     </a>
-    <Navigation />
+    <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+    </button>
+    <nav id="main-navigation" class="site-nav">
+      <ul class="flex gap-1 items-center">
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/services">
+          Services
+          <button
+            class="sub-nav-toggle"
+            aria-haspopup="true"
+            aria-controls="services-navigation"
+            aria-expanded="false"
+            slot="dropdown"
+          >
+            <span class="sr-only">Toggle Services dropdown</span>
+            <Icon name="dropdown" width="11" height="6" />
+          </button>
+          <ul id="services-navigation" class="sub-navigation" slot="dropdown">
+            <ServicesNavigation />
+          </ul>
+        </NavLink>
+        <NavLink href="/blog">Blog</NavLink>
+        <NavLink href="/about-us">About Us</NavLink>
+        <NavLink isButton href="/contact">Contact</NavLink>
+      </ul>
+    </nav>
   </div>
 </header>

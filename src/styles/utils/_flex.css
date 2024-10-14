@@ -1,0 +1,68 @@
+/* stylelint-disable at-rule-no-unknown */
+.flex {
+  display: flex;
+}
+
+.flex-sm-col {
+  flex-direction: row;
+
+  @mixin mobile {
+    flex-direction: column;
+  }
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-05 {
+  gap: 10px;
+}
+
+.gap-1 {
+  gap: 20px;
+
+  @mixin mobile {
+    gap: 10px;
+  }
+}
+
+.gap-2 {
+  gap: 40px;
+
+  @mixin mobile {
+    gap: 20px;
+  }
+}
+
+.gap-3 {
+  gap: 60px;
+
+  @mixin mobile {
+    gap: 20px;
+  }
+}
+
+.gap-4 {
+  gap: 80px;
+
+  @mixin mobile {
+    gap: 20px;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}

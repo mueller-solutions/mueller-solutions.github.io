@@ -1,3 +1,274 @@
 ---
+import { Image } from 'astro:assets';
+import Icon from '../components/icon.astro';
+import MainLayout from '../layouts/main-layout.astro';
+import FinalEngagement from '../components/final-engagement.astro';
 
+const faqs = [
+  {
+    question: 'How do you ensure my website will load faster?',
+    answer:
+      'We use modern frameworks like React, Next.js, and Astro. We also use techniques like lazy loading, caching, and code splitting. They help optimize performance. This leads to a considerable reduction in load times. We also analyze your current site to identify and cut bottlenecks.',
+  },
+  {
+    question: 'What kind of improvements can I expect with performance optimization?',
+    answer:
+      'You can expect faster load times, better engagement, and higher conversions. It will also reduce bounce rates. These improvements will enhance both SEO rankings and user satisfaction.',
+  },
+  {
+    question: 'How long does it take to optimize my website for performance?',
+    answer:
+      'Depending on the complexity of your site, optimization can take anywhere from a few days to a few weeks. After an initial analysis, we will provide a clear timeline tailored to your project.',
+  },
+  {
+    question: 'What is legacy system modernization?',
+    answer:
+      'Legacy system modernization means upgrading old tech and designs. We replace them with modern, scalable, and efficient solutions like React and Node.js. This ensures your systems are more secure, faster, and ready to handle future growth.',
+  },
+  {
+    question: 'Will there be downtime when modernizing my legacy system?',
+    answer:
+      'We take every precaution to cut downtime during the modernization process. Often, we can work in phases. This will keep your system running while we make updates.',
+  },
+  {
+    question: 'Why should I modernize my legacy systems?',
+    answer:
+      "Modernizing makes your web apps more secure and scalable. It also lets them work with modern tools and technologies. It also boosts performance and user experience. It helps your business stay competitive in today's digital world.",
+  },
+  {
+    question: "What's included in your custom web application development?",
+    answer:
+      'Our custom web app development services cover the entire process. We handle everything. It includes planning, design, and frontend and backend development. We also do deployment and support. We tailor each project to meet your specific business needs.',
+  },
+  {
+    question: 'How long does it take to build a custom web application?',
+    answer:
+      'The timeline depends on the scope and complexity of your project. After an initial consultation, we provide a detailed project plan and timeline. Custom web apps usually need a few months from concept to completion.',
+  },
+  {
+    question: 'What technologies do you use for custom web app development?',
+    answer:
+      'We use modern technologies like React, Next.js, and Node.js. They make your app fast, secure, and scalable.',
+  },
+  {
+    question: "Can I update my web application after it's built?",
+    answer:
+      'Yes! We offer support and maintenance packages. They keep your web app updated with the latest features, security patches, and performance fixes.',
+  },
+];
 ---
+
+<MainLayout
+  title="Top Web Development Services | Performance Optimization, Legacy System Modernization, Custom Web Applications"
+  description="Explore our expert web development services including performance optimization, legacy system modernization, and custom web application development. We specialize in creating fast, scalable, and secure solutions tailored to your business needs."
+  keywords="web development services, performance optimization, legacy system modernization, custom web applications, React web development, Node.js development, scalable web solutions, web app development, website optimization, secure web platforms"
+>
+  <!-- Hero -->
+  <section class="hero" style="--background-image: url('/images/services/strategy-paper.webp')">
+    <div class="wrapper">
+      <h1 class="heading1 inverted">Explore Our Expert Services</h1>
+      <p>
+        We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
+        experience. Discover how we can help your business thrive in the digital world.
+      </p>
+      <div class="hero-actions">
+        <button
+          class="button inverted"
+          data-size="large"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+        >
+          Book Your Free Strategy Session
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Success Summary -->
+  <section class="section wrapper">
+    <div class="even-columns two-columns no-gap items-center">
+      <img src="/images/services/success-office.webp" alt="A Office" width="700" height="564" class="rounded" />
+      <div class="card white shadow-strong overlap-left">
+        <p class="tagline">Your Success Is Our Priority</p>
+        <h2 class="heading2">Comprehensive Services to Meet Your Unique Needs</h2>
+        <p class="body1">
+          We understand that every business is different. Our services must be flexible, scalable, and tailored to your
+          needs. Whether you need a quick optimization or a full-scale rebuild, we've got you covered. With our
+          expertise, your web app won't just keep up - it'll lead.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Core Services -->
+  <section class="section wrapper">
+    <header>
+      <p class="tagline">Solutions That Power Your Digital Growth</p>
+      <h2 class="heading2">Our Core Services</h2>
+      <p class="body1">
+        We deliver custom web solutions. They will boost performance, scale with your business, and ensure long-term
+        success. Explore how our services can take your web applications to the next level.
+      </p>
+    </header>
+    <div class="even-columns three-columns slim-content">
+      <a href="/services/web-development" class="card blue slim">
+        <Icon name="flash" width="68" height="68" />
+        <h3 class="heading3">Performance-Optimized Web Development</h3>
+        <p class="body2 text-wrap-pretty">
+          Enhance the speed, efficiency, and user experience of your website or app. We aim to build fast,
+          high-performance solutions. They should engage users and boost conversions.
+        </p>
+      </a>
+      <a href="/services/legacy-system-modernization" class="card purple slim">
+        <Icon name="box" width="68" height="68" />
+        <h3 class="heading3">Legacy System Modernization</h3>
+        <p class="body2 text-wrap-pretty">
+          Outdated systems holding you back? We transform legacy apps into modern, scalable web apps. We use
+          cutting-edge tech like React and Node.js. This ensures minimal disruption and the greatest improvement.
+        </p>
+      </a>
+      <a href="/services/custom-web-applications" class="card green slim">
+        <Icon name="net" width="58" height="58" />
+        <h3 class="heading3">Custom Web Application Development</h3>
+        <p class="body2 text-wrap-pretty">
+          Need a fully tailored solution? We build custom web apps to meet your business needs. We ensure your platform
+          is ready for success, whether you are scaling or launching a new project.
+        </p>
+      </a>
+    </div>
+  </section>
+  <!-- Services Details -->
+  <section class="section primary">
+    <div class="wrapper flex flex-col gap-1">
+      <!-- Performance-Optimized Web Development -->
+      <div class="flex flex-sm-col gap-1">
+        <div class="card justify-center items-start large-gap slim white fade-from-left">
+          <h2 class="heading2">Performance-Optimized Web Development</h2>
+          <h3 class="heading3">What It Is</h3>
+          <p class="body1">
+            We build and optimize <strong>high-performance websites and web apps</strong>. We use modern frameworks like <strong
+              >React</strong
+            >, <strong>Next.js</strong>, and <strong>Astro</strong>. We focus on speed, scalability, and <strong
+              >user experience</strong
+            > in our development. Your site will load fast and engage visitors, boosting <strong
+              >conversion rates</strong
+            >.
+          </p>
+          <h3 class="heading3">What You Get</h3>
+          <ul data-type="list" class="checklist">
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Fast-loading websites and apps</strong> to reduce bounce rates.
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Scalable architecture</strong> to handle increased traffic and growth.
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Improved user experience</strong> for better engagement and conversions.
+            </li>
+          </ul>
+          <button class="button primary">Get Your Free Performance Review</button>
+        </div>
+        <Image
+          src="/images/services/frontend-performance.webp"
+          alt="Performance-Optimized Web Development"
+          width="321"
+          height="573"
+          class="rounded fade-from-right mobile-hidden"
+        />
+      </div>
+      <!-- Legacy System Modernization -->
+      <div class="flex flex-sm-col gap-1">
+        <Image
+          src="/images/services/web-architecture.webp"
+          alt="Legacy System Modernization"
+          width="321"
+          height="554"
+          class="rounded fade-from-left mobile-hidden"
+        />
+        <div class="card justify-center items-start large-gap slim white fade-from-right">
+          <h2 class="heading2">Legacy System Modernization</h2>
+          <h3 class="heading3">What It Is</h3>
+          <p class="body1">
+            Migrate your old legacy apps to modern tech, like <strong>React</strong> and <strong>Node.js</strong>. Our <strong
+              >legacy system modernization services</strong
+            > will make your apps better. They will be more scalable, secure, and <strong>high-performing</strong> for users.
+            We cut disruption during the transition to keep your business running smoothly.
+          </p>
+          <h3 class="heading3">What You Get</h3>
+          <ul data-type="list">
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Modern technology stack</strong> that supports future growth.
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Seamless legacy system migration</strong> with minimal downtime.
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Enhanced functionality</strong> and better overall performance.
+            </li>
+          </ul>
+          <button class="button primary">Book a Free Modernization Strategy Session</button>
+        </div>
+      </div>
+      <!-- Custom Web Application Development -->
+      <div class="flex flex-sm-col gap-1">
+        <div class="card justify-center items-start large-gap slim white fade-from-left">
+          <h2 class="heading2">Custom Web Application Development</h2>
+          <h3 class="heading3">What It Is</h3>
+          <p class="body1">
+            We create custom web apps. They are fully tailored to meet your unique business needs. We build
+            high-performance, secure web apps. They will grow with your business. Whether you need a new platform or
+            want to scale an existing one. From the initial concept to development, we handle every aspect to ensure
+            success.
+          </p>
+          <h3 class="heading3">What You Get</h3>
+          <ul data-type="list">
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Custom-built web applications</strong> designed for your specific needs
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Full-stack development</strong> covering both frontend and backend
+            </li>
+            <li class="flex gap-05 items-center">
+              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <strong>Scalable, secure web platforms</strong> that can evolve with your business
+            </li>
+          </ul>
+          <button class="button primary">Request a Free Web App Consultation</button>
+        </div>
+        <Image
+          src="/images/services/technology.webp"
+          alt="Custom Web Application Development"
+          width="321"
+          height="554"
+          class="rounded fade-from-right mobile-hidden"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="section wrapper">
+    <header>
+      <p class="tagline">Got Questions? We've Got Answers.</p>
+      <h2 class="heading2">Frequently Asked Questions</h2>
+      <p class="body1">
+        We know choosing the right partner for your web development needs is a big decision. Here are some common
+        questions and answers to help you make the best choice.
+      </p>
+    </header>
+    <ul class="even-columns two-columns">
+      {
+        faqs.map((faq) => (
+          <li class="card white shadow fade-from-bottom">
+            <h3 class="heading3">{faq.question}</h3>
+            <p class="body1">{faq.answer}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <FinalEngagement />
+</MainLayout>

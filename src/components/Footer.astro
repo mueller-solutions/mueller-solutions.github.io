@@ -1,51 +1,54 @@
 ---
-import Icon from './common/Icon.astro';
-const pathname = Astro.url.pathname;
+import Icon from './icon.astro';
+import NavLink from './nav-link.astro';
+import ServicesNavigation from './services-navigation.astro';
 ---
 
 <footer class="site-footer">
-  <div class="wrapper main-content">
+  <div class="wrapper">
     <div class="even-columns three-columns">
-      <div class="logo">
-        <img src="/images/logo-white.svg" width="144" height="24" alt="MUELLER Logo White" loading="lazy" />
+      <div>
+        <img src="/images/logo-white.svg" alt="MUELLER Logo White" width="144" height="24" />
       </div>
-      <nav aria-label="Footer navigation">
-        <a href="/about-us" class:list={['nav-link', pathname === '/about-us' && 'active']}>About Us</a>
-        <a href="/services" class:list={['nav-link', pathname === '/services' && 'active']}>Services</a>
-        <a href="/blog" class:list={['nav-link', pathname === '/blog' && 'active']}>Blog</a>
-        <a href="/contact" class:list={['nav-link', pathname === '/contact' && 'active']}>Contact</a>
+      <nav class="footer-nav flex flex-col" aria-label="Footer navigation">
+        <ul class="flex flex-col">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/services">
+            Services
+            <ul class="sub-navigation" slot="dropdown">
+              <ServicesNavigation />
+            </ul>
+          </NavLink>
+          <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/about-us">About Us</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
+        </ul>
       </nav>
-      <div class="contact-info">
-        <address>
-          <p>
-            <span class="icon">
-              <Icon name="location" width="11" height="14" />
-            </span>
+      <div class="flex flex-col gap-2">
+        <address class="flex flex-col">
+          <p class="flex gap-1 items-center">
+            <Icon name="location" width="11" height="14" />
             <span>5900 Balcones Drive STE 100, Austin, TX 78731</span>
           </p>
-          <p>
-            <span class="icon">
-              <Icon name="email" width="14" height="10" />
-            </span>
+          <a href="mailto:info@mueller-solutions.dev" class="flex gap-1 items-center">
+            <Icon name="email" width="14" height="10" />
             <span>info@mueller-solutions.dev</span>
-          </p>
-          <p>
-            <span class="icon">
-              <Icon name="phone" width="10" height="10" />
-            </span>
-            <span>+1 (512) 203 5199</span>
-          </p>
+          </a>
+          <a href="tel:+15122035199" class="flex gap-1 items-center" aria-label="5 1 2. 2 0 3. 5 1 9 9">
+            <Icon name="phone" width="10" height="10" />
+            <span>+1 (512) 203-5199</span>
+          </a>
         </address>
-        <div class="social-links">
+        <!-- <div class="social-links">
           <div class="facebook"></div>
           <div class="linkedin"></div>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div>
-  <div class="wrapper copyright">
-    <span>&copy; 2024 DevBucket LLC. All rights reserved.</span>
-    <span class="separator">|</span>
-    <a href="/privacy-policy" class:list={['nav-link', pathname === '/privacy-policy' && 'active']}>Privacy Policy</a>
+    <div class="copyright">
+      <span>&copy; 2024 DevBucket LLC. All rights reserved.</span>
+      <span class="separator">|</span>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
   </div>
 </footer>

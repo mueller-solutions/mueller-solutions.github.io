@@ -1,0 +1,34 @@
+/* stylelint-disable at-rule-no-unknown */
+@define-mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      @mixin-content;
+    }
+  }
+}
+
+@define-mixin focus {
+  &:focus,
+  &:focus-visible {
+    @mixin-content;
+  }
+}
+
+@define-mixin mobile {
+  @media (width <= 480px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin tablet-up {
+  @media (width > 481px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin desktop-up {
+  @media (width > 769px) {
+    @mixin-content;
+  }
+}

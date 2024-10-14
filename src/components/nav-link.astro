@@ -1,0 +1,17 @@
+---
+type Props = {
+  href: string;
+  isButton?: boolean;
+};
+
+const { href, isButton } = Astro.props;
+const pathname = Astro.url.pathname;
+const isActive = pathname === href;
+---
+
+<li class="nav-item">
+  <a href={href} class:list={[isButton ? 'nav-button' : 'nav-link', isActive && 'active']}>
+    <slot />
+  </a>
+  <slot name="dropdown" />
+</li>

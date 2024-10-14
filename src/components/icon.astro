@@ -1,0 +1,17 @@
+---
+type Props = {
+  name: string;
+  width?: string | number;
+  height?: string | number;
+  class?: string;
+};
+
+const { name, width, height, class: className } = Astro.props;
+const style = [
+  `--icon: url('/images/icons/icon-${name}.svg')`,
+  width && `--width: ${width}px`,
+  height && `--height: ${height}px`,
+].join('; ');
+---
+
+<span style={style} class:list={['icon', className]}></span>
