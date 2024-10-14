@@ -1,0 +1,7 @@
+.rounded {
+  border-radius: var(--border-radius, 12px);
+}
+
+.circle {
+  border-radius: 9999px;
+}

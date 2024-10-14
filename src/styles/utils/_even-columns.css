@@ -1,0 +1,79 @@
+/* stylelint-disable at-rule-no-unknown */
+.even-columns {
+  display: grid;
+  contain: layout style;
+  grid-template-columns: var(--grid-columns, none);
+  gap: var(--gap, clamp(20px, 3vw, 30px));
+
+  &.slim-content {
+    @mixin desktop-up {
+      padding-inline: clamp(5dvw, 7vw, 10dvw);
+    }
+  }
+
+  &.large-gap {
+    gap: var(--gap, clamp(30px, 3vw, 60px));
+  }
+
+  &.no-gap {
+    @mixin tablet-up {
+      gap: 0;
+    }
+  }
+
+  &.one-column {
+    grid-template-columns: 1fr;
+  }
+
+  &.two-columns {
+    grid-template-columns: repeat(1, 1fr);
+
+    @mixin tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &.three-columns {
+    @mixin tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @mixin desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.four-columns {
+    @mixin tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @mixin desktop-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.col-1 {
+  @mixin tablet-up {
+    grid-column: span 1;
+  }
+}
+
+.col-2 {
+  @mixin tablet-up {
+    grid-column: span 2;
+  }
+}
+
+.col-3 {
+  @mixin tablet-up {
+    grid-column: span 3;
+  }
+}
+
+.col-4 {
+  @mixin tablet-up {
+    grid-column: span 4;
+  }
+}

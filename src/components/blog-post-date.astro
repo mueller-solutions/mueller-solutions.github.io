@@ -1,0 +1,11 @@
+---
+import dayjs from 'dayjs';
+
+type Props = {
+  date: string;
+};
+
+const { date } = Astro.props;
+---
+
+<p class="published-on">Published on {dayjs(date).format('MMMM D, YYYY')}</p>

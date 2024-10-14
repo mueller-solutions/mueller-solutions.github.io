@@ -1,0 +1,38 @@
+:root {
+  --border-radius-sm: 6px;
+  --border-radius: 12px;
+  --border-radius-lg: 18px;
+  --clr-primary: rgb(11 128 197 / 100%);
+  --clr-primary-dark: rgb(20 82 133 / 100%);
+  --clr-light: rgb(255 255 255 / 100%);
+  --clr-dark: rgb(34 52 63 / 100%);
+  --clr-gray-darker: rgb(95 95 95 / 100%);
+  --clr-gray-dark: rgb(160 160 160 / 100%);
+  --clr-gray-light: rgb(189 189 189 / 100%);
+  --clr-body: rgb(254 254 254 / 100%);
+  --clr-shine: rgb(255 252 241 / 75%);
+  --clr-shine-low: rgb(255 252 241 / 50%);
+  --clr-shine-lower: rgb(255 252 241 / 40%);
+  --clr-orange: rgb(255 148 22 / 100%);
+  --clr-yellow: rgb(255 213 64 / 100%);
+  --fnt-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --fnt-weight-regular: 400;
+  --fnt-weight-medium: 500;
+  --fnt-weight-semibold: 600;
+  --fnt-weight-bold: 700;
+  --fnt-size-base: 1rem;
+  --trans-duration-short: 200ms;
+  --trans-duration-medium: 300ms;
+  --trans-duration-long: 500ms;
+  --trans-duration-longer: 750ms;
+  --trans-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --trans-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --trans-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-text: 0 1px 2px rgb(0 0 0 / 80%);
+  --shadow-header: 0 4px 10px rgb(0 0 0 / 25%);
+  --shadow-button-sm: 0 3px 10px rgb(0 0 0 / 20%);
+  --shadow-button-sm-hover: 0 4px 15px rgb(0 0 0 / 30%);
+  --shadow-button-active: 0 1px 2px rgb(0 0 0 / 45%);
+  --shadow-button-lg: 0 4px 4px rgb(0 0 0 / 25%);
+  --shadow-button-lg-hover: 0 6px 10px rgb(0 0 0 / 35%);
+}
