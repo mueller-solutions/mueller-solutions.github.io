@@ -1,4 +1,7 @@
 ---
+import FinalEngagement from '../../components/final-engagement.astro';
+import Icon from '../../components/icon.astro';
+import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 ---
 
@@ -14,14 +17,113 @@ import MainLayout from '../../layouts/main-layout.astro';
         Create secure, scalable, and high-performance websites that leave a lasting impression.
       </p>
       <div class="hero-actions">
-        <button
-          class="button"
-          data-size="large"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-        >
-          Book a Free Strategy Call
-        </button>
+        <button class="button" data-size="large">Book a Free Strategy Call</button>
+        <WhatsappButton />
       </div>
     </div>
   </section>
+  <section class="section gradient-up">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">Your Vision, Built to Last</p>
+        <h2 class="heading2">Why Our Web Development Services Are Unmatched</h2>
+      </header>
+      <ul class="even-columns three-columns">
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="lightbulb" width="68" height="68" />
+          <h3 class="heading3">Custom Solutions</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Get web solutions built specifically for your business goals.
+          </p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="scalable-architecture" width="68" height="68" />
+          <h3 class="heading3">Scalable Infrastructure</h3>
+          <p class="body2 text-balance text-pretty-mobile">Ensure seamless growth without sacrificing performance.</p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="resources" width="68" height="68" />
+          <h3 class="heading3">SEO-Optimized</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Rank higher on search engines with built-in SEO best practices.
+          </p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="monitor" width="68" height="68" />
+          <h3 class="heading3">Mobile-First Design</h3>
+          <p class="body2 text-balance text-pretty-mobile">Engage users on any device with responsive design.</p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="cutting-edge-technology" width="68" height="68" />
+          <h3 class="heading3">Advanced Technologies</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Leverage cutting-edge frameworks like React, Next.js, and Node.js.
+          </p>
+        </li>
+        <li class="card white shadow align-center fade-from-bottom">
+          <Icon name="chart-up" width="68" height="68" />
+          <h3 class="heading3">Results-Driven Design</h3>
+          <p class="body2 text-balance text-pretty-mobile">
+            Our designs are engineered to increase user engagement and conversions.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section primary">
+    <div class="wrapper">
+      <header>
+        <p class="tagline inverted">The Numbers Don't Lie</p>
+        <h2 class="heading2 inverted">The ROI of a Professionally Developed Website</h2>
+      </header>
+      <dl class="even-columns four-columns">
+        <dt class="card white shadow align-center fade-from-bottom">
+          <strong class="heading1 text-bold">60%</strong>
+          <span class="body2 text-balance">of users never return to non-mobile-friendly websites.</span>
+        </dt>
+        <dt class="card white shadow align-center fade-from-bottom">
+          <strong class="heading1 text-bold">75%</strong>
+          <span class="body2 text-balance">of a site's credibility is based on its design alone.</span>
+        </dt>
+        <dt class="card white shadow align-center fade-from-bottom">
+          <strong class="heading1 text-bold">40%</strong>
+          <span class="body2 text-balance">improvement in performance boosts user retention for modern sites.</span>
+        </dt>
+        <dt class="card white shadow align-center fade-from-bottom">
+          <strong class="heading1 text-bold">20%</strong>
+          <span class="body2 text-balance">revenue growth is common for businesses with custom websites.</span>
+        </dt>
+      </dl>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">A Process Built for Results</p>
+        <h2 class="heading2">How We Deliver Scalable, Custom Web Solutions</h2>
+      </header>
+      <ul class="even-columns two-columns slim-content">
+        <li class="card blue align-left fade-from-bottom">
+          <h3 class="heading3">Discovery & Strategy</h3>
+          <p class="body1">We understand your business needs to tailor the best solution.</p>
+        </li>
+        <li class="card red align-left fade-from-bottom">
+          <h3 class="heading3">Full-Stack Development</h3>
+          <p class="body1">We build robust, scalable websites using the latest technologies.</p>
+        </li>
+        <li class="card purple align-left fade-from-bottom">
+          <h3 class="heading3">Quality Control</h3>
+          <p class="body1">Rigorous testing ensures your site is secure, fast, and error-free.</p>
+        </li>
+        <li class="card green align-left fade-from-bottom">
+          <h3 class="heading3">Post-Launch Optimization</h3>
+          <p class="body1">Continuous improvement to keep your site performing at its peak.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <FinalEngagement
+    title="Let's Build Your Digital Future"
+    description="Ready to Transform Your Business with a Custom Website?"
+  />
 </MainLayout>

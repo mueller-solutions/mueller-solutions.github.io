@@ -1,18 +1,28 @@
 ---
+type Props = {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+};
 
+const {
+  title = 'Ready to Take Your Project to the Next Level?',
+  description = "Let's discuss your needs and explore how we can help you achieve your goals.",
+  buttonText = 'Schedule a Free Consultation',
+}: Props = Astro.props;
 ---
 
 <section class="section wrapper">
   <div class="final-engagement">
-    <h2 class="heading2 inverted">Ready to Take Your Project to the Next Level?</h2>
+    <h2 class="heading2 inverted">{title}</h2>
     <p class="body1 inverted text-balance text-pretty-mobile">
-      Let's discuss your needs and explore how we can help you achieve your goals.
+      {description}
     </p>
     <button
       class="button"
       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/first-consultation?text_color=454545&primary_color=0b80c5'});return false;"
     >
-      Schedule a Free Consultation
+      {buttonText}
     </button>
   </div>
 </section>

@@ -128,3 +128,11 @@
 .text-center {
   text-align: center;
 }
+
+.text-semibold {
+  font-weight: var(--fnt-weight-semibold);
+}
+
+.text-bold {
+  font-weight: var(--fnt-weight-bold);
+}
