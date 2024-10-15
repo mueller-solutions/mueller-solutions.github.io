@@ -1,5 +1,6 @@
 ---
 import Icon from '../components/icon.astro';
+import WhatsappButton from '../components/whatsapp-button.astro';
 import MainLayout from '../layouts/main-layout.astro';
 ---
 
@@ -31,10 +32,7 @@ import MainLayout from '../layouts/main-layout.astro';
       <h2 class="heading2">Got Questions? Let's Chat!</h2>
     </header>
     <p class="text-center">
-      <a href="https://wa.me/15122035199" target="_blank" class="button whatsapp">
-        <Icon name="whatsapp" width="24" height="24" />
-        Chat with us on WhatsApp
-      </a>
+      <WhatsappButton />
     </p>
   </section>
 </MainLayout>
