@@ -1,0 +1,53 @@
+/* stylelint-disable at-rule-no-unknown */
+.page {
+  .content {
+    @mixin tablet-up {
+      width: 75%;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    @mixin desktop-up {
+      width: 60%;
+    }
+  }
+
+  .section.simple {
+    padding-block: 20px;
+
+    &:first-child {
+      padding-block-start: 40px;
+    }
+
+    &:last-child {
+      padding-block-end: 40px;
+    }
+  }
+
+  h2,
+  h3,
+  p,
+  ul {
+    &:not(:last-child) {
+      margin-block-end: clamp(12px, 4vw, 20px);
+    }
+  }
+
+  ul[data-type='list'] {
+    list-style: disc;
+    padding-inline-start: 20px;
+
+    li {
+      padding-inline-start: 6px;
+    }
+  }
+
+  a {
+    color: var(--clr-primary);
+    transition: color var(--trans-duration-short) var(--trans-ease-out);
+
+    @mixin hover {
+      color: var(--clr-primary-dark);
+    }
+  }
+}
