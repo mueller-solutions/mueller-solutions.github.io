@@ -136,20 +136,6 @@ const htmlKeywords =
             toggleNav(subNavToggle, subMenuEl);
           }
         });
-
-        // Toggle nav links to active
-        navLinks.forEach((link) => {
-          link.classList.remove('active');
-
-          const currentPath = window.location.pathname.slice(1);
-
-          const hrefArray = link.href.split('/');
-          const thisPath = hrefArray[hrefArray.length - 1];
-
-          if (currentPath === thisPath) {
-            link.classList.add('active');
-          }
-        });
       });
 
       function scroll() {
