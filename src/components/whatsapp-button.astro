@@ -1,8 +1,14 @@
 ---
 import Icon from './icon.astro';
+
+type Props = {
+  style?: 'whatsapp' | 'inverted';
+};
+
+const { style = 'inverted' }: Props = Astro.props;
 ---
 
-<a href="https://wa.me/15122035199" target="_blank" class="button inverted">
+<a href="https://wa.me/15122035199" target="_blank" class:list={['button', style]}>
   <Icon name="whatsapp" width="24" height="24" />
   Chat with us on WhatsApp
 </a>
