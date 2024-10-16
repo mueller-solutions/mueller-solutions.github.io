@@ -18,6 +18,7 @@
     "@playform/compress": "^0.1.1",
     "astro": "^4.13.2",
     "astro-robots-txt": "^1.0.0",
+    "astrojs-service-worker": "^2.0.0",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.7",
     "cssnano": "^7.0.5",
