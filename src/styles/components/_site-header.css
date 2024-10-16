@@ -8,10 +8,16 @@
   z-index: 10;
   background-color: var(--clr-light);
   box-shadow: var(--shadow-header);
-  transition: padding var(--trans-duration-short) var(--trans-ease-out);
+  transition:
+    padding var(--trans-duration-short) var(--trans-ease-out),
+    background-color var(--trans-duration-short) var(--trans-ease-out),
+    backdrop-filter var(--trans-duration-short) var(--trans-ease-out);
 
   &.scrolled {
     --padding: 12px;
+
+    background-color: var(--clr-light-transparent);
+    backdrop-filter: blur(10px);
   }
 
   @mixin mobile {
