@@ -7,6 +7,10 @@ type Props = {
 const { href, isButton } = Astro.props;
 const pathname = Astro.url.pathname;
 const isActive = pathname === href;
+
+if (isActive) {
+  console.log('isActive', isActive, href, pathname);
+}
 ---
 
 <li class="nav-item">
