@@ -3,6 +3,7 @@ import netlify from '@astrojs/netlify';
 import playformCompress from '@playform/compress';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
+import serviceWorker from 'astrojs-service-worker';
 
 const siteURL = 'https://mueller-solutions.dev';
 
@@ -28,6 +29,7 @@ export default defineConfig({
       ],
     }),
     playformCompress(),
+    serviceWorker(),
   ],
   build: {
     inlineStylesheets: 'always',
