@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/main-layout.astro';
 import Icon from '../components/icon.astro';
 import FinalEngagement from '../components/final-engagement.astro';
@@ -30,7 +31,7 @@ import FinalEngagement from '../components/final-engagement.astro';
   <!-- Trusted Partner -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <img src="/images/about-us/handshake.webp" alt="Handshake" width="800" height="598" class="rounded" />
+      <Image src="/images/about-us/handshake.webp" alt="Handshake" width="800" height="598" class="rounded" />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">A Vision for the Future, Built on Experience</p>
         <h2 class="heading2">Your Partner in Transforming the Digital Experience</h2>
@@ -162,7 +163,7 @@ import FinalEngagement from '../components/final-engagement.astro';
           long-term success. We offer support and the flexibility to adapt as your business grows in the digital age.
         </p>
       </div>
-      <img
+      <Image
         src="/images/about-us/team-success.webp"
         alt="Team Success"
         width="800"
