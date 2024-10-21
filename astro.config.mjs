@@ -11,8 +11,11 @@ const siteURL = 'https://mueller-solutions.dev';
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: true,
+  }),
   integrations: [
+    serviceWorker(),
     sitemap({
       filter: (page) => page !== `${siteURL}/booking-confirmed/`,
     }),
@@ -29,7 +32,6 @@ export default defineConfig({
       ],
     }),
     playformCompress(),
-    serviceWorker(),
   ],
   build: {
     inlineStylesheets: 'always',

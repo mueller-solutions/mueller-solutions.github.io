@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Icon from './icon.astro';
 import NavLink from './nav-link.astro';
 import ServicesNavigation from './services-navigation.astro';
@@ -8,7 +9,7 @@ import ServicesNavigation from './services-navigation.astro';
 <header class="site-header">
   <div class="wrapper flex space-between items-center">
     <a href="/">
-      <img src="/images/logo.svg" alt="MUELLER Logo" class="site-logo" width="216" height="36" />
+      <Image src="/images/logo.svg" alt="MUELLER Logo" class="site-logo" width="216" height="36" />
     </a>
     <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">
       <span class="sr-only">Menu</span>
