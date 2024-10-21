@@ -1,12 +1,13 @@
 /* stylelint-disable at-rule-no-unknown */
 .site-header {
   --padding: 24px;
+  --background-color: var(--clr-light);
 
   padding-block: var(--padding);
   position: sticky;
   inset: 0;
   z-index: 10;
-  background-color: var(--clr-light);
+  background-color: var(--background-color);
   box-shadow: var(--shadow-header);
   transition:
     padding var(--trans-duration-short) var(--trans-ease-out),
@@ -16,8 +17,11 @@
   &.scrolled {
     --padding: 12px;
 
-    background-color: var(--clr-light-transparent);
-    backdrop-filter: blur(10px);
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      --background-color: var(--clr-light-transparent);
+
+      backdrop-filter: blur(10px);
+    }
   }
 
   @mixin mobile {

@@ -6,15 +6,38 @@ import blogService from '../../services/blog.service';
 const { slug } = Astro.params;
 
 const [post] = await blogService.getPost(slug!);
+const featuredImage = post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+const preloadImageUrl = featuredImage.split('?')[0];
+const preloadFileType = featuredImage.split('.').pop()?.split('?')[0];
+
+// Parse all images in post.content.rendered
+const imageUrls = [...post.content.rendered.matchAll(/<img[^>]+src="([^">]+)"/g)].map((match) => match[1]);
+const preloadTags = imageUrls
+  .map(
+    (url) =>
+      `<link rel="preload" as="image" href="${url.split('?')[0]}" type="image/${url.split('.').pop()?.split('?')[0]}" crossorigin="anonymous" />`,
+  )
+  .join('\n');
 ---
 
-<MainLayout title={post.title.rendered} description={post.excerpt.rendered} keywords={post.tags}>
+<MainLayout
+  title={post.title.rendered}
+  description={post.excerpt.rendered}
+  keywords={post.tags}
+  ogImage={featuredImage}
+>
+  <link
+    slot="html-head"
+    rel="preload"
+    as="image"
+    href={preloadImageUrl}
+    type={`image/${preloadFileType}`}
+    crossorigin="anonymous"
+  />
+  <!-- Preload tags for images in post content -->
+  <Fragment slot="html-head" set:html={preloadTags} />
   <article class="post full">
-    <div
-      class="hero remote-image"
-      style={`--background-image: url(${post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url})`}
-    >
-    </div>
+    <div class="hero remote-image" style={`--background-image: url(${featuredImage})`}></div>
     <div class="wrapper content">
       <header>
         <BlogPostDate date={post.date} />

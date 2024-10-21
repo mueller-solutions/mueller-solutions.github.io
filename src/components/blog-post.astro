@@ -11,7 +11,7 @@ const { post, type = 'preview' } = Astro.props;
 
 <article
   class:list={[
-    type !== 'latest' && 'card white shadow no-padding',
+    type !== 'latest' && 'card white shadow-strong no-padding',
     'post',
     type,
     type === 'latest' && 'flex items-center gap-1',
@@ -32,7 +32,7 @@ const { post, type = 'preview' } = Astro.props;
       <div class="content">
         <BlogPostDate date={post.date} />
         <header>
-          <h2 class="heading2">
+          <h2>
             <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
           </h2>
         </header>

@@ -14,4 +14,12 @@ const style = [
 ].join('; ');
 ---
 
+<link
+  slot="html-head"
+  rel="preload"
+  as="image"
+  href={`/images/icons/icon-${name}.svg`}
+  type="image/svg+xml"
+  crossorigin="anonymous"
+/>
 <span style={style} class:list={['icon', className]}></span>
