@@ -11,9 +11,7 @@ const siteURL = 'https://mueller-solutions.dev';
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  adapter: netlify({
-    imageCDN: true,
-  }),
+  adapter: netlify(),
   integrations: [
     serviceWorker(),
     sitemap({
