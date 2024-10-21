@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import '../styles/main.css';
 import Header from '../components/site-header.astro';
 import Footer from '../components/site-footer.astro';
@@ -30,7 +32,7 @@ const htmlKeywords =
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <script is:inline>
       // Google Tag Manager
@@ -57,6 +59,7 @@ const htmlKeywords =
     <meta property="og:image" content={ogImage} />
     <meta name="author" content="DevBucket, LLC. Austin, TX" />
     <link rel="preconnect" href="//assets.calendly.com" />
+    <link rel="preconnect" href="//unpkg.com" />
     <link rel="preconnect" href="//www.googletagmanager.com" />
     <link rel="preconnect" href="//region1.google-analytics.com" />
     <link rel="preconnect" href="//leadbooster-chat.pipedrive.com" />
@@ -98,7 +101,7 @@ const htmlKeywords =
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" is:inline async></script>
     <script is:inline>
       // Navigation
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('astro:page-load', () => {
         const navToggle = document.querySelector('[aria-controls="main-navigation"]');
         const menuEl = document.getElementById('main-navigation');
         const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
@@ -147,6 +150,7 @@ const htmlKeywords =
       }
       window.onscroll = scroll;
     </script>
+    <ViewTransitions />
   </head>
   <body class={className}>
     <Header />
