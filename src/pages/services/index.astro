@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from '../../components/icon.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
@@ -63,6 +62,10 @@ const faqs = [
   description="Explore our expert web development services including performance optimization, legacy system modernization, and custom web application development. We specialize in creating fast, scalable, and secure solutions tailored to your business needs."
   keywords="web development services, performance optimization, legacy system modernization, custom web applications, React web development, Node.js development, scalable web solutions, web app development, website optimization, secure web platforms"
 >
+  <link slot="html-head" rel="preload" as="image" href="/images/services/strategy-paper.webp" type="image/webp" />
+  <link slot="html-head" rel="preload" as="image" href="/images/services/success-office.webp" type="image/webp" />
+  <link slot="html-head" rel="preload" as="image" href="/images/services/frontend-performance.webp" type="image/webp" />
+  <link slot="html-head" rel="preload" as="image" href="/images/services/technology.webp" type="image/webp" />
   <!-- Hero -->
   <section class="hero" style="--background-image: url('/images/services/strategy-paper.webp')">
     <div class="wrapper">
@@ -85,7 +88,15 @@ const faqs = [
   <!-- Success Summary -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <Image src="/images/services/success-office.webp" alt="A Office" width="700" height="564" class="rounded" />
+      <img
+        src="/images/services/success-office.webp"
+        alt="A Office"
+        width="700"
+        height="564"
+        class="rounded"
+        loading="lazy"
+        decoding="async"
+      />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Your Success Is Our Priority</p>
         <h2 class="heading2">Comprehensive Services to Meet Your Unique Needs</h2>
@@ -173,22 +184,26 @@ const faqs = [
             Get Your Free Performance Review
           </button>
         </div>
-        <Image
+        <img
           src="/images/services/frontend-performance.webp"
           alt="Performance-Optimized Web Development"
           width="321"
           height="573"
           class="rounded fade-from-right mobile-hidden"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <!-- Legacy System Modernization -->
       <div class="flex flex-sm-col gap-1">
-        <Image
+        <img
           src="/images/services/web-architecture.webp"
           alt="Legacy System Modernization"
           width="321"
           height="554"
           class="rounded fade-from-left mobile-hidden"
+          loading="lazy"
+          decoding="async"
         />
         <div class="card justify-center items-start large-gap slim white fade-from-right">
           <h2 class="heading2">Legacy System Modernization</h2>
@@ -245,12 +260,14 @@ const faqs = [
           </ul>
           <button class="button primary">Request a Free Web App Consultation</button>
         </div>
-        <Image
+        <img
           src="/images/services/technology.webp"
           alt="Custom Web Application Development"
           width="321"
           height="554"
           class="rounded fade-from-right mobile-hidden"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
