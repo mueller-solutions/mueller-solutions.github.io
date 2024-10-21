@@ -8,9 +8,16 @@ type Props = {
   description?: string;
   keywords?: string;
   class?: string;
+  ogImage?: string;
 };
 
-const { title, description, keywords, class: className } = Astro.props;
+const {
+  title,
+  description,
+  keywords,
+  class: className,
+  ogImage = 'https://mueller-solutions.dev/images/og-mueller-solutions.jpg',
+} = Astro.props;
 
 const htmlTitle = title ?? 'Expert Frontend Development and Frontend Consulting | MUELLER';
 const htmlDescription =
@@ -32,7 +39,7 @@ const htmlKeywords =
     <meta property="og:title" content={htmlTitle} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={htmlDescription} />
-    <meta property="og:image" content="https://mueller-solutions.dev/images/og-mueller-solutions.jpg" />
+    <meta property="og:image" content={ogImage} />
     <meta name="author" content="DevBucket, LLC. Austin, TX" />
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-icon-60x60.png" />
@@ -49,11 +56,21 @@ const htmlKeywords =
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-icon-192x192.png" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
-    <slot name="html-head" />
-    <link rel="dns-prefetch" href="https://assets.calendly.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://leadbooster-chat.pipedrive.com" />
-    <link rel="dns-prefetch" href="https://static.hotjar.com" />
+    <link rel="dns-prefetch" href="//assets.calendly.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//region1.google-analytics.com" />
+    <link rel="dns-prefetch" href="//leadbooster-chat.pipedrive.com" />
+    <link rel="dns-prefetch" href="//static.hotjar.com" />
+    <link rel="dns-prefetch" href="//script.hotjar.com" />
+    <link rel="dns-prefetch" href="//content.hotjar.io" />
+    <link rel="dns-prefetch" href="//i0.wp.com" />
+    <link rel="preload" as="font" href="/fonts/poppins-regular.woff2" type="font/woff2" />
+    <link rel="preload" as="font" href="/fonts/poppins-medium.woff2" type="font/woff2" />
+    <link rel="preload" as="font" href="/fonts/poppins-semibold.woff2" type="font/woff2" />
+    <link rel="preload" as="font" href="/fonts/poppins-semibold.woff2" type="font/woff2" />
+    <link rel="preload" as="font" href="/fonts/poppins-bold.woff2" type="font/woff2" />
+    <link rel="preload" as="image" href="/images/stars.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="/images/structure.svg" type="image/svg+xml" />
     <!-- Calendly widget -->
     <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" type="text/css" />
     <link
@@ -62,9 +79,9 @@ const htmlKeywords =
       as="script"
       type="text/javascript"
     />
+    <slot name="html-head" />
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="screen" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" is:inline async></script>
-
     <script is:inline>
       // Google Tag Manager
       (function (w, d, s, l, i) {
@@ -102,7 +119,6 @@ const htmlKeywords =
         const menuEl = document.getElementById('main-navigation');
         const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
         const subMenuEl = document.getElementById('services-navigation');
-        const navLinks = document.querySelectorAll('.nav-link, .nav-button');
 
         function toggleNav(toggle, menu) {
           const isOpen = toggle.getAttribute('aria-expanded') === 'true';
