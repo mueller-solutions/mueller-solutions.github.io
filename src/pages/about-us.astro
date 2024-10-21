@@ -10,6 +10,9 @@ import FinalEngagement from '../components/final-engagement.astro';
   description="Discover Florian Mueller, founder of MUELLER, with 20+ years of experience in web development, scalable architecture, and AI-powered solutions. Learn how we combine performance, innovation, and a client-focused approach to deliver top-tier web solutions."
   keywords="Florian Mueller, MUELLER, web development expert, AI-powered solutions, scalable web architecture, frontend development, custom digital strategies, AI-driven onboarding, web performance optimization, technology innovation, digital solutions"
 >
+  <link slot="html-head" rel="preload" as="image" href="/images/about-us/team-pairprogramming.webp" type="image/webp" />
+  <link slot="html-head" rel="preload" as="image" href="/images/about-us/handshake.webp" type="image/webp" />
+  <link slot="html-head" rel="preload" as="image" href="/images/about-us/team-success.webp" type="image/webp" />
   <section class="hero" style="--background-image: url('/images/about-us/team-pairprogramming.webp')">
     <div class="wrapper">
       <h1 class="heading1 inverted">Redefining Digital Excellence with MUELLER Solutions</h1>
@@ -31,7 +34,15 @@ import FinalEngagement from '../components/final-engagement.astro';
   <!-- Trusted Partner -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <Image src="/images/about-us/handshake.webp" alt="Handshake" width="800" height="598" class="rounded" />
+      <img
+        src="/images/about-us/handshake.webp"
+        alt="Handshake"
+        width="800"
+        height="598"
+        class="rounded"
+        loading="lazy"
+        decoding="async"
+      />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">A Vision for the Future, Built on Experience</p>
         <h2 class="heading2">Your Partner in Transforming the Digital Experience</h2>
@@ -163,12 +174,14 @@ import FinalEngagement from '../components/final-engagement.astro';
           long-term success. We offer support and the flexibility to adapt as your business grows in the digital age.
         </p>
       </div>
-      <Image
+      <img
         src="/images/about-us/team-success.webp"
         alt="Team Success"
         width="800"
         height="542"
         class="rounded fade-from-right"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </section>

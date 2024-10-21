@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import FinalEngagement from '../components/final-engagement.astro';
 import Icon from '../components/icon.astro';
 import Testimonial from '../components/testimonial.astro';
@@ -52,12 +51,14 @@ const solutions = [
   <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <Image
+      <img
         src="/images/home/problem-statement.webp"
         alt="Problem Statement"
         width="699"
         height="484"
         class="rounded"
+        loading="lazy"
+        decoding="async"
       />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Don't Let a Slow App Hold You Back</p>
@@ -166,12 +167,14 @@ const solutions = [
           </div>
         </div>
       </div>
-      <Image
+      <img
         class="fade-from-right"
         src="/images/home/solutions-collage.webp"
         alt="Solutions Collage"
         width="514"
         height="552"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </section>
@@ -251,12 +254,14 @@ const solutions = [
             Let's Work Together
           </button>
         </div>
-        <Image
+        <img
           class="fade-from-right"
           src="/images/home/florian-mueller.webp"
           alt="Florian Mueller"
           width="404"
           height="492"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

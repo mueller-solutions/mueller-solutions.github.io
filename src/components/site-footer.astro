@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from './icon.astro';
 import NavLink from './nav-link.astro';
 import ServicesNavigation from './services-navigation.astro';
@@ -10,7 +9,14 @@ import ServicesNavigation from './services-navigation.astro';
   <div class="wrapper">
     <div class="even-columns three-columns">
       <div>
-        <Image src="/images/logo-white.svg" alt="MUELLER Logo White" width="144" height="24" />
+        <img
+          src="/images/logo-white.svg"
+          alt="MUELLER Logo White"
+          width="144"
+          height="24"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <nav class="footer-nav flex flex-col" aria-label="Footer navigation">
         <ul class="flex flex-col">
