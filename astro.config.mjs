@@ -27,6 +27,10 @@ export default defineConfig({
           userAgent: '*',
           disallow: ['/booking-confirmed'],
         },
+        {
+          userAgent: '*',
+          disallow: ['/checklist-registration-success'],
+        },
       ],
     }),
     playformCompress(),

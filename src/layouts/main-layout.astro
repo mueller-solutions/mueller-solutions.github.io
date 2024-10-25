@@ -106,6 +106,7 @@ const htmlKeywords =
         const menuEl = document.getElementById('main-navigation');
         const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
         const subMenuEl = document.getElementById('services-navigation');
+        const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
 
         function toggleNav(toggle, menu) {
           const isOpen = toggle.getAttribute('aria-expanded') === 'true';
@@ -119,6 +120,20 @@ const htmlKeywords =
           } else {
             toggle.setAttribute('aria-expanded', 'true');
           }
+        }
+
+        function openModal(modalId) {
+          document.getElementById(modalId).showModal();
+        }
+
+        function closeModal(modalId) {
+          const modal = document.getElementById(modalId);
+
+          modal.classList.add('out');
+          setTimeout(() => {
+            modal.close();
+            modal.classList.remove('out');
+          }, 200);
         }
 
         navToggle?.addEventListener('click', (event) => {
@@ -138,6 +153,31 @@ const htmlKeywords =
           if (subNavOpen && !subMenuEl?.contains(event.target) && !subNavToggle?.contains(event.target)) {
             toggleNav(subNavToggle, subMenuEl);
           }
+        });
+
+        modalTriggers.forEach((trigger) => {
+          trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const modal = document.getElementById(trigger.dataset.modalTrigger);
+            const modalCloseBtn = modal.querySelector('[data-modal-close]');
+            openModal(trigger.dataset.modalTrigger);
+
+            modalCloseBtn?.addEventListener('click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              closeModal(trigger.dataset.modalTrigger);
+            });
+
+            document.addEventListener('keydown', (event) => {
+              if (event.key === 'Escape') {
+                event.preventDefault();
+                event.stopPropagation();
+                closeModal(trigger.dataset.modalTrigger);
+              }
+            });
+          });
         });
       });
 
