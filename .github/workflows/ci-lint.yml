@@ -1,0 +1,33 @@
+name: Linting
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - converted_to_draft
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.ref_name }}-linting"
+  cancel-in-progress: true
+
+jobs:
+    linting:
+        name: Linting
+        runs-on: ubuntu-22.04-arm64-16core
+        environment: test
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+                cache: pnpm
+            - name: Install dependencies
+              run: pnpm install
+            - name: Run lint
+              run: pnpm lint:ci

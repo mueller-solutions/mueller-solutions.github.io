@@ -41,10 +41,23 @@ const solutions = [
         >
           Schedule a Free Consultation
         </button>
-        <button class="button inverted">
+        <button class="button inverted" data-modal-trigger="free-optimization-checklist">
           <Icon name="download" width="24" height="24" />
           Free Optimization Checklist
         </button>
+        <dialog id="free-optimization-checklist" class="modal">
+          <button class="modal-close" data-modal-close>
+            <Icon name="close" width="24" height="24" />
+          </button>
+          <div class="modal-content">
+            <div
+              class="pipedriveWebForms"
+              data-pd-webforms="https://webforms.pipedrive.com/f/6qmK7tmw49347SMIVeYLXbhuhfvnqp3GNRfK90YzayZvME1XEKq9UWXCiwTLsynF2H"
+            >
+              <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
+            </div>
+          </div>
+        </dialog>
       </div>
     </div>
   </section>

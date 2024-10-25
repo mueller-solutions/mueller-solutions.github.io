@@ -3,7 +3,6 @@
   --border-radius: 12px;
   --border-radius-lg: 18px;
   --clr-primary: rgb(11 128 197 / 100%);
-  --clr-primary: rgb(11 128 197);
   --clr-primary-dark: rgb(20 82 133 / 100%);
   --clr-light: rgb(255 255 255 / 100%);
   --clr-light-transparent: rgb(255 255 255 / 90%);
@@ -37,4 +36,5 @@
   --shadow-button-active: 0 1px 2px rgb(0 0 0 / 45%);
   --shadow-button-lg: 0 4px 4px rgb(0 0 0 / 25%);
   --shadow-button-lg-hover: 0 6px 10px rgb(0 0 0 / 35%);
+  --shadow-modal: 0 4px 20px rgb(0 0 0 / 25%);
 }

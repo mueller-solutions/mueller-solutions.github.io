@@ -1,11 +1,7 @@
-import axios, { type AxiosInstance } from 'axios';
-
-const client = axios.create({
-  baseURL: `${import.meta.env.WP_API_URL}/wp/v2/`,
-});
+import wordpressClient from '../clients/wordpress.client';
 
 class BlogService {
-  constructor(protected client: AxiosInstance) {
+  constructor(protected client: typeof wordpressClient) {
     this.client = client;
   }
 
@@ -21,6 +17,6 @@ class BlogService {
   }
 }
 
-const blogService = new BlogService(client);
+const blogService = new BlogService(wordpressClient);
 
 export default blogService;
