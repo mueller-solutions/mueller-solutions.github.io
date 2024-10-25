@@ -12,14 +12,15 @@ class PipedriveService {
    * @returns True if the lead was updated successfully, false otherwise
    */
   async addDownloadLinkToLead(leadId: string, downloadLink: string) {
-    const response = await this.client.post(`notes`, {
-      data: {
-        deal_id: leadId,
-        content: `Download link: ${downloadLink}`,
-      },
+    console.log(downloadLink);
+    const response = await this.client.post('/notes', {
+      lead_id: leadId,
+      content: `Download link: ${downloadLink}`,
     });
 
-    return response.status === 200;
+    console.log(response.data);
+
+    return response.data.success;
   }
 }
 
