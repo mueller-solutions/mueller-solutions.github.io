@@ -43,7 +43,6 @@ jobs:
             - name: coverage report
               uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
               with:
-                github-token: ${{ steps.get_token.outputs.token }}
                 lcov-file: "./coverage/lcov.info"
                 filter-changed-files: true
                 delete-old-comments: true
