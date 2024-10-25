@@ -10,7 +10,7 @@ class DownloadService {
    * Generate a secure link for downloading a PDF
    */
   generateDownloadLink(leadId: string, fileName: string, url: URL) {
-    const token = this.tokenService.generateToken({ leadId, fileName }, { expiresIn: '5m' });
+    const token = this.tokenService.generateToken({ leadId, fileName }, { expiresIn: '24h' });
     const fullUrl = `${url.protocol}//${url.host}`;
     return `${fullUrl}/api/downloads/file?token=${token}`;
   }
