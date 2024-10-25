@@ -17,7 +17,7 @@ concurrency:
 jobs:
     linting:
         name: Linting
-        runs-on: ubuntu-22.04-arm64-16core
+        runs-on: ubuntu-latest
         environment: test
         steps:
             - name: Checkout
