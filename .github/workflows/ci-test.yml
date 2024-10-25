@@ -38,7 +38,7 @@ jobs:
               run: pnpm install
 
             - name: Run Unit Tests
-              run: pnpm test:unit
+              run: pnpm test:unit:coverage
 
             - name: coverage report
               uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
