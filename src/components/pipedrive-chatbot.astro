@@ -1,0 +1,29 @@
+---
+
+---
+
+<script is:inline>
+  window.pipedriveLeadboosterConfig = {
+    base: 'leadbooster-chat.pipedrive.com',
+    companyId: 13593812,
+    playbookUuid: 'ef0a8f9b-5f4b-4b3d-9e14-799b10b13174',
+    version: 2,
+  };
+  (function () {
+    var w = window;
+    if (w.LeadBooster) {
+      console.warn('LeadBooster already exists');
+    } else {
+      w.LeadBooster = {
+        q: [],
+        on: function (n, h) {
+          this.q.push({ t: 'o', n: n, h: h });
+        },
+        trigger: function (n) {
+          this.q.push({ t: 't', n: n });
+        },
+      };
+    }
+  })();
+</script>
+<script is:inline src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
