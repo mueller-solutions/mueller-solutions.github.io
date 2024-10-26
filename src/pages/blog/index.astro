@@ -15,6 +15,28 @@ const postWithoutSticky = posts.filter((post: any) => !post.sticky);
   description="Blog posts by MUELLER Solutions"
   keywords="blog, MUELLER Solutions, web development, AI solutions, web development services, AI solutions services"
 >
+  {
+    [...stickyPosts, ...postWithoutSticky].map((post: any) => (
+      <link
+        slot="html-head"
+        rel="preload"
+        as="image"
+        href={post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}
+        type="image/webp"
+      />
+    ))
+  }
+  {
+    postWithoutSticky.map((post: any) => (
+      <link
+        slot="html-head"
+        rel="preload"
+        as="image"
+        href={post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}
+        type="image/webp"
+      />
+    ))
+  }
   <div class="wrapper blog">
     <div class="even-columns three-columns">
       <div class="col-2 flex flex-col gap-2">

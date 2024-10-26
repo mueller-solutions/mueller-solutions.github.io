@@ -10,6 +10,13 @@ import MainLayout from '../../layouts/main-layout.astro';
   description="Optimize your website for speed, SEO, and user experience. Our performance optimization services will reduce load times and increase conversions, ensuring your site delivers results."
   keywords="website performance optimization, speed optimization, SEO optimization, improve site speed, boost conversions, web performance audit"
 >
+  <link
+    slot="html-head"
+    rel="preload"
+    as="image"
+    href="/images/services/performance-optimization.webp"
+    type="image/webp"
+  />
   <section class="hero" style="--background-image: url('/images/services/performance-optimization.webp')">
     <div class="wrapper">
       <h1 class="heading1 inverted">Boost Your Website's Speed and Performance</h1>
