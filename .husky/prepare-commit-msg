@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx jira-prepare-commit-msg $1
+# Add Jira ticket number to commit message
+pnpm exec jira-prepare-commit-msg $1
