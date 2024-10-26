@@ -90,15 +90,9 @@ importers:
       husky:
         specifier: 9.0.11
         version: 9.0.11
-      jira-prepare-commit-msg:
-        specifier: ^1.7.2
-        version: 1.7.2(typescript@5.6.3)
       lint-staged:
         specifier: ^15.2.10
         version: 15.2.10
-      prefix-commit-message:
-        specifier: ^4.2.0
-        version: 4.2.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -1895,15 +1889,6 @@ packages:
   core-js-compat@3.38.1:
     resolution: {integrity: sha512-JRH6gfXxGmrzF3tZ57lFx97YARxCXPaMzPo6jELZhv88pBH5VXpQ+y0znKGlFnzuaihqhLbefxSJxWJMPtfDzw==}
 
-  cosmiconfig@8.3.6:
-    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      typescript: '>=4.9.5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   cosmiconfig@9.0.0:
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
     engines: {node: '>=14'}
@@ -2765,11 +2750,6 @@ packages:
   jest-worker@26.6.2:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
-
-  jira-prepare-commit-msg@1.7.2:
-    resolution: {integrity: sha512-vPmwqPoi5TfMF1rXh9XN6u7TiSG+FwdcbeL01nMBUbRRxTMXvIqQZoJSRoNoprgY1JUpYXplc3HGRSVsV22rLg==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -3848,10 +3828,6 @@ packages:
   preferred-pm@4.0.0:
     resolution: {integrity: sha512-gYBeFTZLu055D8Vv3cSPox/0iTPtkzxpLroSYYA7WXgRi31WCJ51Uyl8ZiPeUUjyvs2MBzK+S8v9JVUgHU/Sqw==}
     engines: {node: '>=18.12'}
-
-  prefix-commit-message@4.2.0:
-    resolution: {integrity: sha512-Vdy1EsII/CFKq9yXtcG/U4zIKwy213JSg/wvQcCxz2FZrOZMZdPCLw9doF3fPLPoG1VuS8VKVOxHHoRXpf+WNw==}
-    hasBin: true
 
   prettier-plugin-astro@0.14.1:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
@@ -7106,15 +7082,6 @@ snapshots:
     dependencies:
       browserslist: 4.24.2
 
-  cosmiconfig@8.3.6(typescript@5.6.3):
-    dependencies:
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-      path-type: 4.0.0
-    optionalDependencies:
-      typescript: 5.6.3
-
   cosmiconfig@9.0.0(typescript@5.6.3):
     dependencies:
       env-paths: 2.2.1
@@ -8063,12 +8030,6 @@ snapshots:
       '@types/node': 22.7.9
       merge-stream: 2.0.0
       supports-color: 7.2.0
-
-  jira-prepare-commit-msg@1.7.2(typescript@5.6.3):
-    dependencies:
-      cosmiconfig: 8.3.6(typescript@5.6.3)
-    transitivePeerDependencies:
-      - typescript
 
   js-tokens@4.0.0: {}
 
@@ -9332,8 +9293,6 @@ snapshots:
       find-up-simple: 1.0.0
       find-yarn-workspace-root2: 1.2.16
       which-pm: 3.0.0
-
-  prefix-commit-message@4.2.0: {}
 
   prettier-plugin-astro@0.14.1:
     dependencies:
