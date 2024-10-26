@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import fs from 'fs';
 import downloadService from '../../../services/download.service';
 
-export const GET: APIRoute = async ({ request, url }) => {
+export const GET: APIRoute = async ({ request }) => {
   const token = new URL(request.url).searchParams.get('token');
 
   if (!token) {

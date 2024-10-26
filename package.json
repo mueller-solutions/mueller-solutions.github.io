@@ -10,7 +10,8 @@
     "astro": "astro",
     "format": "prettier --write \"**/*.{ts,js,astro}\"",
     "lint:styles": "stylelint \"src/**/*.css\"",
-    "lint:ci": "pnpm lint:styles",
+    "lint:astro": "astro check",
+    "lint:ci": "pnpm lint:styles && pnpm lint:astro",
     "test:unit": "vitest",
     "test:unit:coverage": "vitest --coverage"
   },
