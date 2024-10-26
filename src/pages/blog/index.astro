@@ -1,10 +1,9 @@
 ---
-import dayjs from 'dayjs';
 import MainLayout from '../../layouts/main-layout.astro';
 import blogService from '../../services/blog.service';
 import BlogPost from '../../components/blog-post.astro';
 
-const { posts, numPages, currentPage } = await blogService.getPosts();
+const { posts } = await blogService.getPosts();
 const latestPosts = posts.slice(0, 4);
 const hasStickyPosts = posts.some((post: any) => post.sticky);
 const stickyPosts = posts.filter((post: any) => post.sticky);
