@@ -96,6 +96,9 @@ importers:
       lint-staged:
         specifier: ^15.2.10
         version: 15.2.10
+      prefix-commit-message:
+        specifier: ^4.2.0
+        version: 4.2.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -3845,6 +3848,10 @@ packages:
   preferred-pm@4.0.0:
     resolution: {integrity: sha512-gYBeFTZLu055D8Vv3cSPox/0iTPtkzxpLroSYYA7WXgRi31WCJ51Uyl8ZiPeUUjyvs2MBzK+S8v9JVUgHU/Sqw==}
     engines: {node: '>=18.12'}
+
+  prefix-commit-message@4.2.0:
+    resolution: {integrity: sha512-Vdy1EsII/CFKq9yXtcG/U4zIKwy213JSg/wvQcCxz2FZrOZMZdPCLw9doF3fPLPoG1VuS8VKVOxHHoRXpf+WNw==}
+    hasBin: true
 
   prettier-plugin-astro@0.14.1:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
@@ -9325,6 +9332,8 @@ snapshots:
       find-up-simple: 1.0.0
       find-yarn-workspace-root2: 1.2.16
       which-pm: 3.0.0
+
+  prefix-commit-message@4.2.0: {}
 
   prettier-plugin-astro@0.14.1:
     dependencies:
