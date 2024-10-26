@@ -12,8 +12,18 @@
     "lint:styles": "stylelint \"src/**/*.css\"",
     "lint:astro": "astro check",
     "lint:ci": "pnpm lint:styles && pnpm lint:astro",
+    "lint:staged": "lint-staged -q",
     "test:unit": "vitest",
-    "test:unit:coverage": "vitest --coverage"
+    "test:unit:coverage": "vitest --coverage",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,js,astro}": [
+      "prettier --write"
+    ],
+    "**/*.css": [
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -44,6 +54,8 @@
     "@types/node": "^22.7.9",
     "@types/wpapi": "^1.1.4",
     "@vitest/coverage-v8": "2.1.3",
+    "husky": "9.0.11",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "stylelint": "^16.10.0",
