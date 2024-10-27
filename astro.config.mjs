@@ -14,14 +14,18 @@ const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.de
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: false,
+  }),
   image: {
     domains: ['media.licdn.com'],
   },
+  prefetch: true,
   integrations: [
-    !IS_DEV && serviceWorker(),
+    serviceWorker(),
     sitemap({
-      filter: (page) => page !== `${siteURL}/booking-confirmed/`,
+      filter: (page) =>
+        page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
     }),
     robotsTxt({
       policy: [

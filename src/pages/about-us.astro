@@ -1,6 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
-
 import MainLayout from '../layouts/main-layout.astro';
 import Icon from '../components/icon.astro';
 import FinalEngagement from '../components/final-engagement.astro';
@@ -8,6 +6,7 @@ import HeroSection from '../components/hero-section.astro';
 import teamPairprogrammingImg from '../assets/about-us/team-pairprogramming.webp';
 import handshakeImg from '../assets/about-us/handshake.webp';
 import teamSuccessImg from '../assets/about-us/team-success.webp';
+import ResponsiveImage from '../components/responsive-image.astro';
 ---
 
 <MainLayout
@@ -34,15 +33,7 @@ import teamSuccessImg from '../assets/about-us/team-success.webp';
   <!-- Trusted Partner -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <Picture
-        src={handshakeImg}
-        alt="Handshake"
-        formats={['avif', 'webp', 'jpg']}
-        fallbackFormat="jpg"
-        widths={[400, handshakeImg.width]}
-        sizes={`(max-width: 480px) 400px, ${handshakeImg.width}px`}
-        class="rounded"
-      />
+      <ResponsiveImage image={handshakeImg} alt="Handshake" class="rounded" />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">A Vision for the Future, Built on Experience</p>
         <h2 class="heading2">Your Partner in Transforming the Digital Experience</h2>
@@ -174,15 +165,7 @@ import teamSuccessImg from '../assets/about-us/team-success.webp';
           long-term success. We offer support and the flexibility to adapt as your business grows in the digital age.
         </p>
       </div>
-      <Picture
-        src={teamSuccessImg}
-        alt="Team Success"
-        formats={['avif', 'webp', 'jpg']}
-        fallbackFormat="jpg"
-        widths={[400, teamSuccessImg.width]}
-        sizes={`(max-width: 480px) 400px, ${teamSuccessImg.width}px`}
-        class="rounded fade-from-right"
-      />
+      <ResponsiveImage image={teamSuccessImg} alt="Team Success" class="rounded fade-from-right" />
     </div>
   </section>
   <FinalEngagement />

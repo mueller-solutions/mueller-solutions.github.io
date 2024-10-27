@@ -1,6 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
-
 import Icon from '../../components/icon.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
@@ -11,6 +9,7 @@ import successOfficeImg from '../../assets/services/success-office.webp';
 import frontendPerformanceImg from '../../assets/services/frontend-performance.webp';
 import webArchitectureImg from '../../assets/services/web-architecture.webp';
 import technologyImg from '../../assets/services/technology.webp';
+import ResponsiveImage from '../../components/responsive-image.astro';
 
 const faqs = [
   {
@@ -91,15 +90,7 @@ const faqs = [
   <!-- Success Summary -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <Picture
-        src={successOfficeImg}
-        alt="A Office"
-        formats={['avif', 'webp', 'jpg']}
-        fallbackFormat="jpg"
-        widths={[400, successOfficeImg.width]}
-        sizes={`(max-width: 480px) 400px, ${successOfficeImg.width}px`}
-        class="rounded"
-      />
+      <ResponsiveImage image={successOfficeImg} alt="A Office" class="rounded" preload />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Your Success Is Our Priority</p>
         <h2 class="heading2">Comprehensive Services to Meet Your Unique Needs</h2>
@@ -187,25 +178,17 @@ const faqs = [
             Get Your Free Performance Review
           </button>
         </div>
-        <Picture
-          src={frontendPerformanceImg}
+        <ResponsiveImage
+          image={frontendPerformanceImg}
           alt="Performance-Optimized Web Development"
-          formats={['avif', 'webp', 'jpg']}
-          fallbackFormat="jpg"
-          widths={[400, frontendPerformanceImg.width]}
-          sizes={`(max-width: 480px) 400px, ${frontendPerformanceImg.width}px`}
           class="rounded fade-from-right mobile-hidden"
         />
       </div>
       <!-- Legacy System Modernization -->
       <div class="flex flex-sm-col gap-1">
-        <Picture
-          src={webArchitectureImg}
+        <ResponsiveImage
+          image={webArchitectureImg}
           alt="Legacy System Modernization"
-          formats={['avif', 'webp', 'jpg']}
-          fallbackFormat="jpg"
-          widths={[400, webArchitectureImg.width]}
-          sizes={`(max-width: 480px) 400px, ${webArchitectureImg.width}px`}
           class="rounded fade-from-left mobile-hidden"
         />
         <div class="card justify-center items-start large-gap slim white fade-from-right">
@@ -263,13 +246,9 @@ const faqs = [
           </ul>
           <button class="button primary">Request a Free Web App Consultation</button>
         </div>
-        <Picture
-          src={technologyImg}
+        <ResponsiveImage
+          image={technologyImg}
           alt="Custom Web Application Development"
-          formats={['avif', 'webp', 'jpg']}
-          fallbackFormat="jpg"
-          widths={[400, technologyImg.width]}
-          sizes={`(max-width: 480px) 400px, ${technologyImg.width}px`}
           class="rounded fade-from-right mobile-hidden"
         />
       </div>
