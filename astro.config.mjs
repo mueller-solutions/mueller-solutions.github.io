@@ -6,17 +6,14 @@ import sitemap from '@astrojs/sitemap';
 import serviceWorker from 'astrojs-service-worker';
 import partytown from '@astrojs/partytown';
 
-console.log('node env', process.env.NODE_ENV);
 const IS_DEV = process.env.NODE_ENV === 'development';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
 
 // https://astro.build/config
 export default defineConfig({
   site: siteURL,
-  output: 'server',
-  adapter: netlify({
-    imageCDN: false,
-  }),
+  output: 'hybrid',
+  adapter: netlify(),
   image: {
     domains: ['media.licdn.com'],
   },
