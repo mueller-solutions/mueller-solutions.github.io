@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import { getImage } from 'astro:assets';
 
 import '../styles/main.css';
 import Header from '../components/site-header.astro';
@@ -7,6 +8,7 @@ import Footer from '../components/site-footer.astro';
 import GoogleTagManager from '../components/google-tag-manager.astro';
 import PipedriveChatbot from '../components/pipedrive-chatbot.astro';
 import Calendly from '../components/calendly.astro';
+import ogMuellerSolutionsImg from '../assets/seo/og-mueller-solutions.jpg';
 
 type Props = {
   title?: string;
@@ -16,13 +18,7 @@ type Props = {
   ogImage?: string;
 };
 
-const {
-  title,
-  description,
-  keywords,
-  class: className,
-  ogImage = 'https://mueller-solutions.dev/images/og-mueller-solutions.jpg',
-} = Astro.props;
+const { title, description, keywords, class: className, ogImage } = Astro.props;
 const baseURL = Astro.url.origin;
 
 const htmlTitle = title ?? 'Expert Frontend Development and Frontend Consulting | MUELLER';
@@ -32,6 +28,8 @@ const htmlDescription =
 const htmlKeywords =
   keywords ??
   'frontend development, frontend consulting, frontend development services, frontend consulting services, web app development, frontend consulting, performance optimization, scalable web applications, speed optimization, Progressive Web Apps, server-side rendering, React development, code optimization, cross-browser compatibility, user experience design, UI/UX consulting, web performance, frontend architecture, micro-frontend architecture, responsive web design, SEO for web apps, modern frontend development';
+
+const ogImageOptimized = await getImage({ src: ogImage || ogMuellerSolutionsImg, format: 'webp' });
 ---
 
 <!doctype html>
@@ -47,7 +45,7 @@ const htmlKeywords =
     <meta property="og:title" content={htmlTitle} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={htmlDescription} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageOptimized.src} />
     <meta name="author" content="DevBucket, LLC. Austin, TX" />
     <link rel="preconnect" href="//assets.calendly.com" />
     <link rel="preconnect" href="//unpkg.com" />

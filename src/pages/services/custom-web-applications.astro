@@ -3,6 +3,8 @@ import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
+import HeroSection from '../../components/hero-section.astro';
+import customApplicationsImg from '../../assets/services/custom-applications.webp';
 ---
 
 <MainLayout
@@ -10,24 +12,22 @@ import MainLayout from '../../layouts/main-layout.astro';
   description="Build custom web applications that drive growth. Our tailored web app solutions are scalable, secure, and designed to meet the unique needs of your business."
   keywords="custom web application development, tailored web solutions, scalable web apps, secure web platforms, custom business applications, web development"
 >
-  <section class="hero" style="--background-image: url('/images/services/custom-applications.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Unlock the Power of Custom Web Applications</h1>
-      <p class="text-balance text-pretty-mobile">
-        Drive business growth and engagement with bespoke web applications designed for your unique needs.
-      </p>
-      <div class="hero-actions">
-        <button
-          class="button"
-          data-size="large"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-        >
-          Schedule a Custom Web App Consultation
-        </button>
-        <WhatsappButton />
-      </div>
+  <HeroSection image={customApplicationsImg}>
+    <h1 class="heading1 inverted">Unlock the Power of Custom Web Applications</h1>
+    <p class="text-balance text-pretty-mobile">
+      Drive business growth and engagement with bespoke web applications designed for your unique needs.
+    </p>
+    <div class="hero-actions">
+      <button
+        class="button"
+        data-size="large"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+      >
+        Schedule a Custom Web App Consultation
+      </button>
+      <WhatsappButton />
     </div>
-  </section>
+  </HeroSection>
   <section class="section gradient-up">
     <div class="wrapper">
       <header>

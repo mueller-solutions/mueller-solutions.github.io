@@ -1,0 +1,37 @@
+---
+import { getImage } from 'astro:assets';
+
+type Props = {
+  image: ImageMetadata;
+};
+
+const { image } = Astro.props;
+
+const imageAvif = await getImage({ src: image, format: 'avif' });
+const imageWebp = await getImage({ src: image, format: 'webp' });
+const imageJpeg = await getImage({ src: image, format: 'jpeg' });
+---
+
+<section class="hero">
+  <div class="wrapper">
+    <slot />
+  </div>
+</section>
+
+<style
+  define:vars={{
+    'image-avif': `url(${imageAvif.src})`,
+    'image-webp': `url(${imageWebp.src})`,
+    'image-jpeg': `url(${imageJpeg.src})`,
+  }}
+>
+  @media (width > 480px) {
+    .hero {
+      background-image: image-set(
+        var(--image-avif) type('image/avif'),
+        var(--image-webp) type('image/webp'),
+        var(--image-jpeg) type('image/jpeg')
+      );
+    }
+  }
+</style>

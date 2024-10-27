@@ -6,7 +6,7 @@
   --spacing-y: clamp(40px, 6vw, 160px);
 
   background-color: var(--clr-primary-dark);
-  background-image: var(--background-image);
+  background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
   border-bottom-left-radius: var(--border-radius);
@@ -23,10 +23,6 @@
   @mixin tablet-up {
     --text-align: left;
     --content-max-width: 47.5%;
-  }
-
-  @mixin mobile {
-    background-image: none;
   }
 
   h1 {

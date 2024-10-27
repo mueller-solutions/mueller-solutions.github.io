@@ -3,6 +3,8 @@ import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
+import HeroSection from '../../components/hero-section.astro';
+import performanceOptimizationImg from '../../assets/services/performance-optimization.webp';
 ---
 
 <MainLayout
@@ -10,18 +12,16 @@ import MainLayout from '../../layouts/main-layout.astro';
   description="Optimize your website for speed, SEO, and user experience. Our performance optimization services will reduce load times and increase conversions, ensuring your site delivers results."
   keywords="website performance optimization, speed optimization, SEO optimization, improve site speed, boost conversions, web performance audit"
 >
-  <section class="hero" style="--background-image: url('/images/services/performance-optimization.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Boost Your Website's Speed and Performance</h1>
-      <p class="text-balance text-pretty-mobile">
-        Don't lose customers to slow load times. Optimize your site for speed, better SEO, and higher conversions.
-      </p>
-      <div class="hero-actions">
-        <button class="button" data-size="large">Start Your Performance Audit </button>
-        <WhatsappButton />
-      </div>
+  <HeroSection image={performanceOptimizationImg}>
+    <h1 class="heading1 inverted">Boost Your Website's Speed and Performance</h1>
+    <p class="text-balance text-pretty-mobile">
+      Don't lose customers to slow load times. Optimize your site for speed, better SEO, and higher conversions.
+    </p>
+    <div class="hero-actions">
+      <button class="button" data-size="large">Start Your Performance Audit </button>
+      <WhatsappButton />
     </div>
-  </section>
+  </HeroSection>
   <section class="section gradient-up">
     <div class="wrapper">
       <header>
