@@ -10,7 +10,7 @@ const isActive = pathname === href;
 ---
 
 <li class="nav-item">
-  <a href={href} class:list={[isButton ? 'nav-button' : 'nav-link', isActive && 'active']}>
+  <a href={href} class:list={[isButton ? 'nav-button' : 'nav-link', isActive && 'active']} data-astro-prefetch>
     <slot />
   </a>
   <slot name="dropdown" />

@@ -12,6 +12,7 @@ const imageWebp = await getImage({ src: image, format: 'webp' });
 const imageJpg = await getImage({ src: image, format: 'jpg' });
 ---
 
+<link rel="preload" href={imageAvif.src} as="image" type="image/avif" />
 <section class="hero">
   <div class="wrapper">
     <slot />
