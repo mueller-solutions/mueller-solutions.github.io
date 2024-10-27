@@ -80,7 +80,7 @@ const ogImageOptimized = await getImage({ src: ogImage || ogMuellerSolutionsImg,
     <Calendly />
     <script is:inline>
       // Navigation
-      document.addEventListener('astro:page-load', () => {
+      document.addEventListener('DOMContentLoaded', () => {
         const navToggle = document.querySelector('[aria-controls="main-navigation"]');
         const menuEl = document.getElementById('main-navigation');
         const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
