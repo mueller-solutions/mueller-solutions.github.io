@@ -9,7 +9,7 @@ const { image } = Astro.props;
 
 const imageAvif = await getImage({ src: image, format: 'avif' });
 const imageWebp = await getImage({ src: image, format: 'webp' });
-const imageJpeg = await getImage({ src: image, format: 'jpg' });
+const imageJpg = await getImage({ src: image, format: 'jpg' });
 ---
 
 <section class="hero">
@@ -22,7 +22,7 @@ const imageJpeg = await getImage({ src: image, format: 'jpg' });
   define:vars={{
     'image-avif': `url(${imageAvif.src})`,
     'image-webp': `url(${imageWebp.src})`,
-    'image-jpeg': `url(${imageJpeg.src})`,
+    'image-jpg': `url(${imageJpg.src})`,
   }}
 >
   @media (width > 480px) {
@@ -30,7 +30,7 @@ const imageJpeg = await getImage({ src: image, format: 'jpg' });
       background-image: image-set(
         var(--image-avif) type('image/avif'),
         var(--image-webp) type('image/webp'),
-        var(--image-jpeg) type('image/jpeg')
+        var(--image-jpg) type('image/jpg')
       );
     }
   }
