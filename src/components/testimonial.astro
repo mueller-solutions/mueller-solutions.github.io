@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import Icon from './icon.astro';
 
 type Props = {
@@ -12,7 +13,6 @@ type Props = {
 const { quote, author, company, image, href } = Astro.props;
 ---
 
-<link slot="html-head" rel="preload" as="image" href={image} type="image/jpeg" />
 <div class="card white shadow slim fade-from-bottom">
   <Icon name="rating-stars" class="rating-stars" width="82" height="14" />
   <p class="body2">
@@ -20,7 +20,16 @@ const { quote, author, company, image, href } = Astro.props;
   </p>
   <div class="flex gap-1">
     <a href={href} rel="nofollow">
-      <img src={image} alt={author} width="40" height="40" loading="lazy" decoding="async" class="circle" />
+      <Picture
+        src={image}
+        alt={author}
+        inferSize
+        class="circle"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        width={40}
+        height={40}
+      />
     </a>
     <div>
       <p class="heading4">{author}</p>

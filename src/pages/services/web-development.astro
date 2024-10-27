@@ -3,6 +3,8 @@ import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
+import HeroSection from '../../components/hero-section.astro';
+import webDevelopmentImg from '../../assets/services/web-development.webp';
 ---
 
 <MainLayout
@@ -10,18 +12,16 @@ import MainLayout from '../../layouts/main-layout.astro';
   description="Discover our custom web development services designed for growth. We create scalable, SEO-friendly, and high-performance websites tailored to your business needs."
   keywords="custom web development, scalable websites, SEO-friendly web development, high-performance web solutions, responsive web design, full-stack web development"
 >
-  <section class="hero" style="--background-image: url('/images/services/web-development.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Build Web Solutions That Drive Business Growth</h1>
-      <p class="text-balance text-pretty-mobile">
-        Create secure, scalable, and high-performance websites that leave a lasting impression.
-      </p>
-      <div class="hero-actions">
-        <button class="button" data-size="large">Book a Free Strategy Call</button>
-        <WhatsappButton />
-      </div>
+  <HeroSection image={webDevelopmentImg}>
+    <h1 class="heading1 inverted">Build Web Solutions That Drive Business Growth</h1>
+    <p class="text-balance text-pretty-mobile">
+      Create secure, scalable, and high-performance websites that leave a lasting impression.
+    </p>
+    <div class="hero-actions">
+      <button class="button" data-size="large">Book a Free Strategy Call</button>
+      <WhatsappButton />
     </div>
-  </section>
+  </HeroSection>
   <section class="section gradient-up">
     <div class="wrapper">
       <header>

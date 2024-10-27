@@ -3,6 +3,8 @@ import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
+import HeroSection from '../../components/hero-section.astro';
+import legacySystemImg from '../../assets/services/legacy-system.webp';
 ---
 
 <MainLayout
@@ -10,18 +12,16 @@ import MainLayout from '../../layouts/main-layout.astro';
   description="Transform outdated systems into modern, scalable solutions. Our legacy system modernization services ensure your business is equipped for future growth with secure, efficient technologies."
   keywords="legacy system modernization, future-proof systems, modern tech stack, migrate legacy applications, secure web solutions, scalable web platforms"
 >
-  <section class="hero" style="--background-image: url('/images/services/legacy-system.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Upgrade Your Legacy Systems to Future-Ready Solutions</h1>
-      <p class="text-balanc text-pretty-mobile">
-        Don't let outdated technology hold your business back—modernize and scale without disruption.
-      </p>
-      <div class="hero-actions">
-        <button class="button" data-size="large">Book a Free Modernization Consultation</button>
-        <WhatsappButton />
-      </div>
+  <HeroSection image={legacySystemImg}>
+    <h1 class="heading1 inverted">Upgrade Your Legacy Systems to Future-Ready Solutions</h1>
+    <p class="text-balanc text-pretty-mobile">
+      Don't let outdated technology hold your business back—modernize and scale without disruption.
+    </p>
+    <div class="hero-actions">
+      <button class="button" data-size="large">Book a Free Modernization Consultation</button>
+      <WhatsappButton />
     </div>
-  </section>
+  </HeroSection>
   <section class="section gradient-up">
     <div class="wrapper">
       <header>

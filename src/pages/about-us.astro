@@ -1,7 +1,13 @@
 ---
+import { Picture } from 'astro:assets';
+
 import MainLayout from '../layouts/main-layout.astro';
 import Icon from '../components/icon.astro';
 import FinalEngagement from '../components/final-engagement.astro';
+import HeroSection from '../components/hero-section.astro';
+import teamPairprogrammingImg from '../assets/about-us/team-pairprogramming.webp';
+import handshakeImg from '../assets/about-us/handshake.webp';
+import teamSuccessImg from '../assets/about-us/team-success.webp';
 ---
 
 <MainLayout
@@ -9,38 +15,33 @@ import FinalEngagement from '../components/final-engagement.astro';
   description="Discover Florian Mueller, founder of MUELLER, with 20+ years of experience in web development, scalable architecture, and AI-powered solutions. Learn how we combine performance, innovation, and a client-focused approach to deliver top-tier web solutions."
   keywords="Florian Mueller, MUELLER, web development expert, AI-powered solutions, scalable web architecture, frontend development, custom digital strategies, AI-driven onboarding, web performance optimization, technology innovation, digital solutions"
 >
-  <link slot="html-head" rel="preload" as="image" href="/images/about-us/team-pairprogramming.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/about-us/handshake.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/about-us/team-success.webp" type="image/webp" />
-  <section class="hero" style="--background-image: url('/images/about-us/team-pairprogramming.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Redefining Digital Excellence with MUELLER Solutions</h1>
-      <p class="text-balance text-pretty-mobile">
-        Leading the next generation of web development solutions, combining high performance, scalability, and
-        AI-powered innovation.
-      </p>
-      <div class="hero-actions">
-        <button
-          class="button"
-          data-size="large"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-        >
-          Schedule a Free Consultation
-        </button>
-      </div>
+  <HeroSection image={teamPairprogrammingImg}>
+    <h1 class="heading1 inverted">Redefining Digital Excellence with MUELLER Solutions</h1>
+    <p class="text-balance text-pretty-mobile">
+      Leading the next generation of web development solutions, combining high performance, scalability, and AI-powered
+      innovation.
+    </p>
+    <div class="hero-actions">
+      <button
+        class="button"
+        data-size="large"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+      >
+        Schedule a Free Consultation
+      </button>
     </div>
-  </section>
+  </HeroSection>
   <!-- Trusted Partner -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <img
-        src="/images/about-us/handshake.webp"
+      <Picture
+        src={handshakeImg}
         alt="Handshake"
-        width="800"
-        height="598"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        widths={[400, handshakeImg.width]}
+        sizes={`(max-width: 480px) 400px, ${handshakeImg.width}px`}
         class="rounded"
-        loading="lazy"
-        decoding="async"
       />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">A Vision for the Future, Built on Experience</p>
@@ -173,14 +174,14 @@ import FinalEngagement from '../components/final-engagement.astro';
           long-term success. We offer support and the flexibility to adapt as your business grows in the digital age.
         </p>
       </div>
-      <img
-        src="/images/about-us/team-success.webp"
+      <Picture
+        src={teamSuccessImg}
         alt="Team Success"
-        width="800"
-        height="542"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        widths={[400, teamSuccessImg.width]}
+        sizes={`(max-width: 480px) 400px, ${teamSuccessImg.width}px`}
         class="rounded fade-from-right"
-        loading="lazy"
-        decoding="async"
       />
     </div>
   </section>

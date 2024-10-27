@@ -1,7 +1,16 @@
 ---
+import { Picture } from 'astro:assets';
+
 import Icon from '../../components/icon.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
+import HeroSection from '../../components/hero-section.astro';
+
+import strategyPaperImg from '../../assets/services/strategy-paper.webp';
+import successOfficeImg from '../../assets/services/success-office.webp';
+import frontendPerformanceImg from '../../assets/services/frontend-performance.webp';
+import webArchitectureImg from '../../assets/services/web-architecture.webp';
+import technologyImg from '../../assets/services/technology.webp';
 
 const faqs = [
   {
@@ -62,40 +71,34 @@ const faqs = [
   description="Explore our expert web development services including performance optimization, legacy system modernization, and custom web application development. We specialize in creating fast, scalable, and secure solutions tailored to your business needs."
   keywords="web development services, performance optimization, legacy system modernization, custom web applications, React web development, Node.js development, scalable web solutions, web app development, website optimization, secure web platforms"
 >
-  <link slot="html-head" rel="preload" as="image" href="/images/services/strategy-paper.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/services/success-office.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/services/frontend-performance.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/services/technology.webp" type="image/webp" />
   <!-- Hero -->
-  <section class="hero" style="--background-image: url('/images/services/strategy-paper.webp')">
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Explore Our Expert Services</h1>
-      <p>
-        We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
-        experience. Discover how we can help your business thrive in the digital world.
-      </p>
-      <div class="hero-actions">
-        <button
-          class="button inverted"
-          data-size="large"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-        >
-          Book Your Free Strategy Session
-        </button>
-      </div>
+  <HeroSection image={strategyPaperImg}>
+    <h1 class="heading1 inverted">Explore Our Expert Services</h1>
+    <p>
+      We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
+      experience. Discover how we can help your business thrive in the digital world.
+    </p>
+    <div class="hero-actions">
+      <button
+        class="button inverted"
+        data-size="large"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+      >
+        Book Your Free Strategy Session
+      </button>
     </div>
-  </section>
+  </HeroSection>
   <!-- Success Summary -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <img
-        src="/images/services/success-office.webp"
+      <Picture
+        src={successOfficeImg}
         alt="A Office"
-        width="700"
-        height="564"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        widths={[400, successOfficeImg.width]}
+        sizes={`(max-width: 480px) 400px, ${successOfficeImg.width}px`}
         class="rounded"
-        loading="lazy"
-        decoding="async"
       />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Your Success Is Our Priority</p>
@@ -184,26 +187,26 @@ const faqs = [
             Get Your Free Performance Review
           </button>
         </div>
-        <img
-          src="/images/services/frontend-performance.webp"
+        <Picture
+          src={frontendPerformanceImg}
           alt="Performance-Optimized Web Development"
-          width="321"
-          height="573"
+          formats={['avif', 'webp', 'jpg']}
+          fallbackFormat="jpg"
+          widths={[400, frontendPerformanceImg.width]}
+          sizes={`(max-width: 480px) 400px, ${frontendPerformanceImg.width}px`}
           class="rounded fade-from-right mobile-hidden"
-          loading="lazy"
-          decoding="async"
         />
       </div>
       <!-- Legacy System Modernization -->
       <div class="flex flex-sm-col gap-1">
-        <img
-          src="/images/services/web-architecture.webp"
+        <Picture
+          src={webArchitectureImg}
           alt="Legacy System Modernization"
-          width="321"
-          height="554"
+          formats={['avif', 'webp', 'jpg']}
+          fallbackFormat="jpg"
+          widths={[400, webArchitectureImg.width]}
+          sizes={`(max-width: 480px) 400px, ${webArchitectureImg.width}px`}
           class="rounded fade-from-left mobile-hidden"
-          loading="lazy"
-          decoding="async"
         />
         <div class="card justify-center items-start large-gap slim white fade-from-right">
           <h2 class="heading2">Legacy System Modernization</h2>
@@ -260,14 +263,14 @@ const faqs = [
           </ul>
           <button class="button primary">Request a Free Web App Consultation</button>
         </div>
-        <img
-          src="/images/services/technology.webp"
+        <Picture
+          src={technologyImg}
           alt="Custom Web Application Development"
-          width="321"
-          height="554"
+          formats={['avif', 'webp', 'jpg']}
+          fallbackFormat="jpg"
+          widths={[400, technologyImg.width]}
+          sizes={`(max-width: 480px) 400px, ${technologyImg.width}px`}
           class="rounded fade-from-right mobile-hidden"
-          loading="lazy"
-          decoding="async"
         />
       </div>
     </div>

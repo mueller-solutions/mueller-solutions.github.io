@@ -1,8 +1,16 @@
 ---
+import { Picture } from 'astro:assets';
+
+import MainLayout from '../layouts/main-layout.astro';
+
 import FinalEngagement from '../components/final-engagement.astro';
+import HeroSection from '../components/hero-section.astro';
 import Icon from '../components/icon.astro';
 import Testimonial from '../components/testimonial.astro';
-import MainLayout from '../layouts/main-layout.astro';
+import manWithLaptopImg from '../assets/home/man-with-laptop.jpg';
+import probleStatementImg from '../assets/home/problem-statement.jpg';
+import solutionsCollageImg from '../assets/home/solutions-collage.jpg';
+import florianMuellerImg from '../assets/home/florian-mueller.png';
 
 const solutions = [
   { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
@@ -21,12 +29,8 @@ const solutions = [
 ---
 
 <MainLayout>
-  <link slot="html-head" rel="preload" as="image" href="/images/home/man-with-laptop.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/home/problem-statement.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/home/solutions-collage.webp" type="image/webp" />
-  <link slot="html-head" rel="preload" as="image" href="/images/home/florian-mueller.webp" type="image/webp" />
   <!-- Hero -->
-  <section class="hero" style="--background-image: url('/images/home/man-with-laptop.webp')">
+  <HeroSection image={manWithLaptopImg}>
     <div class="wrapper">
       <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
       <p class="text-balance text-pretty-mobile">
@@ -60,18 +64,18 @@ const solutions = [
         </dialog>
       </div>
     </div>
-  </section>
+  </HeroSection>
   <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <img
-        src="/images/home/problem-statement.webp"
+      <Picture
+        src={probleStatementImg}
         alt="Problem Statement"
-        width="699"
-        height="484"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        widths={[400, probleStatementImg.width]}
+        sizes={`(max-width: 480px) 400px, ${probleStatementImg.width}px`}
         class="rounded"
-        loading="lazy"
-        decoding="async"
       />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Don't Let a Slow App Hold You Back</p>
@@ -180,14 +184,14 @@ const solutions = [
           </div>
         </div>
       </div>
-      <img
-        class="fade-from-right"
-        src="/images/home/solutions-collage.webp"
+      <Picture
+        src={solutionsCollageImg}
         alt="Solutions Collage"
-        width="514"
-        height="552"
-        loading="lazy"
-        decoding="async"
+        formats={['avif', 'webp', 'jpg']}
+        fallbackFormat="jpg"
+        widths={[400, solutionsCollageImg.width]}
+        sizes={`(max-width: 480px) 400px, ${solutionsCollageImg.width}px`}
+        class="fade-from-right"
       />
     </div>
   </section>
@@ -267,14 +271,14 @@ const solutions = [
             Let's Work Together
           </button>
         </div>
-        <img
+        <Picture
+          src={florianMuellerImg}
+          alt="Florian Mueller, Founder & CEO"
+          formats={['avif', 'webp', 'png']}
+          fallbackFormat="png"
+          widths={[400, florianMuellerImg.width]}
+          sizes={`(max-width: 480px) 400px, ${florianMuellerImg.width}px`}
           class="fade-from-right"
-          src="/images/home/florian-mueller.webp"
-          alt="Florian Mueller"
-          width="404"
-          height="492"
-          loading="lazy"
-          decoding="async"
         />
       </div>
     </div>
