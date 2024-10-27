@@ -9,7 +9,7 @@ const { image } = Astro.props;
 
 const imageAvif = await getImage({ src: image, format: 'avif' });
 const imageWebp = await getImage({ src: image, format: 'webp' });
-const imageJpeg = await getImage({ src: image, format: 'jpeg' });
+const imageJpeg = await getImage({ src: image, format: 'jpg' });
 ---
 
 <section class="hero">
