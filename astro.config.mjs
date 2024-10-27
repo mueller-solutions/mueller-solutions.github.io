@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
-import node from '@astrojs/node';
 import playformCompress from '@playform/compress';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
@@ -15,7 +14,7 @@ const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.de
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  adapter: IS_DEV ? node({ mode: 'standalone' }) : netlify(),
+  adapter: netlify(),
   image: {
     domains: ['media.licdn.com'],
   },
