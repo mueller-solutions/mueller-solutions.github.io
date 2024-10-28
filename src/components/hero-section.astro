@@ -1,18 +1,17 @@
 ---
-import { getImage } from 'astro:assets';
+import { useUserAgent } from 'astro-useragent';
 
 type Props = {
-  image: ImageMetadata;
+  image: string;
 };
 
-const { image } = Astro.props;
+const uaString = Astro.request.headers.get('user-agent');
+const { isMobile } = useUserAgent(uaString);
 
-const imageAvif = await getImage({ src: image, format: 'avif' });
-const imageWebp = await getImage({ src: image, format: 'webp' });
-const imageJpg = await getImage({ src: image, format: 'jpg' });
+const { image } = Astro.props;
 ---
 
-<link rel="preload" href={imageAvif.src} as="image" type="image/avif" />
+{!isMobile && <link rel="preload" href={`/images/${image}.webp`} as="image" type="image/webp" />}
 <section class="hero">
   <div class="wrapper">
     <slot />
@@ -21,18 +20,13 @@ const imageJpg = await getImage({ src: image, format: 'jpg' });
 
 <style
   define:vars={{
-    'image-avif': `url(${imageAvif.src})`,
-    'image-webp': `url(${imageWebp.src})`,
-    'image-jpg': `url(${imageJpg.src})`,
+    'image-webp': `url('/images/${image}.webp')`,
+    'image-jpg': `url('/images/${image}.jpg')`,
   }}
 >
   @media (width > 480px) {
     .hero {
-      background-image: image-set(
-        var(--image-avif) type('image/avif'),
-        var(--image-webp) type('image/webp'),
-        var(--image-jpg) type('image/jpg')
-      );
+      background-image: image-set(var(--image-webp) type('image/webp'), var(--image-jpg) type('image/jpg'));
     }
   }
 </style>

@@ -5,10 +5,6 @@ import FinalEngagement from '../components/final-engagement.astro';
 import HeroSection from '../components/hero-section.astro';
 import Icon from '../components/icon.astro';
 import Testimonial from '../components/testimonial.astro';
-import manWithLaptopImg from '../assets/home/man-with-laptop.jpg';
-import probleStatementImg from '../assets/home/problem-statement.jpg';
-import solutionsCollageImg from '../assets/home/solutions-collage.jpg';
-import florianMuellerImg from '../assets/home/florian-mueller.png';
 import ResponsiveImage from '../components/responsive-image.astro';
 
 const solutions = [
@@ -29,45 +25,50 @@ const solutions = [
 
 <MainLayout>
   <!-- Hero -->
-  <HeroSection image={manWithLaptopImg}>
-    <div class="wrapper">
-      <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
-      <p class="text-balance text-pretty-mobile">
-        Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
-        Stand out online and leave your competition behind.
-      </p>
-      <div class="hero-actions">
-        <button
-          class="button"
-          data-size="large"
-          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-        >
-          Schedule a Free Consultation
+  <HeroSection image="home/man-with-laptop">
+    <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
+    <p class="text-balance text-pretty-mobile">
+      Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
+      Stand out online and leave your competition behind.
+    </p>
+    <div class="hero-actions">
+      <button
+        class="button"
+        data-size="large"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
+      >
+        Schedule a Free Consultation
+      </button>
+      <button class="button inverted" data-modal-trigger="free-optimization-checklist">
+        <Icon name="download" width="24" height="24" />
+        Free Optimization Checklist
+      </button>
+      <dialog id="free-optimization-checklist" class="modal">
+        <button class="modal-close" data-modal-close>
+          <Icon name="close" width="24" height="24" />
         </button>
-        <button class="button inverted" data-modal-trigger="free-optimization-checklist">
-          <Icon name="download" width="24" height="24" />
-          Free Optimization Checklist
-        </button>
-        <dialog id="free-optimization-checklist" class="modal">
-          <button class="modal-close" data-modal-close>
-            <Icon name="close" width="24" height="24" />
-          </button>
-          <div class="modal-content">
-            <div
-              class="pipedriveWebForms"
-              data-pd-webforms="https://webforms.pipedrive.com/f/6qmK7tmw49347SMIVeYLXbhuhfvnqp3GNRfK90YzayZvME1XEKq9UWXCiwTLsynF2H"
-            >
-              <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
-            </div>
+        <div class="modal-content">
+          <div
+            class="pipedriveWebForms"
+            data-pd-webforms="https://webforms.pipedrive.com/f/6qmK7tmw49347SMIVeYLXbhuhfvnqp3GNRfK90YzayZvME1XEKq9UWXCiwTLsynF2H"
+          >
+            <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
           </div>
-        </dialog>
-      </div>
+        </div>
+      </dialog>
     </div>
   </HeroSection>
   <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <ResponsiveImage image={probleStatementImg} alt="Problem Statement" class="rounded" preload />
+      <ResponsiveImage
+        image="home/problem-statement"
+        alt="Problem Statement"
+        class="rounded"
+        preload
+        width={699}
+        height={484}
+      />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Don't Let a Slow App Hold You Back</p>
         <h2 class="heading2">Is Your Web App Slowing You Down?</h2>
@@ -175,7 +176,13 @@ const solutions = [
           </div>
         </div>
       </div>
-      <ResponsiveImage image={solutionsCollageImg} alt="Solutions Collage" class="fade-from-right" />
+      <ResponsiveImage
+        image="home/solutions-collage"
+        alt="Solutions Collage"
+        class="fade-from-right"
+        width={514}
+        height={552}
+      />
     </div>
   </section>
   <!-- Testimonials -->
@@ -254,7 +261,14 @@ const solutions = [
             Let's Work Together
           </button>
         </div>
-        <ResponsiveImage image={florianMuellerImg} alt="Florian Mueller, Founder & CEO" class="fade-from-right" />
+        <ResponsiveImage
+          image="home/florian-mueller"
+          alt="Florian Mueller, Founder & CEO"
+          class="fade-from-right"
+          width={474}
+          height={462}
+          format="png"
+        />
       </div>
     </div>
   </section>
