@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
-// import serviceWorker from 'astrojs-service-worker';
+import serviceWorker from 'astrojs-service-worker';
 import partytown from '@astrojs/partytown';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -46,7 +46,7 @@ export default defineConfig({
         },
       },
     }),
-    // serviceWorker(),
+    serviceWorker(),
     sitemap({
       filter: (page) =>
         page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
