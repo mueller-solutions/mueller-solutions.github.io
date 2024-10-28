@@ -32,13 +32,19 @@ const solutions = [
       Stand out online and leave your competition behind.
     </p>
     <div class="hero-actions">
-      <button class="button" data-size="large" data-free-consultation> Schedule a Free Consultation </button>
-      <button class="button inverted" data-modal-trigger="free-optimization-checklist">
+      <button id="free-consultation-button" class="button" data-size="large" data-free-consultation>
+        Schedule a Free Consultation
+      </button>
+      <button
+        id="free-optimization-checklist-button"
+        class="button inverted"
+        data-modal-trigger="free-optimization-checklist"
+      >
         <Icon name="download" width="24" height="24" />
         Free Optimization Checklist
       </button>
       <dialog id="free-optimization-checklist" class="modal">
-        <button class="modal-close" data-modal-close>
+        <button id="free-optimization-checklist-close-button" class="modal-close" data-modal-close>
           <Icon name="close" width="24" height="24" />
         </button>
         <div class="modal-content">
@@ -161,10 +167,7 @@ const solutions = [
             }
           </ul>
           <div>
-            <button
-              class="button primary"
-              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5'});return false;"
-            >
+            <button id="get-started-button" class="button primary" data-free-consultation>
               Ready To Get Started
             </button>
           </div>
@@ -198,14 +201,14 @@ const solutions = [
           image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
           href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
         />
-        <!-- <Testimonial
-          quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
-          author="Stephan Conrad"
-          company="Senior Director of Engineering, Veeva Systems"
-          image="https://media.licdn.com/dms/image/v2/C4D03AQHyAQNlEHakEA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516825198799?e=1732752000&v=beta&t=4XzxITsl63UvvvpC_OzjCmMc-PJy-D2brsQ2en3LTgs"
-          href="https://www.linkedin.com/in/stephan-conrad-627b5a19"
-        />
         <Testimonial
+          quote="I had the pleasure of working closely with Florian for several years, and his expertise in frontend development and architecture consistently impressed me. Throughout our collaborations, he demonstrated a deep understanding of modern web technologies and frameworks."
+          author="Daniela Grebe"
+          company="Product Management at Univention"
+          image="https://media.licdn.com/dms/image/v2/C4E03AQHoRlNQAJQwAQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516324221161?e=1735776000&v=beta&t=xoMP_Gtz9AK9qTNBkT-ZiBsNtRhk09N54gwWGEfEsXM"
+          href="https://www.linkedin.com/in/dgrebe/"
+        />
+        <!-- <Testimonial
           quote="Florian is a great frontend engineer. He has vast frontend and overall architectural knowledge and he constantly keeps himself informed about what is going on in the community."
           author="Stephan Conrad"
           company="Senior Director of Engineering, Veeva Systems"
@@ -248,7 +251,9 @@ const solutions = [
               success.
             </p>
           </header>
-          <button class="button primary" data-free-consultation> Let's Work Together </button>
+          <button id="lets-work-together-button" class="button primary" data-free-consultation>
+            Let's Work Together
+          </button>
         </div>
         <ResponsiveImage
           image="home/florian-mueller"

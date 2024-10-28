@@ -5,7 +5,7 @@ import Footer from '../components/site-footer.astro';
 import GoogleTagManager from '../components/google-tag-manager.astro';
 import PipedriveChatbot from '../components/pipedrive-chatbot.astro';
 import Calendly from '../components/calendly.astro';
-import ogMuellerSolutionsImg from '../assets/seo/og-mueller-solutions.jpg';
+import Scripts from '../components/scripts.astro';
 
 type Props = {
   title?: string;
@@ -74,97 +74,7 @@ const htmlKeywords =
     <link rel="preload" as="font" href="/fonts/poppins-bold.woff2" type="font/woff2" crossorigin="anonymous" />
     <slot name="html-head" />
     <Calendly />
-    <script is:inline>
-      // Navigation
-      document.addEventListener('DOMContentLoaded', () => {
-        const navToggle = document.querySelector('[aria-controls="main-navigation"]');
-        const menuEl = document.getElementById('main-navigation');
-        const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
-        const subMenuEl = document.getElementById('services-navigation');
-        const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
-
-        function toggleNav(toggle, menu) {
-          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-
-          if (isOpen) {
-            menu?.classList.add('out');
-            setTimeout(() => {
-              toggle.setAttribute('aria-expanded', 'false');
-              menu?.classList.remove('out');
-            }, 200);
-          } else {
-            toggle.setAttribute('aria-expanded', 'true');
-          }
-        }
-
-        function openModal(modalId) {
-          document.getElementById(modalId).showModal();
-        }
-
-        function closeModal(modalId) {
-          const modal = document.getElementById(modalId);
-
-          modal.classList.add('out');
-          setTimeout(() => {
-            modal.close();
-            modal.classList.remove('out');
-          }, 200);
-        }
-
-        navToggle?.addEventListener('click', (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          toggleNav(navToggle, menuEl);
-        });
-
-        subNavToggle?.addEventListener('click', (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          toggleNav(subNavToggle, subMenuEl);
-        });
-
-        document.addEventListener('click', (event) => {
-          const subNavOpen = subNavToggle?.getAttribute('aria-expanded') === 'true';
-          if (subNavOpen && !subMenuEl?.contains(event.target) && !subNavToggle?.contains(event.target)) {
-            toggleNav(subNavToggle, subMenuEl);
-          }
-        });
-
-        modalTriggers.forEach((trigger) => {
-          trigger.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-
-            const modal = document.getElementById(trigger.dataset.modalTrigger);
-            const modalCloseBtn = modal.querySelector('[data-modal-close]');
-            openModal(trigger.dataset.modalTrigger);
-
-            modalCloseBtn?.addEventListener('click', (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              closeModal(trigger.dataset.modalTrigger);
-            });
-
-            document.addEventListener('keydown', (event) => {
-              if (event.key === 'Escape') {
-                event.preventDefault();
-                event.stopPropagation();
-                closeModal(trigger.dataset.modalTrigger);
-              }
-            });
-          });
-        });
-      });
-
-      function scroll() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.querySelector('.site-header')?.classList.add('scrolled');
-        } else {
-          document.querySelector('.site-header')?.classList.remove('scrolled');
-        }
-      }
-      window.onscroll = scroll;
-    </script>
+    <Scripts />
   </head>
   <body class={className}>
     <Header />
