@@ -1,16 +1,8 @@
 ---
-export const prerender = true;
-
 import Icon from '../../components/icon.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
 import HeroSection from '../../components/hero-section.astro';
-
-import strategyPaperImg from '../../assets/services/strategy-paper.webp';
-import successOfficeImg from '../../assets/services/success-office.webp';
-import frontendPerformanceImg from '../../assets/services/frontend-performance.webp';
-import webArchitectureImg from '../../assets/services/web-architecture.webp';
-import technologyImg from '../../assets/services/technology.webp';
 import ResponsiveImage from '../../components/responsive-image.astro';
 
 const faqs = [
@@ -73,7 +65,7 @@ const faqs = [
   keywords="web development services, performance optimization, legacy system modernization, custom web applications, React web development, Node.js development, scalable web solutions, web app development, website optimization, secure web platforms"
 >
   <!-- Hero -->
-  <HeroSection image={strategyPaperImg}>
+  <HeroSection image="services/strategy-paper">
     <h1 class="heading1 inverted">Explore Our Expert Services</h1>
     <p>
       We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
@@ -92,7 +84,14 @@ const faqs = [
   <!-- Success Summary -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <ResponsiveImage image={successOfficeImg} alt="A Office" class="rounded" preload />
+      <ResponsiveImage
+        image="services/success-office"
+        alt="A Office"
+        class="rounded"
+        preload
+        width={700}
+        height={564}
+      />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Your Success Is Our Priority</p>
         <h2 class="heading2">Comprehensive Services to Meet Your Unique Needs</h2>
@@ -181,17 +180,23 @@ const faqs = [
           </button>
         </div>
         <ResponsiveImage
-          image={frontendPerformanceImg}
+          image="services/frontend-performance"
           alt="Performance-Optimized Web Development"
           class="rounded fade-from-right mobile-hidden"
+          width={321}
+          height={573}
+          noMobile
         />
       </div>
       <!-- Legacy System Modernization -->
       <div class="flex flex-sm-col gap-1">
         <ResponsiveImage
-          image={webArchitectureImg}
+          image="services/web-architecture"
           alt="Legacy System Modernization"
           class="rounded fade-from-left mobile-hidden"
+          width={321}
+          height={573}
+          noMobile
         />
         <div class="card justify-center items-start large-gap slim white fade-from-right">
           <h2 class="heading2">Legacy System Modernization</h2>
@@ -249,9 +254,12 @@ const faqs = [
           <button class="button primary">Request a Free Web App Consultation</button>
         </div>
         <ResponsiveImage
-          image={technologyImg}
+          image="services/technology"
           alt="Custom Web Application Development"
           class="rounded fade-from-right mobile-hidden"
+          width={321}
+          height={573}
+          noMobile
         />
       </div>
     </div>

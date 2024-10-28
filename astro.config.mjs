@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
-import playformCompress from '@playform/compress';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
-import serviceWorker from 'astrojs-service-worker';
+// import serviceWorker from 'astrojs-service-worker';
 import partytown from '@astrojs/partytown';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -12,35 +11,13 @@ const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.de
 // https://astro.build/config
 export default defineConfig({
   site: siteURL,
-  output: 'hybrid',
+  output: 'server',
   adapter: netlify(),
   image: {
     domains: ['media.licdn.com'],
   },
   prefetch: true,
   integrations: [
-    serviceWorker(),
-    sitemap({
-      filter: (page) =>
-        page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
-    }),
-    robotsTxt({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: ['/privacy-policy'],
-        },
-        {
-          userAgent: '*',
-          disallow: ['/booking-confirmed'],
-        },
-        {
-          userAgent: '*',
-          disallow: ['/checklist-registration-success'],
-        },
-      ],
-    }),
-    playformCompress(),
     partytown({
       config: {
         debug: IS_DEV,
@@ -68,6 +45,27 @@ export default defineConfig({
           return url;
         },
       },
+    }),
+    // serviceWorker(),
+    sitemap({
+      filter: (page) =>
+        page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
+    }),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: ['/privacy-policy'],
+        },
+        {
+          userAgent: '*',
+          disallow: ['/booking-confirmed'],
+        },
+        {
+          userAgent: '*',
+          disallow: ['/checklist-registration-success'],
+        },
+      ],
     }),
   ].filter(Boolean),
   build: {

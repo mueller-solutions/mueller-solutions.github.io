@@ -1,5 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
 import Icon from './icon.astro';
 
 type Props = {
@@ -20,7 +19,7 @@ const { quote, author, company, image, href } = Astro.props;
   </p>
   <div class="flex gap-1">
     <a href={href} rel="nofollow">
-      <Picture src={image} alt={author} inferSize class="circle" formats={['avif', 'webp']} width={40} height={40} />
+      <img src={image} alt={author} class="circle" width={40} height={40} loading="lazy" decoding="async" />
     </a>
     <div>
       <p class="heading4">{author}</p>
