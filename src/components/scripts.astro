@@ -1,0 +1,108 @@
+---
+
+---
+
+<script is:inline>
+  // Navigation
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('[aria-controls="main-navigation"]');
+    const menuEl = document.getElementById('main-navigation');
+    const subNavToggle = document.querySelector('[aria-controls="services-navigation"]');
+    const subMenuEl = document.getElementById('services-navigation');
+    const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+    const freeConsultationButtons = document.querySelectorAll('[data-free-consultation]');
+
+    function toggleNav(toggle, menu) {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        menu?.classList.add('out');
+        setTimeout(() => {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu?.classList.remove('out');
+        }, 200);
+      } else {
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function openModal(modalId) {
+      document.getElementById(modalId).showModal();
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+
+      modal.classList.add('out');
+      setTimeout(() => {
+        modal.close();
+        modal.classList.remove('out');
+      }, 200);
+    }
+
+    navToggle?.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleNav(navToggle, menuEl);
+    });
+
+    subNavToggle?.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleNav(subNavToggle, subMenuEl);
+    });
+
+    document.addEventListener('click', (event) => {
+      const subNavOpen = subNavToggle?.getAttribute('aria-expanded') === 'true';
+      if (subNavOpen && !subMenuEl?.contains(event.target) && !subNavToggle?.contains(event.target)) {
+        toggleNav(subNavToggle, subMenuEl);
+      }
+    });
+
+    for (const trigger of modalTriggers) {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const modal = document.getElementById(trigger.dataset.modalTrigger);
+        const modalCloseBtn = modal.querySelector('[data-modal-close]');
+        openModal(trigger.dataset.modalTrigger);
+
+        modalCloseBtn?.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          closeModal(trigger.dataset.modalTrigger);
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            event.stopPropagation();
+            closeModal(trigger.dataset.modalTrigger);
+          }
+        });
+      });
+    }
+
+    for (const button of freeConsultationButtons) {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/mueller-solutions/free-consultation?text_color=454545&primary_color=0b80c5',
+        });
+        return false;
+      });
+    }
+  });
+
+  function scroll() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.querySelector('.site-header')?.classList.add('scrolled');
+    } else {
+      document.querySelector('.site-header')?.classList.remove('scrolled');
+    }
+  }
+  window.onscroll = scroll;
+</script>

@@ -3,15 +3,16 @@ import { useUserAgent } from 'astro-useragent';
 
 type Props = {
   image: string;
+  remoteImage?: boolean;
 };
 
 const uaString = Astro.request.headers.get('user-agent');
 const { isMobile } = useUserAgent(uaString);
 
-const { image } = Astro.props;
+const { image, remoteImage } = Astro.props;
 ---
 
-{!isMobile && <link rel="preload" href={`/images/${image}.webp`} as="image" type="image/webp" />}
+{!isMobile && <link rel="preload" href={remoteImage ? image : `/images/${image}.webp`} as="image" type="image/webp" />}
 <section class="hero">
   <div class="wrapper">
     <slot />
@@ -20,13 +21,12 @@ const { image } = Astro.props;
 
 <style
   define:vars={{
-    'image-webp': `url('/images/${image}.webp')`,
-    'image-jpg': `url('/images/${image}.jpg')`,
+    image: remoteImage ? `url(${image})` : `url('/images/${image}.webp')`,
   }}
 >
   @media (width > 480px) {
     .hero {
-      background-image: image-set(var(--image-webp) type('image/webp'), var(--image-jpg) type('image/jpg'));
+      background-image: var(--image);
     }
   }
 </style>

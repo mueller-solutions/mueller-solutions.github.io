@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
-import serviceWorker from 'astrojs-service-worker';
 import partytown from '@astrojs/partytown';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -13,10 +12,6 @@ export default defineConfig({
   site: siteURL,
   output: 'server',
   adapter: netlify(),
-  image: {
-    domains: ['media.licdn.com'],
-  },
-  prefetch: true,
   integrations: [
     partytown({
       config: {
@@ -27,7 +22,7 @@ export default defineConfig({
         logImageRequests: false,
         logScriptExecution: false,
         logStackTraces: false,
-        forward: ['dataLayer.push', 'pipedriveLeadboosterConfig'],
+        forward: ['dataLayer.push'],
         resolveUrl: (url, location) => {
           const proxyUrl = new URL(location.origin);
           if (
@@ -36,8 +31,7 @@ export default defineConfig({
             url.hostname === 'googletagmanager.com' ||
             url.hostname === 'www.googletagmanager.com' ||
             url.hostname === 'region1.google-analytics.com' ||
-            url.hostname === 'google.com' ||
-            url.hostname === 'www.google.com'
+            url.hostname === 'google.com'
           ) {
             proxyUrl.searchParams.append('apiurl', url.href);
             return proxyUrl;
@@ -46,7 +40,6 @@ export default defineConfig({
         },
       },
     }),
-    serviceWorker(),
     sitemap({
       filter: (page) =>
         page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
@@ -67,7 +60,7 @@ export default defineConfig({
         },
       ],
     }),
-  ].filter(Boolean),
+  ],
   build: {
     inlineStylesheets: 'always',
     format: 'file',
