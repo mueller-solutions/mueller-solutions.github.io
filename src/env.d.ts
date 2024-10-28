@@ -6,6 +6,7 @@ interface ImportMetaEnv {
   readonly JWT_SECRET: string;
   readonly PIPEDRIVE_API_URL: string;
   readonly PIPEDRIVE_API_TOKEN: string;
+  readonly GTM_ID: string;
 }
 
 interface ImportMeta {

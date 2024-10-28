@@ -19,13 +19,13 @@ const { isMobile } = useUserAgent(uaString);
 const imageName = !noMobile && isMobile ? `${image}_mobile` : image;
 ---
 
-{preload && <link rel="preload" href={`/images/${imageName}.webp`} as="image" type="image/webp" />}
+{preload && <link rel="preload" href={`/images/${imageName}.${format}`} as="image" type="image/webp" />}
 <img
   src={`/images/${imageName}.${format}`}
   alt={alt}
   class={className}
   width={width}
   height={height}
-  loading={preload ? 'eager' : 'lazy'}
+  loading="lazy"
   decoding="async"
 />

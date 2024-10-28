@@ -1,5 +1,6 @@
 ---
 import BlogPostDate from '../../components/blog-post-date.astro';
+import HeroSection from '../../components/hero-section.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import blogService from '../../services/blog.service';
 
@@ -48,7 +49,7 @@ const preloadTags = imageUrls
   <!-- Preload tags for images in post content -->
   <Fragment slot="html-head" set:html={preloadTags} />
   <article class="post full">
-    <div class="hero remote-image" style={`--background-image: url(${featuredImage})`}></div>
+    <HeroSection image={featuredImage} remoteImage />
     <div class="wrapper content">
       <header>
         <BlogPostDate date={post.date} />
