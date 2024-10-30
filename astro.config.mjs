@@ -14,6 +14,7 @@ export default defineConfig({
   output: 'server',
   adapter: netlify(),
   // adapter: node({ mode: 'standalone' }),
+  prefetch: true,
   integrations: [
     partytown({
       config: {

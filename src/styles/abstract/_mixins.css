@@ -15,6 +15,15 @@
   }
 }
 
+@define-mixin all-states {
+  &,
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    @mixin-content;
+  }
+}
+
 @define-mixin mobile {
   @media (width <= 480px) {
     @mixin-content;

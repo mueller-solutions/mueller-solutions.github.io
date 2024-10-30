@@ -1,0 +1,74 @@
+/* stylelint-disable at-rule-no-unknown */
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+@keyframes error-message-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.form-control {
+  --label-color: var(--clr-dark);
+  --input-border-color: var(--clr-gray-light);
+  --input-border-size: 1px;
+
+  display: grid;
+  gap: 4px;
+
+  .label {
+    color: var(--label-color);
+    font-size: 14px;
+    font-weight: var(--fnt-weight-semibold);
+    transition: color var(--trans-duration-short) var(--trans-ease-out);
+  }
+
+  input,
+  textarea {
+    border: none;
+    border-radius: var(--border-radius-lg);
+    padding: 12px 20px;
+    background-color: var(--clr-light);
+    box-shadow: 0 0 0 var(--input-border-size) var(--input-border-color);
+    transition: box-shadow var(--trans-duration-short) var(--trans-ease-out);
+    outline: none;
+
+    @mixin hover {
+      --input-border-color: var(--clr-primary);
+    }
+
+    @mixin focus {
+      --input-border-color: var(--clr-primary);
+      --input-border-size: 2px;
+    }
+  }
+
+  &:has(+ .button) {
+    margin-block-end: 16px;
+  }
+
+  &.form-control-error {
+    --label-color: var(--clr-error);
+
+    animation: error-message-fade-in var(--trans-duration-short) var(--trans-ease-out) forwards;
+
+    input,
+    textarea {
+      @mixin all-states {
+        --input-border-color: var(--clr-error);
+      }
+    }
+
+    .error-message {
+      color: var(--clr-error);
+      font-size: 14px;
+      font-weight: var(--fnt-weight-medium);
+    }
+  }
+}

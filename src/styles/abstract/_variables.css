@@ -16,6 +16,9 @@
   --clr-shine-lower: rgb(255 252 241 / 40%);
   --clr-orange: rgb(255 148 22 / 100%);
   --clr-yellow: rgb(255 213 64 / 100%);
+  --clr-error-dark: rgb(88 71 71 / 100%);
+  --clr-error: rgb(255 100 100 / 100%);
+  --clr-error-light: rgb(255 231 231 / 100%);
   --fnt-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   --fnt-weight-regular: 400;
   --fnt-weight-medium: 500;

@@ -1,0 +1,88 @@
+---
+import Icon from './icon.astro';
+---
+
+<dialog id="free-optimization-checklist" class="modal">
+  <button id="free-optimization-checklist-close-button" class="modal-close" data-modal-close>
+    <Icon name="close" width="24" height="24" />
+  </button>
+  <div class="modal-content">
+    <h2 class="heading3">Get Your Free Optimization Checklist</h2>
+    <p class="body1">Sign up now and you will receive your personal Optimization Checklist via email.</p>
+    <p class="errors"></p>
+    <form
+      id="free-optimization-checklist-form"
+      action="POST"
+      class="form"
+      hx-post="/api/forms/register-download"
+      hx-swap="none"
+    >
+      <label for="name" class="form-control">
+        <span class="label">Name</span>
+        <input type="text" id="name" name="name" data-required />
+      </label>
+      <label for="email" class="form-control">
+        <span class="label">Email</span>
+        <input type="email" id="email" name="email" data-required />
+      </label>
+      <label for="company" class="form-control">
+        <span class="label">Company (optional)</span>
+        <input type="text" id="company" name="company" />
+      </label>
+      <button type="submit" class="button primary"> Submit </button>
+    </form>
+  </div>
+</dialog>
+
+<script>
+  const requiredInputs = document.querySelectorAll('[data-required]');
+  const dialogEl = document.getElementById('free-optimization-checklist') as HTMLDialogElement;
+
+  dialogEl.addEventListener('close', resetForm);
+
+  for (const input of requiredInputs) {
+    (input as HTMLInputElement).addEventListener('blur', handleBlurEvent);
+    (input as HTMLInputElement).addEventListener('focus', handleFocusEvent);
+  }
+
+  function resetForm() {
+    const inputEls = dialogEl.querySelectorAll('input');
+
+    for (const input of inputEls) {
+      (input as HTMLInputElement).value = '';
+      hideError(input as HTMLInputElement);
+    }
+  }
+
+  function handleBlurEvent(event: FocusEvent) {
+    const el = event.target as HTMLInputElement;
+
+    if (!el.value) {
+      el.dataset.hasError = 'true';
+      const displayName = el.parentElement?.querySelector('.label')?.innerHTML;
+      showError(el, `${displayName} is required.`);
+    }
+  }
+
+  function handleFocusEvent(event: FocusEvent) {
+    const el = event.target as HTMLInputElement;
+
+    if (el.dataset.hasError) {
+      hideError(el);
+      el.dataset.hasError = 'false';
+    }
+  }
+
+  function showError(el: HTMLInputElement, errorMessage: string) {
+    el.parentElement?.classList.add('form-control-error');
+    const errorEl = document.createElement('span');
+    errorEl.classList.add('error-message');
+    errorEl.textContent = errorMessage;
+    el.parentElement?.appendChild(errorEl);
+  }
+
+  function hideError(el: HTMLInputElement) {
+    el.parentElement?.classList.remove('form-control-error');
+    el.parentElement?.querySelector('.error-message')?.remove();
+  }
+</script>
