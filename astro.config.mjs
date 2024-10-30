@@ -14,8 +14,8 @@ const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'p
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  // adapter: netlify(),
-  adapter: node({ mode: 'standalone' }),
+  adapter: netlify(),
+  // adapter: node({ mode: 'standalone' }),
   prefetch: true,
   integrations: [
     partytown({
