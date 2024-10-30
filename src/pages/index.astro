@@ -6,6 +6,7 @@ import HeroSection from '../components/hero-section.astro';
 import Icon from '../components/icon.astro';
 import Testimonial from '../components/testimonial.astro';
 import ResponsiveImage from '../components/responsive-image.astro';
+import FreeOptimizationChecklistModal from '../components/free-optimization-checklist-modal.astro';
 
 const solutions = [
   { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
@@ -43,6 +44,14 @@ const solutions = [
         <Icon name="download" width="24" height="24" />
         Free Optimization Checklist
       </button>
+      <!-- <button
+        id="free-optimization-checklist-button"
+        class="button inverted"
+        data-modal-trigger="free-optimization-checklist"
+      >
+        <Icon name="download" width="24" height="24" />
+        Free Optimization Checklist
+      </button>
       <dialog id="free-optimization-checklist" class="modal">
         <button id="free-optimization-checklist-close-button" class="modal-close" data-modal-close>
           <Icon name="close" width="24" height="24" />
@@ -55,9 +64,12 @@ const solutions = [
             <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
           </div>
         </div>
-      </dialog>
+      </dialog> -->
     </div>
   </HeroSection>
+
+  <FreeOptimizationChecklistModal />
+
   <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">

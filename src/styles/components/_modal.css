@@ -52,13 +52,17 @@
   outline: none;
   text-shadow: none;
   padding: clamp(20px, 4vw, 40px);
-  padding-block-end: clamp(6px, 4vw, 10px);
   border-radius: var(--border-radius);
   width: min(calc(100% - 40px), 500px);
   box-shadow: var(--shadow-modal);
 
   &::backdrop {
     animation: modal-background-in var(--trans-duration-short) var(--trans-ease-out) forwards;
+  }
+
+  .modal-content {
+    display: grid;
+    gap: 12px;
   }
 
   .modal-close {

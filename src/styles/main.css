@@ -18,6 +18,7 @@
 /* Layout */
 @import url('./layout/_wrapper.css');
 @import url('./layout/_typography.css');
+@import url('./layout/_forms.css');
 
 /* Components */
 @import url('./components/_icon.css');
@@ -34,3 +35,4 @@
 @import url('./components/_blog.css');
 @import url('./components/_page.css');
 @import url('./components/_modal.css');
+@import url('./components/_error.css');

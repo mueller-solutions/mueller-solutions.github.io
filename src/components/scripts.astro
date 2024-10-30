@@ -59,10 +59,29 @@
       }
     });
 
+    document.body.addEventListener('checklistRegister', (event) => {
+      const eventName = event.detail.value;
+      console.log(eventName);
+
+      if (eventName === 'checklist-registration-failed') {
+        const errorsEl = document.querySelector('#free-optimization-checklist .errors');
+        errorsEl.innerHTML = '<span class="error">Something went wrong. Please try again.</span>';
+      }
+    });
+
+    function preventEscapeKey(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+
     for (const trigger of modalTriggers) {
       trigger.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
+
+        document.addEventListener('keydown', preventEscapeKey);
 
         const modal = document.getElementById(trigger.dataset.modalTrigger);
         const modalCloseBtn = modal.querySelector('[data-modal-close]');
@@ -72,14 +91,7 @@
           event.preventDefault();
           event.stopPropagation();
           closeModal(trigger.dataset.modalTrigger);
-        });
-
-        document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape') {
-            event.preventDefault();
-            event.stopPropagation();
-            closeModal(trigger.dataset.modalTrigger);
-          }
+          document.removeEventListener('keydown', preventEscapeKey);
         });
       });
     }
