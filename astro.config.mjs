@@ -8,12 +8,14 @@ import partytown from '@astrojs/partytown';
 const IS_DEV = process.env.NODE_ENV === 'development';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
 
+const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'privacy-policy'];
+
 // https://astro.build/config
 export default defineConfig({
   site: siteURL,
   output: 'server',
-  adapter: netlify(),
-  // adapter: node({ mode: 'standalone' }),
+  // adapter: netlify(),
+  adapter: node({ mode: 'standalone' }),
   prefetch: true,
   integrations: [
     partytown({
@@ -44,24 +46,13 @@ export default defineConfig({
       },
     }),
     sitemap({
-      filter: (page) =>
-        page !== `${siteURL}/booking-confirmed/` && page !== `${siteURL}/checklist-registration-success/`,
+      filter: (page) => !excludedPages.includes(page.split('/').pop()),
     }),
     robotsTxt({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: ['/privacy-policy'],
-        },
-        {
-          userAgent: '*',
-          disallow: ['/booking-confirmed'],
-        },
-        {
-          userAgent: '*',
-          disallow: ['/checklist-registration-success'],
-        },
-      ],
+      policy: excludedPages.map((page) => ({
+        userAgent: '*',
+        disallow: [`/${page}`],
+      })),
     }),
   ],
   build: {
