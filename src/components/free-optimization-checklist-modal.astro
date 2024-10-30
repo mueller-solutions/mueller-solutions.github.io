@@ -35,6 +35,8 @@ import Icon from './icon.astro';
 </dialog>
 
 <script>
+  import { handleBlurEvent, handleFocusEvent, hideError } from '../utils/form.utils';
+
   const requiredInputs = document.querySelectorAll('[data-required]');
   const dialogEl = document.getElementById('free-optimization-checklist') as HTMLDialogElement;
 
@@ -45,6 +47,16 @@ import Icon from './icon.astro';
     (input as HTMLInputElement).addEventListener('focus', handleFocusEvent);
   }
 
+  document.body.addEventListener('checklistRegister', (event) => {
+    // @ts-expect-error event.detail is not typed.
+    const eventName = event.detail.value as string;
+
+    if (eventName === 'checklist-registration-failed') {
+      const errorsEl = document.querySelector('#free-optimization-checklist .errors') as HTMLDivElement;
+      errorsEl.innerHTML = '<span class="error">Something went wrong. Please try again.</span>';
+    }
+  });
+
   function resetForm() {
     const inputEls = dialogEl.querySelectorAll('input');
 
@@ -52,37 +64,5 @@ import Icon from './icon.astro';
       (input as HTMLInputElement).value = '';
       hideError(input as HTMLInputElement);
     }
-  }
-
-  function handleBlurEvent(event: FocusEvent) {
-    const el = event.target as HTMLInputElement;
-
-    if (!el.value) {
-      el.dataset.hasError = 'true';
-      const displayName = el.parentElement?.querySelector('.label')?.innerHTML;
-      showError(el, `${displayName} is required.`);
-    }
-  }
-
-  function handleFocusEvent(event: FocusEvent) {
-    const el = event.target as HTMLInputElement;
-
-    if (el.dataset.hasError) {
-      hideError(el);
-      el.dataset.hasError = 'false';
-    }
-  }
-
-  function showError(el: HTMLInputElement, errorMessage: string) {
-    el.parentElement?.classList.add('form-control-error');
-    const errorEl = document.createElement('span');
-    errorEl.classList.add('error-message');
-    errorEl.textContent = errorMessage;
-    el.parentElement?.appendChild(errorEl);
-  }
-
-  function hideError(el: HTMLInputElement) {
-    el.parentElement?.classList.remove('form-control-error');
-    el.parentElement?.querySelector('.error-message')?.remove();
   }
 </script>

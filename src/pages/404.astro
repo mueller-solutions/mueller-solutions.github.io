@@ -1,8 +1,8 @@
 ---
 export const prerender = true;
 
-import Icon from '../components/icon.astro';
 import MainLayout from '../layouts/main-layout.astro';
+import NotFoundServices from '../components/not-found-services.astro';
 ---
 
 <MainLayout
@@ -18,36 +18,5 @@ import MainLayout from '../layouts/main-layout.astro';
       </p>
     </div>
   </section>
-  <section class="section wrapper">
-    <header>
-      <p class="tagline">This Might Drive Your Success</p>
-      <h2 class="heading2">Our Services</h2>
-    </header>
-    <ul class="even-columns three-columns">
-      <li class="card white shadow align-center fade-from-bottom">
-        <Icon name="frontend-performance" width="52" height="52" />
-        <h3 class="heading3">Performance-Optimized Web Development</h3>
-        <p class="body2 text-balance text-pretty-mobile">
-          Create lightning-fast websites and apps that keep users engaged and drive conversions.
-        </p>
-      </li>
-      <li class="card white shadow align-center fade-from-bottom">
-        <Icon name="scalable-architecture" width="60" height="52" />
-        <h3 class="heading3">Legacy Application Modernization</h3>
-        <p class="body2 text-balance text-pretty-mobile">
-          Transform outdated systems into modern, scalable web applications with the latest technologies.
-        </p>
-      </li>
-      <li class="card white shadow align-center fade-from-bottom">
-        <Icon name="cutting-edge-technology" width="59" height="52" />
-        <h3 class="heading3">Custom Web Application Development</h3>
-        <p class="body2 text-balance text-pretty-mobile">
-          Create custom web solutions for your unique business needs. They should be scalable and high-performing.
-        </p>
-      </li>
-    </ul>
-    <div class="actions">
-      <a href="/services" class="button">Explore Our Services</a>
-    </div>
-  </section>
+  <NotFoundServices />
 </MainLayout>

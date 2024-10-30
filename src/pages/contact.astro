@@ -26,10 +26,7 @@ import MainLayout from '../layouts/main-layout.astro';
       hx-post="/api/forms/contact"
       hx-swap="none"
     >
-      <div class="notifications">
-        <p class="success"></p>
-        <p class="errors"></p>
-      </div>
+      <p class="errors"></p>
       <label for="name" class="form-control">
         <span class="label">Name</span>
         <input type="text" id="name" name="name" data-required />
@@ -64,3 +61,24 @@ import MainLayout from '../layouts/main-layout.astro';
   </section>
   <FinalEngagement />
 </MainLayout>
+
+<script>
+  import { handleBlurEvent, handleFocusEvent } from '../utils/form.utils';
+
+  const requiredInputs = document.querySelectorAll('[data-required]');
+
+  for (const input of requiredInputs) {
+    (input as HTMLInputElement).addEventListener('blur', handleBlurEvent);
+    (input as HTMLInputElement).addEventListener('focus', handleFocusEvent);
+  }
+
+  document.body.addEventListener('contactSubmit', (event) => {
+    // @ts-expect-error event.detail is not typed.
+    const eventName = event.detail.value as string;
+
+    if (eventName === 'contact-submit-failed') {
+      const errorsEl = document.querySelector('#contact-form .errors') as HTMLDivElement;
+      errorsEl.innerHTML = '<span class="error">Something went wrong. Please try again.</span>';
+    }
+  });
+</script>

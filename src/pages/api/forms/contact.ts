@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request }) => {
     const phone = data.get('phone') as string | undefined;
     const company = data.get('company') as string | undefined;
 
-    const success = await pipedriveService.createLead('Performance Checklist', {
+    const success = await pipedriveService.createLead('Contact Form', {
       name: name,
       email: email,
       company: company,
@@ -30,7 +30,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(null, {
       status: 200,
       headers: {
-        'HX-Trigger': JSON.stringify({ contactSubmit: 'contact-submit-success' }),
+        'HX-Location': '/contact-success',
       },
     });
   } catch (error) {
