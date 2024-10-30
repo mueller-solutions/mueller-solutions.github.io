@@ -1,4 +1,4 @@
-export type FormInput = {
+export type LeadInput = {
   name: string;
   email: string;
   phone?: string;
