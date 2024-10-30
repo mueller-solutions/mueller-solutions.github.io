@@ -1,4 +1,5 @@
 ---
+import FinalEngagement from '../components/final-engagement.astro';
 import WhatsappButton from '../components/whatsapp-button.astro';
 import MainLayout from '../layouts/main-layout.astro';
 ---
@@ -17,13 +18,37 @@ import MainLayout from '../layouts/main-layout.astro';
     </div>
   </section>
   <section class="section wrapper">
-    <p class="tagline text-center">No red tape, just real solutions.</p>
-    <div
-      class="pipedriveWebForms"
-      data-pd-webforms="https://webforms.pipedrive.com/f/6FvFfQYkb4Gh0vK6guVt535BCcsWPAZSIvipYaBUd63dNyFUwt5tQKtt0Bg25GAQ15"
+    <form
+      id="contact-form"
+      action="POST"
+      class="form"
+      style="max-width: 400px; margin-inline: auto"
+      hx-post="/api/forms/contact"
+      hx-swap="none"
     >
-      <script src="https://webforms.pipedrive.com/f/loader" is:inline></script>
-    </div>
+      <p class="errors"></p>
+      <label for="name" class="form-control">
+        <span class="label">Name</span>
+        <input type="text" id="name" name="name" data-required />
+      </label>
+      <label for="email" class="form-control">
+        <span class="label">Email</span>
+        <input type="email" id="email" name="email" data-required />
+      </label>
+      <label for="company" class="form-control">
+        <span class="label">Comnpany (optional)</span>
+        <input type="text" id="company" name="company" />
+      </label>
+      <label for="phone" class="form-control">
+        <span class="label">Phone (optional)</span>
+        <input type="text" id="phone" name="phone" />
+      </label>
+      <label for="message" class="form-control">
+        <span class="label">Your Message</span>
+        <textarea name="message" id="message" rows="4"></textarea>
+      </label>
+      <button type="submit" class="button primary"> Submit </button>
+    </form>
   </section>
   <section class="section simple wrapper">
     <header>
@@ -34,4 +59,26 @@ import MainLayout from '../layouts/main-layout.astro';
       <WhatsappButton style="whatsapp" />
     </p>
   </section>
+  <FinalEngagement />
 </MainLayout>
+
+<script>
+  import { handleBlurEvent, handleFocusEvent } from '../utils/form.utils';
+
+  const requiredInputs = document.querySelectorAll('[data-required]');
+
+  for (const input of requiredInputs) {
+    (input as HTMLInputElement).addEventListener('blur', handleBlurEvent);
+    (input as HTMLInputElement).addEventListener('focus', handleFocusEvent);
+  }
+
+  document.body.addEventListener('contactSubmit', (event) => {
+    // @ts-expect-error event.detail is not typed.
+    const eventName = event.detail.value as string;
+
+    if (eventName === 'contact-submit-failed') {
+      const errorsEl = document.querySelector('#contact-form .errors') as HTMLDivElement;
+      errorsEl.innerHTML = '<span class="error">Something went wrong. Please try again.</span>';
+    }
+  });
+</script>

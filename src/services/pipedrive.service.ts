@@ -59,7 +59,7 @@ class PipedriveService {
       if (lead.message) {
         await this.createNote({
           leadId: leadData.id,
-          content: `<b>Message:</b><br/>${lead.message}`,
+          content: `<p><strong>Message:</strong></p><p>${lead.message}</p>`,
         });
       }
 
