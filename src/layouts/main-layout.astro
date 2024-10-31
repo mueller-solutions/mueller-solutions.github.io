@@ -18,10 +18,10 @@ type Props = {
 const { title, description, keywords, class: className, ogImage = '/images/og-mueller-solutions.jpg' } = Astro.props;
 const baseURL = Astro.url.origin;
 
-const htmlTitle = title ?? 'Expert Frontend Development and Frontend Consulting | MUELLER';
+const htmlTitle = title ?? 'Front End Web Development Services TX';
 const htmlDescription =
   description ??
-  'Enhance your web app development with expert frontend development and frontend consulting services. We specialize in building faster, more stable web applications through speed optimization and advanced frontend solutions. Achieve your goals efficiently and effectively.';
+  "Explore Austin's leading front-end developer and web design services to help you build a stronger online presence.";
 const htmlKeywords =
   keywords ??
   'frontend development, frontend consulting, frontend development services, frontend consulting services, web app development, frontend consulting, performance optimization, scalable web applications, speed optimization, Progressive Web Apps, server-side rendering, React development, code optimization, cross-browser compatibility, user experience design, UI/UX consulting, web performance, frontend architecture, micro-frontend architecture, responsive web design, SEO for web apps, modern frontend development';
@@ -34,10 +34,10 @@ const htmlKeywords =
     <base href={baseURL} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-    <title>{htmlTitle}</title>
+    <title>{htmlTitle} | mueller-solutions.dev</title>
     <meta name="description" content={htmlDescription} />
     <meta name="keywords" content={htmlKeywords} />
-    <meta property="og:title" content={htmlTitle} />
+    <meta property="og:title" content={`${htmlTitle} | mueller-solutions.dev`} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={htmlDescription} />
     <meta property="og:image" content={ogImage} />
