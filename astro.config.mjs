@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 const IS_DEV = process.env.NODE_ENV === 'development';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
 
-const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'privacy-policy'];
+const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'contact-success'];
 
 // https://astro.build/config
 export default defineConfig({
