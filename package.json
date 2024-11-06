@@ -14,7 +14,7 @@
     "lint:ci": "pnpm lint:styles && pnpm lint:astro",
     "lint:staged": "lint-staged -q",
     "test:unit": "vitest",
-    "test:unit:coverage": "vitest --coverage",
+    "test:unit:coverage": "vitest run --coverage",
     "prepare": "husky"
   },
   "lint-staged": {
