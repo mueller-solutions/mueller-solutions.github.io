@@ -46,11 +46,11 @@ jobs:
             - name: Run Unit Tests
               run: pnpm test:unit:coverage
 
-            - name: coverage report
-              uses: vebr/jest-lcov-reporter@v0.2.0
-              with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                lcov-file: ./coverage/lcov.info
+            # - name: coverage report
+            #   uses: vebr/jest-lcov-reporter@v0.2.0
+            #   with:
+            #     github-token: ${{ secrets.GITHUB_TOKEN }}
+            #     lcov-file: ./coverage/lcov.info
 
             # - name: Get app token
             #   id: get_token
