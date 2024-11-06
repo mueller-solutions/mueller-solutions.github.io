@@ -59,12 +59,12 @@ jobs:
             #     app_id: ${{ vars.PIPELINE_GITHUB_APP_ID }}
             #     private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
               
-            - name: coverage report
-              uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
-              # The reason for using a hash rather than a version/tag, is the project
-              # failed in publishing this release: https://github.com/romeovs/lcov-reporter-action/issues/47
-              with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                lcov-file: "./coverage/lcov.info"
-                filter-changed-files: true
-                delete-old-comments: true
+            # - name: coverage report
+            #   uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
+            #   # The reason for using a hash rather than a version/tag, is the project
+            #   # failed in publishing this release: https://github.com/romeovs/lcov-reporter-action/issues/47
+            #   with:
+            #     github-token: ${{ secrets.GITHUB_TOKEN }}
+            #     lcov-file: "./coverage/lcov.info"
+            #     filter-changed-files: true
+            #     delete-old-comments: true
