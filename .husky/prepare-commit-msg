@@ -3,9 +3,11 @@
 # Get current branch name
 branch_name=$(git rev-parse --abbrev-ref HEAD)
 
+echo "Branch name: $branch_name"
+
 # Extract the Jira ticket number from the branch name (e.g., JIRA-123)
 # Adjust the regex according to your branch naming convention
-ticket_number=$(echo "$branch_name" | grep -oE '[A-Z]+-[0-9]+')
+ticket_number=$(echo "$branch_name" | grep -oE '[A-Z]+-[0-9]+' || echo "")
 
 # Check if ticket number exists
 if [ -n "$ticket_number" ]; then
