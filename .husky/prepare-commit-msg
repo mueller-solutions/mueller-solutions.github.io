@@ -1,17 +1,19 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Prefix commit message with Jira ticket number
 
 # Get current branch name
 branch_name=$(git rev-parse --abbrev-ref HEAD)
 
+echo "Branch name: $branch_name"
+
 # Extract the Jira ticket number from the branch name (e.g., JIRA-123)
 # Adjust the regex according to your branch naming convention
-ticket_number=$(echo "$branch_name" | grep -oE '[A-Z]+-[0-9]+')
+ticket_number=$(echo "$branch_name" | grep -oE '[A-Z]+-[0-9]+' || echo "")
 
 # Check if ticket number exists
 if [ -n "$ticket_number" ]; then
   # Prepend ticket number to commit message
   sed -i.bak -e "1s/^/[$ticket_number] /" "$1"
+else
+  # Optionally, you can log a message or handle the case where no ticket number is found
+  echo "No Jira ticket number found in branch name: $branch_name"
 fi

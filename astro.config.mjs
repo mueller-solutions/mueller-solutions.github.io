@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
+const IS_TEST = process.env.NODE_ENV === 'test';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
 
 const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'contact-success'];
@@ -13,9 +14,10 @@ const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'c
 // https://astro.build/config
 export default defineConfig({
   site: siteURL,
-  output: 'server',
-  adapter: netlify(),
-  // adapter: node({ mode: 'standalone' }),
+  output: IS_TEST ? 'static' : 'server',
+  ...(!IS_TEST && {
+    adapter: netlify(),
+  }),
   prefetch: true,
   integrations: [
     partytown({
