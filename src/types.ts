@@ -71,3 +71,10 @@ export type PipedriveResponse<T> = {
   success: boolean;
   data: T;
 };
+
+export type ZapierResponse = {
+  attempt: string;
+  id: string;
+  request_id: string;
+  status: 'success' | 'failure';
+};
