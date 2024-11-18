@@ -4,8 +4,7 @@
 interface ImportMetaEnv {
   readonly WP_API_URL: string;
   readonly JWT_SECRET: string;
-  readonly PIPEDRIVE_API_URL: string;
-  readonly PIPEDRIVE_API_TOKEN: string;
+  readonly ZAPIER_API_URL: string;
   readonly GTM_ID: string;
 }
 

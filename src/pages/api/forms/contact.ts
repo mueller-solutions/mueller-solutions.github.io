@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import pipedriveService from '../../../services/pipedrive.service';
+import zapierService from '../../../services/zapier.service';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request }) => {
     const phone = data.get('phone') as string | undefined;
     const company = data.get('company') as string | undefined;
 
-    const success = await pipedriveService.createLead('Contact Form', {
+    const success = await zapierService.sendContactForm({
       name: name,
       email: email,
       company: company,
