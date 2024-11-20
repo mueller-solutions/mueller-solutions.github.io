@@ -25,12 +25,12 @@
     --content-max-width: 47.5%;
   }
 
-  h1 {
+  .heading1 {
     margin-block-end: 22px;
     max-width: var(--content-max-width);
   }
 
-  p {
+  p:not(.heading1) {
     font-size: clamp(18px, 2.5vw, 23px);
     line-height: clamp(26px, 3vw, 32px);
     margin-block-end: clamp(26px, 6vw, 60px);

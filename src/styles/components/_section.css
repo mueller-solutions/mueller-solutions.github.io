@@ -29,6 +29,10 @@
     background-image: linear-gradient(to top, rgb(231 247 255 / 100%), var(--clr-body));
   }
 
+  &.light-blue {
+    background-color: rgb(231 247 255 / 100%);
+  }
+
   .actions {
     padding-block-start: clamp(20px, 4vw, 40px);
     text-align: center;
