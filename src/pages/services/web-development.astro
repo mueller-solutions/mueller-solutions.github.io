@@ -4,6 +4,34 @@ import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import HeroSection from '../../components/hero-section.astro';
+
+const faqs = [
+  {
+    question: 'What is custom web development, and how is it different from using a website builder?',
+    answer:
+      'While other builders develop pages from a set of pre-designed templates with few customization options, custom web development implies the actual coding from scratch or through frameworks that permit complete flexibility and scalability.',
+  },
+  {
+    question: 'How long does it take to develop a custom website?',
+    answer:
+      'The timeline depends on the complexity of the project. Factors that determine this could be the features that are to be covered, how complicated the design should be, what kind of content requirements are needed, or third-party service integrations.',
+  },
+  {
+    question: 'How much does custom web development cost?',
+    answer:
+      'Key factors driving costs in the number of pages, functionality (e-commerce, user portals, custom forms), the technology stack, and design requirements.',
+  },
+  {
+    question: "Can I update my website after it's developed?",
+    answer:
+      'Yep! A custom site can also be built with a Content Management System, such as WordPress, or even with a custom back-end solution where you can easily update your site.',
+  },
+  {
+    question: 'Will my custom website be mobile-friendly?',
+    answer:
+      "That's right. So, if all of the custom sites that we develop are going to auto-respond to various screen sizes and device types.",
+  },
+];
 ---
 
 <MainLayout
@@ -12,7 +40,7 @@ import HeroSection from '../../components/hero-section.astro';
   keywords="custom web development, scalable websites, SEO-friendly web development, high-performance web solutions, responsive web design, full-stack web development"
 >
   <HeroSection image="services/web-development">
-    <h1 class="heading1 inverted">Build Web Solutions That Drive Business Growth</h1>
+    <p class="heading1 inverted">Build Web Solutions That Drive Business Growth</p>
     <p class="text-balance text-pretty-mobile">
       Create secure, scalable, and high-performance websites that leave a lasting impression.
     </p>
@@ -23,6 +51,23 @@ import HeroSection from '../../components/hero-section.astro';
       <WhatsappButton />
     </div>
   </HeroSection>
+  <section class="section">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">Tailored Web Solutions: Smart, Secure, and Built to Captivate</p>
+        <h1 class="heading2">Web Development Services</h1>
+      </header>
+      <div class="even-columns slim-content one-column">
+        <p class="body1 text-center text-balance text-pretty-mobile">
+          Need a top web development company in Austin, TX?<br />MUELLER Solutions has the best-in-class designers on
+          the market, who can tailor specific web designs according to your expectations. The focus is on creating
+          user-centric and smart sites that can grab users' eyeballs. No matter whether you are a start-up or a big
+          millionaire, our seasoned developers use the latest technological advancements and platforms to create fast,
+          secure, and performance-optimized sites.
+        </p>
+      </div>
+    </div>
+  </section>
   <section class="section gradient-up">
     <div class="wrapper">
       <header>
@@ -71,6 +116,25 @@ import HeroSection from '../../components/hero-section.astro';
       </ul>
     </div>
   </section>
+  <section class="section gradient-down">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">Your Vision, Our Innovation</p>
+        <h1 class="heading2">Why Choose Us</h1>
+      </header>
+      <div class="even-columns slim-content one-column">
+        <p class="body1 text-center text-balance text-pretty-mobile">
+          We can readily help you create quirky layouts, complex functionalities, or an e-commerce platform. Our team
+          works closely with clients to ensure every detail is optimized for performance and aligned with brand
+          identity. From responsive designs to seamless integration and mighty back-end systems, we use cutting-edge
+          technologies to craft websites that take a hub in this digital world.
+        </p>
+      </div>
+      <div class="actions">
+        <button id="get-started-button" class="button primary" data-free-consultation> Ready To Get Started </button>
+      </div>
+    </div>
+  </section>
   <section class="section primary">
     <div class="wrapper">
       <header>
@@ -105,20 +169,50 @@ import HeroSection from '../../components/hero-section.astro';
     <ul class="even-columns two-columns slim-content">
       <li class="card blue align-left fade-from-bottom">
         <h3 class="heading3">Discovery & Strategy</h3>
-        <p class="body1">We understand your business needs to tailor the best solution.</p>
+        <p class="body1">
+          Our process starts well, covering in-depth discovery and strategy sessions, ensuring that we are perfectly in
+          line with your goals from the very start.
+        </p>
       </li>
       <li class="card red align-left fade-from-bottom">
         <h3 class="heading3">Full-Stack Development</h3>
-        <p class="body1">We build robust, scalable websites using the latest technologies.</p>
+        <p class="body1">
+          Being a firm of developers, we are pretty skilled in front-end and back-end technologies to serve up a robust,
+          end-to-end solution. Be it something custom CMS, a simple e-commerce platform, or a complex web application,
+          there can't go wrong.
+        </p>
       </li>
       <li class="card purple align-left fade-from-bottom">
         <h3 class="heading3">Quality Control</h3>
-        <p class="body1">Rigorous testing ensures your site is secure, fast, and error-free.</p>
+        <p class="body1">
+          For us, quality is non-negotiable. We adhere to the quality assurance process strictly so that your website is
+          super bug-free, secure, and fully optimized.
+        </p>
       </li>
       <li class="card green align-left fade-from-bottom">
         <h3 class="heading3">Post-Launch Optimization</h3>
-        <p class="body1">Continuous improvement to keep your site performing at its peak.</p>
+        <p class="body1">
+          We continue to update and improve-whether that's the optimization of your site's speed, enhancing your ranking
+          from a search engine optimization perspective, or adding cool new features to match the latest in user
+          expectations.
+        </p>
       </li>
+    </ul>
+  </section>
+  <section class="section wrapper">
+    <header>
+      <p class="tagline">Got Questions? We've Got Answers.</p>
+      <h2 class="heading2">Frequently Asked Questions</h2>
+    </header>
+    <ul class="even-columns slim-content one-column">
+      {
+        faqs.map((faq) => (
+          <li class="card white shadow fade-from-bottom">
+            <h3 class="heading3">{faq.question}</h3>
+            <p class="body1">{faq.answer}</p>
+          </li>
+        ))
+      }
     </ul>
   </section>
   <FinalEngagement
