@@ -104,3 +104,8 @@ strong {
     }
   }
 }
+
+[data-list-style='disc'] {
+  padding-inline-start: 1.5rem;
+  list-style: disc;
+}
