@@ -1,15 +1,11 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 // import node from '@astrojs/node';
-import robotsTxt from 'astro-robots-txt';
-import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_TEST = process.env.NODE_ENV === 'test';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
-
-const excludedPages = ['booking-confirmed', 'checklist-registration-success', 'contact-success'];
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,15 +45,6 @@ export default defineConfig({
           return url;
         },
       },
-    }),
-    sitemap({
-      filter: (page) => !excludedPages.includes(page.split('/').pop()),
-    }),
-    robotsTxt({
-      policy: excludedPages.map((page) => ({
-        userAgent: '*',
-        disallow: [`/${page}`],
-      })),
     }),
   ],
   build: {

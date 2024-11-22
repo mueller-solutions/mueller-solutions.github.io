@@ -1,0 +1,41 @@
+---
+import dayjs from 'dayjs';
+import blogService from '../services/blog.service';
+
+const pages = await Astro.glob('./**/*.astro');
+
+const fullUrl = Astro.url.origin;
+
+const filteredPages = pages.filter((page) => {
+  return ['blog', '[slug]', 'booking-confirmed', 'checklist-registration-success', 'contact-success'].every(
+    (blockedPage) => !page.url?.includes(blockedPage),
+  );
+});
+
+const { posts } = await blogService.getPosts();
+const lastMod = dayjs(posts[0].publishedAt).toISOString();
+
+Astro.response.headers.set('Content-Type', 'application/xml');
+---
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {
+    filteredPages.map((page) => (
+      <url>
+        <loc>{`${fullUrl}${page.url?.replace('.html', '')}`}</loc>
+      </url>
+    ))
+  }
+  <url>
+    <loc>{`${fullUrl}/blog`}</loc>
+    <lastmod>{lastMod}</lastmod>
+  </url>
+  {
+    posts.map((post: any) => (
+      <url>
+        <loc>{`${fullUrl}/blog/${post.slug}`}</loc>
+        <lastmod>{dayjs(post.publishedAt).toISOString()}</lastmod>
+      </url>
+    ))
+  }
+</urlset>
