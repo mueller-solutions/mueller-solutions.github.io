@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
-import node from '@astrojs/node';
+// import node from '@astrojs/node';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
@@ -17,6 +17,9 @@ export default defineConfig({
   output: IS_TEST ? 'static' : 'server',
   ...(!IS_TEST && {
     adapter: netlify(),
+    // adapter: node({
+    //   mode: 'standalone',
+    // }),
   }),
   prefetch: true,
   integrations: [
