@@ -28,7 +28,7 @@ export const GET: APIRoute = async ({ request }) => {
     headers: {
       Location: filePath, // Redirect to PDF file path (local or S3 URL)
       'Content-Type': 'application/pdf', // Ensure proper content type
-      'Content-Disposition': 'attachment; filename="performance-checklist.pdf"', // This header forces download
+      'Content-Disposition': `attachment; filename="performance-checklist.pdf"`, // This header forces download
     },
   });
 };

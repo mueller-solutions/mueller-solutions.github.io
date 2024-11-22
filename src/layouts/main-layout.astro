@@ -3,7 +3,6 @@ import '../styles/main.css';
 import Header from '../components/site-header.astro';
 import Footer from '../components/site-footer.astro';
 import GoogleTagManager from '../components/google-tag-manager.astro';
-import PipedriveChatbot from '../components/pipedrive-chatbot.astro';
 import Calendly from '../components/calendly.astro';
 import Scripts from '../components/scripts.astro';
 
@@ -30,12 +29,6 @@ const htmlKeywords =
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <script
-      id="cookieyes"
-      type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/f85e096edb75933a345d0c48/script.js"
-      async
-      is:inline></script> -->
     <GoogleTagManager />
     <base href={baseURL} />
     <meta charset="UTF-8" />
@@ -89,6 +82,12 @@ const htmlKeywords =
     <Header />
     <slot />
     <Footer />
-    <!-- <PipedriveChatbot /> -->
+    <script
+      async
+      type="module"
+      src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"
+      is:inline></script>
+    <zapier-interfaces-chatbot-embed is-popup="true" chatbot-id="cm3sosoth001na1ax1vzy5v0f"
+    ></zapier-interfaces-chatbot-embed>
   </body>
 </html>

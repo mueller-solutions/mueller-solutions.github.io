@@ -1,14 +1,15 @@
 import type { APIRoute } from 'astro';
-import pipedriveService from '../../../services/pipedrive.service';
-
-export const POST: APIRoute = async ({ request }) => {
+import zapierService from '../../../services/zapier.service';
+import downloadService from '../../../services/download.service';
+export const POST: APIRoute = async ({ request, url }) => {
   try {
     const data = await request.formData();
     const name = data.get('name') as string;
     const email = data.get('email') as string;
     const company = data.get('company') as string | undefined;
 
-    const success = await pipedriveService.createLead('Performance Checklist', {
+    const downloadLink = downloadService.generateDownloadLink(email, 'performance-checklist', url);
+    const success = await zapierService.sendDownloadLink(downloadLink, {
       name: name,
       email: email,
       company: company,
