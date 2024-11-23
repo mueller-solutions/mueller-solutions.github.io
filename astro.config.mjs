@@ -51,4 +51,7 @@ export default defineConfig({
     inlineStylesheets: 'always',
     format: 'file',
   },
+  redirects: {
+    '/about': '/about-us',
+  },
 });
