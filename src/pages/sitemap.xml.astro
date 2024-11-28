@@ -1,6 +1,6 @@
 ---
 import dayjs from 'dayjs';
-import blogService from '../services/blog.service';
+import { getCollection } from 'astro:content';
 
 const pages = await Astro.glob('./**/*.astro');
 
@@ -12,8 +12,9 @@ const filteredPages = pages.filter((page) => {
   );
 });
 
-const { posts } = await blogService.getPosts();
-const lastMod = dayjs(posts[0].publishedAt).toISOString();
+const posts = await getCollection('blog', (post) => !post.data.draft);
+
+const lastMod = dayjs(posts[0].data.posted).toISOString();
 
 Astro.response.headers.set('Content-Type', 'application/xml');
 ---
@@ -31,10 +32,10 @@ Astro.response.headers.set('Content-Type', 'application/xml');
     <lastmod>{lastMod}</lastmod>
   </url>
   {
-    posts.map((post: any) => (
+    posts.map((post) => (
       <url>
         <loc>{`${fullUrl}/blog/${post.slug}`}</loc>
-        <lastmod>{dayjs(post.publishedAt).toISOString()}</lastmod>
+        <lastmod>{dayjs(post.data.posted).toISOString()}</lastmod>
       </url>
     ))
   }

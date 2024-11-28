@@ -1,18 +1,12 @@
 ---
-import { useUserAgent } from 'astro-useragent';
-
 type Props = {
   image: string;
   remoteImage?: boolean;
 };
 
-const uaString = Astro.request.headers.get('user-agent');
-const { isMobile } = useUserAgent(uaString);
-
 const { image, remoteImage } = Astro.props;
 ---
 
-{!isMobile && <link rel="preload" href={remoteImage ? image : `/images/${image}.webp`} as="image" type="image/webp" />}
 <section class="hero">
   <div class="wrapper">
     <slot />

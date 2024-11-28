@@ -137,7 +137,7 @@
         margin-block-end: clamp(16px, 4vw, 40px);
       }
 
-      p:not(:last-child) {
+      p:not(:last-child, .published-on) {
         margin-block-end: 12px;
       }
 

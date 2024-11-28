@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
@@ -11,6 +13,7 @@ import HeroSection from '../../components/hero-section.astro';
   description="Transform outdated systems into modern, scalable solutions. Our legacy system modernization services ensure your business is equipped for future growth with secure, efficient technologies."
   keywords="legacy system modernization, future-proof systems, modern tech stack, migrate legacy applications, secure web solutions, scalable web platforms"
 >
+  <link rel="preload" href="/images/services/legacy-system.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="services/legacy-system">
     <p class="heading1 inverted">Upgrade Your Legacy Systems to Future-Ready Solutions</p>
     <p class="text-balance text-pretty-mobile">

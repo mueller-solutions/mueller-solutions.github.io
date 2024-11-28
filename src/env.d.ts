@@ -2,10 +2,11 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly WP_API_URL: string;
   readonly JWT_SECRET: string;
   readonly ZAPIER_API_URL: string;
   readonly GTM_ID: string;
+  readonly TINA_CLIENT_ID: string;
+  readonly TINA_TOKEN: string;
 }
 
 interface ImportMeta {

@@ -1,0 +1,64 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
+import BlogPostDate from '../../components/blog-post-date.astro';
+import HeroSection from '../../components/hero-section.astro';
+import MainLayout from '../../layouts/main-layout.astro';
+
+// 1. Get the slug from the incoming server request
+const { slug } = Astro.params;
+if (slug === undefined) {
+  throw new Error('Slug is required');
+}
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (post) => !post.data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// 2. Query for the entry directly using the request slug
+const post = await getEntry('blog', slug);
+// 3. Redirect if the entry does not exist
+if (post === undefined) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await post.render();
+
+const featuredImage = post.data.image;
+const preloadFileType = featuredImage.split('.').pop()?.split('?')[0];
+---
+
+<MainLayout
+  title={post.data.title}
+  description={post.data.excerpt}
+  keywords={post.data.tags ? post.data.tags.join(', ') : ''}
+  ogImage={featuredImage}
+>
+  <link
+    slot="html-head"
+    rel="preload"
+    as="image"
+    href={featuredImage}
+    type={`image/${preloadFileType}`}
+    crossorigin="anonymous"
+  />
+  <article class="post full">
+    <HeroSection image={featuredImage} remoteImage />
+    <div class="wrapper content">
+      <header>
+        <BlogPostDate date={post.data.posted} />
+        <h1 class="heading1">{post.data.title}</h1>
+      </header>
+      <Content />
+    </div>
+  </article>
+</MainLayout>
