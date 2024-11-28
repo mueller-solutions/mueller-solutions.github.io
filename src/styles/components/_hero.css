@@ -16,6 +16,10 @@
   text-align: var(--text-align);
   text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
 
+  @mixin tablet-up {
+    background-image: var(--image);
+  }
+
   &:not(.simple) {
     background-size: cover;
   }

@@ -7,20 +7,8 @@ type Props = {
 const { image, remoteImage } = Astro.props;
 ---
 
-<section class="hero">
+<section class="hero" style={`--image: ${remoteImage ? `url(${image})` : `url('/images/${image}.webp')`}`}>
   <div class="wrapper">
     <slot />
   </div>
 </section>
-
-<style
-  define:vars={{
-    image: remoteImage ? `url(${image})` : `url('/images/${image}.webp')`,
-  }}
->
-  @media (width > 480px) {
-    .hero {
-      background-image: var(--image);
-    }
-  }
-</style>
