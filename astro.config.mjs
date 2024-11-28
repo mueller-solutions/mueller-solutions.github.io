@@ -13,7 +13,7 @@ const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.de
 // https://astro.build/config
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL || siteURL,
-  output: IS_TEST ? 'static' : 'hybrid',
+  output: IS_TEST ? 'static' : 'server',
   ...(!IS_TEST && {
     ...(IS_PROD && { adapter: netlify() }),
     // ...(IS_PROD && { adapter: node({ mode: 'standalone' }) }),
