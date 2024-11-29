@@ -9,7 +9,7 @@ excerpt: >-
   site is. In fact, your website’s speed plays a big part in where you rank in
   search results.
 image: >-
-  /d4553-purple-yellow-illustrated-leadership-development-linkedin-background-photo-4.webp
+  /images/d4553-purple-yellow-illustrated-leadership-development-linkedin-background-photo-4.webp
 ---
 
 Tired of watching pages load slowly? Your visitors feel the same way. In today’s fast-paced online world, people expect websites to load instantly. A slow website can quickly turn visitors away. But it’s not just about your visitors—Google and other search engines also pay attention to how fast your site is. In fact, your website’s speed plays a big part in where you rank in search results.

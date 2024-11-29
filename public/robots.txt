@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /booking-confirmed
-Disallow: /checklist-registration-success
-Disallow: /contact-success
-
-Sitemap: https://mueller-solutions.dev/sitemap.xml

@@ -8,7 +8,7 @@ excerpt: >-
   collect useful information. Without a website, businesses risk losing
   potential customers and rely too much
 image: >-
-  /blog-images/7e264-blue-and-white-modern-responsive-website-development-services-instagram-post-6.webp
+  /images/7e264-blue-and-white-modern-responsive-website-development-services-instagram-post-6.webp
 ---
 
 Having a website is very important for small businesses, but many owners don’t see its value. Some think websites are only for big companies or too costly, but this is a mistake. A website helps attract customers, build trust, and collect useful information.
@@ -149,9 +149,9 @@ The study divided businesses into four groups: basic, intermediate, high, and ad
 
 Deloitte found that being in the advanced group offered huge benefits compared to the basic group. The advanced businesses:
 
-* Earned twice as much revenue,
-* Achieved four times higher year-over-year revenue growth, and
-* Experienced six times higher employment growth rates.
+- Earned twice as much revenue,
+- Achieved four times higher year-over-year revenue growth, and
+- Experienced six times higher employment growth rates.
 
 With these advantages, it’s clear that a website and other digital marketing are worth the investment. However, the Deloitte study also found that 80% of small businesses are not making the most of their digital marketing efforts, which hurts their success.
 

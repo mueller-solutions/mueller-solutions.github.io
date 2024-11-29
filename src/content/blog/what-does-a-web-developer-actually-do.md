@@ -7,7 +7,7 @@ excerpt: >-
   “back-end” (how things work behind the scenes). Some skilled developers do
   both and are known as “Full-Stack Developers.”
 image: >-
-  /c0a1a-white-and-blue-modern-web-application-design-linkedin-background-photo-1.webp
+  /images/c0a1a-white-and-blue-modern-web-application-design-linkedin-background-photo-1.webp
 ---
 
 Web Developers bring website designs to life by setting up layouts, adding graphics and content, and making sure the site runs smoothly and quickly. They also test to make sure the website works well on all types of screens—whether it's a computer, mobile phone, or tablet. If you want to be a Web Developer, you'll need to know how to write code using popular languages like JavaScript, HTML (HyperText Markup Language), CSS (Cascading Style Sheets), and others.
@@ -26,12 +26,12 @@ The daily tasks of a Web Developer can be very different depending on the projec
 
 Here are some common tasks a Web Developer handles daily:
 
-* Turning wireframe designs into working code
-* Designing the structure and content of a website
-* Adding features and making the site responsive
-* Launching the site online
-* Updating and improving existing websites
-* Troubleshooting and fixing bugs or glitches
+- Turning wireframe designs into working code
+- Designing the structure and content of a website
+- Adding features and making the site responsive
+- Launching the site online
+- Updating and improving existing websites
+- Troubleshooting and fixing bugs or glitches
 
 Collaboration is a big part of a Web Developer's daily routine. They often attend team meetings with Content Creators, Graphic Designers, UI Specialists, Marketers, Client Services Managers, and others. Web Developers also work together to troubleshoot, review, and fix code that needs improvement. Senior Web Developers might spend time mentoring Junior Web Developers and managing team projects and schedules.
 
@@ -77,11 +77,11 @@ Frontend developers also perform usability tests and fix any bugs that come up. 
 
 Here are some basic tasks that a Front-End Developer may be responsible for:
 
-* Collaborating with Graphic Designers, UX Designers, or Web Designers to ensure design ideas are turned into a user-friendly website.
-* Turning design sketches or wireframes into code that a web browser can read and display.
-* Structuring a website to make it easy to find through search engines (part of Search Engine Optimization or SEO).
-* Creating websites that look good and work well on any screen, from 24-inch computer monitors to five-inch smartphone screens (known as responsive design).
-* Testing websites and fixing bugs or other issues.
+- Collaborating with Graphic Designers, UX Designers, or Web Designers to ensure design ideas are turned into a user-friendly website.
+- Turning design sketches or wireframes into code that a web browser can read and display.
+- Structuring a website to make it easy to find through search engines (part of Search Engine Optimization or SEO).
+- Creating websites that look good and work well on any screen, from 24-inch computer monitors to five-inch smartphone screens (known as responsive design).
+- Testing websites and fixing bugs or other issues.
 
 ## What Does a Backend Developer Do?
 
@@ -93,9 +93,9 @@ If you’ve ever bought something online or filled out a form, you interacted wi
 
 A backend developer is responsible for building and maintaining the technology that powers the frontend, which includes three main parts:
 
-* Server
-* Application
-* Database
+- Server
+- Application
+- Database
 
 The code that backend developers write ensures that everything the frontend developer creates works properly.
 
@@ -111,10 +111,10 @@ The server side is also known as the data layer, and being able to work with dat
 
 Typical tasks that a backend developer might perform include:
 
-* Creating, integrating, and managing the database
-* Building server-side software using backend frameworks
-* Developing and deploying content management systems (like for a blog)
-* Working with web server technologies, API integration, and operating systems
+- Creating, integrating, and managing the database
+- Building server-side software using backend frameworks
+- Developing and deploying content management systems (like for a blog)
+- Working with web server technologies, API integration, and operating systems
 
 If you ask many people what a web developer does, they might laugh and give a sarcastic one-word answer: “Debugging.” Backend developers are no different—they are responsible for testing and fixing any issues with the backend elements of a system or application.
 

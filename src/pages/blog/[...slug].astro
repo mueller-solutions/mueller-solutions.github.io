@@ -43,14 +43,7 @@ const preloadFileType = featuredImage.split('.').pop()?.split('?')[0];
   keywords={post.data.tags ? post.data.tags.join(', ') : ''}
   ogImage={featuredImage}
 >
-  <link
-    slot="html-head"
-    rel="preload"
-    as="image"
-    href={featuredImage}
-    type={`image/${preloadFileType}`}
-    crossorigin="anonymous"
-  />
+  <link slot="html-head" rel="preload" as="image" href={featuredImage} type={`image/${preloadFileType}`} />
   <article class="post full">
     <HeroSection image={featuredImage} remoteImage />
     <div class="wrapper content">
