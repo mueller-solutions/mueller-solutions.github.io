@@ -6,6 +6,7 @@ import { getEntry } from 'astro:content';
 import BlogPostDate from '../../components/blog-post-date.astro';
 import HeroSection from '../../components/hero-section.astro';
 import MainLayout from '../../layouts/main-layout.astro';
+import FinalEngagement from '../../components/final-engagement.astro';
 
 // 1. Get the slug from the incoming server request
 const { slug } = Astro.params;
@@ -53,5 +54,6 @@ const preloadFileType = featuredImage.split('.').pop()?.split('?')[0];
       </header>
       <Content />
     </div>
+    <FinalEngagement />
   </article>
 </MainLayout>
