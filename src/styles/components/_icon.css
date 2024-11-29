@@ -1,7 +1,7 @@
 .icon {
   display: block;
-  width: var(--width, 24px);
-  height: var(--height, 24px);
+  width: var(--width);
+  height: var(--height);
   mask-image: var(--icon);
   mask-position: center;
   mask-repeat: no-repeat;

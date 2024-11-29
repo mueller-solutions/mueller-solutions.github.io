@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import MainLayout from '../layouts/main-layout.astro';
 import Icon from '../components/icon.astro';
 import FinalEngagement from '../components/final-engagement.astro';
@@ -11,6 +13,7 @@ import ResponsiveImage from '../components/responsive-image.astro';
   description="Find a professional in front-end development with years of experience. Committed to innovation where we deliver scalable, AI-powered digital solutions."
   keywords="Florian Mueller, MUELLER, web development expert, AI-powered solutions, scalable web architecture, frontend development, custom digital strategies, AI-driven onboarding, web performance optimization, technology innovation, digital solutions"
 >
+  <link rel="preload" href="/images/about-us/team-pairprogramming.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="about-us/team-pairprogramming">
     <h1 class="heading1 inverted">Redefining Digital Excellence with MUELLER Solutions</h1>
     <p class="text-balance text-pretty-mobile">

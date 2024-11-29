@@ -56,6 +56,15 @@ textarea {
   color: black;
 }
 
+pre {
+  border-radius: var(--border-radius);
+  background-color: var(--clr-dark);
+  padding: 1rem;
+  font-size: var(--fnt-size-base);
+  line-height: 1.5rem;
+  font-family: monospace;
+}
+
 ul,
 ol {
   list-style: none;

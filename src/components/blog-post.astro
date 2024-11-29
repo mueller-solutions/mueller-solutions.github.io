@@ -1,8 +1,9 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import BlogPostDate from './blog-post-date.astro';
 
 type Props = {
-  post: any;
+  post: CollectionEntry<'blog'>;
   type: 'featured' | 'preview' | 'latest';
 };
 
@@ -17,31 +18,30 @@ const { post, type = 'preview' } = Astro.props;
     type === 'latest' && 'flex items-center gap-1',
   ]}
 >
-  <figure>
-    <img
-      src={post._embedded['wp:featuredmedia'][0].source_url}
-      alt={post.title.rendered}
-      loading="lazy"
-      decoding="async"
-    />
-  </figure>
+  {
+    post.data.image && (
+      <figure>
+        <img src={post.data.image} alt={post.data.title} loading="lazy" decoding="async" />
+      </figure>
+    )
+  }
   {
     type === 'latest' ? (
       <header>
-        <BlogPostDate date={post.date} />
+        <BlogPostDate date={post.data.posted} />
         <h2 class="heading3">
-          <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+          <a href={`/blog/${post.slug}`} set:html={post.data.title} />
         </h2>
       </header>
     ) : (
       <div class="content">
-        <BlogPostDate date={post.date} />
+        <BlogPostDate date={post.data.posted} />
         <header>
           <h2>
-            <a href={`/blog/${post.slug}`} set:html={post.title.rendered} />
+            <a href={`/blog/${post.slug}`} set:html={post.data.title} />
           </h2>
         </header>
-        <Fragment set:html={post.excerpt.rendered} />
+        <Fragment set:html={post.data.excerpt} />
       </div>
     )
   }

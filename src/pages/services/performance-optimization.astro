@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
@@ -11,6 +13,13 @@ import HeroSection from '../../components/hero-section.astro';
   description="Optimize your website for speed, SEO, and user experience. Our performance optimization services will reduce load times and increase conversions, ensuring your site delivers results."
   keywords="website performance optimization, speed optimization, SEO optimization, improve site speed, boost conversions, web performance audit"
 >
+  <link
+    rel="preload"
+    href="/images/services/performance-optimization.webp"
+    as="image"
+    type="image/webp"
+    slot="html-head"
+  />
   <HeroSection image="services/performance-optimization">
     <p class="heading1 inverted">Boost Your Website's Speed and Performance</p>
     <p class="text-balance text-pretty-mobile">

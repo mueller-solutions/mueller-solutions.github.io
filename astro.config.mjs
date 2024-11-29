@@ -2,20 +2,21 @@ import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 // import node from '@astrojs/node';
 import partytown from '@astrojs/partytown';
+import minify from '@frontendista/astro-html-minify';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
+const IS_PROD = process.env.NODE_ENV === 'production';
 const IS_TEST = process.env.NODE_ENV === 'test';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
+// const siteURL = 'http://localhost:4321';
 
 // https://astro.build/config
 export default defineConfig({
-  site: siteURL,
+  site: process.env.DEPLOY_PRIME_URL || siteURL,
   output: IS_TEST ? 'static' : 'server',
   ...(!IS_TEST && {
-    adapter: netlify(),
-    // adapter: node({
-    //   mode: 'standalone',
-    // }),
+    ...(IS_PROD && { adapter: netlify() }),
+    // ...(IS_PROD && { adapter: node({ mode: 'standalone' }) }),
   }),
   prefetch: true,
   integrations: [
@@ -46,6 +47,7 @@ export default defineConfig({
         },
       },
     }),
+    ...(IS_PROD ? [minify()] : []),
   ],
   build: {
     inlineStylesheets: 'always',

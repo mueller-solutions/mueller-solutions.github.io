@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import fs from 'fs';
 import downloadService from '../../../services/download.service';

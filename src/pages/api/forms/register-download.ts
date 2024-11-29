@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import zapierService from '../../../services/zapier.service';
 import downloadService from '../../../services/download.service';

@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Icon from '../../components/icon.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
@@ -80,14 +82,8 @@ const faqs = [
   <!-- Success Summary -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
-      <ResponsiveImage
-        image="services/success-office"
-        alt="A Office"
-        class="rounded"
-        preload
-        width={700}
-        height={564}
-      />
+      <link rel="preload" href="/images/services/success-office.webp" as="image" type="image/webp" slot="html-head" />
+      <ResponsiveImage image="services/success-office" alt="A Office" class="rounded" width={700} height={564} />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Your Success Is Our Priority</p>
         <h2 class="heading2">Comprehensive Services to Meet Your Unique Needs</h2>
@@ -156,15 +152,15 @@ const faqs = [
           <h3 class="heading3">What You Get</h3>
           <ul data-type="list" class="checklist">
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Fast-loading websites and apps</strong> to reduce bounce rates.
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Scalable architecture</strong> to handle increased traffic and growth.
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Improved user experience</strong> for better engagement and conversions.
             </li>
           </ul>
@@ -203,15 +199,15 @@ const faqs = [
           <h3 class="heading3">What You Get</h3>
           <ul data-type="list">
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Modern technology stack</strong> that supports future growth.
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Seamless legacy system migration</strong> with minimal downtime.
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Enhanced functionality</strong> and better overall performance.
             </li>
           </ul>
@@ -234,15 +230,15 @@ const faqs = [
           <h3 class="heading3">What You Get</h3>
           <ul data-type="list">
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Custom-built web applications</strong> designed for your specific needs
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Full-stack development</strong> covering both frontend and backend
             </li>
             <li class="flex gap-05 items-center">
-              <Icon name="checkbox" class="icon-checkbox" width="20" height="20" />
+              <Icon name="checkbox" isCheckbox width="20" height="20" />
               <strong>Scalable, secure web platforms</strong> that can evolve with your business
             </li>
           </ul>

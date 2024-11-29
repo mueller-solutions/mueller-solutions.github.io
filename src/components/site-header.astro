@@ -4,7 +4,6 @@ import NavLink from './nav-link.astro';
 import ServicesNavigation from './services-navigation.astro';
 ---
 
-<link slot="html-head" rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
 <header class="site-header">
   <div class="wrapper flex space-between items-center">
     <a href="/">
@@ -18,19 +17,20 @@ import ServicesNavigation from './services-navigation.astro';
         <NavLink href="/">Home</NavLink>
         <NavLink href="/services">
           Services
-          <button
-            class="sub-nav-toggle"
-            aria-haspopup="true"
-            aria-controls="services-navigation"
-            aria-expanded="false"
-            slot="dropdown"
-          >
-            <span class="sr-only">Toggle Services dropdown</span>
-            <Icon name="dropdown" width="11" height="6" />
-          </button>
-          <ul id="services-navigation" class="sub-navigation" slot="dropdown">
-            <ServicesNavigation />
-          </ul>
+          <Fragment slot="dropdown">
+            <button
+              class="sub-nav-toggle"
+              aria-haspopup="true"
+              aria-controls="services-navigation"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle Services dropdown</span>
+              <Icon name="dropdown" width="11" height="6" />
+            </button>
+            <ul id="services-navigation" class="sub-navigation">
+              <ServicesNavigation />
+            </ul>
+          </Fragment>
         </NavLink>
         <NavLink href="/blog">Blog</NavLink>
         <NavLink href="/about-us">About Us</NavLink>

@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import MainLayout from '../layouts/main-layout.astro';
 
 import FinalEngagement from '../components/final-engagement.astro';
@@ -26,6 +28,7 @@ const solutions = [
 
 <MainLayout>
   <!-- Hero -->
+  <link rel="preload" href="/images/home/man-with-laptop.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="home/man-with-laptop">
     <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
     <p class="text-balance text-pretty-mobile">
@@ -52,11 +55,11 @@ const solutions = [
   <!-- Problem Statement -->
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
+      <link rel="preload" href="/images/home/problem-statement.webp" as="image" type="image/webp" slot="html-head" />
       <ResponsiveImage
         image="home/problem-statement"
         alt="Problem Statement"
         class="rounded"
-        preload
         width={699}
         height={484}
       />

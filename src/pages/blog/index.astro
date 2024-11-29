@@ -1,13 +1,12 @@
 ---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/main-layout.astro';
-import blogService from '../../services/blog.service';
 import BlogPost from '../../components/blog-post.astro';
 
-const { posts } = await blogService.getPosts();
-const latestPosts = posts.slice(0, 4);
-const hasStickyPosts = posts.some((post: any) => post.sticky);
-const stickyPosts = posts.filter((post: any) => post.sticky);
-const postWithoutSticky = posts.filter((post: any) => !post.sticky);
+const posts = await getCollection('blog', (post) => !post.data.draft);
+const orderedPosts = posts.sort((a, b) => new Date(b.data.posted).getTime() - new Date(a.data.posted).getTime());
 ---
 
 <MainLayout
@@ -18,14 +17,13 @@ const postWithoutSticky = posts.filter((post: any) => !post.sticky);
   <div class="wrapper blog">
     <div class="even-columns three-columns">
       <div class="col-2 flex flex-col gap-2">
-        {hasStickyPosts && stickyPosts.map((post: any) => <BlogPost post={post} type="featured" />)}
         <div class="even-columns two-columns">
-          {postWithoutSticky.map((post: any) => <BlogPost post={post} type="preview" />)}
+          {orderedPosts.map((post) => <BlogPost post={post} type="preview" />)}
         </div>
       </div>
       <div class="col-1 flex flex-col gap-1">
         <p class="tagline">Latest Posts</p>
-        {latestPosts.map((post: any) => <BlogPost post={post} type="latest" />)}
+        {orderedPosts.slice(0, 5).map((post: any) => <BlogPost post={post} type="latest" />)}
       </div>
     </div>
   </div>

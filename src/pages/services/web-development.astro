@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
 import WhatsappButton from '../../components/whatsapp-button.astro';
@@ -39,6 +41,7 @@ const faqs = [
   description="Join hands with an e-commerce website development company in Texas for user-friendly and creative web solutions that encourage sales and interaction."
   keywords="custom web development, scalable websites, SEO-friendly web development, high-performance web solutions, responsive web design, full-stack web development"
 >
+  <link rel="preload" href="/images/services/web-development.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="services/web-development">
     <p class="heading1 inverted">Build Web Solutions That Drive Business Growth</p>
     <p class="text-balance text-pretty-mobile">
