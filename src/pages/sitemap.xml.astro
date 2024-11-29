@@ -13,8 +13,9 @@ const filteredPages = pages.filter((page) => {
 });
 
 const posts = await getCollection('blog', (post) => !post.data.draft);
+const orderedPosts = posts.sort((a, b) => new Date(b.data.posted).getTime() - new Date(a.data.posted).getTime());
 
-const lastMod = dayjs(posts[0].data.posted).toISOString();
+const lastMod = dayjs(orderedPosts[0].data.posted).toISOString();
 
 Astro.response.headers.set('Content-Type', 'application/xml');
 ---
@@ -32,7 +33,7 @@ Astro.response.headers.set('Content-Type', 'application/xml');
     <lastmod>{lastMod}</lastmod>
   </url>
   {
-    posts.map((post) => (
+    orderedPosts.map((post) => (
       <url>
         <loc>{`${fullUrl}/blog/${post.slug}`}</loc>
         <lastmod>{dayjs(post.data.posted).toISOString()}</lastmod>
