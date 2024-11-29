@@ -26,27 +26,27 @@ While web development and web design have some overlap, there are important diff
 
 **Web Designers:**
 
-* Design everything a user sees on a website or software, including visuals, colors, fonts, and how easy it is to use.
-* Work directly with clients to create designs or as part of a team to bring the client’s vision to life.
-* Might need some knowledge of programming or coding, especially common languages like HTML, CSS, PHP, and JavaScript.
-* Create wireframes and prototypes to test ideas, and give input on logos, branding, and company style guides.
+- Design everything a user sees on a website or software, including visuals, colors, fonts, and how easy it is to use.
+- Work directly with clients to create designs or as part of a team to bring the client’s vision to life.
+- Might need some knowledge of programming or coding, especially common languages like HTML, CSS, PHP, and JavaScript.
+- Create wireframes and prototypes to test ideas, and give input on logos, branding, and company style guides.
 
 **Web Developers:**
 
-* Write the code that makes a website work, whether it's on the front end (what users see) or back end (server-side).
-* Build or apply designs requested by a client or made by a design team.
-* Must be highly skilled in several programming languages like HTML, CSS, PHP, and JavaScript, and may also use other languages like Ruby, C/C++, and Python, as well as frameworks and libraries.
-* Usually don’t create mockups, choose fonts, or select color schemes.
+- Write the code that makes a website work, whether it's on the front end (what users see) or back end (server-side).
+- Build or apply designs requested by a client or made by a design team.
+- Must be highly skilled in several programming languages like HTML, CSS, PHP, and JavaScript, and may also use other languages like Ruby, C/C++, and Python, as well as frameworks and libraries.
+- Usually don’t create mockups, choose fonts, or select color schemes.
 
 ## What Are the Most Common Programming Languages?
 
 The most common programming languages used in web development are:
 
-* HTML (Hypertext Markup Language)
-* CSS (Cascading Style Sheets)
-* JavaScript
-* PHP
-* HTML
+- HTML (Hypertext Markup Language)
+- CSS (Cascading Style Sheets)
+- JavaScript
+- PHP
+- HTML
 
 ## What is HTML?
 
@@ -77,7 +77,7 @@ In this case, `<h1>` is the element used for a large heading.
 **Attributes**: These provide extra information about elements. They appear inside the start tag. For example:
 
 ```html
-<img src="image.jpg" alt="Description of image">
+<img src="image.jpg" alt="Description of image" />
 ```
 
 Here, src specifies the image file, and alt gives a description.
@@ -87,7 +87,7 @@ Here, src specifies the image file, and alt gives a description.
 A simple HTML document has a structure like this:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Page Title</title>
@@ -111,7 +111,7 @@ A simple HTML document has a structure like this:
 
 **CSS (Cascading Style Sheets)** is the language used to style and layout websites. While HTML provides the structure of a webpage, CSS controls how that structure looks and feels. It manages the colors, fonts, spacing, and overall design, making websites visually appealing and easy to navigate.
 
-### How CSS Works:
+### How CSS Works
 
 CSS works by selecting elements in the HTML and applying styles to them. These styles include things like color, size, and positioning. CSS allows web developers to separate content (HTML) from design, making it easier to update and maintain the look of a website.
 
@@ -125,7 +125,7 @@ p {
 
 In this example, the rule applies to all `<p>` elements (paragraphs), turning their text blue.
 
-### Key Parts of CSS:
+### Key Parts of CSS
 
 **Selectors**: These tell the browser which HTML elements to style. Common selectors include tags, classes, and IDs. For example:
 
@@ -168,7 +168,7 @@ There are three main ways to include CSS in your HTML:
 **External CSS**: Styles are written in a separate .css file and linked to the HTML file. This is the best practice for larger websites. For example:
 
 ```html
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css" />
 ```
 
 In this case, the styles are stored in a file called styles.css.
@@ -178,10 +178,10 @@ In this case, the styles are stored in a file called styles.css.
 Here’s how you can use CSS to style a simple webpage:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Welcome to My Website</h1>
@@ -229,7 +229,7 @@ In this case, when a user clicks the button, a pop-up message will appear saying
 **DOM Manipulation**: JavaScript can access and change the structure of an HTML page in real-time through the Document Object Model (DOM). This means you can use JavaScript to update text, images, and other elements on a webpage without having to reload the page.
 
 ```javascript
-document.getElementById("myText").innerHTML = "New Content!";
+document.getElementById('myText').innerHTML = 'New Content!';
 ```
 
 In this example, JavaScript finds the HTML element with the ID "myText" and changes its content.
@@ -237,8 +237,8 @@ In this example, JavaScript finds the HTML element with the ID "myText" and chan
 **Event Handling**: JavaScript can detect and respond to user actions, known as "events." Common events include clicking buttons, submitting forms, and scrolling through a page. JavaScript can be used to perform actions based on these events.
 
 ```javascript
-document.getElementById("myButton").addEventListener("click", function () {
-  alert("Button clicked!");
+document.getElementById('myButton').addEventListener('click', function () {
+  alert('Button clicked!');
 });
 ```
 
@@ -247,13 +247,13 @@ document.getElementById("myButton").addEventListener("click", function () {
 Here’s how JavaScript can be used to make a webpage interactive:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>My Website</title>
     <script>
       function changeText() {
-        document.getElementById("myText").innerHTML = "You clicked the button!";
+        document.getElementById('myText').innerHTML = 'You clicked the button!';
       }
     </script>
   </head>
@@ -266,8 +266,8 @@ Here’s how JavaScript can be used to make a webpage interactive:
 
 In this example:
 
-* A button is created on the webpage.
-* When the user clicks the button, the text in the \<h1> tag changes.
+- A button is created on the webpage.
+- When the user clicks the button, the text in the \<h1> tag changes.
 
 ## What is PHP?
 
@@ -294,7 +294,7 @@ Here’s a simple example of a PHP script that displays a welcome message based 
 ```php
 <?php
   $hour = date("H");
-  
+
   if ($hour < 12) {
     echo "Good morning!";
   } elseif ($hour < 18) {
@@ -313,13 +313,13 @@ This script uses PHP’s built-in date function to check the time and display a 
 
 "Above-the-fold content" is the part of a webpage that users see right away without scrolling. Optimizing this content helps your site load faster and makes a good first impression. Here’s how to do it:
 
-* **Prioritize Key Resources**: Focus on loading essential items, like CSS, JavaScript, and images, that are needed to show the top of your page.
-* **Minimize Load-Blocking Resources**: Reduce file sizes, combine scripts, and remove unnecessary elements to help your page load faster.
-* **Inline Critical CSS**: Add essential CSS directly in your HTML to avoid extra requests and speed up the loading process.
-* **Defer Non-Critical JavaScript**: Load non-essential JavaScript after the visible content loads to prevent delays.
-* **Lazy Load Images**: Use lazy loading for images, so they load only when needed, saving initial load time.
-* **Use Async and Defer for Scripts**: Set "async" or "defer" on external scripts to load them without slowing down above-the-fold content.
-* **Optimize Third-Party Content**: Limit or optimize third-party plugins and widgets to reduce any impact on loading speed.
+- **Prioritize Key Resources**: Focus on loading essential items, like CSS, JavaScript, and images, that are needed to show the top of your page.
+- **Minimize Load-Blocking Resources**: Reduce file sizes, combine scripts, and remove unnecessary elements to help your page load faster.
+- **Inline Critical CSS**: Add essential CSS directly in your HTML to avoid extra requests and speed up the loading process.
+- **Defer Non-Critical JavaScript**: Load non-essential JavaScript after the visible content loads to prevent delays.
+- **Lazy Load Images**: Use lazy loading for images, so they load only when needed, saving initial load time.
+- **Use Async and Defer for Scripts**: Set "async" or "defer" on external scripts to load them without slowing down above-the-fold content.
+- **Optimize Third-Party Content**: Limit or optimize third-party plugins and widgets to reduce any impact on loading speed.
 
 Optimizing above-the-fold content boosts your website’s speed and gives users a smooth browsing experience right from the start.
 

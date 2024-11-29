@@ -145,6 +145,10 @@
         margin-block: clamp(16px, 4vw, 24px) clamp(12px, 4vw, 16px);
       }
 
+      strong {
+        color: var(--clr-dark);
+      }
+
       ul {
         padding-inline-start: 1.5rem;
         list-style: disc;
