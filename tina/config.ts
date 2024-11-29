@@ -2,7 +2,7 @@ import { defineConfig } from 'tinacms';
 import slugify from 'slugify';
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.GITHUB_BRANCH || process.env.BRANCH || process.env.HEAD || 'main';
+const branch = process.env.GITHUB_BRANCH || process.env.COMMIT_REF || process.env.HEAD || 'main';
 
 export default defineConfig({
   branch,
