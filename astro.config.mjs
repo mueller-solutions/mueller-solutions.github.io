@@ -7,12 +7,14 @@ import minify from '@frontendista/astro-html-minify';
 const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';
 const IS_TEST = process.env.NODE_ENV === 'test';
+const IS_PREVIEW = process.env.CONTEXT === 'deploy-preview' || process.env.CONTEXT === 'branch-deploy';
 const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
 // const siteURL = 'http://localhost:4321';
+const site = IS_PREVIEW ? process.env.DEPLOY_PRIME_URL : siteURL;
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.DEPLOY_PRIME_URL || siteURL,
+  site: site,
   output: IS_TEST ? 'static' : 'server',
   ...(!IS_TEST && {
     ...(IS_PROD && { adapter: netlify() }),
