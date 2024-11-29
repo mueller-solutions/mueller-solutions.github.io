@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tinacms dev -c \"astro dev --host\"",
     "start": "astro dev",
-    "build": "rm -rf dist/ && tinacms build && astro check && astro build",
+    "build": "rm -rf dist/ && astro check && tinacms build && astro build",
     "build:local": "rm -rf dist/ && astro check && tinacms build --local -c \"astro build\"",
     "preview": "astro preview",
     "astro": "astro",
