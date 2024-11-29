@@ -12,9 +12,9 @@ type Props = {
 const { quote, author, company, image, href } = Astro.props;
 ---
 
-<div class="card white shadow slim fade-from-bottom">
+<div class="card white shadow slim fade-from-bottom flex flex-col gap-4">
   <Icon name="rating-stars" isRatingStars width="82" height="14" />
-  <p class="body2">
+  <p class="body2 flex-1">
     {quote}
   </p>
   <div class="flex gap-1">
