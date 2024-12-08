@@ -41,6 +41,12 @@ const htmlKeywords =
     <meta property="og:description" content={htmlDescription} />
     <meta property="og:image" content={ogImage} />
     <meta name="author" content="DevBucket, LLC. Austin, TX" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="MUELLER Solutions RSS Feed"
+      href={new URL('/rss.xml', Astro.site)}
+    />
     <link rel="preconnect" href="//assets.calendly.com" />
     <link rel="preconnect" href="//unpkg.com" />
     <link rel="preconnect" href="//www.googletagmanager.com" />
