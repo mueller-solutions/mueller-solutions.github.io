@@ -20,10 +20,10 @@ const baseURL = Astro.url.origin;
 const htmlTitle = title ?? 'Front End Web Development Services TX';
 const htmlDescription =
   description ??
-  "Explore Austin's leading front-end developer and web design services to help you build a stronger online presence.";
+  "Explore Austin's leading web development and web design services to help you build a stronger online presence.";
 const htmlKeywords =
   keywords ??
-  'frontend development, frontend consulting, frontend development services, frontend consulting services, web app development, frontend consulting, performance optimization, scalable web applications, speed optimization, Progressive Web Apps, server-side rendering, React development, code optimization, cross-browser compatibility, user experience design, UI/UX consulting, web performance, frontend architecture, micro-frontend architecture, responsive web design, SEO for web apps, modern frontend development';
+  'web development, frontend consulting, frontend development services, frontend consulting services, web app development, frontend consulting, performance optimization, scalable web applications, speed optimization, Progressive Web Apps, server-side rendering, React development, code optimization, cross-browser compatibility, user experience design, UI/UX consulting, web performance, frontend architecture, micro-frontend architecture, responsive web design, SEO for web apps, modern frontend development';
 ---
 
 <!doctype html>
@@ -33,14 +33,20 @@ const htmlKeywords =
     <meta charset="UTF-8" />
     <GoogleTagManager />
     <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
-    <title>{htmlTitle} | mueller-solutions.dev</title>
+    <title>{htmlTitle} | MUELLER Solutions, Austin, TX</title>
     <meta name="description" content={htmlDescription} />
     <meta name="keywords" content={htmlKeywords} />
-    <meta property="og:title" content={`${htmlTitle} | mueller-solutions.dev`} />
+    <meta property="og:title" content={`${htmlTitle} | MUELLER Solutions, Austin, TX`} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={htmlDescription} />
     <meta property="og:image" content={ogImage} />
     <meta name="author" content="DevBucket, LLC. Austin, TX" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="MUELLER Solutions RSS Feed"
+      href={new URL('/rss.xml', Astro.site)}
+    />
     <link rel="preconnect" href="//assets.calendly.com" />
     <link rel="preconnect" href="//unpkg.com" />
     <link rel="preconnect" href="//www.googletagmanager.com" />

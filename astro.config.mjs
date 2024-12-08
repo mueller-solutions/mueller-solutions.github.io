@@ -1,25 +1,34 @@
-import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
-// import node from '@astrojs/node';
+import node from '@astrojs/node';
 import partytown from '@astrojs/partytown';
 import minify from '@frontendista/astro-html-minify';
+import { defineConfig } from 'astro/config';
+import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 
+const env = dotenv.config();
+dotenvExpand.expand(env);
+
+const PORT = parseInt(process.env.PORT || '4321');
 const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';
 const IS_TEST = process.env.NODE_ENV === 'test';
 const IS_PREVIEW = process.env.CONTEXT === 'deploy-preview' || process.env.CONTEXT === 'branch-deploy';
-const siteURL = IS_DEV ? 'http://localhost:4321' : 'https://mueller-solutions.dev';
-// const siteURL = 'http://localhost:4321';
+const siteURL = IS_DEV ? `http://localhost:${PORT}` : process.env.URL;
 const site = IS_PREVIEW ? process.env.DEPLOY_PRIME_URL : siteURL;
+const IS_LOCAL = site?.startsWith('http://localhost') || false;
 
 // https://astro.build/config
 export default defineConfig({
   site: site,
   output: IS_TEST ? 'static' : 'server',
   ...(!IS_TEST && {
-    ...(IS_PROD && { adapter: netlify() }),
-    // ...(IS_PROD && { adapter: node({ mode: 'standalone' }) }),
+    ...(IS_LOCAL ? { adapter: node({ mode: 'standalone' }) } : { adapter: netlify() }),
   }),
+  server: {
+    port: PORT,
+    host: true,
+  },
   prefetch: true,
   integrations: [
     partytown({

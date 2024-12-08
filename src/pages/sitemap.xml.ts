@@ -8,6 +8,7 @@ const blockedPages: string[] = [
   'booking-confirmed',
   'checklist-registration-success',
   'contact-success',
+  'blog',
 ];
 
 /**
@@ -29,17 +30,23 @@ export const GET: APIRoute = async ({ url }) => {
   const orderedPosts = posts.sort((a, b) => new Date(b.data.posted).getTime() - new Date(a.data.posted).getTime());
   const lastMod = dayjs(orderedPosts[0].data.posted).toISOString();
 
-  return new Response(
-    `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${filteredPages.map((page) => `<url><loc>${url.origin}${replaceAstroWithSlash(page)}</loc></url>`).join('')}
-${orderedPosts.map((post) => `<url><loc>${url.origin}/blog/${post.slug}</loc><lastmod>${dayjs(post.data.posted).toISOString()}</lastmod></url>`).join('')}
-</urlset>`,
-    {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/xml',
-      },
-    },
+  const pageUrls = filteredPages.map((page) => `<url><loc>${url.origin}${replaceAstroWithSlash(page)}</loc></url>`);
+  const postUrls = orderedPosts.map(
+    (post) =>
+      `<url><loc>${url.origin}/blog/${post.slug}</loc><lastmod>${dayjs(post.data.posted).toISOString()}</lastmod></url>`,
   );
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pageUrls.join('\n')}
+<url><loc>${url.origin}/blog</loc><lastmod>${dayjs(lastMod).toISOString()}</lastmod></url>
+${postUrls.join('\n')}
+</urlset>`;
+
+  return new Response(sitemap, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  });
 };

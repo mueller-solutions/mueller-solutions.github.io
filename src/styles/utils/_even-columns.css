@@ -60,9 +60,21 @@
   }
 }
 
+.col-offset-1 {
+  @mixin tablet-up {
+    grid-column-start: 2;
+  }
+}
+
 .col-2 {
   @mixin tablet-up {
     grid-column: span 2;
+  }
+}
+
+.col-offset-2 {
+  @mixin tablet-up {
+    grid-column: span 2 / -1;
   }
 }
 
@@ -72,8 +84,20 @@
   }
 }
 
+.col-offset-3 {
+  @mixin tablet-up {
+    grid-column: span 3 / -1;
+  }
+}
+
 .col-4 {
   @mixin tablet-up {
     grid-column: span 4;
+  }
+}
+
+.col-offset-4 {
+  @mixin tablet-up {
+    grid-column: span 4 / -1;
   }
 }
