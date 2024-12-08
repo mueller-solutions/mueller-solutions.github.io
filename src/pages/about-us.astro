@@ -1,11 +1,15 @@
 ---
 export const prerender = true;
 
+import { Image } from 'astro:assets';
+
 import MainLayout from '../layouts/main-layout.astro';
 import Icon from '../components/icon.astro';
 import FinalEngagement from '../components/final-engagement.astro';
 import HeroSection from '../components/hero-section.astro';
 import ResponsiveImage from '../components/responsive-image.astro';
+import florianMueller from '../images/team/florian-mueller.png';
+import jayTijerina from '../images/team/jay-tijerina.png';
 ---
 
 <MainLayout
@@ -145,6 +149,31 @@ import ResponsiveImage from '../components/responsive-image.astro';
           <p class="body2 text-balance text-pretty-mobile">
             You'll receive clear, consistent updates throughout the project.
           </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Our Team -->
+  <section class="section">
+    <div class="wrapper">
+      <header>
+        <p class="tagline">A Team of Experts Committed to Excellence</p>
+        <h2 class="heading2">Meet Our Team</h2>
+      </header>
+      <ul class="even-columns four-columns gap-4">
+        <li class="flex flex-col items-center gap-1 col-1 col-offset-1">
+          <Image src={florianMueller} alt="Florian Mueller" class="rounded" />
+          <div class="flex flex-col items-center text-center">
+            <h3 class="heading3">Florian Mueller</h3>
+            <p class="body1">Founder & CEO</p>
+          </div>
+        </li>
+        <li class="flex flex-col items-cente gap-1 col-1">
+          <Image src={jayTijerina} alt="Jay Tijerina" class="rounded" />
+          <div class="flex flex-col items-center text-center">
+            <h3 class="heading3">Jay Tijerina</h3>
+            <p class="body1">Sales & Business Development</p>
+          </div>
         </li>
       </ul>
     </div>
