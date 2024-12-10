@@ -6,7 +6,7 @@ posted: 2024-11-06T23:00:00.000Z
 excerpt: >-
   Mobile app development has been steadily growing over the years. This type of
   software development focuses on creating apps that work on mobile devices.
-image: /images/Blue-White-Modern-Mobile-App-Coming-Video-1.webp
+image: ../../media/cms/Blue-White-Modern-Mobile-App-Coming-Video-1.webp
 ---
 
 Mobile app development has been steadily growing over the years. This type of software development focuses on creating apps that work on mobile devices.

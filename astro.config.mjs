@@ -2,6 +2,7 @@ import netlify from '@astrojs/netlify';
 import node from '@astrojs/node';
 import partytown from '@astrojs/partytown';
 import minify from '@frontendista/astro-html-minify';
+
 import { defineConfig } from 'astro/config';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
@@ -66,5 +67,8 @@ export default defineConfig({
   },
   redirects: {
     '/about': '/about-us',
+  },
+  experimental: {
+    responsiveImages: true,
   },
 });

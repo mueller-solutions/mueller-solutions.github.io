@@ -1,5 +1,5 @@
-import { defineConfig } from 'tinacms';
 import slugify from 'slugify';
+import { defineConfig } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || 'main';
@@ -18,8 +18,8 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: '',
-      publicFolder: 'public/images',
+      mediaRoot: '../../',
+      publicFolder: 'src/media/cms',
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/

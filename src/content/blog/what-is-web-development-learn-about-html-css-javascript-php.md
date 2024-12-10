@@ -5,7 +5,7 @@ excerpt: >-
   Web development, also called website development, involves creating, building,
   and maintaining websites and web applications that run in a web browser. It
   can also include tasks like web design, coding, and managing databases.
-image: /images/fba82-blue-modern-tech-company-presentation.webp
+image: ../../media/cms/fba82-blue-modern-tech-company-presentation.webp
 ---
 
 Web development, also called website development, involves creating, building, and maintaining websites and web applications that run in a web browser. It can also include tasks like web design, coding, and managing databases.

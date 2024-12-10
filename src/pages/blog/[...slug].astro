@@ -1,10 +1,9 @@
 ---
 export const prerender = true;
 
-import { getCollection } from 'astro:content';
-import { getEntry } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import BlogPostDate from '../../components/blog-post-date.astro';
-import HeroSection from '../../components/hero-section.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
 
@@ -35,23 +34,30 @@ if (post === undefined) {
 const { Content } = await post.render();
 
 const featuredImage = post.data.image;
-const preloadFileType = featuredImage.split('.').pop()?.split('?')[0];
 ---
 
 <MainLayout
   title={post.data.title}
   description={post.data.excerpt}
   keywords={post.data.tags ? post.data.tags.join(', ') : ''}
-  ogImage={featuredImage}
+  ogImage={featuredImage.src}
 >
-  <link slot="html-head" rel="preload" as="image" href={featuredImage} type={`image/${preloadFileType}`} />
   <article class="post full">
-    <HeroSection image={featuredImage} remoteImage />
-    <div class="wrapper content">
-      <header>
+    <header>
+      <Image
+        src={featuredImage}
+        alt={post.data.title}
+        layout="responsive"
+        class="hero-image"
+        widths={[480, featuredImage.width]}
+        sizes={`(max-width: 480px) 480px, ${featuredImage.width}px`}
+      />
+      <div class="wrapper content">
         <BlogPostDate date={post.data.posted} />
         <h1 class="heading1">{post.data.title}</h1>
-      </header>
+      </div>
+    </header>
+    <div class="wrapper content">
       <Content />
     </div>
     <FinalEngagement />

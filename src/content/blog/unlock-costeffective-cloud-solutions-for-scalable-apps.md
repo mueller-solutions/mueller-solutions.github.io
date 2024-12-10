@@ -1,8 +1,8 @@
 ---
-title: "Unlock Cost-Effective Cloud Solutions for Scalable Apps"
+title: 'Unlock Cost-Effective Cloud Solutions for Scalable Apps'
 posted: 2024-11-30T10:46:09.061Z
 excerpt: "Tired of cloud costs crippling your growth? Discover innovative strategies to scale your app efficiently and cost-effectively. It's time to unlock your app's potential!"
-image: "/images/modern-tech-office-collaboration-app-scaling-strategies.png"
+image: '../../media/cms/modern-tech-office-collaboration-app-scaling-strategies.png'
 ---
 
 ## Introduction

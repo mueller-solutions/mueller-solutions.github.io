@@ -113,8 +113,22 @@
       }
     }
 
+    .hero-image {
+      --border-radius: clamp(28px, 4vw, 40px);
+
+      height: clamp(200px, 30vw, 700px);
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
     .content {
-      padding-block: clamp(20px, 4vw, 80px);
+      &:has(& + .content) {
+        padding-block: clamp(20px, 4vw, 80px);
+      }
+
+      &:not(:has(& + .content)) {
+        padding-block: clamp(20px, 4vw, 40px) 20px;
+      }
 
       @mixin tablet-up {
         width: 80dvw;
@@ -131,14 +145,14 @@
 
         .heading1 {
           font-size: clamp(40px, 4vw, 54px);
-          line-height: clamp(44px, 4vw, 58px);
+          line-height: clamp(50px, 5vw, 62px);
         }
       }
 
       h2 {
         font-size: clamp(28px, 4vw, 32px);
         line-height: clamp(30px, 4vw, 38px);
-        margin-block: clamp(24px, 4vw, 32px) clamp(16px, 4vw, 24px);
+        margin-block: clamp(24px, 4vw, 32px) clamp(10px, 4vw, 14px);
       }
 
       h3 {
@@ -150,20 +164,28 @@
       }
 
       ul {
-        padding-inline-start: 1.5rem;
         list-style: disc;
+      }
+
+      ol {
+        list-style: decimal;
+      }
+
+      ul,
+      ol {
+        padding-inline-start: 1rem;
 
         li {
+          padding-inline-start: 0.5rem;
+
           @mixin mobile {
             text-wrap: pretty;
           }
 
-          &:not(:last-child) {
-            margin-block-end: 12px;
+          margin-block-end: 12px;
 
-            @mixin mobile {
-              margin-block-end: 8px;
-            }
+          @mixin mobile {
+            margin-block-end: 8px;
           }
         }
 
@@ -174,7 +196,7 @@
         }
       }
 
-      p:not(:last-child, .published-on),
+      p:not(:last-child),
       ul:not(:last-child),
       pre:not(:last-child) {
         margin-block-end: 12px;

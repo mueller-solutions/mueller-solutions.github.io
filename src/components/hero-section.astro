@@ -1,13 +1,20 @@
 ---
 type Props = {
-  image: string;
+  image: string | { src: string };
   remoteImage?: boolean;
 };
 
 const { image, remoteImage } = Astro.props;
+
+let imageStyle = '';
+if (typeof image === 'object') {
+  imageStyle = `url(${image.src})`;
+} else {
+  imageStyle = remoteImage ? `url(${image})` : `url('/images/${image}.webp')`;
+}
 ---
 
-<section class="hero" style={`--image: ${remoteImage ? `url(${image})` : `url('/images/${image}.webp')`}`}>
+<section class="hero" style={`--image: ${imageStyle}`}>
   <div class="wrapper">
     <slot />
   </div>

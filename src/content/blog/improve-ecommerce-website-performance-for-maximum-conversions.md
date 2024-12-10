@@ -5,7 +5,7 @@ excerpt: >-
   Nearly half of consumers expect a web page to load in 2 seconds or less. If it
   takes more than 3 seconds, almost 50% of visitors may leave the website
   altogether.
-image: /images/7e34c-home-17.webp
+image: ../../media/cms/7e34c-home-17.webp
 ---
 
 Nearly half of consumers expect a web page to load in 2 seconds or less. If it takes more than 3 seconds, almost 50% of visitors may leave the website altogether.
