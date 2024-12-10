@@ -2,7 +2,7 @@
 title: 'Unlocking AI: Best Tools & Trends for Small Businesses'
 posted: 2024-12-01T15:05:11.012Z
 excerpt: "Unlock your small business's potential with AI! From chatbots to predictive analytics, discover how these tools can streamline operations and elevate your marketing game. Don't get left behind!"
-image: '/images/small-business-office-brainstorming-ai-strategies.png'
+image: '../../media/cms/small-business-office-brainstorming-ai-strategies.png'
 ---
 
 ## Understanding AI: What It Means for Small Businesses

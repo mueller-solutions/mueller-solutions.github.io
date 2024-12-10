@@ -1,14 +1,17 @@
 ---
 export const prerender = true;
 
-import MainLayout from '../layouts/main-layout.astro';
+import { Image } from 'astro:assets';
 
+import MainLayout from '../layouts/main-layout.astro';
 import FinalEngagement from '../components/final-engagement.astro';
 import HeroSection from '../components/hero-section.astro';
 import Icon from '../components/icon.astro';
 import Testimonial from '../components/testimonial.astro';
-import ResponsiveImage from '../components/responsive-image.astro';
 import FreeOptimizationChecklistModal from '../components/free-optimization-checklist-modal.astro';
+import problemStatement from '../media/home/problem-statement.webp';
+import solutionsCollage from '../media/home/solutions-collage.webp';
+import florianMueller from '../media/home/florian-mueller.webp';
 
 const solutions = [
   { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
@@ -56,12 +59,12 @@ const solutions = [
   <section class="section wrapper">
     <div class="even-columns two-columns no-gap items-center">
       <link rel="preload" href="/images/home/problem-statement.webp" as="image" type="image/webp" slot="html-head" />
-      <ResponsiveImage
-        image="home/problem-statement"
+      <Image
+        src={problemStatement}
         alt="Problem Statement"
         class="rounded"
-        width={699}
-        height={484}
+        widths={[480, problemStatement.width]}
+        sizes={`(max-width: 480px) 480px, ${problemStatement.width}px`}
       />
       <div class="card white shadow-strong overlap-left">
         <p class="tagline">Don't Let a Slow App Hold You Back</p>
@@ -167,12 +170,12 @@ const solutions = [
           </div>
         </div>
       </div>
-      <ResponsiveImage
-        image="home/solutions-collage"
+      <Image
+        src={solutionsCollage}
         alt="Solutions Collage"
         class="fade-from-right"
-        width={514}
-        height={552}
+        widths={[480, solutionsCollage.width]}
+        sizes={`(max-width: 480px) 480px, ${solutionsCollage.width}px`}
       />
     </div>
   </section>
@@ -249,12 +252,12 @@ const solutions = [
             Let's Work Together
           </button>
         </div>
-        <ResponsiveImage
-          image="home/florian-mueller"
+        <Image
+          src={florianMueller}
           alt="Florian Mueller, Founder & CEO"
           class="fade-from-right"
-          width={474}
-          height={462}
+          widths={[480, florianMueller.width]}
+          sizes={`(max-width: 480px) 480px, ${florianMueller.width}px`}
         />
       </div>
     </div>

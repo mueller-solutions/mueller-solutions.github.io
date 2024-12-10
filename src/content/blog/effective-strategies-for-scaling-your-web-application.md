@@ -5,7 +5,7 @@ excerpt: >-
   If you’ve built a web application, you probably want it to be a big success
   for your business. But any successful app owner will tell you that attracting
   lots of users comes with its own challenges.
-image: /images/2a132-yellow-and-white-illustrative-app-development-instagram-post.webp
+image: ../../media/cms/2a132-yellow-and-white-illustrative-app-development-instagram-post.webp
 tags:
   - scale-web-app
   - scale-web-application

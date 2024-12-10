@@ -8,7 +8,7 @@ excerpt: >-
   collect useful information. Without a website, businesses risk losing
   potential customers and rely too much
 image: >-
-  /images/7e264-blue-and-white-modern-responsive-website-development-services-instagram-post-6.webp
+  ../../media/cms/7e264-blue-and-white-modern-responsive-website-development-services-instagram-post-6.webp
 ---
 
 Having a website is very important for small businesses, but many owners don’t see its value. Some think websites are only for big companies or too costly, but this is a mistake. A website helps attract customers, build trust, and collect useful information.

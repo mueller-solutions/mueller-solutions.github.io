@@ -7,7 +7,7 @@ excerpt: >-
   longer a luxury for small businesses—they’re a must. Having a website gives
   your business important advantages to help you grow and stay competitive. Why
   Every Small Business Needs
-image: /images/aebc7-black-pink-modern-email-header-4.webp
+image: ../../media/cms/aebc7-black-pink-modern-email-header-4.webp
 ---
 
 In today’s digital world, it’s not about whether your small business should have a website. The real question is, can you afford not to? Websites are no longer a luxury for small businesses—they’re a must. Having a website gives your business important advantages to help you grow and stay competitive.

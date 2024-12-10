@@ -7,7 +7,7 @@ excerpt: >-
   “back-end” (how things work behind the scenes). Some skilled developers do
   both and are known as “Full-Stack Developers.”
 image: >-
-  /images/c0a1a-white-and-blue-modern-web-application-design-linkedin-background-photo-1.webp
+  ../../media/cms/c0a1a-white-and-blue-modern-web-application-design-linkedin-background-photo-1.webp
 ---
 
 Web Developers bring website designs to life by setting up layouts, adding graphics and content, and making sure the site runs smoothly and quickly. They also test to make sure the website works well on all types of screens—whether it's a computer, mobile phone, or tablet. If you want to be a Web Developer, you'll need to know how to write code using popular languages like JavaScript, HTML (HyperText Markup Language), CSS (Cascading Style Sheets), and others.

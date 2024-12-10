@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import BlogPostDate from './blog-post-date.astro';
 
 type Props = {
@@ -8,6 +9,8 @@ type Props = {
 };
 
 const { post, type = 'preview' } = Astro.props;
+const postImage = post.data.image;
+console.log('postImage', postImage);
 ---
 
 <article
@@ -19,9 +22,13 @@ const { post, type = 'preview' } = Astro.props;
   ]}
 >
   {
-    post.data.image && (
+    postImage && (
       <figure>
-        <img src={post.data.image} alt={post.data.title} loading="lazy" decoding="async" />
+        {typeof postImage === 'string' ? (
+          <img src={postImage} alt={post.data.title} loading="lazy" decoding="async" />
+        ) : (
+          <Image src={postImage} alt={post.data.title} />
+        )}
       </figure>
     )
   }

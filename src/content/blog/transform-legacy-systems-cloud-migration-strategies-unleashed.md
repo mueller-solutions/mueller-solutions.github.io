@@ -2,7 +2,7 @@
 title: 'Transform Legacy Systems: Cloud Migration Strategies Unleashed'
 posted: 2024-11-29T18:41:27.756Z
 excerpt: 'Outdated tech is a time machine to nowhere. Discover how cloud migration turns legacy challenges into future opportunities. Ready to leap ahead? Let’s reimagine your tech together!'
-image: 'https://d14uq1pz7dzsdq.cloudfront.net/4b0416b9-97f0-4e10-ba6e-d3544a6698f1_.png?Expires=1733510481&Signature=mKUVMZFOZ64JvOEZHIpPOeFukUEZSGhN1wpBck0C32nu8uY~KkJVIJYWsoDoBOpEPuGGddiOg~JOD~2jLEvVvWA20WQy6GfRNNs8pulZrImPiW9YLd83DcLlfcR9IiXfOl2ne7hnet9qWWuIifZICE9JFEITe0AK5Vpktd5ob2AkWTLvEvxNTAjYN6kyELcyuPDuQNtc420DnDNEOTIlVGu3sDl610ZzrIuK31m8dpInNE9r41XVPCbO9CRad65iq6kivDWz6nQROw7ccU8kLqDhOgYQ3gKE8elDSurddBI3EfeDSopSeAJQDr6lTbrxRKTYlfDHT-JxRHwZ7tVfXg__&Key-Pair-Id=K1F55BTI9AHGIK'
+image: '../../media/cms/modern-tech-office-collaboration-app-scaling-strategies.png'
 ---
 
 ## Are your legacy systems holding your business back?
