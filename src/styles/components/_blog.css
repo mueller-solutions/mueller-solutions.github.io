@@ -117,6 +117,7 @@
       --border-radius: clamp(28px, 4vw, 40px);
 
       height: clamp(200px, 30vw, 700px);
+      margin-inline: auto;
       border-bottom-left-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
     }
