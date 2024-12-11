@@ -90,11 +90,11 @@
 
   &[data-size='large'] {
     --shadow: var(--shadow-button-lg);
-    --padding-y: clamp(20px, 4vw, 24px);
+    --padding-y: clamp(20px, 4vw, 22px);
     --padding-x: clamp(26px, 6vw, 32px);
 
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 22px;
+    line-height: 22px;
     padding: var(--padding-y) var(--padding-x);
 
     &:hover {

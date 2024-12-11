@@ -11,6 +11,7 @@ import successOffice from '../../media/services/success-office.webp';
 import frontendPerformance from '../../media/services/frontend-performance.webp';
 import webArchitecture from '../../media/services/web-architecture.webp';
 import technology from '../../media/services/technology.webp';
+import HeroEngagement from '../../components/hero-engagement.astro';
 
 const faqs = [
   {
@@ -67,22 +68,19 @@ const faqs = [
 ---
 
 <MainLayout
-  title="Web Development Services"
-  description="Develop your online presence with professional web development services. Improve productivity, and design customized programs to suit your business. "
+  title="Front end development services Austin, Texas"
+  description="Develop your online presence with professional web development services in Austin, Texas. Improve productivity, and design customized programs to suit your business. "
   keywords="web development services, performance optimization, legacy system modernization, custom web applications, React web development, Node.js development, scalable web solutions, web app development, website optimization, secure web platforms"
 >
   <!-- Hero -->
   <HeroSection image="services/strategy-paper">
-    <h1 class="heading1 inverted">Explore Our Expert Services</h1>
+    <h1 class="heading1 inverted">Explore Our Expert Web Solutions</h1>
     <p>
-      We offer specialized services to optimize your web app. They will improve its performance, scalability, and user
-      experience. Discover how we can help your business thrive in the digital world.
+      We specialize in web design, website development, and front-end development to help your platform perform at its
+      best. From boosting performance and scalability to enhancing user experience, our services are designed to help
+      your business thrive in today’s digital landscape.
     </p>
-    <div class="hero-actions">
-      <button id="free-strategy-session-button" class="button inverted" data-size="large" data-free-consultation>
-        Book Your Free Strategy Session
-      </button>
-    </div>
+    <HeroEngagement />
   </HeroSection>
   <!-- Success Summary -->
   <section class="section wrapper">

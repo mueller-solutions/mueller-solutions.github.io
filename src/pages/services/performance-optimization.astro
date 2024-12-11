@@ -3,9 +3,9 @@ export const prerender = true;
 
 import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
-import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import HeroSection from '../../components/hero-section.astro';
+import HeroEngagement from '../../components/hero-engagement.astro';
 ---
 
 <MainLayout
@@ -25,12 +25,7 @@ import HeroSection from '../../components/hero-section.astro';
     <p class="text-balance text-pretty-mobile">
       Don't lose customers to slow load times. Optimize your site for speed, better SEO, and higher conversions.
     </p>
-    <div class="hero-actions">
-      <button id="free-performance-audit-button" class="button" data-size="large" data-free-consultation>
-        Start Your Performance Audit
-      </button>
-      <WhatsappButton />
-    </div>
+    <HeroEngagement />
   </HeroSection>
   <section class="section">
     <div class="wrapper">

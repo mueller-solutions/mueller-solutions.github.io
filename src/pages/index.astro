@@ -12,6 +12,8 @@ import FreeOptimizationChecklistModal from '../components/free-optimization-chec
 import problemStatement from '../media/home/problem-statement.webp';
 import solutionsCollage from '../media/home/solutions-collage.webp';
 import florianMueller from '../media/home/florian-mueller.webp';
+import HeroEngagement from '../components/hero-engagement.astro';
+import ButtonCall from '../components/button-call.astro';
 
 const solutions = [
   { title: 'Understand Your Needs', description: 'We start by diving deep into your business goals and challenges' },
@@ -33,24 +35,12 @@ const solutions = [
   <!-- Hero -->
   <link rel="preload" href="/images/home/man-with-laptop.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="home/man-with-laptop">
-    <h1 class="heading1 inverted">Unlock Your Web App's Full Potential</h1>
+    <h1 class="heading1 inverted">Websites That Drive Results</h1>
     <p class="text-balance text-pretty-mobile">
-      Don't settle for slow or clunky. We make your web app faster, smoother, and ready to grow with your business.
-      Stand out online and leave your competition behind.
+      Get a fast, modern website that captivates your audience, builds your brand, and drives your business forward.
+      With expert web design in Austin, Texas, we’ll help you stand out online.
     </p>
-    <div class="hero-actions">
-      <button id="free-consultation-button" class="button" data-size="large" data-free-consultation>
-        Schedule a Free Consultation
-      </button>
-      <button
-        id="free-optimization-checklist-button"
-        class="button inverted"
-        data-modal-trigger="free-optimization-checklist"
-      >
-        <Icon name="download" width="24" height="24" />
-        Free Optimization Checklist
-      </button>
-    </div>
+    <HeroEngagement />
   </HeroSection>
 
   <FreeOptimizationChecklistModal />
@@ -67,12 +57,12 @@ const solutions = [
         sizes={`(max-width: 480px) 480px, ${problemStatement.width}px`}
       />
       <div class="card white shadow-strong overlap-left">
-        <p class="tagline">Don't Let a Slow App Hold You Back</p>
-        <h2 class="heading2">Is Your Web App Slowing You Down?</h2>
+        <p class="tagline">Your Website, Built to Work for You</p>
+        <h2 class="heading2">Struggling to Build Your Website?</h2>
         <p class="body1 text-balance text-pretty-mobile">
-          In today's fast-paced digital world, a slow, unresponsive web app isn't just frustrating — it's costing you
-          users, conversions, and revenue. We're here to fix what's holding you back and unlock your app's full
-          potential.
+          Not enough time or know-how to get it done? Don’t worry—we’ve got your back. As a trusted web design company,
+          we create fast, modern websites that attract customers and help your business grow. Let us handle the details
+          while you focus on what you do best.
         </p>
       </div>
     </div>
@@ -83,22 +73,32 @@ const solutions = [
       <p class="tagline">See The Difference We Can Make</p>
       <h2 class="heading2">Why Choose Us?</h2>
       <p class="body1 text-balance text-pretty-mobile">
-        Partnering with us means you'll experience significant improvements in speed, user satisfaction, and
-        scalability. Here's what we deliver:
+        Your website is the foundation of your online success, and we’re here to ensure it delivers results. As your #1
+        web design company here in Austin, Texas, we specialize in front-end development services that create modern,
+        high-performing websites tailored to your business goals. Here’s what sets us apart:
       </p>
     </header>
     <ul class="even-columns three-columns">
       <li class="card blue align-left fade-from-bottom">
         <h3 class="heading3">Blazing Fast Performance</h3>
-        <p class="body2 text-balance text-pretty-mobile">We optimize your app for lightning speed</p>
+        <p class="body2 text-balance text-pretty-mobile">
+          Don’t let slow load times drive visitors away. We optimize your site with cutting-edge website development
+          practices to deliver lightning-fast performance, keeping users engaged and improving search engine rankings.
+        </p>
       </li>
       <li class="card purple align-left fade-from-bottom">
         <h3 class="heading3">Seamless User Experience</h3>
-        <p class="body2 text-balance text-pretty-mobile">Smooth interactions that keep users coming back</p>
+        <p class="body2 text-balance text-pretty-mobile">
+          Our web design team focuses on intuitive, user-friendly designs that ensure smooth interactions and keep
+          visitors coming back for more.
+        </p>
       </li>
       <li class="card green align-left fade-from-bottom">
         <h3 class="heading3">Scalable Solutions</h3>
-        <p class="body2 text-balance text-pretty-mobile">Architecture that grows with your business</p>
+        <p class="body2 text-balance text-pretty-mobile">
+          Whether you’re a local startup or an expanding enterprise, we provide website development that’s built to grow
+          with your business, handling more traffic and features with ease.
+        </p>
       </li>
     </ul>
   </section>
@@ -109,30 +109,37 @@ const solutions = [
         <p class="tagline inverted">Solutions That Drive Success</p>
         <h2 class="heading2 inverted">Our Services</h2>
         <p class="body1 inverted text-balance text-pretty-mobile">
-          We specialize in building high-performance, scalable web applications that elevate your business. We modernize
-          legacy systems and craft custom web solutions. We ensure your digital presence is ready to scale and succeed.
+          We specialize in building high-performance, scalable websites and web applications that elevate your business.
+          We modernize your legacy systems and craft custom web solutions. We ensure your digital presence is ready to
+          scale and succeed.
         </p>
       </header>
       <ul class="even-columns three-columns">
         <li class="card white shadow align-center fade-from-bottom">
           <Icon name="frontend-performance" width="52" height="52" />
-          <h3 class="heading3">Performance-Optimized Web Development</h3>
+          <h3 class="heading3">Performance-Optimized Website Development</h3>
           <p class="body2 text-balance text-pretty-mobile">
-            Create lightning-fast websites and apps that keep users engaged and drive conversions.
+            We design and develop websites and apps that are built for speed. Our focus on front-end development ensures
+            lightning-fast performance, keeping users engaged and driving more conversions. A fast, well-optimized site
+            isn’t just a bonus—it’s essential for growing your business.
           </p>
         </li>
         <li class="card white shadow align-center fade-from-bottom">
           <Icon name="scalable-architecture" width="60" height="52" />
-          <h3 class="heading3">Legacy Application Modernization</h3>
+          <h3 class="heading3">Legacy Website and App Modernization</h3>
           <p class="body2 text-balance text-pretty-mobile">
-            Transform outdated systems into modern, scalable web applications with the latest technologies.
+            Is your outdated system holding your business back? We specialize in website development and modernizing web
+            applications, turning legacy systems into fast, scalable solutions. Whether it’s a new design, a better user
+            experience, or advanced features, we’ll ensure your technology is ready to keep up with your business.
           </p>
         </li>
         <li class="card white shadow align-center fade-from-bottom">
           <Icon name="cutting-edge-technology" width="59" height="52" />
           <h3 class="heading3">Custom Web Application Development</h3>
           <p class="body2 text-balance text-pretty-mobile">
-            Create custom web solutions for your unique business needs. They should be scalable and high-performing.
+            Your business deserves more than a cookie-cutter solution. We create custom web designs and front-end
+            development solutions tailored to your specific needs. With a focus on scalability and high performance,
+            we’ll deliver a web application that helps your business stand out and grow.
           </p>
         </li>
       </ul>
@@ -149,19 +156,38 @@ const solutions = [
           <p class="tagline">Proven Process to Success</p>
           <h2 class="heading2">Innovative Solutions With Integrity</h2>
           <p class="body1 text-balance text-pretty-mobile">
-            With over 20 years of experience, we've honed a process that ensures your app not only meets your current
-            needs but is also ready to scale as your business grows.
+            With over 20 years of experience, we deliver web design, website development, and front-end development
+            solutions that not only meet your current needs but are also built to scale with your business. Our proven
+            process ensures that every project is tailored to your unique goals and sets the foundation for long-term
+            success.
           </p>
         </header>
         <div class="flex flex-col gap-4">
           <ul data-type="list">
-            {
-              solutions.map((solution) => (
-                <li class="fade-from-bottom text-balance text-pretty-mobile">
-                  <strong>{solution.title}:</strong> {solution.description}
-                </li>
-              ))
-            }
+            <li class="text-balance text-pretty-mobile">
+              <strong>Understand Your Needs:</strong> We begin by diving deep into your business goals, challenges, and vision
+              to ensure our solutions align perfectly with your objectives.
+            </li>
+            <li class="text-balance text-pretty-mobile">
+              <strong>Audit & Analyze:</strong> Through a comprehensive performance audit, we identify areas where your website
+              or app can improve in speed, usability, and scalability.
+            </li>
+            <li class="text-balance text-pretty-mobile">
+              <strong>Craft a Custom Strategy:</strong> Using insights from the audit, we create a detailed, tailored plan
+              to address your unique challenges and deliver measurable results.
+            </li>
+            <li class="text-balance text-pretty-mobile">
+              <strong>Implement & Optimize:</strong> From design to development, we implement cutting-edge website development
+              techniques to transform your platform into a fast, modern, and high-performing solution.
+            </li>
+            <li class="text-balance text-pretty-mobile">
+              <strong>Test for Perfection:</strong> Rigorous testing ensures every element of your front-end development
+              functions flawlessly, providing users with an exceptional experience.
+            </li>
+            <li class="text-balance text-pretty-mobile">
+              <strong>Ongoing Support:</strong> We don’t stop at delivery. We provide continuous support to maintain, update,
+              and optimize your platform, keeping it aligned with your business as it grows.
+            </li>
           </ul>
           <div>
             <button id="get-started-button" class="button primary" data-free-consultation>

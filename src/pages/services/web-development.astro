@@ -3,9 +3,9 @@ export const prerender = true;
 
 import FinalEngagement from '../../components/final-engagement.astro';
 import Icon from '../../components/icon.astro';
-import WhatsappButton from '../../components/whatsapp-button.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import HeroSection from '../../components/hero-section.astro';
+import HeroEngagement from '../../components/hero-engagement.astro';
 
 const faqs = [
   {
@@ -37,22 +37,18 @@ const faqs = [
 ---
 
 <MainLayout
-  title="Custom Web Development Company Austin TX"
-  description="Join hands with an e-commerce website development company in Texas for user-friendly and creative web solutions that encourage sales and interaction."
-  keywords="custom web development, scalable websites, SEO-friendly web development, high-performance web solutions, responsive web design, full-stack web development"
+  title="Professional Website Development Company Austin Texas"
+  description="Partner with a professional website development company in Austin, Texas. We craft custom, scalable, and SEO-friendly websites designed to boost engagement, sales, and growth."
+  keywords="custom website development, scalable web solutions, SEO-friendly websites, responsive web design, high-performance websites, Austin web development, front-end development services, e-commerce web development, full-stack web development"
 >
   <link rel="preload" href="/images/services/web-development.webp" as="image" type="image/webp" slot="html-head" />
   <HeroSection image="services/web-development">
-    <p class="heading1 inverted">Build Web Solutions That Drive Business Growth</p>
+    <p class="heading1 inverted">Building Websites That Drive Business Growth</p>
     <p class="text-balance text-pretty-mobile">
-      Create secure, scalable, and high-performance websites that leave a lasting impression.
+      Get a stunning, high-converting, and scalable website that captivates your audience, enhances user experience, and
+      drives real growth. Call us today to get started!
     </p>
-    <div class="hero-actions">
-      <button id="free-strategy-call-button" class="button" data-size="large" data-free-consultation>
-        Book a Free Strategy Call
-      </button>
-      <WhatsappButton />
-    </div>
+    <HeroEngagement />
   </HeroSection>
   <section class="section">
     <div class="wrapper">
