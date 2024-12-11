@@ -168,7 +168,7 @@ import teamSuccess from '../media/about-us/team-success.webp';
         <h2 class="heading2">Meet Our Team</h2>
       </header>
       <ul class="even-columns four-columns gap-4">
-        <li class="flex flex-col items-center gap-1 col-1 col-offset-1">
+        <li class="team-member col-1 col-offset-1">
           <Image
             src={florianMueller}
             alt="Florian Mueller"
@@ -176,12 +176,12 @@ import teamSuccess from '../media/about-us/team-success.webp';
             widths={[480, florianMueller.width]}
             sizes={`(max-width: 480px) 480px, ${florianMueller.width}px`}
           />
-          <div class="flex flex-col items-center text-center">
-            <h3 class="heading3">Florian Mueller</h3>
-            <p class="body1">Founder & CEO</p>
+          <div class="caption">
+            <h3 class="name">Florian Mueller</h3>
+            <p class="position">Founder & CEO</p>
           </div>
         </li>
-        <li class="flex flex-col items-cente gap-1 col-1">
+        <li class="team-member gap-1 col-1">
           <Image
             src={jayTijerina}
             alt="Jay Tijerina"
@@ -189,9 +189,9 @@ import teamSuccess from '../media/about-us/team-success.webp';
             widths={[480, jayTijerina.width]}
             sizes={`(max-width: 480px) 480px, ${jayTijerina.width}px`}
           />
-          <div class="flex flex-col items-center text-center">
-            <h3 class="heading3">Jay Tijerina</h3>
-            <p class="body1">Sales & Business Development</p>
+          <div class="caption">
+            <h3 class="name">Jay Tijerina</h3>
+            <p class="position">Sales & Business Development</p>
           </div>
         </li>
       </ul>
