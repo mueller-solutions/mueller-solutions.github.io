@@ -10,7 +10,6 @@ type Props = {
 
 const { post, type = 'preview' } = Astro.props;
 const postImage = post.data.image;
-console.log('postImage', postImage);
 ---
 
 <article
@@ -27,7 +26,7 @@ console.log('postImage', postImage);
         {typeof postImage === 'string' ? (
           <img src={postImage} alt={post.data.title} loading="lazy" decoding="async" />
         ) : (
-          <Image src={postImage} alt={post.data.title} />
+          <Image src={postImage} alt={post.data.title} layout="responsive" width="448" />
         )}
       </figure>
     )
