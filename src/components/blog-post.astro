@@ -32,6 +32,8 @@ const postImage = post.data.image;
             alt={post.data.title}
             layout="responsive"
             width="448"
+            widths={[390, 448]}
+            sizes="(max-width: 440px) 390px, 448px"
             loading={index < 3 ? 'eager' : 'lazy'}
           />
         )}
