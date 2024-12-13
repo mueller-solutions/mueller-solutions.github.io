@@ -6,9 +6,10 @@ import BlogPostDate from './blog-post-date.astro';
 type Props = {
   post: CollectionEntry<'blog'>;
   type: 'featured' | 'preview' | 'latest';
+  index: number;
 };
 
-const { post, type = 'preview' } = Astro.props;
+const { post, type = 'preview', index } = Astro.props;
 const postImage = post.data.image;
 ---
 
@@ -26,7 +27,13 @@ const postImage = post.data.image;
         {typeof postImage === 'string' ? (
           <img src={postImage} alt={post.data.title} loading="lazy" decoding="async" />
         ) : (
-          <Image src={postImage} alt={post.data.title} layout="responsive" width="448" />
+          <Image
+            src={postImage}
+            alt={post.data.title}
+            layout="responsive"
+            width="448"
+            loading={index < 3 ? 'eager' : 'lazy'}
+          />
         )}
       </figure>
     )

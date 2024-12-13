@@ -22,7 +22,7 @@ const orderedPosts = posts.sort((a, b) => new Date(b.data.posted).getTime() - ne
   </header>
   <div class="wrapper blog">
     <div class="even-columns three-columns">
-      {orderedPosts.map((post) => <BlogPost post={post} type="preview" />)}
+      {orderedPosts.map((post, index) => <BlogPost post={post} type="preview" index={index} />)}
     </div>
   </div>
 </MainLayout>
