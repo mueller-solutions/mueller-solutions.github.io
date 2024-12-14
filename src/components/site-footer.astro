@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+
 import Icon from './icon.astro';
 import NavLink from './nav-link.astro';
-import ServicesNavigation from './services-navigation.astro';
+
+import iconFacebook from '../media/icons/icon-facebook.svg';
 ---
 
 <footer class="site-footer">
@@ -17,19 +20,26 @@ import ServicesNavigation from './services-navigation.astro';
           decoding="async"
         />
       </div>
-      <nav class="footer-nav flex flex-col" aria-label="Footer navigation">
-        <ul class="flex flex-col">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/services">
-            Services
-            <ul class="sub-navigation" slot="dropdown">
-              <ServicesNavigation />
-            </ul>
-          </NavLink>
-          <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/about-us">About Us</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
-        </ul>
+      <nav class="footer-nav flex flex-sm-col gap-2" aria-label="Footer navigation">
+        <div class="flex flex-col gap-1">
+          <p class="nav-title">Company</p>
+          <ul>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/services">Services</NavLink>
+            <NavLink href="/blog">Blog</NavLink>
+            <NavLink href="/about-us">About Us</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="nav-title">Services</p>
+          <ul>
+            <NavLink href="/services/web-development">Web Development</NavLink>
+            <NavLink href="/services/performance-optimization">Performance Optimization</NavLink>
+            <NavLink href="/services/legacy-system-modernization">Legacy System Modernization</NavLink>
+            <NavLink href="/services/custom-web-applications">Custom Web Applications</NavLink>
+          </ul>
+        </div>
       </nav>
       <div class="flex flex-col gap-2">
         <address class="flex flex-col">
@@ -46,24 +56,42 @@ import ServicesNavigation from './services-navigation.astro';
             <span>+1 (512) 200-3062</span>
           </a>
         </address>
-        <div class="social-links">
+        <nav class="social-links">
           <a
             href="https://www.facebook.com/profile.php?id=61564462280786"
             target="_blank"
-            rel="noopener noreferrer"
             aria-label="MUELLER Solutions on Facebook"
           >
-            <Icon name="facebook" width="18" height="18" />
+            <Icon name="facebook" width="24" height="24" />
           </a>
           <a
             href="https://www.linkedin.com/company/mueller-solutions-dev"
             target="_blank"
-            rel="noopener noreferrer"
             aria-label="MUELLER Solutions on LinkedIn"
           >
-            <Icon name="linkedin" width="18" height="18" />
+            <Icon name="linkedin" width="24" height="24" />
           </a>
-        </div>
+          <a href="https://x.com/muellerdevatx" target="_blank" aria-label="MUELLER Solutions on X">
+            <Icon name="x" width="24" height="24" />
+          </a>
+          <a
+            href="https://www.instagram.com/muellersolutionsatx/"
+            target="_blank"
+            aria-label="MUELLER Solutions on Instagram"
+          >
+            <Icon name="instagram" width="24" height="24" />
+          </a>
+          <a
+            href="https://maps.app.goo.gl/eBMYp3y98prLAu6N7"
+            target="_blank"
+            aria-label="MUELLER Solutions on Google Maps"
+          >
+            <Icon name="googleplus" width="24" height="24" />
+          </a>
+          <a href="https://mueller-solutions.dev/rss.xml" target="_blank" aria-label="MUELLER Solutions RSS Feed">
+            <Icon name="rss" width="24" height="24" />
+          </a>
+        </nav>
       </div>
     </div>
     <div class="copyright">

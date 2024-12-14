@@ -31,12 +31,20 @@
   }
 
   .footer-nav {
+    .nav-title {
+      font-weight: var(--fnt-weight-bold);
+
+      @mixin tablet-up {
+        padding-inline: 10px;
+      }
+    }
+
     .nav-link {
       display: inline-block;
-      padding: 6px 10px;
+      padding-block: 6px;
 
-      @mixin mobile {
-        margin-inline: -10px;
+      @mixin tablet-up {
+        padding-inline: 10px;
       }
     }
 
@@ -59,7 +67,7 @@
   .copyright {
     border-top: 1px solid rgb(216 242 255 / 10%);
     margin-top: 40px;
-    padding-top: 16px;
+    padding-block: 16px;
     font-size: 13px;
     line-height: 13px;
     text-align: center;
@@ -74,6 +82,6 @@
 
   .social-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
