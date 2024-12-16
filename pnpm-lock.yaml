@@ -35,6 +35,9 @@ importers:
       astro-imagetools:
         specifier: ^0.9.0
         version: 0.9.0(astro@5.0.4(@types/node@22.8.7)(jiti@1.21.6)(lightningcss@1.27.0)(rollup@2.79.2)(sass@1.80.6)(sugarss@4.0.1(postcss@8.4.49))(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.0))
+      astro-social-share:
+        specifier: ^2.1.0
+        version: 2.1.0
       astro-useragent:
         specifier: ^5.0.0
         version: 5.0.0(astro@5.0.4(@types/node@22.8.7)(jiti@1.21.6)(lightningcss@1.27.0)(rollup@2.79.2)(sass@1.80.6)(sugarss@4.0.1(postcss@8.4.49))(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.0))
@@ -3533,6 +3536,9 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
+
+  astro-social-share@2.1.0:
+    resolution: {integrity: sha512-t5DykR+T7gGNLTnrFXASCyufCpXcWhLdXFLSRYRKvMOFSUaaPIWMPu1ncIhxdFD7hm7SWHboAb33nJUUZxJH2Q==}
 
   astro-useragent@5.0.0:
     resolution: {integrity: sha512-uD4r64rufCBQ2QYOigPH3Coxgj3g3ZeESXOWy1TovS3zqyo34GvmD+tPi8xtz6KTeifiX2K8gvabplmrjT/yPA==}
@@ -13263,6 +13269,8 @@ snapshots:
       imagetools-core: 3.0.2
     transitivePeerDependencies:
       - debug
+
+  astro-social-share@2.1.0: {}
 
   astro-useragent@5.0.0(astro@5.0.4(@types/node@22.8.7)(jiti@1.21.6)(lightningcss@1.27.0)(rollup@2.79.2)(sass@1.80.6)(sugarss@4.0.1(postcss@8.4.49))(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.0)):
     dependencies:

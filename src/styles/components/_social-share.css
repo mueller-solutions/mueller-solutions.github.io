@@ -1,0 +1,8 @@
+.astro-social-share {
+  padding-block-start: clamp(20px, 4vw, 30px);
+
+  svg {
+    fill: var(--clr-dark);
+    transition: fill var(--trans-duration-short) var(--trans-ease-in-out);
+  }
+}

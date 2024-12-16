@@ -3,6 +3,7 @@ export const prerender = true;
 
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { SocialShare } from 'astro-social-share';
 import BlogPostDate from '../../components/blog-post-date.astro';
 import MainLayout from '../../layouts/main-layout.astro';
 import FinalEngagement from '../../components/final-engagement.astro';
@@ -55,10 +56,12 @@ const featuredImage = post.data.image;
       <div class="wrapper content">
         <BlogPostDate date={post.data.posted} />
         <h1 class="heading1">{post.data.title}</h1>
+        <SocialShare title={post.data.title} description={post.data.excerpt} />
       </div>
     </header>
     <div class="wrapper content">
       <Content />
+      <SocialShare title={post.data.title} description={post.data.excerpt} />
     </div>
     <FinalEngagement />
   </article>
