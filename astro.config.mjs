@@ -1,6 +1,6 @@
 import netlify from '@astrojs/netlify';
 import node from '@astrojs/node';
-import partytown from '@astrojs/partytown';
+// import partytown from '@astrojs/partytown';
 import minify from '@frontendista/astro-html-minify';
 
 import { defineConfig } from 'astro/config';
@@ -32,33 +32,33 @@ export default defineConfig({
   },
   prefetch: true,
   integrations: [
-    partytown({
-      config: {
-        debug: IS_DEV,
-        logCalls: false,
-        logGetters: false,
-        logSetters: false,
-        logImageRequests: false,
-        logScriptExecution: false,
-        logStackTraces: false,
-        forward: ['dataLayer.push'],
-        resolveUrl: (url, location) => {
-          const proxyUrl = new URL(location.origin);
-          if (
-            url.hostname === 'googleads.g.doubleclick.net' ||
-            url.hostname === 'www.googleadservices.com' ||
-            url.hostname === 'googletagmanager.com' ||
-            url.hostname === 'www.googletagmanager.com' ||
-            url.hostname === 'region1.google-analytics.com' ||
-            url.hostname === 'google.com'
-          ) {
-            proxyUrl.searchParams.append('apiurl', url.href);
-            return proxyUrl;
-          }
-          return url;
-        },
-      },
-    }),
+    // partytown({
+    //   config: {
+    //     debug: IS_DEV,
+    //     logCalls: false,
+    //     logGetters: false,
+    //     logSetters: false,
+    //     logImageRequests: false,
+    //     logScriptExecution: false,
+    //     logStackTraces: false,
+    //     forward: ['dataLayer.push'],
+    //     resolveUrl: (url, location) => {
+    //       const proxyUrl = new URL(location.origin);
+    //       if (
+    //         url.hostname === 'googleads.g.doubleclick.net' ||
+    //         url.hostname === 'www.googleadservices.com' ||
+    //         url.hostname === 'googletagmanager.com' ||
+    //         url.hostname === 'www.googletagmanager.com' ||
+    //         url.hostname === 'region1.google-analytics.com' ||
+    //         url.hostname === 'google.com'
+    //       ) {
+    //         proxyUrl.searchParams.append('apiurl', url.href);
+    //         return proxyUrl;
+    //       }
+    //       return url;
+    //     },
+    //   },
+    // }),
     ...(IS_PROD ? [minify()] : []),
   ],
   build: {
