@@ -7,6 +7,7 @@ interface ImportMetaEnv {
   readonly GTM_ID: string;
   readonly TINA_CLIENT_ID: string;
   readonly TINA_TOKEN: string;
+  readonly INTERCOM_APP_ID: string;
 }
 
 interface ImportMeta {

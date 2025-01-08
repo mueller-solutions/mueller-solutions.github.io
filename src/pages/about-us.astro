@@ -9,6 +9,7 @@ import FinalEngagement from '../components/final-engagement.astro';
 import HeroSection from '../components/hero-section.astro';
 import florianMueller from '../media/team/florian-mueller.png';
 import jayTijerina from '../media/team/jay-tijerina.png';
+import drewHull from '../media/team/drew-hull.png';
 import handshake from '../media/about-us/handshake.webp';
 import teamSuccess from '../media/about-us/team-success.webp';
 ---
@@ -167,8 +168,8 @@ import teamSuccess from '../media/about-us/team-success.webp';
         <p class="tagline">A Team of Experts Committed to Excellence</p>
         <h2 class="heading2">Meet Our Team</h2>
       </header>
-      <ul class="even-columns four-columns gap-4">
-        <li class="team-member col-1 col-offset-1">
+      <ul class="even-columns three-columns gap-4 slim-content">
+        <li class="team-member col-1">
           <Image
             src={florianMueller}
             alt="Florian Mueller"
@@ -191,6 +192,19 @@ import teamSuccess from '../media/about-us/team-success.webp';
           />
           <div class="caption">
             <h3 class="name">Jay Tijerina</h3>
+            <p class="position">Sales & Business Development</p>
+          </div>
+        </li>
+        <li class="team-member gap-1 col-1">
+          <Image
+            src={drewHull}
+            alt="Drew Hull"
+            class="rounded"
+            widths={[480, drewHull.width]}
+            sizes={`(max-width: 480px) 480px, ${drewHull.width}px`}
+          />
+          <div class="caption">
+            <h3 class="name">Drew Hull</h3>
             <p class="position">Sales & Business Development</p>
           </div>
         </li>
