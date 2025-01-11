@@ -14,6 +14,7 @@ import NavLink from './nav-link.astro';
           height="24"
           loading="lazy"
           decoding="async"
+          itemprop="logo"
         />
       </div>
       <nav class="footer-nav flex flex-sm-col gap-2" aria-label="Footer navigation">
@@ -38,21 +39,24 @@ import NavLink from './nav-link.astro';
         </div>
       </nav>
       <div class="flex flex-col gap-2">
-        <address class="flex flex-col">
+        <address class="flex flex-col" itemscope itemtype="https://schema.org/PostalAddress">
           <p class="flex gap-1 items-center">
             <Icon name="location" width="11" height="14" />
-            <span>5900 Balcones Drive STE 100, Austin, TX 78731</span>
+            <span itemprop="streetAddress">5900 Balcones Drive STE 100</span>
+            <span itemprop="addressLocality">Austin</span>
+            <span itemprop="addressRegion">TX</span>
+            <span itemprop="postalCode">78731</span>
           </p>
           <a href="mailto:info@mueller-solutions.dev" class="flex gap-1 items-center">
             <Icon name="email" width="14" height="10" />
-            <span>info@mueller-solutions.dev</span>
+            <span itemprop="email">info@mueller-solutions.dev</span>
           </a>
           <a href="tel:+15122003062" class="flex gap-1 items-center" aria-label="5 1 2. 2 0 0. 3 0 6 2">
             <Icon name="phone" width="10" height="10" />
-            <span>+1 (512) 200-3062</span>
+            <span itemprop="telephone">+1 (512) 200-3062</span>
           </a>
         </address>
-        <nav class="social-links">
+        <nav class="social-links" aria-label="Social links">
           <a
             href="https://www.facebook.com/profile.php?id=61564462280786"
             target="_blank"
