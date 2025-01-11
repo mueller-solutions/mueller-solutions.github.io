@@ -7,7 +7,7 @@ const gtmId = import.meta.env.GTM_ID;
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     function gtag() {
-      w[l](arguments);
+      w[l].push(arguments);
     }
     gtag('consent', 'default', {
       ad_storage: 'granted',
