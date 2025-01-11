@@ -109,31 +109,51 @@ const faqs = [
       <p class="tagline">Solutions That Power Your Digital Growth</p>
       <h2 class="heading2">Our Core Services</h2>
       <p class="body1">
-        We deliver custom web solutions. They will boost performance, scale with your business, and ensure long-term
-        success. Explore how our services can take your web applications to the next level.
+        We deliver custom web solutions in <span itemprop="areaServed" itemscope itemtype="https://schema.org/State"
+          ><span itemprop="name">Texas</span></span
+        >. They will boost performance, scale with your business, and ensure long-term success. Explore how our services
+        can take your web applications to the next level.
       </p>
     </header>
-    <div class="even-columns three-columns slim-content">
-      <a href="/services/web-development" class="card blue slim">
+    <div
+      class="even-columns three-columns slim-content"
+      itemprop="hasOfferCatalog"
+      itemscope
+      itemtype="https://schema.org/OfferCatalog"
+    >
+      <a href="/services/web-development" class="card blue slim" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Performance-Optimized Web Development" />
         <Icon name="flash" width="68" height="68" />
-        <h3 class="heading3">Performance-Optimized Web Development</h3>
-        <p class="body2 text-wrap-pretty">
+        <h3 class="heading3" itemprop="name">Performance-Optimized Web Development</h3>
+        <p class="body2 text-wrap-pretty" itemprop="description">
           Enhance the speed, efficiency, and user experience of your website or app. We aim to build fast,
           high-performance solutions. They should engage users and boost conversions.
         </p>
       </a>
-      <a href="/services/legacy-system-modernization" class="card purple slim">
+      <a
+        href="/services/legacy-system-modernization"
+        class="card purple slim"
+        itemscope
+        itemtype="https://schema.org/Service"
+      >
+        <meta itemprop="serviceType" content="Legacy System Modernization" />
         <Icon name="box" width="68" height="68" />
-        <h3 class="heading3">Legacy System Modernization</h3>
-        <p class="body2 text-wrap-pretty">
+        <h3 class="heading3" itemprop="name">Legacy System Modernization</h3>
+        <p class="body2 text-wrap-pretty" itemprop="description">
           Outdated systems holding you back? We transform legacy apps into modern, scalable web apps. We use
           cutting-edge tech like React and Node.js. This ensures minimal disruption and the greatest improvement.
         </p>
       </a>
-      <a href="/services/custom-web-applications" class="card green slim">
+      <a
+        href="/services/custom-web-applications"
+        class="card green slim"
+        itemscope
+        itemtype="https://schema.org/Service"
+      >
+        <meta itemprop="serviceType" content="Custom Web Application Development" />
         <Icon name="net" width="58" height="58" />
-        <h3 class="heading3">Custom Web Application Development</h3>
-        <p class="body2 text-wrap-pretty">
+        <h3 class="heading3" itemprop="name">Custom Web Application Development</h3>
+        <p class="body2 text-wrap-pretty" itemprop="description">
           Need a fully tailored solution? We build custom web apps to meet your business needs. We ensure your platform
           is ready for success, whether you are scaling or launching a new project.
         </p>
@@ -142,34 +162,44 @@ const faqs = [
   </section>
   <!-- Services Details -->
   <section class="section primary">
-    <div class="wrapper flex flex-col gap-1">
+    <div
+      class="wrapper flex flex-col gap-1"
+      itemprop="hasOfferCatalog"
+      itemscope
+      itemtype="https://schema.org/OfferCatalog"
+    >
       <!-- Performance-Optimized Web Development -->
-      <div class="flex flex-sm-col gap-1">
+      <div class="flex flex-sm-col gap-1" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Performance-Optimized Web Development" />
         <div class="card justify-center items-start large-gap slim white fade-from-left">
-          <h2 class="heading2">Performance-Optimized Web Development</h2>
+          <h2 class="heading2" itemprop="name">Performance-Optimized Web Development</h2>
           <h3 class="heading3">What It Is</h3>
           <p class="body1">
-            We build and optimize <strong>high-performance websites and web apps</strong>. We use modern frameworks like <strong
-              >React</strong
-            >, <strong>Next.js</strong>, and <strong>Astro</strong>. We focus on speed, scalability, and <strong
-              >user experience</strong
-            > in our development. Your site will load fast and engage visitors, boosting <strong
-              >conversion rates</strong
-            >.
+            We build and optimize <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+              ><span itemprop="name">high-performance websites and web apps</span></strong
+            >. We use modern frameworks like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Astro</strong
+            >. We focus on speed, scalability, and <strong>user experience</strong> in our development. Your site will load
+            fast and engage visitors, boosting <strong>conversion rates</strong>.
           </p>
           <h3 class="heading3">What You Get</h3>
           <ul data-type="list" class="checklist">
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Fast-loading websites and apps</strong> to reduce bounce rates.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Fast-loading websites and apps</span></strong
+              > to reduce bounce rates.
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Scalable architecture</strong> to handle increased traffic and growth.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Scalable architecture</span></strong
+              > to handle increased traffic and growth.
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Improved user experience</strong> for better engagement and conversions.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Improved user experience</span></strong
+              > for better engagement and conversions.
             </li>
           </ul>
           <button id="free-performance-review-button" class="button primary" data-free-consultation>
@@ -183,14 +213,16 @@ const faqs = [
         />
       </div>
       <!-- Legacy System Modernization -->
-      <div class="flex flex-sm-col gap-1">
+      <div class="flex flex-sm-col gap-1" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Legacy System Modernization" />
         <Image src={webArchitecture} alt="Legacy System Modernization" class="rounded fade-from-left mobile-hidden" />
         <div class="card justify-center items-start large-gap slim white fade-from-right">
-          <h2 class="heading2">Legacy System Modernization</h2>
+          <h2 class="heading2" itemprop="name">Legacy System Modernization</h2>
           <h3 class="heading3">What It Is</h3>
           <p class="body1">
-            Migrate your old legacy apps to modern tech, like <strong>React</strong> and <strong>Node.js</strong>. Our <strong
-              >legacy system modernization services</strong
+            Migrate your old legacy apps to modern tech, like <strong>React</strong> and <strong>Node.js</strong>. Our
+            <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+              ><span itemprop="name">legacy system modernization services</span></strong
             > will make your apps better. They will be more scalable, secure, and <strong>high-performing</strong> for users.
             We cut disruption during the transition to keep your business running smoothly.
           </p>
@@ -198,15 +230,21 @@ const faqs = [
           <ul data-type="list">
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Modern technology stack</strong> that supports future growth.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Modern technology stack</span></strong
+              > that supports future growth.
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Seamless legacy system migration</strong> with minimal downtime.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Seamless legacy system migration</span></strong
+              > with minimal downtime.
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Enhanced functionality</strong> and better overall performance.
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Enhanced functionality</span></strong
+              > and better overall performance.
             </li>
           </ul>
           <button id="free-modernization-strategy-session-button" class="button primary" data-free-consultation>
@@ -215,29 +253,37 @@ const faqs = [
         </div>
       </div>
       <!-- Custom Web Application Development -->
-      <div class="flex flex-sm-col gap-1">
+      <div class="flex flex-sm-col gap-1" itemscope itemtype="https://schema.org/Service">
+        <meta itemprop="serviceType" content="Custom Web Application Development" />
         <div class="card justify-center items-start large-gap slim white fade-from-left">
-          <h2 class="heading2">Custom Web Application Development</h2>
+          <h2 class="heading2" itemprop="name">Custom Web Application Development</h2>
           <h3 class="heading3">What It Is</h3>
           <p class="body1">
-            We create custom web apps. They are fully tailored to meet your unique business needs. We build
-            high-performance, secure web apps. They will grow with your business. Whether you need a new platform or
-            want to scale an existing one. From the initial concept to development, we handle every aspect to ensure
-            success.
+            We create <span itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+              ><span itemprop="name"></span>custom web apps</span
+            >. They are fully tailored to meet your unique business needs. We build high-performance, secure web apps.
+            They will grow with your business. Whether you need a new platform or want to scale an existing one. From
+            the initial concept to development, we handle every aspect to ensure success.
           </p>
           <h3 class="heading3">What You Get</h3>
           <ul data-type="list">
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Custom-built web applications</strong> designed for your specific needs
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Custom-built web applications</span></strong
+              > designed for your specific needs
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Full-stack development</strong> covering both frontend and backend
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Full-stack development</span></strong
+              > covering both frontend and backend
             </li>
             <li class="flex gap-05 items-center">
               <Icon name="checkbox" isCheckbox width="20" height="20" />
-              <strong>Scalable, secure web platforms</strong> that can evolve with your business
+              <strong itemprop="itemOffered" itemscope itemtype="https://schema.org/Service"
+                ><span itemprop="name">Scalable, secure web platforms</span></strong
+              > that can evolve with your business
             </li>
           </ul>
           <button id="free-web-app-consultation-button" class="button primary" data-free-consultation>
