@@ -3,8 +3,19 @@ const gtmId = import.meta.env.GTM_ID;
 ---
 
 <script is:inline define:vars={{ gtmId }}>
+  window.dataLayer = window.dataLayer || [];
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
+    function gtag() {
+      w[l](arguments);
+    }
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+      personalization_storage: 'granted',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+    });
     w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     var f = d.getElementsByTagName(s)[0],
       j = d.createElement(s),
