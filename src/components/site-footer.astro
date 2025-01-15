@@ -42,10 +42,12 @@ import NavLink from './nav-link.astro';
         <address class="flex flex-col" itemscope itemtype="https://schema.org/PostalAddress">
           <p class="flex gap-1 items-center">
             <Icon name="location" width="11" height="14" />
-            <span itemprop="streetAddress">5900 Balcones Drive STE 100</span>
-            <span itemprop="addressLocality">Austin</span>
-            <span itemprop="addressRegion">TX</span>
-            <span itemprop="postalCode">78731</span>
+            <span>
+              <span itemprop="streetAddress">5900 Balcones Drive STE 100</span><span>, </span>
+              <span itemprop="addressLocality">Austin</span><span>, </span>
+              <span itemprop="addressRegion">TX</span><span>, </span>
+              <span itemprop="postalCode">78731</span>
+            </span>
           </p>
           <a href="mailto:info@mueller-solutions.dev" class="flex gap-1 items-center">
             <Icon name="email" width="14" height="10" />
