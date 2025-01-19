@@ -67,4 +67,4 @@ In the ever-evolving digital landscape, Texas service businesses must continuous
 
 For personalized support in optimizing your onboarding process and enhancing your digital presence, contact [MUELLER Solutions](https://mueller-solutions.dev/contact). Our team is ready to help you transform your business with tailored strategies designed for success in today’s competitive market. Explore [our services](https://mueller-solutions.dev/services) and discover how we can help your business get more clients.
 
-Reach out to us at [info@muellersolutions.com](mailto:info@muellersolutions.com) or call us at [+1 (512) 200-3062](tel:+15122003062). Let us help you create an efficient, engaging onboarding process that ensures client satisfaction and business growth.
+Reach out to us at [info@mueller-solutions.dev](mailto:info@mueller-solutions.dev) or call us at [+1 (512) 200-3062](tel:+15122003062). Let us help you create an efficient, engaging onboarding process that ensures client satisfaction and business growth.
